@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"terminal.background": "#fdfdfd", // black terminal background
+			"terminal.foreground": "#000000", // white text
+			"terminalCursor.foreground": "#05199e", // white cursor
+			"terminal.ansiBlack": "#ffc640",
+			"terminal.ansiRed": "#FF5555",
+			"terminal.ansiGreen": "#50FA7B",
+			"terminal.ansiYellow": "#ff6c40",
+			"terminal.ansiBlue": "#cfddff",
+			"terminal.ansiMagenta": "#FF79C6",
+			"terminal.ansiCyan": "#8BE9FD",
+			"terminal.ansiWhite": "#BBBBBB",
+			"activityBar.background": "#a30a0a", // Background color
+			"activityBar.foreground": "#ffffff", // Icon color (active)
+			"activityBar.inactiveForeground": "#bababa", // Icon color (inactive)
+			"activityBar.border": "#333333", // Optional: border on right edge
+			"statusBar.background": "#494949"
+		},
+		"latex-workshop.formatting.latex": "latexindent",
+		"editor.formatOnSave": true,
+		"notebook.formatOnSave.enabled": true
+	}
+}
