@@ -2,7 +2,11 @@
 
 This repository contains the LaTeX files for compiling my DPhil thesis. 
 
-## Notes from Canvas 'writing a thesis' course
+## MSD Canvas Course
+
+Link to Canvas course [here](https://canvas.ox.ac.uk/courses/54330). 
+
+## Thesis Guidance
 
 University regulations are found [here](https://www.ox.ac.uk/students/academic/exams/research?wssl=1), with MSD specific guidance available as a [Canvas course](https://canvas.ox.ac.uk/courses/22105). Key points include
 
