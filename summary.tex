@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages for better formatting
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{geometry}      % adjust margins
+\geometry{margin=0.8in}
+
+% Document information
+\title{\textbf{Harnessing Individual Participant Data from Clinical Trials to Predict Relapse in Visceral Leishmaniasis}}
+\author{Thesis Summary}
+\date{James Wilson\\\today}  % or set a fixed date, e.g. \date{22 September 2025}
+
+\begin{document}
+
+\maketitle
+
+% \begin{abstract}
+%     This is a short abstract or summary of the document (optional).
+% \end{abstract}
+
+\section*{Introduction}
+
+\subsection*{Background}
+
+Visceral leishmaniasis (VL) is a neglected tropical disease caused by parasites of the \textit{Leishmania} genus and transmitted between mammalian hosts by sandflies. The disease affects the poorest of the poor and typically manifests with insidious-onset fever, weight loss and splenomegaly. Without adequate and timely treatment, death is anticipated.\footnote{https://www.who.int/news-room/fact-sheets/detail/leishmaniasis} The Indian subcontinent (ISC) and East Africa have historically borne the highest burden of disease, where transmission is principally sustained by a persistent human reservoir.\footnote{Ready PD. Epidemiology of visceral leishmaniasis. Clin Epidemiol. 2014 May 3;6:147-54. doi: 10.2147/CLEP.S44267}
+
+In the ISC a highly successful WHO-supported elimination programme was launched in 2005, where through coordinated and targeted interventions, disease incidence has reduced from approximately 50,000 to under 1000 cases per year. Aiming to replicate this success, in 2023 the WHO launched an elimination framework for East Africa, where the disease remains a significant public health concern.\footnote{https://www.who.int/news/item/14-07-2023-who-launches-new-campaign-to-eliminate-visceral-leishmaniasis-in-east-africa} An important threat to the success of these elimination campaigns is treatment failure, which occurs when the patient either fails to respond adequately to initial treatment (initial treatment failure) or when the disease recrudesces despite demonstrating an initial treatment response (relapse). Relapse poses particular challenges given the potential for the emergence of de novo drug resistance, the selection for more virulent parasite strains, and the possible toxicity associated with second-line therapy.
+
+Through close collaboration with disease experts and stakeholders, the Infectious Diseases Data Observatory (IDDO) has established a data sharing platform for individual participant data (IPD) from VL clinical trials. With over 14,000 IPD records from across 50 studies, IDDO aims to leverage the power of IPD meta-analysis\footnote{Often described as the `gold standard of systematic reviews' } to pursue key research questions that cannot otherwise be addressed by the limited sample sizes of individual trials.\footnote{https://www.iddo.org/research-themes/visceral-leishmaniasis}
+
+\subsection*{Aim}
+
+The overarching aim of this thesis is to explore how IPD from the IDDO VL data platform can be harnessed to better understand both the causes and predictors of treatment failure in VL. The hope is to ultimately inform clinical decision-making and public health policy, thereby improving patient outcomes and supporting the success of the ongoing elimination campaigns in the ISC and East Africa.
+
+\subsection*{Summary of thesis chapters}
+
+To address the aim, this thesis is divided into the following chapters.
+\begin{description}
+    \item[Chapter 1: Introduction] Introduces the topic of visceral leishmaniasis, outlines the research questions and objectives, and provides an overview of the thesis structure.
+    \item[Chapter 2: Background] Provides an in-depth review of the existing literature on VL, including its epidemiology, immunology, clinical presentation, management, and challenges associated with treatment failure in the context of elimination. A systematic literature search provides context for a narrative review of the determinants of VL relapse with a focus on the ISC and East Africa.
+    \item[Chapter 3: Systematic review of prognostic models] Prior to the development of a new prognostic model, it is important to review the literature to ensure an existing model does not already exist. Prognostic models predicting all VL clinical outcomes are reviewed.
+    \item[Chapters 4--5: Prognostic models for VL relapse] Using IPD from the IDDO VL data platform, these chapters present the development and internal validation of prognostic models predicting VL relapse in the ISC and East Africa, respectively.
+    \item[Chapter 6: Discussion] Summarises the findings from preceding chapters, discusses their implications for clinical practice and public health policy, and outlines potential avenues for future research.
+\end{description}
+
+\subsection*{Methodologies}
+\begin{description}
+    \item[Systematic review of prognostic models]
+          Following prior publication of a protocol,\footnote{Wilson J et al. Prognostic prediction models for clinical outcomes in patients diagnosed with visceral leishmaniasis: protocol for a systematic review. BMJ Open. 2023 Oct 24;13(10):e075597. doi: 10.1136/bmjopen-2023-075597} five bibliographic databases (Ovid Embase, Ovid MEDLINE, the Web of Science Core Collection, SciELO and LILACS) were searched from inception to 1\textsuperscript{st} March 2023 to identify all published studies that developed, validated, or updated models predicting future clinical outcomes in VL patients. No language restrictions were applied. Screening, data extraction and risk of bias assessments were performed in duplicate. Reporting guidelines (TRIPOD-SRMA), data extraction guidelines (CHARMS) and risk of bias assessment tools (PROBAST) were utilised.
+    \item[Prognostic model development and internal validation]
+          IPD cleaning and subsequent analyses were performed in R with support from the University of Oxford Biomedical Research Computing facility. Eligible studies were selected from the IDDO VL data platform that were prospective, conducted in the ISC (Chapter 4) or East Africa (Chapter 5), with minimum 6-month follow-up and reported relapse events. Patients living with HIV or without confirmed initial cure were excluded. Two prognostic models were developed for the binary outcome of 6-month relapse using multivariable generalised linear mixed-effects modelling with a logit link function and study (ISC model) or treatment regimen (East Africa model) as a random intercept: Model 1 incorporating pre-treatment parasite count, and Model 2 omitting this predictor for broader applicability. Candidate predictors were available at treatment initiation and included age, sex, malnutrition severity, spleen length, laboratory values (including haemoglobin), and treatment regimen (ISC model). Missing data were imputed using two-level chained equations (20 imputations, 20 iterations). Final model predictors were selected by backwards selection (p < 0.10) and  applying Rubin's Rules at each selection stage. Univariable variable selection was not performed. Internal validation used bootstrapping (n = 500) to adjust for optimism and assess model stability. Adjusted model discrimination (c-statistic) and calibration (slope, intercept, plots) were presented. TRIPOD-AI and TRIPOD-Cluster reporting guidelines were adhered to, and a prior protocol was published on the Open Science Framework.\footnote{https://osf.io/z4bdn}
+\end{description}
+
+\subsection*{Results}
+\begin{description}
+    \item[Systematic review of prognostic models] Eight studies, published 2003-21, were identified describing 12 model developments and 19 external validations. All models predicted either in-hospital mortality (n=10 models) or registry-reported mortality (n=2), and were developed in either Brazilian or East African settings (n=9 and n=3 models respectively). A visual summary of the identified predictors of mortality is presented in Figure~\ref{fig:predictors}. Model discrimination (c-statistic) ranged from 0.62--0.92 when evaluated in new data (19 external validations, 10 models). Risk of bias was high for all model developments and validations: no studies presented calibration plots, 11 models were at high risk of overfitting due to small sample sizes, and six models presented risk scores inconsistent with reported regression coefficients. Manuscript currently undergoing peer review.\footnote{BMJ Public Health, https://www.medrxiv.org/content/10.1101/2024.03.20.24304622v1}
+    \item[Prognostic model development and internal validation: ISC] 19 studies (4,599 participants) were included, with 228 relapses (5.0\%) observed. Final predictors selected across both models were age (linear and squared terms), fever duration, anaemia severity, and treatment group. Model 1 additionally included pre-treatment parasite count. In the adjusted model, higher relapse risk was associated with extremes of age, shorter fever duration, higher parasite counts, non-severe anaemia (vs severe anaemia), and miltefosine treatment (vs. single-dose liposomal amphotericin B). Optimism-corrected c-statistics of 0.68 and 0.64 were achieved for Model 1 and 2 respectively. Calibration plots demonstrated good agreement between predicted and observed probabilities across predictor subgroups, and when assessed independently in adults and children. Manuscript in preparation.\footnote{BMC Diagnostic and Prognostic Research, https://www.overleaf.com/8588788312zybgrkdddjtr\#b77f54}
+    \item[Prognostic model development and internal validation: East Africa] Eight studies (1,799 participants), encompassing 13 different treatment regimens, satisfied the inclusion criteria. 87 relapses (4.8\%) were observed. In the preliminary multivariable model (including baseline parasite density),\footnote{Final model awaiting co-author review} increased relapse risk was associated with: moderate and severe malnutrition (vs. non-severe malnutrition), severe anaemia (vs. non-severe anaemia), higher pre-treatment parasite density, shorter duration of fever, and smaller spleen length. The preliminary model demonstrates reasonable discrimination (c-statistic 0.71) and with calibration plots demonstrating good agreement. Manuscript in preparation.
+\end{description}
+
+\subsection*{Discussion}
+Utilising IPD from over 6,000 VL patients across 27 studies, this thesis introduces the first prognostic models predicting VL relapse. Providing context to the model findings, an in-depth review of the VL literature is provided with a focus on the region-specific determinants of VL relapse. A systematic review of existing prognostic models demonstrates the absence of any pre-existing prediction models for relapse -- justifying the need for new model development.
+
+A number of important predictors of VL relapse are identified, including age, malnutrition severity, anaemia severity, pre-treatment parasite count, fever duration and pre-treatment spleen size. Whilst some of these predictors are recognised in the literature, others represent novel findings. The public health implications of these findings are considered, including how individual patient risk-stratification can inform clinical decision-making to support the success of ongoing elimination efforts.
+
+Prognostic models need not be causal, but considering plausible biological mechanisms can provide important insights into disease pathophysiology and further support treatment decisions. Both multivariable and univariable associations were therefore used to explore potential casual models explaining the observed predictors of relapse.
+
+In conclusion, this thesis explores VL relapse as a key challenge to visceral leishmaniasis elimination, and demonstrates how collaborative data sharing and IPD meta-analysis can overcome the limitations of individual trials. The resulting prognostic models offer new insights into disease dynamics and hold potential to inform clinical decision-making and public health policy, thereby reinforcing the sustainability of elimination efforts.
+
+\newpage
+\subsection*{Appendix: selected figures}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[
+        width=1\textwidth]
+    {figures/ch3/predictors.png}
+    \caption{Illustration of the considered and final predictors identified in VL prognostic models predicting mortality. The bar chart presents the number of models incorporating each predictor. To aid comparison, similar predictors have been grouped and renamed. Full details: https://www.medrxiv.org/content/10.1101/2024.03.20.24304622v1.}
+    \label{fig:predictors}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[
+        width=1\textwidth]
+    {figures/ch4/feverDurCal.png}
+    \caption{Calibration plots for the Indian subcontinent prognostic model including pre-treatment parasite count. Left: overall observed vs. predicted probability of relapse for deciles of predicted probability. Red dashed line represents perfect calibration, observed probabilities presented with 95\% confidence intervals. Right: observed vs. predicted probability of relapse stratified by groups of fever duration.}
+    \label{fig:feverDurCal}
+\end{figure}
+
+\end{document}
