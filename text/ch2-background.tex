@@ -1,18 +1,71 @@
 \begin{savequote}[8cm]
-    \textlatin{The background chapter aims to (i) give wider context to your work, (ii) show your understandinq of your field, (iii) show the scopr of your work, (iv) give any necessary definitions, (v) show the strengths and weaknesses of w3hat has already been done and any debate
+    \textlatin{The background chapter aims to (i) give wider context to your work, (ii) show your understandinq of your field, (iii) show the scope of your work, (iv) give any necessary definitions, (v) show the strengths and weaknesses of w3hat has already been done and any debate
         \qauthor{--- Dr Jen de Beyer, UK EQUATOR Centre, Centre for Statistics in Medicine, NDORMS}}
 \end{savequote}
 
 \chapter{\label{ch:2-background}Background}
 \minitoc
 
-\section{Visceral leishmaniasis}
-\subsection{Epidemiology}
+\section{Introduction}
+
+% speak more broadly about leishmaniases before narrowing in on VL specifically
+The leishmaniases are a diverse group of diseases caused by protozoan parasites from the \textit{Leishmania} genus and transmitted between susceptible mammalian hosts by the bite of infected female sandflies. Humans are vulnerable to at least 20 \textit{Leishmania} species, manifesting as four principal disease forms: cutaneous leishmaniasis (CL), mucocutaneous leishmaniasis (MCL), visceral leishmaniasis (VL) and post kala-azar dermal leishmaniasis (PKDL)\cite{farrar2023manson, burza2018, who_leish}. These distinct forms are determined largely by parasite species and strain, and associated with a spectrum of clinical presentations ranging in severity from the relatively common and typically self-healing skin lesions seen in CL, to the often disfiguring mucosal destruction characteristic of MCL, and life-threatening systemic illness of VL\cite{burza2018}. VL is by far the most severe manifestation of leishmaniasis, responsible for the lion's share of mortality and morbidity, and affecting some of the most impoverished populations in the world.
+
+The aim of this chapter is to lay the groundwork for subsequent sections on the development and validation of prognostic models predicting VL relapse in the Indian subcontinent (ISC)\footnote{Despite sporadic VL cases reported from Pakistan, Bhutan and Sri Lanka, in this thesis ISC refers to India, Nepal and Bangladesh.} and East Africa. The chapter begins with an overview of VL, covering its epidemiology, clinical features, life cycle, pathophysiology, immunology and management. Particular emphasis is placed on the ongoing WHO-supported elimination programmes in the ISC and East Africa, which shape the public health landscape in which a VL prognostic model would be implemented. This chapter concludes with a narrative review of current knowledge on the determinants of VL relapse, informed by a systematic review of the literature.
+
+\section{Epidemiology}
+
+\subsection{Disease Burden and Geographical Distribution}
+
+VL is endemic\footnote{Defined by the WHO as the occurrence of at least one autochthonous case with demonstrated local transmission within a country\cite{who_wer2023}.} in at least 80 countries across tropical, semi-tropical and temperate regions. The disease is caused by two closely related \textit{Leishmania} species whose distribution defines the four principal global regions of high endemicity (see figure \ref{fig:gho_map}): \textit{L. donovani}, responsible for anthroponotic transmission in the ISC and East Africa, and \textit{L. infantum}\footnote{Previously referred to as \textit{L. chagasi} in the Americas.}, responsible for zoonotic transmission in the Americas (principally Brazil) and Mediterranean basin, extending into the Middle East and Central Asia\cite{who_wer2023,who_gho}. Together, these two species comprise the \textit{L. donovani complex}.
+
+% cp /Users/jameswilson/proj/vl_visualisation/results/gho_map.pdf figures/ch2/gho_map.pdf
+\begin{landscape}
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[clip, trim={0cm 2.3cm 0cm 2.2cm}, width=1.55\textwidth]{figures/ch2/gho_map.pdf}
+        \caption{Visceral leishmaniasis endemicity (reported 2023) and average annual cases (reported 2018 - 2023). `Considered endemic' - at least one autochthonous case has been reported, with or without the entire cycle of transmission being demonstrated. Data sourced from the World Health Organization Global Health Observatory, accessed October 2025\cite{who_gho}. }
+        \label{fig:gho_map}
+    \end{figure}
+\end{landscape}
+
+Estimating the global burden of VL is problematic, with true case numbers obscured by significant underreporting resulting from limited access to healthcare, inadequate diagnostic facilities, misdiagnosis and poor surveillance systems in many endemic countries\cite{chappuis2007,singh2006, mubayi2010, maia-elkhoury2007}. In 2012, Alvar et al. published the results of an important WHO-led update to the global incidence of leishmaniasis using country-level reporting from the mid-late 2000s\cite{alvar2012};  underreporting rates were estimated systematically through consultation with country representatives and disease experts. The global incidence was estimated at 200,000--400,000/year, with approximately 80\% of the burden originating from the ISC and 15\% from East Africa. Compared to official reporting during the same time period of 58,000 cases/year, this reflects a global underreporting rate of 3.5--7-fold.
+
+Since the publication of Alvar et al.'s estimates, the number of cases has undisputedly fallen dramatically, driven largely by decreases in the ISC following the launch of the Kala-Azar Elimination Programme (KEAP) in 2005. Officially reported cases decreased from >50,000 cases/year prior to 2012, to approximately 22,500/year in 2017 and <12,000/year in 2023\cite{who_gho} (selected country breakdowns presented in Figure \ref{fig:gho_plot_top8}). Notably, this downward trend has persisted despite improvements in surveillance and reporting systems in many endemic countries\cite{who_wer2023}. Reflecting these changes, the WHO revised its estimated annual incidence in 2017 to 50,000--90,000 cases/year\footnote{According to the online WHO Leishmaniasis Fact Sheet: \url{https://www.who.int/news-room/fact-sheets/detail/leishmaniasis}. Alternate WHO online material reports an estimated 30,000 cases/year since 2020: \url{https://www.who.int/health-topics/leishmaniasis} (online material last accessed October 2025).}\cite{who_leish}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figures/ch2/gho_plot_top8.pdf} % path to your figure file
+    \caption{Temporal trends of reported new visceral leishmaniasis cases by country. Comparison between the top 8 countries with the highest average case numbers reported between 2013 and 2023. Data sourced from the World Health Organization Global Health Observatory\cite{who_gho}.}
+    \label{fig:gho_plot_top8}
+\end{figure}
+
+Based on the most recent reporting data from 2023\cite{who_gho}; the five countries with the highest case numbers are now  Sudan, Ethiopia, Brazil, Kenya and South Sudan -- collectively accounting for 72.4\% of the global total. In stark contrast to the situation 20 years ago, countries in the ISC now account for only 6.3\% of the reported total: India with 538 cases (4.6\%), Nepal with 168 cases (1.4\%), and Bangladesh with just 34 cases (0.3\%).
+
+Approximately 5--15\% of cases are thought to result in death, although accurate mortality estimates are challenged by a paucity of reporting and, where deaths are reported, they frequently only reflect hospital deaths and omit those where a definite diagnosis was missed. Whilst in the 2000s, VL was blamed for causing the second highest number of deaths from a parasitic disease after malaria\cite{chappuis2007}, more recent estimates tentatively place the figure at a more modest 5,500/year with a wide uncertainty range of 1,600--17,800 deaths/year\cite{gbd2021}.
+
+\subsection{Transmission}
+
+\subsubsection{Vector}
+Covered in dense hairs and measuring 2-4mm in length, Phlebotomine sandflies have a distinctly fuzzy appearance under magnification. Females from an estimated 31 species across two genera are known to transmit the parasite between human hosts: \textit{Lutzomyia} in the New World and \textit{Phlebotomine} in the Old World\cite{akhoundi2016}. Sandflies occupy a wide range of ecological niches, found on every continent except Antarctica. Biting occurs from dusk, with females requiring a blood meal for larval development. During the day they are found in cool and sheltered locations, such as in cracks and crevices in walls as seen with \textit{Ph. argentipes}, responsible for transmission in the ISC. In East Africa, three sandfly vectors have been incriminated for \textit{L. donovani} transmission, defining two distinct and non-overlapping ecological settings: (i) the \textit{Acacia-Balanites} and black cotton soil savannah regions in Northern Ethiopia, Sudan and South Sudan, where \textit{Ph. orientalis thrives}, and (ii) the savannah and forest areas in the southern focus of Southern Ethiopia, Kenya and Uganda, where \textit{Ph. martini} and \textit{Ph. celiae} are seen in association with \textit{Macrotermes} termite mounts.
+
+In addition to sandflies, needle sharing among people who inject drugs was considered an important route of transmission in the southern Mediterranean region during the 1990s and 2000s, particularly among people living with HIV \cite{alvar1997}. Exceptionally, transmission can also result from blood transfusion, organ transplantation, congenital infection, laboratory accidents\cite{farrar2023manson}, and possibly even sexual contact\cite{guedes2020, symmers1960}.
+
+\subsubsection{Reservoirs}
+
+Similar to the majority of the \textit{Leishmania} spp., \textit{L. infantum} demonstrates zoonotic transmission (animal $\rightarrow
+$ sandfly $\rightarrow$ human), with domestic dogs being the main reservoir host in both the Americas and the Old World. This being said, an ever-increasing list of wild and domestic animals have been shown to harbour the parasite, including cats, foxes, horses, rodents, bats and opossums, although their relevance to human infection is often unclear\cite{alcover2020, ratzlaff2023}. A recent outbreak near Madrid (2009--2012) was attributed to hares\cite{molina2012}.
+
+In contrast to \textit{L. infantum}, and crucially from an elimination perspective, \textit{L. donovani} transmission in the ISC and East Africa is regarded as predominantly anthroponotic (human $\rightarrow$ sandfly $\rightarrow$ human). Although \textit{L. donovani} infections have been reported in several animal species in both regions, including cattle and dogs, the significance of these infections as potential sources of human transmission has yet to be established \cite{kushwaha2024, jones2021}.
+
+\subsubsection{Transmission Risk Factors}
+
+
+
 \subsection{Clinical features}
-\subsection{Diagnosis}
-\subsection{Treatment}
-\subsection{Immunology}
+
+\subsection{Pathophysiology}
+
+\subsection{Management}
+
 \subsection{Control and elimination}
-\section{Prognostic models in visceral leishmaniasis}
-\subsection{What is a prognostic model?}
-\subsection{Why use prognostic models?}
