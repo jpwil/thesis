@@ -41,6 +41,18 @@
 % If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
 % Either way, you'll have to choose and configure an appropriate bibliography format...
 
+%% boxes %%
+\usepackage[most]{tcolorbox}
+
+% Define a new tcolorbox environment with an automatic counter
+\newtcolorbox[auto counter, number within=chapter]{mybox}[2][]{%
+  colback=blue!5!white,
+  colframe=blue!75!black,
+  fonttitle=\bfseries,
+  title=Box~\thetcbcounter: #2, % automatic numbering
+  #1
+}
+
 % The science-type option: numerical in-text citation with references in order of appearance.
 % \usepackage[latin, english]{babel}
 
