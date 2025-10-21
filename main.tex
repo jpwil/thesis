@@ -46,9 +46,10 @@
 
 % Define a new tcolorbox environment with an automatic counter
 \newtcolorbox[auto counter, number within=chapter]{mybox}[2][]{%
-  colback=blue!5!white,
-  colframe=blue!75!black,
+  colback=blue!2!white,
+  colframe=blue!60!white,
   fonttitle=\bfseries,
+  fontupper=\small,
   title=Box~\thetcbcounter: #2, % automatic numbering
   #1
 }
@@ -224,11 +225,10 @@
 
 %%%%% REFERENCES
 
-% JEM: Quote for the top of references (just like a chapter quote if you're using them).  Comment to skip.
-\begin{savequote}[8cm]
-  The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
-  \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
-\end{savequote}
+% \begin{savequote}[8cm]
+%   The first kind of intellectual and artistic personality belongs to the hedgehogs, the second to the foxes \dots
+%   \qauthor{--- Sir Isaiah Berlin \cite{berlin_hedgehog_2013}}
+% \end{savequote}
 
 \setlength{\baselineskip}{0pt} % JEM: Single-space References
 
