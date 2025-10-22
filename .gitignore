@@ -6,6 +6,7 @@
 
 ## Output PDF file for project
 main.pdf
+*.bbl-SAVE-ERROR
 
 ## Latexmk files
 *.latexmain
