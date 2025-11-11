@@ -56,6 +56,18 @@
 
 %% tables %%
 \usepackage{booktabs}
+\usepackage{array}        % for \newcolumntype and >{...}
+\usepackage{ragged2e}     % for \RaggedRight (better than \raggedright in p{} cols)
+\usepackage{manyfoot}
+
+% Define convenient column types:
+% L{<len>} = ragged-right paragraph column of width <len>
+% C{<len>} = centered paragraph column of width <len>
+% R{<len>} = ragged-left (right-aligned) paragraph column of width <len>
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
+
 
 % The science-type option: numerical in-text citation with references in order of appearance.
 % \usepackage[latin, english]{babel}
