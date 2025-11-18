@@ -25,6 +25,9 @@
 		},
 		"latex-workshop.formatting.latex": "latexindent",
 		"editor.formatOnSave": true,
-		"notebook.formatOnSave.enabled": true
+		"notebook.formatOnSave.enabled": true,
+		"cSpell.words": [
+			"KAEP"
+		]
 	}
 }
