@@ -18,17 +18,105 @@ The current chapter is divided into a methodology section, explaining in detail 
 
 Two complementary models are presented. Model~1 incorporates parasite grade from a pre-treatment tissue aspirate, whereas Model~2 excludes this variable, allowing for use in settings where diagnosis relies solely on serological or clinico-epidemiological criteria.
 
+% \subsection{Prognostic models}
+
+% - key terminology
+
+% \subsection{IPD meta-analysis}
+
+% - advantages of using data across multiple studies
+% - links from Debray 2023 (TRIPOD-Cluster)
+% - challenges 
+
+
 \section{Methodology}
 
-\subsection{Study inclusion}
-\subsection{Participants and outcomes}
+This study is reported according to the TRIPOD-AI and TRIPOD-Cluster reporting guidelines\cite{collins2024A,debray2023}. A protocol is available on the Open Science Framework at \url{https://osf.io/z4bdn}.
+
+\subsection{Study eligibility}
+
+Authors of studies identified through a living systematic review of VL clinical efficacy studies\cite{bush2017,singh-phulgenda2022} were invited to share their IPD with the IDDO VL data platform\cite{dahal2025}.
+
+Shared IPD were standardised to the Clinical Data Interchange Standards Consortium (CDISC) compliant Study Data Tabulation Model (SDTM) standard\cite{cdisc2024}, adapted by IDDO for visceral leishmaniasis\cite{iddo2020}. Participant-identifiable data were redacted prior to curation thus creating pseudonymised database.  Curated SDTM datasets were converted to an analysis-ready format using R (v4.4.1) and the \texttt{tidyverse} package\cite{r2025,wickham2019}. For datasets with corresponding publications, the quality of data linkage is assessed as part of the risk of bias analysis, with a focus on consistency in the reported outcomes of initial cure and relapse.
+
+Datasets from studies meeting the following criteria were eligible for inclusion in model development:
+
+\begin{enumerate}
+    \item Conducted in the ISC (India, Nepal, Bangladesh)
+    \item Prospective design, with participants providing informed consent
+    \item Recruited participants with a diagnosis of visceral leishmaniasis, confirmed by clinical symptoms and either parasitological or serological evidence
+    \item Reported the treatment regimen, including at least the drug name(s), dose and duration
+    \item Included a minimum of 6 months of prospective follow-up from treatment initiation
+    \item Reported VL relapse events during the 6-month follow-up period or later.
+\end{enumerate}
+
+\subsection{Participant eligibility}
+
+Individual participants with a positive human immunodeficiency virus (HIV) test or positive pregnancy test were excluded from the analysis. Where study inclusion criteria required a positive tissue aspirate, participants with a negative tissue aspirate were excluded. No individual participants were excluded based on age, sex or prior VL history.
+
+Where reported, relapse is defined as new clinical symptoms compatible with VL and confirmed with a positive tissue aspirate\cite{dahal2024}. For the outcome (relapse) to occur, participants must first have demonstrated an initial response to treatment, termed `initial cure', typically assessed between 15-30 days with some variability around the timing . Participants without confirmed initial cure were therefore excluded. The assessment of initial cure can be based on clinical criteria or a combination of clinical and/or parasitological criteria. We did not exclude studies based on their criteria for defining initial cure.
+
+% Study-specific definitions of initial cure and relapse are presented in \hyperref[sec:add-files]{Additional file 1}.
+
 \subsection{Sample size}
+
+We used the methodology developed by Riley et al. to calculate the sample size required for multivariable prediction models with binary outcomes\cite{riley2019}, and implemented in the R package \texttt{pmsampsize}\cite{ensor2023}. We determined the maximum number of predictor parameters permitted according to three criteria designed to limit model overfitting and ensure accurate outcome estimation. Given the lack of previously published relapse prediction models, we assumed a Nagelkerke R$^2$ of 0.15\cite{riley2019}. With a total of 228 relapses in 4,599 participants (5.0\% event rate), the maximum number of supported predictor parameters was calculated at 25, corresponding to 8.8 events per predictor parameter (EPP).
+
 \subsection{Candidate predictors}
+
+Candidate predictors available at the time of starting treatment were selected based on (i) existing evidence and expert opinion regarding their association with relapse\cite{hirve2016, goyal2020, burza2014}, (ii) availability across the contributed datasets; and (iii) feasibility for routine use outside research settings.
+
+For Model~1 (including parasite grade), 16 candidate predictor parameters were included, corresponding to a study-specific random intercept term and 12 participant-level candidate predictors (EPP~=~14.25, with some predictors linked to $>$1 parameter). Candidate predictors consisted of age, sex, treatment regimen, malnutrition, duration of fever before treatment, spleen size, parasite grade from tissue aspirate, severity of anaemia, and a range of laboratory values including white blood cell count (WBC), platelet count, alanine aminotransferase (ALT), and creatinine.
+
+As a marker of malnutrition - and in keeping with previous literature on the association between VL and malnutrition - BMI and BMI-for-age z-scores were used in adults and children/adolescents ($<$18 years) respectively\cite{burza2014,dorlo2017,naylor-leyland2022}. This variable was grouped as three ordered categories: (i) severe malnutrition: BMI $<$16 kg/m$^2$ or BMI-for-age z-score $<$-3; (ii) moderate malnutrition: 16 kg/m$^{2}\leq$ BMI $<$18.5 kg/m$^2$ or -3$\leq$ BMI-for-age z-score $<$-2; and (iii) mild or no malnutrition: BMI $\geq$18.5 kg/m2 or BMI-for-age z-score $\geq$-2. Z-scores were calculated using World Health Organization (WHO) growth standards with R packages \texttt{anthro} and \texttt{anthroplus}\cite{schumacher2023,schumacher2021}.
+
+To account for an anticipated non-linear relationship between age and relapse, age was included as a third-degree polynomial term (linear, squared, and cubic components).
+
+Treatment was categorised into three groups, reflecting current and recent WHO VL treatment guidelines in the Indian subcontinent: (i) 10mg/kg single dose liposomal amphotericin B (SDA), (ii) 28 days of oral miltefosine (standard linear dosing), and (iii) any other medicines or regimens. Further subdivision of the `other' group was not feasible due to the marked heterogeneity of treatment regimens across the contributing studies.
+Anaemia was grouped into two categories: severe and non-severe, using haemoglobin cut-offs stratified by age and sex thresholds, as per 2024 WHO guidance\cite{who_haem2024}. Additional subdivision of the non-severe anaemia group was limited by the small number of participants in the mild and normal categories.
+
+Baseline parasite grade, when available, was assessed from splenic or bone marrow aspirates (with Nepalese studies preferentially using the latter). When reported, the logarithmic counting method of Chulay and Bryceson (1983) was either described or directly cited {Additional file 1}\cite{chulay1983}.
+
+Continuous predictors - including fever duration, spleen length, and all blood tests except haemoglobin - were log-transformed to reduce skewness and better approximate normality. For spleen size, a value of 1 was added prior to transformation to accommodate zero values and avoid undefined logarithmic results. For parasite count, a value of 1 was subtracted to better approximate a Poisson distribution in the imputation model.
+
 \subsection{Descriptive analysis}
 \subsection{Missing data}
+
+Missing data were common and resulted from (i) planned non-capture at the study-level (ii) unplanned incomplete capture of the predictor at the study-level, or (iii) incomplete IPD in the contributed dataset. Outcome data were complete.
+
+We used multiple imputation with chained equations (MICE) to handle missing data and assumed missingness at random (MAR) \cite{white2011,van_buuren2021}. All ungrouped candidate predictors, as well as weight, height and the outcome (relapse) were included in the imputation model. Derived predictors, including BMI, BMI-for-age z-score, and higher order age polynomial terms, were passively imputed from age, weight and height. Grouping of haemoglobin, BMI and BMI-for-age z-score occurred after imputation. We used the R package \texttt{mice}, with addon packages \texttt{countimp} for non-hierarchical count data (modelling parasite grade) and \texttt{micemd} for two-level continuous data (modelling the remaining variables, accounting for study-level heterogeneity and systematically missing data)\cite{van-buuren2011,kleinke2024,audigier2023,audigier2018}.
+
+For each model development, 20 imputations were performed with 20 iterations per imputation. Convergence of the imputation models was inspected visually with trace plots and by comparing distributions of imputed data with the complete data.
+
+The same imputation model was used for the development of both Model~1 and Model~2. The MAR assumption and convergence of the imputation model were assessed visually with diagnostic plots. These included trace plots and plots comparing the original and imputed data (including density plots and scatter plots for age, height, and weight). Full specification of the imputation model methods, predictor matrix, passive imputation specifications, and post imputation calculations are provided in ...
+
 \subsection{Model specification and variable selection}
+
+Six-month relapse was modelled as a binary outcome in a multivariable generalised linear mixed-effects model (GLMM) with a logit link function. Predictors were transformed as previously described. Anticipated between-study heterogeneity was accounted for by including study as a random intercept term\cite{bouwmeester2013A}. Whilst introducing methodological complexity, there are a number of benefits gained by accounting for between-study heterogeneity\cite{debray2023}:
+
+\begin{itemize}
+    \item Ignoring clustering can result in relapse probability estimates that are biased towards the overall study population estimate\cite{wynants2018}.
+    \item Variation in model performance measures can be compared and contrasted across the included studies, allowing insights into sources of heterogeneity\cite{steyerberg2019}.
+    \item Allows for improved generalisability of the model to new settings and populations\cite{debray2023,steyerberg2019}.
+\end{itemize}
+
+Model parameters were estimated using the \texttt{glmer} function from the \texttt{lme4} package in R with the BOBYQA algorithm\cite{bates2015,powell2009}.
+
+The final predictor set was determined using backwards variable selection with cutoff p $<$0.10. Rubin's rules were used to combine predictor estimates and test predictor significance at each selection stage across the 20 imputed datasets\cite{austin2019,rubin1987}. For categorical predictors with over two groups (malnutrition, treatment), predictor significance was assessed with the D1 multivariate Wald test as implemented in the \texttt{mice} R package\cite{van-buuren2011,li1991}. For age, lower-order polynomial terms were retained in the model whilst higher-order terms remained.
+
 \subsection{Model performance}
+
+Model discrimination was assessed using the c-statistic, and calibration using calibration slope, and calibration intercept and calibration plots. Within-study (conditional) performance measures are presented, reflecting model performance when evaluated at the study level\cite{wynants2018,van-klaveren2014}.
+
+C-statistics with 95\% confidence intervals were calculated with bootstrapping (n~=~500). Bootstrap samples were then pooled across multiple imputations using the `MI Boot (PS)' method described by Schomaker et al\cite{schomaker2018}. Calibration slope and intercept were pooled across imputed datasets using Rubin's rules.
+
+For constructing calibration plots, the mean predicted and observed relapse probabilities were calculated across selected subgroups in the combined imputed datasets. Predicted probabilities were calibrated at the study level with logistic recalibration. Study-specific calibrated probabilities were estimated with best linear unbiased predictors. Binomial confidence intervals for the mean observed probabilities were estimated using Wilson's method. To account for multiple imputation, the number of relapses and corresponding denominators were averaged across imputations (i.e. divided by 20) prior to interval calculation. The continuous relationship between observed relapse probability and predicted probabilities was modelled using a generalised additive model with standard errors inflated by $\sqrt{20}$ to adjust for the inflated sample size from multiple imputations.
+
+Performance heterogeneity across the contributing studies was assessed with aggregate random-effects meta-analyses using the R package \texttt{metafor}\cite{viechtbauer2010}. Between-study variance was estimated with restricted maximum likelihood and 95\% confidence and prediction intervals were estimated with the Hartung-Knapp-Sidik-Jonkman method. C-statistics were pooled on the logit scale, and calibration slope and interval were pooled on their original scale\cite{snell2018}.
+
 \subsection{Internal validation}
+
+Internal validation was performed using bootstrapping at the participant level to (i) adjust performance measures and parameter estimates for model overfitting (optimism and uniform shrinkage), and (ii) evaluate model stability by reviewing the variation in model selection across different bootstrap samples\cite{collins2024B, bouwmeester2013B}. For each of the 500 bootstrap samples of the original dataset, full model development was performed including multiple imputation. Performance measures were evaluated for each bootstrap model in (i) the imputed bootstrap datasets used to derive the bootstrap model and (ii) the imputed original datasets used to derive the original model. The performance (optimism) difference between (i) and (ii) was calculated. The average (mean) optimism across the 500 bootstrap models was then subtracted from the original model apparent performance measures to obtain the optimism adjusted performance measures. Uniform shrinkage of the parameter estimates was performed. The University of Oxford Biomedical Research Computing cluster was used due to the high computational demand of performing bootstrapping with both multiple imputation with GLMM fitting.
 
 %\subsection{Risk of bias and applicability assessment}
 
