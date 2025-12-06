@@ -13,7 +13,7 @@
 % flow diagram
 \begin{figure}[tb]
     \centering
-    \includegraphics[width = \textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch5/isc_flow_chart.pdf}
+    \includegraphics[width = 0.8\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch5/isc_flow_chart.pdf}
     \caption{Flow diagram showing the studies and participants excluded from Indian subcontinent model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; ISC: Indian subcontinent; PKDL: post kala-azar dermal leishmaniasis; VL: visceral leishmaniasis.}
     \label{fig:isc_flow_diagram}
 \end{figure}
@@ -21,14 +21,14 @@
 % studies tables
 \input{tables/ch5/isc_study.tex}
 
-% categorical table
+% categorical variables table
 \input{tables/ch5/isc_categorical.tex}
 
-% continuous table
+% continuous variables table
 \input{tables/ch5/isc_continuous.tex}
 
+% pooled distributions of categorical variables
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/catOut/comb_cat.pdf figures/ch5/isc_cat_comb.pdf
-
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
     \begin{figure}[tb]
@@ -40,6 +40,7 @@
 \end{landscape}
 \restoregeometry
 
+% these are the pooled continuous distributions and relationships with relapse - PART 1
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/age_comb.pdf figures/ch5/isc_pool_age_comb.pdf
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/ss_comb.pdf figures/ch5/isc_pool_ss_comb.pdf
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/fd_comb.pdf figures/ch5/isc_pool_fd_comb.pdf
@@ -83,6 +84,7 @@
     \label{fig:isc_pooled_dist_cont1}
 \end{figure}
 
+% these are the pooled continuous distributions and relationships with relapse - PART 2
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/wbc_comb.pdf figures/ch5/isc_pool_wbc_comb.pdf
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/plt_comb.pdf figures/ch5/isc_pool_plt_comb.pdf
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/hb_comb.pdf figures/ch5/isc_pool_hb_comb.pdf
@@ -126,6 +128,7 @@
 
 Distributions of continuous and categorical candidate predictors, stratified by study, are included in Appendix \ref{app:results}, Sections \ref{app:results-cp-dist-cont} and \ref{app:results-cp-dist-cat}, respectively.
 
+% these are the study specific distributions of outcome, sex and age
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
@@ -138,6 +141,14 @@ Distributions of continuous and categorical candidate predictors, stratified by 
 \end{landscape}
 \restoregeometry
 
+% missing data figure
+% cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch5/isc_missing_summary.pdf
+\begin{figure}[tb]
+    \centering
+    \includegraphics[scale = 0.8]{figures/ch5/isc_missing_summary.pdf}
+    \caption{Density plot illustrating the amount of missing data overall and across contributing studies. Study ordered by lead author and publication year. Variable ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}
+    \label{fig:isc_missing_summary}
+\end{figure}
 
 \section{East Africa model}
 
