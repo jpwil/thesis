@@ -1,0 +1,64 @@
+% \begin{table}[ht]
+%     \centering
+%     \begin{tabular}{rllllllll}
+%         \hline
+%            & VARIABLE        & median\_overall                                         & range\_overall                       & missing\_overall & median\_nr                                              & missing\_nr  & median\_r                                               & missing\_r \\
+%         \hline
+%         1  & AGE             & 14 (9 -- 22)                                            & 0.6 -- 60                            & 1 (0.0)          & 15 (9 -- 22)                                            & 1 (0.1)      & 12 (9 -- 20)                                            & 0 (0.0)    \\
+%         2  & HEIGHT          & 153 (126 -- 168)                                        & 68.8 -- 205                          & 9 (0.4)          & 154 (126 -- 168)                                        & 8 (0.4)      & 143 (127 -- 164)                                        & 1 (1.0)    \\
+%         3  & WEIGHT          & 35 (21 -- 49)                                           & 5.6 -- 70.5                          & 1 (0.0)          & 35 (21 -- 49)                                           & 1 (0.1)      & 28 (20.6 -- 44.5)                                       & 0 (0.0)    \\
+%         4  & BMI             & 17.5626352555497 (16.2946453729421 -- 18.6851211072664) & 12.1107266435986 -- 32.6388888888889 & 1,299 (63.3)     & 17.5382653061225 (16.2911048048411 -- 18.7109492465502) & 1,229 (63.0) & 17.6308539944904 (16.6493236212279 -- 18.2183224271267) & 70 (70.7)  \\
+%         5  & BMIZ            & -2.32 (-3.1 -- -1.495)                                  & -8.84 -- 3.13                        & 888 (43.3)       & -2.3 (-3.09 -- -1.4725)                                 & 854 (43.8)   & -2.58 (-3.43 -- -1.89)                                  & 34 (34.3)  \\
+%         6  & WFHZ            & -2.36 (-3.12 -- -1.58)                                  & -6.81 -- 0.49                        & 1,922 (93.7)     & -2.32 (-3.01 -- -1.55)                                  & 1,827 (93.6) & -3.415 (-3.8925 -- -3.24)                               & 95 (96.0)  \\
+%         7  & SPLEEN\_LENGTH  & 8 (5 -- 11)                                             & 0 -- 30                              & 69 (3.4)         & 8 (5 -- 11)                                             & 69 (3.5)     & 7 (4 -- 10)                                             & 0 (0.0)    \\
+%         8  & FEVER\_DURATION & 40.44 (25 -- 91.32)                                     & 3 -- 761                             & 349 (17.0)       & 40.44 (25 -- 91.32)                                     & 320 (16.4)   & 30.44 (20.25 -- 60.88)                                  & 29 (29.3)  \\
+%         9  & PARASITE        & 2 (1 -- 4)                                              & 1 -- 6                               & 662 (32.3)       & 2 (1 -- 4)                                              & 655 (33.6)   & 3 (1.75 -- 5)                                           & 7 (7.1)    \\
+%         10 & LAB\_WBC        & 2.5 (1.8 -- 3.5)                                        & 0.6 -- 16.8                          & 887 (43.2)       & 2.5 (1.8 -- 3.5)                                        & 871 (44.6)   & 2.7 (1.84 -- 3.55)                                      & 16 (16.2)  \\
+%         11 & LAB\_PLT        & 106 (73 -- 157)                                         & 5 -- 881                             & 890 (43.4)       & 105 (73 -- 155)                                         & 874 (44.8)   & 110 (74.5 -- 171)                                       & 16 (16.2)  \\
+%         12 & LAB\_HGB        & 79 (67 -- 91)                                           & 22 -- 167                            & 2 (0.1)          & 80 (67 -- 92)                                           & 2 (0.1)      & 72 (62 -- 83.5)                                         & 0 (0.0)    \\
+%         13 & LAB\_ALT        & 21 (14 -- 31)                                           & 2 -- 134                             & 920 (44.9)       & 21 (14 -- 31)                                           & 901 (46.2)   & 19 (14 -- 30.25)                                        & 19 (19.2)  \\
+%         14 & LAB\_CREAT      & 44.2 (0.6 -- 79)                                        & 0.1 -- 134                           & 826 (40.3)       & 44.2 (0.6 -- 78.94)                                     & 815 (41.8)   & 44.2 (0.675 -- 79.5603825)                              & 11 (11.1)  \\
+%         \hline
+%     \end{tabular}
+% \end{table}
+
+
+\begin{landscape}
+    \begin{table}[htbp]
+        \centering
+        \small
+        \begin{threeparttable}
+            \begin{tabular}{@{} l @{} r @{\hspace{4pt}} l @{} r @{\hspace{4pt}} l @{} r @{\hspace{4pt}} l @{} r @{\hspace{4pt}} l @{} r @{\hspace{4pt}} l @{} r @{\hspace{4pt}} l @{}}
+                \toprule
+                \textbf{Variable}           & \multicolumn{4}{@{}c@{}}{\textbf{Overall} (n = 4,599)} & \multicolumn{4}{@{}c@{}}{\textbf{Final cure} (n = 4,371)} & \multicolumn{4}{@{}c@{}}{\textbf{Relapse} (n = 228)}                                                                                                                        \\
+                \cmidrule(r){2-5}\cmidrule(lr){6-9}\cmidrule(l){10-13}
+                                            & Median                                                 & (IQR)                                                     & Missing\tnote{1}                                     & (\%)   & Median & (IQR)            & Missing & (\%)   & Median & (IQR)            & Missing\footnotemark[1] & (\%)   \\
+                \midrule
+                Age (years)                 & 14                                                     & (9 -- 22)                                                 & 1                                                    & (0.0)  & 15     & (9 -- 22)        & 1       & (0.1)  & 12     & (9 -- 20)        & 0                       & (0.0)  \\
+                Height (cm)                 & 153                                                    & (126 -- 168)                                              & 9                                                    & (0.4)  & 154    & (126 -- 168)     & 8       & (0.4)  & 143    & (127 -- 164)     & 1                       & (1.0)  \\
+                Weight (kg)                 & 35                                                     & (21 -- 49)                                                & 1                                                    & (0.0)  & 35     & (21 -- 49)       & 1       & (0.1)  & 28     & (20.6 -- 44.5)   & 0                       & (0.0)  \\
+                BMI (kg/m$^2$)\tnote{2}     & 17.56                                                  & (16.29 -- 18.69)                                          & 4                                                    & (0.5)  & 17.54  & (16.29 -- 18.71) & 3       & (0.4)  & 17.63  & (16.65 -- 18.22) & 1                       & (3.2)  \\
+                BMI-FA z-score\tnote{3}     & -2.32                                                  & (-3.10 -- -1.50)                                          & 2                                                    & (0.2)  & -2.30  & (-3.09 -- -1.47) & 2       & (0.2)  & -2.58  & (-3.43 -- -1.89) & 0                       & (0.0)  \\
+                WFH z-score\tnote{4}        & -2.36                                                  & (-3.12 -- -1.58)                                          & 0                                                    & (0.0)  & -2.32  & (-3.01 -- -1.55) & 0       & (0.0)  & -3.42  & (-3.89 -- -3.24) & 0                       & (0.0)  \\
+                Spleen size (cm)            & 8                                                      & (5 -- 11)                                                 & 69                                                   & (3.4)  & 8      & (5 -- 11)        & 69      & (3.5)  & 7      & (4 -- 10)        & 0                       & (0.0)  \\
+                Fever duration (days)       & 40.4                                                   & (25.0 -- 91.3)                                            & 349                                                  & (17.0) & 40.4   & (25.0 -- 91.3)   & 320     & (16.4) & 30.4   & (20.3 -- 60.9)   & 29                      & (29.3) \\
+                Parasite grade              & 2                                                      & (1 -- 4)                                                  & 662                                                  & (32.3) & 2      & (1 -- 4)         & 655     & (33.6) & 3      & (2 -- 5)         & 7                       & (7.1)  \\
+                WBC ($\times 10^9$/L)       & 2.5                                                    & (1.8 -- 3.5)                                              & 887                                                  & (43.2) & 2.5    & (1.8 -- 3.5)     & 871     & (44.6) & 2.7    & (1.8 -- 3.6)     & 16                      & (16.2) \\
+                Platelets ($\times 10^9$/L) & 106                                                    & (73 -- 157)                                               & 890                                                  & (43.4) & 105    & (73 -- 155)      & 874     & (44.8) & 110    & (74.5 -- 171)    & 16                      & (16.2) \\
+                Haemoglobin (g/L)           & 79                                                     & (67 -- 91)                                                & 2                                                    & (0.1)  & 80     & (67 -- 92)       & 2       & (0.1)  & 72     & (62 -- 83.5)     & 0                       & (0.0)  \\
+                ALT (IU/L)                  & 21                                                     & (14 -- 31)                                                & 920                                                  & (44.9) & 21     & (14 -- 31)       & 901     & (46.2) & 19     & (14 -- 30)       & 19                      & (19.2) \\
+                Creatinine ($\mu$mol/L)     & 44.2                                                   & (0.6 -- 79.0)                                             & 826                                                  & (40.3) & 44.2   & (0.6 -- 78.9)    & 815     & (41.8) & 44.2   & (0.7 -- 79.6)    & 11                      & (11.1) \\
+                \bottomrule
+            \end{tabular}
+            \begin{tablenotes}
+                \footnotesize
+                \item[1] Denominator for missing \%: total number of patients in respective group (overall, relapse or final cure). For measures of malnutrition (BMI, BMI-for-age z-score, and weight-for-height z-score), see below.
+                \item[2] Denominator for missing \%: number of patients aged $\geq$ 19 years, n = 756 (relapse: 30, final cure: 726).
+                \item[3] Denominator for missing \%: number of patients aged 5--18 year inclusive, n = 1,165 (relapse: 65, final cure: 1,100).
+                \item[4] Denominator for missing \%: number of patients aged $<$ 5 years, n = 129 (relapse: 4, final cure: 125).
+            \end{tablenotes}
+        \end{threeparttable}
+        \caption{Summary of continuous candidate predictors across contributed studies from East Africa. Including additional variables used for the derivation of malnutrition status (height, weight, BMI, BMI-for-age z-score, weight-for-height z-score). ALT: alanine aminotransferase; BMI(-FA): body mass index(-for age); cm: centimetres; IQR: inter-quartile range, IU: international units; kg: kilograms; L: litres; m: metres; WBC: white blood cells; WFH: weight-for-height; g: grams; $\mu$mol: micromoles.}
+        \label{tab:ea_continuous}
+    \end{table}
+\end{landscape}
