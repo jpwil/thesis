@@ -20,6 +20,9 @@ cp /Users/jameswilson/proj/vl_model_isc/figures/dist/catOut/comb_cat.pdf figures
 # selected study-specific distributions (study n / relapse / sex/ age)
 cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
 
+# study specific treatments
+cp /Users/jameswilson/proj/vl_model_isc/figures/treatment/treat_dist1a.pdf figures/ch5/treat.pdf
+
 # missing data summary
 cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch5/isc_missing_summary.pdf
 
@@ -70,6 +73,9 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/dist/catOut/comb_cat.pdf figures/
 
 # selected study-specific distributions (study n / relapse / sex/ age)
 cp /Users/jameswilson/proj/vl_model_ea/figures/dist/main_dist.pdf figures/ch6/ea_main_dist.pdf
+
+# study specific treatments
+cp /Users/jameswilson/proj/vl_model_ea/figures/treatment/treat_dist1a.pdf figures/ch6/treat.pdf
 
 # missing data summary
 cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/ea_missing_summary.pdf

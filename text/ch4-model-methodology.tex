@@ -16,8 +16,6 @@ The Infectious Diseases Data Observatory (IDDO) VL data platform hosts over 14,0
 
 The current chapter is divided into a methodology section, explaining in detail the methods used to standardise, describe, and analyse the IPD, and a results section, where the principal findings are presented. A number of results, including figures, tables, model equations, and performance measures, are included in the Appendices and Supplemental files. The chapter concludes with a summary of the main findings. The mechanisms underlying the models' findings, and the practical ramifications of deploying such models in the field, are considered in the final discussion chapter (Chapter \ref{ch:6-discussion}).
 
-Two complementary models are presented. Model~1 incorporates parasite grade from a pre-treatment tissue aspirate, whereas Model~2 excludes this variable, allowing for use in settings where diagnosis relies solely on serological or clinico-epidemiological criteria.
-
 % \subsection{Prognostic models}
 
 % - key terminology
@@ -28,10 +26,23 @@ Two complementary models are presented. Model~1 incorporates parasite grade from
 % - links from Debray 2023 (TRIPOD-Cluster)
 % - challenges 
 
-
 \section{Methodology}
 
 This study is reported according to the TRIPOD-AI and TRIPOD-Cluster reporting guidelines\cite{collins2024A,debray2023}. A protocol is available on the Open Science Framework at \url{https://osf.io/z4bdn}.
+
+\newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
+
+\begin{landscape}
+    \begin{figure}[tb]
+        \centering
+        \includegraphics[width=1.2\textwidth, trim={1.6cm 1cm 1.6cm 1.3cm}, clip]{figures/ch4/workflow.pdf}
+        \caption{Methodological workflow. \ding{192} Data harmonisation is performed for each contributed dataset including: initial curation (by the IDDO data engineering team) to the CDISC SDTM format, application of inclusion and exclusion criteria, and removal of outliers. Curated and cleaned datasets are converted into an analysis (wide) format and merged prior to \ding{193} model development. Multiple imputation is used to create (m = 30) imputed (complete) datasets. Variable selection, final model fitting, and apparent performance evaluation is performed on all imputed datasets. Estimates are pooled using Rubin's rules. Bootstrapping is used to perform \ding{194} internal validation, allowing (i) review of model stability and (ii) optimism adjustment of performance measures and original model coefficients. All model development steps, including multiple imputation, are repeated for each of the (b = 500) bootstrap datasets. The resulting bootstrap models (b = 500) are evaluated both in the corresponding bootstrap (imputed) datasets and the original (imputed) datasets, and pooled using Rubin's rules. The mean of the differences of the pooled performance measures (in bootstrap vs original dataset) are used to shrink the original model coefficients and apparent performance measures, resulting in the final optimism-adjusted model (uniform shrinkage). AP: apparent performance; b: number of bootstraps; BP: bootstrap model performance; CDISC: Clinical Data Interchange Standards Consortium; IDDO: infectious diseases data observatory; m: number of imputations; n: number of contributed studies. SDTM: Study Data Tabulation Model.}
+        \label{fig:workflow}
+    \end{figure}
+
+\end{landscape}
+
+\restoregeometry
 
 \subsection{Study eligibility}
 

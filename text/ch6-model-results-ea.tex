@@ -1,6 +1,6 @@
 \begin{savequote}[8cm]
-    Quote goes here.
-    \qauthor{--- James Wilson}
+  Quote goes here.
+  \qauthor{--- James Wilson}
 \end{savequote}
 
 \chapter{\label{ch:6-ea-model-results}East Africa model results}
@@ -10,10 +10,10 @@
 
 % flow diagram
 \begin{figure}[tb]
-    \centering
-    \includegraphics[width = 0.8\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch6/ea_flow_chart.pdf}
-    \caption{Flow diagram showing the studies and participants excluded from East Africa model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; EA: East Africa; PKDL: post kala-azar dermal leishmaniasis; VL: visceral leishmaniasis.}
-    \label{fig:ea_flow_diagram}
+  \centering
+  \includegraphics[width = 0.8\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch6/ea_flow_chart.pdf}
+  \caption{Flow diagram showing the studies and participants excluded from East Africa model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; EA: East Africa; PKDL: post kala-azar dermal leishmaniasis; VL: visceral leishmaniasis.}
+  \label{fig:ea_flow_diagram}
 \end{figure}
 
 % studies tables
@@ -29,12 +29,12 @@
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/catOut/comb_cat.pdf figures/ch6/ea_cat_comb.pdf
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
-    \begin{figure}[tb]
-        \centering
-        \includegraphics[width=1.35\textwidth]{figures/ch6/ea_cat_comb.pdf}
-        \caption{Pooled distributions and predictor--outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. Note: for parasite grade relapse \%, y-axis is rescaled to accommodate increased risk in 6+ group. Norm: normal.}
-        \label{fig:ea_cat_comb}
-    \end{figure}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch6/ea_cat_comb.pdf}
+    \caption{Pooled distributions and predictor--outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. Note: for parasite grade relapse \%, y-axis is rescaled to accommodate increased risk in 6+ group. Norm: normal.}
+    \label{fig:ea_cat_comb}
+  \end{figure}
 \end{landscape}
 \restoregeometry
 
@@ -47,39 +47,39 @@
 
 \clearpage
 \begin{figure}[H]
+  \centering
+  \begin{subfigure}{\textwidth}
     \centering
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_age_comb.pdf}
-            \put(2,19){\small Age}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_weight_comb.pdf}
-            \put(2,19){\small Weight}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_height_comb.pdf}
-            \put(2,19){\small Height}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_fd_comb.pdf}
-            \put(2,19){\small FevDur}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_ss_comb.pdf}
-            \put(2,19){\small SpnSize}
-        \end{overpic}
-    \end{subfigure}
-    \caption{Distributions and predictor--outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
-    \label{fig:ea_pooled_dist_cont1}
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_age_comb.pdf}
+      \put(2,19){\small Age}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_weight_comb.pdf}
+      \put(2,19){\small Weight}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_height_comb.pdf}
+      \put(2,19){\small Height}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_fd_comb.pdf}
+      \put(2,19){\small FevDur}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_ss_comb.pdf}
+      \put(2,19){\small SpnSize}
+    \end{overpic}
+  \end{subfigure}
+  \caption{Distributions and predictor--outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \label{fig:ea_pooled_dist_cont1}
 \end{figure}
 
 % these are the pooled continuous distributions and relationships with relapse - PART 2
@@ -89,61 +89,71 @@
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/contOut/alt_comb.pdf figures/ch6/ea_pool_alt_comb.pdf
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/contOut/cr_comb.pdf figures/ch6/ea_pool_cr_comb.pdf
 \begin{figure}[H]
+  \centering
+  \begin{subfigure}{\textwidth}
     \centering
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_hb_comb.pdf}
-            \put(2,19){\small Hb}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_plt_comb.pdf}
-            \put(2,19){\small Plt}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_wbc_comb.pdf}
-            \put(2,19){\small WBC}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_alt_comb.pdf}
-            \put(2,19){\small ALT}
-        \end{overpic}
-    \end{subfigure}
-    \begin{subfigure}{\textwidth}
-        \centering
-        \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_cr_comb.pdf}
-            \put(2,19){\small Crt}
-        \end{overpic}
-    \end{subfigure}
-    \caption{Pooled distributions and predictor--outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
-    \label{fig:ea_pooled_dist_cont2}
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_hb_comb.pdf}
+      \put(2,19){\small Hb}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_plt_comb.pdf}
+      \put(2,19){\small Plt}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_wbc_comb.pdf}
+      \put(2,19){\small WBC}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_alt_comb.pdf}
+      \put(2,19){\small ALT}
+    \end{overpic}
+  \end{subfigure}
+  \begin{subfigure}{\textwidth}
+    \centering
+    \begin{overpic}[width=\textwidth]{figures/ch6/ea_pool_cr_comb.pdf}
+      \put(2,19){\small Crt}
+    \end{overpic}
+  \end{subfigure}
+  \caption{Pooled distributions and predictor--outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \label{fig:ea_pooled_dist_cont2}
 \end{figure}
 
 % these are the study specific distributions of outcome, sex and age
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/main_dist.pdf figures/ch6/ea_main_dist.pdf
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
-    \begin{figure}[tb]
-        \centering
-        \includegraphics[width=1.35\textwidth]{figures/ch6/ea_main_dist.pdf}
-        \caption{Graphical summary of East Africa study-specific sample sizes and distributions of relapse status, sex, and age.}
-        \label{fig:ea_main_dist}
-    \end{figure}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch6/ea_main_dist.pdf}
+    \caption{Graphical summary of East Africa study-specific sample sizes and distributions of relapse status, sex, and age.}
+    \label{fig:ea_main_dist}
+  \end{figure}
+
+  % study specific treatments
+  % cp /Users/jameswilson/proj/vl_model_ea/figures/treatment/treat_dist1a.pdf figures/ch6/treat.pdf
+
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch6/treat.pdf}
+    \caption{Bar chart showing the distribution of treatment regimens across contributing studies from East Africa. Drugs are colour-coded (see legend). Important distinguishing dosing information provided in the overlaying labels. Full treatment details presented in Table \ref{tab:ea_study}. D: days; LAMB: liposomal amphotericin B (Gilead); PM: paromomycin; MF: miltefosine; mg: miligrams/kilogram; SSG: sodium stibogluconate.}
+    \label{fig:ea_treat}
+  \end{figure}
+
 \end{landscape}
 \restoregeometry
-
 
 
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/ea_missing_summary.pdf
 \begin{figure}[tb]
-    \centering
-    \includegraphics[scale = 0.8, trim={0cm 3.8cm 0cm 3.3cm}, clip]{figures/ch6/ea_missing_summary.pdf}
-    \caption{Density plot illustrating the amount of missing data overall and across contributing studies from East Africa. Study ordered by lead author and publication year. Variable ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}
-    \label{fig:ea_missing_summary}
+  \centering
+  \includegraphics[scale = 0.8, trim={0cm 3.8cm 0cm 3.3cm}, clip]{figures/ch6/ea_missing_summary.pdf}
+  \caption{Density plot illustrating the amount of missing data overall and across contributing studies from East Africa. Study ordered by lead author and publication year. Variable ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}
+  \label{fig:ea_missing_summary}
 \end{figure}

@@ -87,6 +87,8 @@
 \newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
 
 
+\usepackage{pifont} % circled text
+
 % The science-type option: numerical in-text citation with references in order of appearance.
 % \usepackage[latin, english]{babel}
 
@@ -160,6 +162,15 @@
 % Leave this line alone; it gets things started for the real document.
 \setlength{\baselineskip}{\textbaselineskip}
 
+% \restoregeometry redefines \baselineskip, so we need to fix it again after each restore
+\makeatletter
+\let\origrestoregeometry\restoregeometry
+\renewcommand{\restoregeometry}{%
+  \origrestoregeometry
+  \baselineskip=\textbaselineskip\relax
+}
+\makeatletter
+
 %%%%% CHOOSE YOUR SECTION NUMBERING DEPTH HERE
 % You have two choices.  First, how far down are sections numbered?  (Below that, they're named but
 % don't get numbers.)  Second, what level of section appears in the table of contents?  These don't have
@@ -170,7 +181,6 @@
 \setcounter{secnumdepth}{2}
 % The level that shows up in the ToC:
 \setcounter{tocdepth}{2}
-
 
 %%%%% ABSTRACT SEPARATE
 % This is used to create the separate, one-page abstract that you are required to hand into the Exam
@@ -184,7 +194,6 @@
 % JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
 % keeping with most typesetting conventions.
 \begin{romanpages}
-
   % Title page is created here
   \maketitle
 
@@ -219,7 +228,7 @@
   % This is where the whole-document ToC appears:
   \tableofcontents
 
-  \listoffigures
+  % \listoffigures
   \mtcaddchapter
   % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
 
