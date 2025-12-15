@@ -215,11 +215,9 @@
   \end{abstract}
 
   %%%%% MINI TABLES
-  % This lays the groundwork for per-chapter, mini tables of contents.  Comment the following line
-  % (and remove \minitoc from the chapter files) if you don't want this.  Un-comment either of the
-  % next two lines if you want a per-chapter list of figures or tables.
   \dominitoc % include a mini table of contents
-  %\dominilof  % include a mini list of figures
+  \adjustmtc[-1] % fix minitoc numbering, it works. How it works will forever remain a mystery.  
+  % \dominilof  % include a mini list of figures
   %\dominilot  % include a mini list of tables
 
   % This aligns the bottom of the text of each page.  It generally makes things look better.
@@ -227,7 +225,6 @@
 
   % This is where the whole-document ToC appears:
   \tableofcontents
-
   % \listoffigures
   \mtcaddchapter
   % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
@@ -262,6 +259,7 @@
 \startappendices
 % Add or remove any appendices you'd like here:
 \include{text/ch2-appendix}
+\include{text/ch4-appendix}
 \include{text/ch5-appendix}
 \include{text/ch6-appendix}
 
@@ -278,7 +276,6 @@
 % 	\printbibliography[heading=bibintoc,title={\bibtitle}]}
 
 \printbibliography[heading=bibintoc,title={\bibtitle}]
-
 \end{document}
 
 
