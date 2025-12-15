@@ -14,33 +14,39 @@ To address this evidence gap, four prognostic models are developed using IPD fro
 
 The development and evaluation of clinical prediction models is supported by an extensive methodological literature. Over the past decade, reporting guidelines for prediction model studies have been established\cite{collins2015, moons2015, debray2023, collins2024A}, alongside a growing number of reviews and recommendations that define best practice\cite{efthimiou2024, collins2024B, riley2024A, riley2024B, vanSmeden2021}. The use of IPD from multiple studies introduces additional methodological challenges; specifically (i) clustering of participants within studies and (ii) the presence of missing data\cite{debray2023}.
 
-The aim of this chapter is to describe and justify the methodology used for model development and evaluation \textemdash\ from data acquisition to final model presentation. Guidelines and methodological texts are cited as required, and checklists are provided for current reporting guidelines on prediction model studies (TRIPOD-AI and TRIPOD-Cluster)\cite{collins2024A,debray2023}. Additional material, including the R code, is presented in Appendix \ref{app:methodology} and in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. A protocol is available on the Open Science Framework at \url{https://osf.io/z4bdn}.
+The aim of this chapter is to describe and justify the methodology used for model development and evaluation \textemdash\ from data acquisition to final model presentation. Guidelines and methodological texts are cited as required, and checklists are provided for current reporting guidelines on prediction model studies (TRIPOD-AI and TRIPOD-Cluster)\cite{collins2024A,debray2023}. Additional material, including the R code, is presented in Appendix \ref{app:methodology} and in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. A protocol is available on the \href{https://osf.io/z4bdn}{Open Science Framework}.\footnote{Created Nov 8, 2024, available at \url{https://osf.io/z4bdn}}
 
-% structure
+The chapter is broadly structured in three sections as outlined in Figure \ref{fig:workflow}: (1) data harmonisation, (2) model development, and (3) internal validation.
 
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
     \begin{figure}[tb]
         \centering
         \includegraphics[width=1.2\textwidth, trim={1.6cm 1cm 1.6cm 1.3cm}, clip]{figures/ch4/workflow.pdf}
-        \caption{Methodological workflow. \ding{192} Data harmonisation is performed for each contributed dataset including: initial curation (by the IDDO data engineering team) to the CDISC SDTM format, application of inclusion and exclusion criteria, and removal of outliers. Curated and cleaned datasets are converted into an analysis (wide) format and merged prior to \ding{193} model development. Multiple imputation is used to create (m = 30) imputed (complete) datasets. Variable selection, final model fitting, and apparent performance evaluation is performed on all imputed datasets. Estimates are pooled using Rubin's rules. Bootstrapping is used to perform \ding{194} internal validation, allowing (i) review of model stability and (ii) optimism adjustment of performance measures and original model coefficients. All model development steps, including multiple imputation, are repeated for each of the (b = 500) bootstrap datasets. The resulting bootstrap models (b = 500) are evaluated both in the corresponding bootstrap (imputed) datasets and the original (imputed) datasets, and pooled using Rubin's rules. The mean of the differences of the pooled performance measures (in bootstrap vs original dataset) are used to shrink the original model coefficients and apparent performance measures, resulting in the final optimism-adjusted model (uniform shrinkage). AP: apparent performance; b: number of bootstraps; BP: bootstrap model performance; CDISC: Clinical Data Interchange Standards Consortium; IDDO: infectious diseases data observatory; m: number of imputations; n: number of contributed studies. SDTM: Study Data Tabulation Model.}
+        \caption{Schema of methodological workflow. \ding{192} Data harmonisation is performed for each contributed dataset including: initial curation (by the IDDO data engineering team) to the CDISC SDTM format, application of inclusion and exclusion criteria, and removal of outliers. Curated and cleaned datasets are converted into an analysis (wide) format and merged prior to \ding{193} model development. Multiple imputation is used to create (m = 30) imputed (complete) datasets. Variable selection, model fitting, and apparent performance evaluation is performed on all imputed datasets. Estimates are pooled using Rubin's rules. Bootstrapping is used to perform \ding{194} internal validation, allowing (i) review of model stability and (ii) optimism adjustment of performance measures and original model coefficients. All model development steps, including multiple imputation, are repeated for each of the (b = 500) bootstrap datasets. The resulting bootstrap models (b = 500) are evaluated both in the corresponding bootstrap (imputed) datasets and the original (imputed) datasets, and pooled using Rubin's rules. The mean of the differences of the pooled performance measures (in bootstrap vs. original dataset) are used to shrink the original model coefficients and apparent performance measures, resulting in the final optimism-adjusted model. AP: apparent performance; b: number of bootstraps; BP: bootstrap model performance; CDISC: Clinical Data Interchange Standards Consortium; IDDO: infectious diseases data observatory; m: number of imputations; n: number of contributed studies. SDTM: Study Data Tabulation Model.}
         \label{fig:workflow}
     \end{figure}
 \end{landscape}
 \restoregeometry
 
-\section{Data acquisition and harmonisation}
+\section{Data harmonisation}
+
+Here, data harmonisation refers to the process of acquiring, curating, and any subsequent data manipulation required to produce a single analysis dataset ready for model development.
+
+In the interest of full disclosure, the process of data acquisition was completed by IDDO colleagues prior to the commencement of this DPhil project. Data curation was performed collaboratively between the IDDO data engineering team with support from the IDDO science team (myself included). Subsequent methodological steps were performed by myself.
+
+\subsection{Data acquisition}
+
+A systematic review of the scientific literature was first performed in 2016, with the aim of comprehensively cataloguing all existing VL clinical trials (PROSPERO: \href{https://www.crd.york.ac.uk/PROSPERO/view/CRD42021284622}{CRD42021284622})\cite{bush2017}. 145 trials were initially identified (1980--2016, n = 26,986 patients), with further trials added during periodic updates according to an open protocol\cite{Singh-Phulgenda2022_IDDO_VL_protocol}. Between 2018--2022, authors of the identified VL clinical trials were invited to share their IPD with the IDDO VL data platform, according to the General Data Protection Regulation (GDPR)--compliant IDDO data sharing policy\cite{IDDO_DataGovernance, dahal2025}.
+
+\subsection{Data curation}
+
+On receipt of IPD, to facilitate reusability and interoperability, contributed datasets were standardised to a common storage format: the Clinical Data Interchange Standards Consortium (CDISC)--compliant Study Data Tabulation Model (SDTM) standard\cite{cdisc2024}, adapted by IDDO for VL\cite{iddo2020}. During the curation process, contributed datasets underwent \textit{psuedonymisation},\footnote{\ `\dots processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information' \url{https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/anonymisation/pseudonymisation/} (accessed 15 Dec 2025).} prior to being available for data sharing requests by the VL research community.
+
+\subsection{Data cleaning}
 
 
-
-
-\subsection{Study eligibility}
-
-Authors of studies identified through a living systematic review of VL clinical efficacy studies\cite{bush2017,singh-phulgenda2022} were invited to share their IPD with the IDDO VL data platform\cite{dahal2025}.
-
-Shared IPD were standardised to the Clinical Data Interchange Standards Consortium (CDISC) compliant Study Data Tabulation Model (SDTM) standard\cite{cdisc2024}, adapted by IDDO for visceral leishmaniasis\cite{iddo2020}. Participant-identifiable data were redacted prior to curation thus creating pseudonymised database.  Curated SDTM datasets were converted to an analysis-ready format using R (v4.4.1) and the \texttt{tidyverse} package\cite{r2025,wickham2019}. For datasets with corresponding publications, the quality of data linkage is assessed as part of the risk of bias analysis, with a focus on consistency in the reported outcomes of initial cure and relapse.
-
-Datasets from studies meeting the following criteria were eligible for inclusion in model development:
+\subsection{Participant eligibility}
 
 \begin{enumerate}
     \item Conducted in the ISC (India, Nepal, Bangladesh)
@@ -50,8 +56,6 @@ Datasets from studies meeting the following criteria were eligible for inclusion
     \item Included a minimum of 6 months of prospective follow-up from treatment initiation
     \item Reported VL relapse events during the 6-month follow-up period or later.
 \end{enumerate}
-
-\subsection{Participant eligibility}
 
 Individual participants with a positive human immunodeficiency virus (HIV) test or positive pregnancy test were excluded from the analysis. Where study inclusion criteria required a positive tissue aspirate, participants with a negative tissue aspirate were excluded. No individual participants were excluded based on age, sex or prior VL history.
 
