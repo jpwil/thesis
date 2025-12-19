@@ -128,7 +128,7 @@ Initial cure definitions based solely on clinical improvement, as is common in r
 
 Recently, Dahal and colleagues performed a systematic review of the design, conduct, analysis, and reporting of VL therapeutic efficacy studies, published between 2000--2021. Of the 89 studies identified, 71 (79.8\%) included parasitological assessment, with or without demonstration of clinical improvement, as part of the test--of--cure, while 13 (14.6\%) required clinical improvement only. The remaining studies did not provide a definition. Timing also varied considerably, with the 68 (76.4\%) of studies performing the test--of--cure between 15--30 days following treatment completion\cite{dahal2024}. Similar patterns are observed in the contributed studies, as reported in the \href{https://github.com/jpwil/dphil}{Supplemental Material}, and discussed further in subsequent results chapters. Importantly, criteria for `clinical improvement' are often not specified. Further complicating interpretation, many studies describe a subgroup of `slow responders', who remain in the study despite a positive tissue aspirate in the test--of--cure. These patients may undergo repeat assessment at subsequent time points (e.g. 2--4 weeks later), with or without treatment extension, and may or may not ultimately be classified as having achieved initial cure.
 
-Such variation in the initial cure definition can challenge standardisation efforts, leading to differences in observed relapse rates  stemming from differences in the population at risk. These differences, however, can often be mitigated through interrogation of the IPD. Box \ref{box:ipd-events} provides a working definition for initial cure, which is applied during the data harmonisation process.
+Such variation in the initial cure definition can challenge standardisation efforts, leading to differences in observed relapse rates  stemming from differences in the population at risk. These differences, however, can often be mitigated through interrogation of the IPD. Box \ref{box:ipd-events} provides a working definition for initial cure, which is applied during data harmonisation.
 
 \begin{mybox}[floatplacement=tb, label=box:ipd-events]{IPD--based working definitions}
     \begin{description}[nosep]
@@ -136,7 +136,7 @@ Such variation in the initial cure definition can challenge standardisation effo
     \end{description}
     \tcbline
     \begin{description}[nosep]
-        \item[\textbf{Relapse}] Where relapse is not directly recorded in the IPD as an efficacy outcome, it can be inferred from (i) absence of rescue treatment within 6 months of test--of--cure assessment, (ii) the presence of a positive tissue aspirate in addition to a recurrence of compatible signs and symptoms.
+        \item[\textbf{Relapse}] Where relapse is not directly recorded in the IPD as an efficacy outcome, the event can be inferred from two or more of: (i) the need for rescue treatment within 6 months of initial cure assessment (test--of--cure), (ii) the presence of a positive tissue aspirate, and (iii) in addition to a recurrence of compatible signs and symptoms.
     \end{description}
 \end{mybox}
 
@@ -165,21 +165,23 @@ Having created an analysis--ready dataset, model development can now commence. I
 
 \subsection{\label{sec:meth-samp}Sample size}
 
-Sample size methodology developed by Riley et al\cite{riley2019A}, and implemented in the R package \texttt{pmsampsize}\cite{ensor2023}, is used to estimate the maximum number of predictors parameters (degrees of freedom) permitted to prevent overfitting, given the number of IPD and relapse events. To achieve this, Riley et al. propose three criteria: (i) small optimism in predictor effect estimates, defined by a global shrinkage factor of $geq$0.9, (ii) small absolute difference of $\leq$0.05 in the model's apparent and adjusted Nagelkerke's R\textsuperscript{2}, and (iii) precise estimation of the overall risk in the population.
+An often cited `rule of thumb' is that at least 10--20 outcome events per predictor parameter (EPP) are required to prevent model overfitting\cite{peduzzi1996,harrell2015}. However, both the validity of this threshold and the broader premise that a single rule applies universally have been increasingly questioned in the prediction modelling literature\cite{courvoisier2011}.
 
-Given the lack of previously published relapse prediction models, we assumed a Nagelkerke R$^2$ of 0.15\cite{riley2019A}.
+In response to these concerns, Riley et al.\cite{riley2019A} proposed a new sample size methodology in 2018. For prediction models with binary or time--to--event outcomes, the approach defines a minimum sample size that satisfies three criteria: (i) minimal optimism in predictor effect estimates, quantified by a global shrinkage factor of $\geq$0.9; (ii) a small absolute difference ($\leq$0.05) between the model's apparent and adjusted Nagelkerke's R\textsuperscript{2}; and (iii) precise estimation of the overall population risk (i.e.\ the model intercept). When the number of participants and outcome events is fixed, as in the present study, the maximum allowable EPP can be derived from an estimate of the model's overall performance. In the absence of previously published prediction models for relapse, we followed the authors' recommendation and assumed a Nagelkerke R\textsuperscript{2} of 0.15\cite{riley2019A}.
+
+This methodology has been implemented in the \texttt{pmsampsize} R package\cite{ensor2023}, which was used to perform the sample size calculations for this study.
 
 \subsubsection{ISC model}
 
-With a total of 228 relapses identified among 4,599 participants (5.0\% event rate), the maximum number of predictor parameters satisfying Riley et al.'s three criteria was 25, corresponding to 8.86 events per predictor parameter (EPP). Relaxing the permitted overall shrinkage from 0.90 to 0.85 (modifying criteria (i)) allows for 40 predictor parameters, corresponding to 5.57 EPP.
+With a total of 228 relapses identified in 4,599 participants (5.0\% event rate), the maximum number of predictor parameters satisfying Riley et al.'s three criteria is 25, corresponding to 8.86 EPP. Relaxing the permitted overall shrinkage from 0.90 to 0.85 (modifying criteria (i)) allows for 40 predictor parameters, corresponding to 5.57 EPP.
 
 \subsubsection{East Africa model}
 
-With a total of 99 relapses identified among 2,051 participants (4.8\% event rate), the maximum number of predictor parameters satisfying Riley et al.'s three criteria was 11, corresponding to 8.81 EPP. Relaxing the permitted overall shrinkage from 0.90 to 0.85 (modifying criteria (i)) allows for 18 predictor parameters, corresponding to 5.54 EPP.
+With a total of 99 relapses identified in 2,051 participants (4.8\% event rate), the maximum number of predictor parameters satisfying Riley et al.'s three criteria is 11, corresponding to 8.81 EPP. Relaxing the permitted overall shrinkage from 0.90 to 0.85 allows for 18 predictor parameters, corresponding to 5.54 EPP.
 
 \subsection{\label{sec:meth-candidate-pred}Candidate predictors}
 
-Candidate predictors available at the time of starting treatment were selected based on (i) existing evidence and expert opinion regarding their association with relapse\cite{hirve2016, goyal2020, burza2014}, (ii) availability across the contributed datasets; and (iii) feasibility for routine use outside research settings.
+Candidate predictors available at the time of starting treatment were selected based on (i) existing evidence and expert opinion regarding their association with relapse\cite{hirve2016, goyal2020, burza2014}, as summarised in Chapter \ref{ch:2-background}, Section \ref{sec:relapse}, (ii) availability across the contributed datasets; and (iii) feasibility for routine use outside research settings.
 
 For Model~1 (including parasite grade), 16 candidate predictor parameters were included, corresponding to a study-specific random intercept term and 12 participant-level candidate predictors (EPP~=~14.25, with some predictors linked to $>$1 parameter). Candidate predictors consisted of age, sex, treatment regimen, malnutrition, duration of fever before treatment, spleen size, parasite grade from tissue aspirate, severity of anaemia, and a range of laboratory values including white blood cell count (WBC), platelet count, alanine aminotransferase (ALT), and creatinine.
 
@@ -196,7 +198,7 @@ Continuous predictors - including fever duration, spleen length, and all blood t
 
 \subsection{\label{sec:meth-desc}Descriptive analysis}
 
-\subsection{\label{sec:meth-missing}}
+\subsection{\label{sec:meth-missing}Missing data}
 
 Missing data were common and resulted from (i) planned non-capture at the study-level (ii) unplanned incomplete capture of the predictor at the study-level, or (iii) incomplete IPD in the contributed dataset. Outcome data were complete.
 
