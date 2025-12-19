@@ -21,7 +21,7 @@ This chapter's structure closely mirrors the methodological workflow as outlined
 
 All analyses were performed using R version 4.4.1\cite{r2025}, with R packages cited in the relevant sections below. R scripts used for model development and evaluation are provided in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
 
-\begin{mybox}{Definition of the research question: a PICOTS approach}
+\begin{mybox}[label=box:picots]{Definition of the research question: a PICOTS approach}
     \begin{description}[nosep]
         \item[Population] HIV-negative patients that are prospectively recruited into a clinical trial with a diagnosis of visceral leishmaniasis, confirmed either serologically or parasitologically. No restrictions are placed on age, sex or treatment regimen.
         \item[Index models] For each setting, two prognostic models are developed; one including baseline parasite grade from a tissue aspirate, and one without. The models predict the \textit{future} occurrence of relapse, using patient information collected at treatment baseline. The intended time of model use is following a successful assessment of treatment response.
@@ -30,7 +30,6 @@ All analyses were performed using R version 4.4.1\cite{r2025}, with R packages c
         \item[Timing] Relapse occurring within 6--months of test--of--cure (typically occurring at the time of treatment completion, or within 30 days of starting treatment).
         \item[Setting] Participants from either the Indian subcontinent or East Africa.
     \end{description}
-    \label{box:picots}
 \end{mybox}
 
 \section{Data harmonisation}
@@ -67,81 +66,118 @@ To facilitate reusability and interoperability, contributed datasets were standa
 Subsequently, SDTM format datasets were converted to a single analysis--ready dataset, primed for model development. This stage consisted of multiple steps, refined iteratively over several months and in close consultation with the IDDO data engineering team:
 
 \begin{itemize}[noitemsep]
-    \item Creation of a standardised outcome variable according to a pre-defined definition (Section \ref{sec:out-definition})
-    \item Application of study and participant eligibility criteria (Section \ref{sec:eligibility})
     \item Identification and removal of spurious data points (e.g. outliers, discussed below)
+    \item Application of study and participant eligibility criteria (Section \ref{sec:eligibility})
+    \item Creation of a standardised outcome variable according to a pre-defined definition (Section \ref{sec:methods-outcome})
     \item Conversion of the datasets from a long to wide format, consisting of one row per participant
     \item Merging of all datasets into a single analysis dataset
 \end{itemize}
 
-Data wrangling during the second curation stage was performed with the \texttt{tidyverse} suite of R packages\cite{wickham2019}. Identification and removal of spurious data points was performed through subgroup tabulations and visual inspection of histograms and scatter plots. Where two incongruous data points were identified, for example, incompatible height and weight values, a third variable, such as BMI or age, would be used to identify the spurious value. Data points considered to be outliers were changed to missing values. A complete record of all data cleaning steps, including outlier identification and removal, was maintained and documented in commented R scripts.
+Data wrangling during the second curation stage was performed with the \texttt{tidyverse} suite of R packages\cite{wickham2019}. Identification and removal of spurious data points was performed through subgroup tabulations and visual inspection of histograms and scatter plots. Where two incongruous data points were identified, for example, incompatible height and weight values, a third variable, such as BMI or age, would be used to identify the spurious value. Data points considered to be outliers were converted to missing values. A complete record of all data cleaning steps, including outlier identification and removal, was maintained and documented in commented R scripts.
 
-\subsection{\label{sec:out-definition}Outcome definition}
+In Section \ref{sec:relapse} of Chapter \ref{ch:2-background}, relapse was defined broadly as `the reappearance of VL signs and symptoms following an initial treatment response', and `typically confirmed by direct visualisation of the parasite on a tissue aspirate smear'. Despite appearing a clear definition, on closer inspection it can be appreciated that even subtle variations in eligibility criteria, study design, and the definition of efficacy endpoints can, at times unexpectedly, impact the proportion of patients experiencing relapse as a study outcome.
 
-In Section \ref{sec:relapse} of Chapter \ref{ch:2-background}, relapse was described as `the reappearance of VL signs and symptoms following an initial treatment response', and `typically confirmed by direct visualisation of the parasite on a tissue aspirate smear'. Despite what may appear a clear definition, on closer inspection, it can be appreciated that even subtle variations in study design and relapse definition can, perhaps unexpectedly, impact the proportion of patients achieving relapse as a study outcome.
+\subsection{\label{sec:eligibility}Population at risk}
 
-In a recent systematic review, Dahal et al. explored heterogeneity in the design and reporting of all VL therapeutic efficacy trials published between 2000--2021\cite{dahal2024}. Based on these findings, and from exploring definitions of initial cure and relapse in the contributed studies, important sources of heterogeneity can be identified.
+Clear specification of the population at risk is fundamental to understanding the model's real-world applicability\cite{riley2021_book_ch17, collins2024A}. Particular attention is given to the definition of initial cure, since (i) relapse can only occur following an initial treatment response, and (ii) heterogeneity in study-level cure definitions can be partially addressed through IPD--based standardisation.
+
+Inclusion and exclusion criteria were applied at the study and participant levels and are presented in Box \ref{box:eligibility}. Criteria are chosen according to (i) the eligibility criteria applied in the original systematic review from which identified study authors were invited to contribute their IPD\cite{bush2017}, (ii) the range of studies available in the IDDO VL data platform, and (iii) the resulting impact and applicability of models developed.
+
+\begin{mybox}[floatplacement=tb, label=box:eligibility]{Eligibility criteria}
+    \begin{itemize}[nosep]
+        \item \textbf{Study--level \underline{inclusion} criteria}
+              \begin{itemize}
+                  \item Studies conducted in either the ISC (India, Nepal, Bangladesh) or East Africa (Ethiopia, Sudan, South Sudan, Kenya, Uganda)
+                  \item Prospective design, defined as participants having provided informed consent
+                  \item Participants recruited with a diagnosis of VL as defined by a combination of clinical symptoms and either parasitological or serological confirmation
+                  \item Studies that report, as a minimum, the treatment regimen including at least the drug name(s), dose and duration
+                  \item Recruited a minimum of 6 patients
+                  \item Included a minimum of 6 months of prospective follow-up from treatment initiation
+                  \item Reported VL relapse events during the 6-month follow-up period
+              \end{itemize}
+        \item \textbf{Participant--level \underline{exclusion} criteria}
+              \begin{itemize}
+                  \item Participants with HIV co-infection or from a setting with high HIV co-infection prevalence and without a negative HIV test
+                  \item Participants who were confirmed pregnant at the time of treatment initiation
+                  \item Participants with symptomatic treatment failure requiring rescue treatment, identified either before or at initial cure assessment
+              \end{itemize}
+    \end{itemize}
+\end{mybox}
+
+\subsubsection{Study--level criteria}
+
+Study-level inclusion criteria were applied to ensure that contributing datasets were sufficiently comparable in terms of epidemiological context, study design, and outcome ascertainment to permit meaningful harmonisation and pooled analysis.
+
+Studies were limited to those conducted in East Africa and the ISC, reflecting both the public health relevance of relapse prediction in regions with ongoing VL elimination programmes, and the availability of IPD within the IDDO VL data platform. On review of the IDDO inventory \cite{iddo2025vlinventory}, only two studies were conducted outside these regions \textemdash\ one in Greece conducted in the 1990s \cite{syriopoulou2003}, and one in Brazil in the 2010s \cite{romero2017}. These were excluded to preserve geographical and epidemiological coherence.
+
+Only prospectively conducted studies were included. Prospective designs allow for systematic and active follow-up, predefined outcome definitions, and contemporaneous outcome recording, all of which are important for the reliable identification of initial cure and subsequent relapse. However, reliance on IPD derived from clinical trials limits the direct applicability of the resulting model to real-world patients \textemdash\ those who are managed outside trial settings, and may not meet the often--stringent eligibility criteria. These limitations are discussed further in Chapter~\ref{ch:7-discussion}.
+
+A minimum study size was imposed to exclude very small cohorts with unstable relapse estimates. Finally, studies were required to report relapse events during follow-up, either explicitly or in a form that allowed relapse to be inferred from the available IPD.
+
+\subsubsection{Participant--level criteria}
+
+With respect to clinical presentation, treatment response, and outcomes, patients with VL/HIV co-infection constitute an important but distinct clinical population. Accordingly, patients with and without VL/HIV co-infection were \textit{not} combined within a single prediction model, given the substantial uncertainty in extrapolating relapse associations derived from HIV-negative patients to those with VL/HIV co-infection. Since the majority of contributing studies excluded patients with VL/HIV co-infection, insufficient IPD were available to develop a separate model for this group.
+
+As with VL/HIV co-infection, very few contributing studies included pregnant participants, reflecting their systematic exclusion from VL trials and precluding the development of a separate prediction model.
 
 \subsubsection{Initial cure}
 
-Understanding study--specific definitions of initial cure is important, as most studies require the patient to achieve initial cure in order to be at risk of relapse. Initial cure definitions based solely on clinical symptoms, reflecting routine practice, are likely to include patients with a persistently positive tissue aspirate, were this measured. Such patients represent a higher risk subgroup for subsequent relapse, and would otherwise have been classified as initial treatment failures and excluded from further follow-up if the study were to apply a more stringent, parasitology--based test--of--cure. It therefore follows that, all else being equal, stricter criteria for achieving initial cure are associated with a lower observed risk of subsequent relapse.
+Understanding study--specific definitions of initial cure is important, as all studies require the patient to demonstrate a treatment response, measured with a test--of--cure, in order to be at subsequent risk of relapse. Consequently, patients \textit{not} achieving initial cure \textemdash\ described as initial treatment failure \textemdash\ should be excluded. A direct consequence of excluding these patients is that model--derived risk estimates are only applicable to patients demonstrating initial cure.
 
-Of the 89 studies identified by Dahal et al, 71 (79.8\%) required confirmation with parasitological assessment (with or without demonstration of clinical improvement), while 13 (14.6\%) required clinical improvement only; the remaining studies did not report cure criteria\cite{dahal2024}. The timing of initial cure assessment also varied considerably, with the 68 (76.4\%) of studies performing the test--of--cure from 15--30 days following treatment completion. Similar patterns are observed in the contributed studies, as reported in the \href{https://github.com/jpwil/dphil}{Supplemental Material}, and discussed further in subsequent results chapters. Importantly, criteria for `clinical improvement' are often not specified. Further complicating interpretation, many studies describe a subgroup of `slow responders', in whom the test--of--cure tissue aspirate remains positive despite clinical improvement. These patients may undergo repeat assessment at variable time points (e.g. 2--4 weeks later), with or without treatment extension, and may or may not ultimately be classified as having achieved initial cure. Such variation in both the definition and timing of initial cure assessment can challenge standardisation efforts, leading to heterogeneity in observed relapse rates that is independent of other relapse risk factors.
+Initial cure definitions based solely on clinical improvement, as is common in routine practice, are likely to classify some patients as cured despite persistently positive tissue aspirates, were these assessed. These patients form a subgroup at increased risk of relapse and would instead be classified as initial treatment failures under more stringent, parasitology-based test--of--cure criteria, thereby being excluded from subsequent follow-up. Consequently, all else being equal, studies applying stricter definitions of initial cure will observe a lower subsequent relapse risk.
 
-\subsubsection{Relapse and `definite cure`'}
+Recently, Dahal and colleagues performed a systematic review of the design, conduct, analysis, and reporting of VL therapeutic efficacy studies, published between 2000--2021. Of the 89 studies identified, 71 (79.8\%) included parasitological assessment, with or without demonstration of clinical improvement, as part of the test--of--cure, while 13 (14.6\%) required clinical improvement only. The remaining studies did not provide a definition. Timing also varied considerably, with the 68 (76.4\%) of studies performing the test--of--cure between 15--30 days following treatment completion\cite{dahal2024}. Similar patterns are observed in the contributed studies, as reported in the \href{https://github.com/jpwil/dphil}{Supplemental Material}, and discussed further in subsequent results chapters. Importantly, criteria for `clinical improvement' are often not specified. Further complicating interpretation, many studies describe a subgroup of `slow responders', who remain in the study despite a positive tissue aspirate in the test--of--cure. These patients may undergo repeat assessment at subsequent time points (e.g. 2--4 weeks later), with or without treatment extension, and may or may not ultimately be classified as having achieved initial cure.
 
-Relapse itself, where described at the study--level, is also subject to substantial variation with respect to its (i) definition \textemdash\ including whether patients require initial cure, the severity of symptoms required to trigger a repeat aspirate, and the tissue type chosen for aspirate, and (ii) timing \textemdash\ e.g. whether patients were actively screened at set time points with clinical examination $\pm$ routine aspirates, or whether dependent on patients attending voluntarily (passively) based on recurrent symptoms and discharge advice. In line with findings by Dahal et al, a significant proportion of contributing studies do not directly define relapse as a study outcome\cite{dahal2024}. Instead, for most studies, a relapse event can be inferred from patients achieving initial cure who subsequently do not meet the definition of `definite cure', which itself is typically defined as patients requiring rescue treatment.
+Such variation in the initial cure definition can challenge standardisation efforts, leading to differences in observed relapse rates  stemming from differences in the population at risk. These differences, however, can often be mitigated through interrogation of the IPD. Box \ref{box:ipd-events} provides a working definition for initial cure, which is applied during the data harmonisation process.
 
-\subsubsection{Outcome standardisation}
+\begin{mybox}[floatplacement=tb, label=box:ipd-events]{IPD--based working definitions}
+    \begin{description}[nosep]
+        \item[\textbf{Initial cure}] Where initial cure (or initial treatment failure) is \textit{not} directly recorded in the IPD as an efficacy outcome, or where it is recorded but the study definition considers `slow responders' as initial treatment failures, it can be inferred from (i) improvement of signs and symptoms between baseline and test--of--cure, and (ii) not requiring rescue treatment during initial treatment. Importantly, reflecting both routine clinical practice and a number of study definitions, detection of parasites at test--of--cure should not preclude the subsequent development of relapse, so long as points (i) and (ii) are met.
+    \end{description}
+    \tcbline
+    \begin{description}[nosep]
+        \item[\textbf{Relapse}] Where relapse is not directly recorded in the IPD as an efficacy outcome, it can be inferred from (i) absence of rescue treatment within 6 months of test--of--cure assessment, (ii) the presence of a positive tissue aspirate in addition to a recurrence of compatible signs and symptoms.
+    \end{description}
+\end{mybox}
 
-Access to study--level IPD allows for identification of relapse both directly, where relapse events are presented as a pre-defined efficacy outcome, and indirectly, where relapse events can be identified using a combination of related efficacy outcome data (initial cure status, definite cure status), and information recorded on tissue aspirates, timing of rescue treatment, and patient signs and symptoms recorded at pre-defined follow-up periods.
+\subsection{\label{sec:methods-outcome}Outcome}
 
-Where direct identification of relapse events is not provided in the contributed IPD, the following two--part pragmatic definition will be applied:
+Relapse itself, where described at the study--level, is also subject to substantial variation with respect to its (i) definition \textemdash\ including the severity of symptoms required to trigger a repeat aspirate and the tissue type chosen for aspirate, and (ii) timing \textemdash\ including whether patients were actively screened at set time points with clinical examination $\pm$ routine aspirates, or whether dependent on patients attended voluntarily based on recurrent symptoms and discharge advice. In line with findings by Dahal et al, a significant proportion of contributing studies do not directly define relapse as a study outcome\cite{dahal2024}. Instead, for most studies, a relapse event can be inferred from patients achieving initial cure who subsequently do not meet the definition of `definite cure', which itself is typically defined as patients requiring rescue treatment.
 
-\begin{enumerate}[noitemsep]
-    \item \textbf{An initial treatment response is achieved.} Where initial cure (or initial treatment failure) is \textit{not} directly recorded in the IPD as an efficacy outcome, or where it is recorded but the study definition considers `slow responders' as initial treatment failures, it can be inferred from (i) improvement of signs and symptoms between baseline and test--of--cure, and (ii) not requiring rescue treatment during initial treatment. Importantly, reflecting both routine clinical practice and a number of study definitions, the detection of parasites at test--of--cure does not prevent the subsequent development of relapse, so long as points (i) and (ii) are met.
-    \item \textbf{Subsequent recurrence of symptoms considered to be a relapse event.} Where relapse is not directly recorded in the IPD as an efficacy outcome, it can be inferred from (i) absence of rescue treatment within 6 months of test--of--cure assessment, (ii) the presence of a positive tissue aspirate in addition to a recurrence of compatible signs and symptoms.
-\end{enumerate}
+Similar to the approach described for identifying patients that achieve initial cure, access to IPD allows relapse events to be inferred from other variables, including: definite cure status, tissue aspirates, timing of rescue treatment initiation, and patient signs and symptoms. Box \ref{box:ipd-events} provides an IPD--based working definition of relapse.
 
-Two important points
-- denominator information (at risk)
-- relapse is binary
-- loss of follow up
-- cross-referencing with study publications (where available)
-
-\subsection{\label{sec:eligibility}Participant eligibility}
-
-The following inclusion and exclusion criteria were applied:
-
-\begin{itemize}[noitemsep]
-    \item \textbf{Study--level \underline{inclusion} criteria}
-          \begin{itemize}
-              \item Studies conducted in either the ISC (India, Nepal, Bangladesh) or East Africa (Ethiopia, Sudan, South Sudan, Kenya, Uganda)
-              \item Prospective design, defined as participants having provided informed consent
-              \item Participants recruited with a diagnosis of VL as defined by a combination of clinical symptoms and either parasitological or serological confirmation
-              \item Studies that reported, as a minimum, the treatment regimen including at least the drug name(s), dose and duration
-              \item Included a minimum of 6 months of prospective follow-up from treatment initiation
-              \item Reported VL relapse events during the 6-month follow-up period or later
-          \end{itemize}
-    \item \textbf{Participant--level \underline{exclusion} criteria}
-          \begin{itemize}
-              \item Participants with HIV co-infection or from a setting with high HIV co-infection prevalence and without a negative HIV test
-              \item Participants who were confirmed pregnant at the time of treatment initiation
-              \item Participants with symptomatic treatment failure requiring rescue treatment before or at initial cure assessment
-          \end{itemize}
-\end{itemize}
-
-Individual participants with a positive human immunodeficiency virus (HIV) test or positive pregnancy test were excluded from the analysis. Where study inclusion criteria required a positive tissue aspirate, participants with a negative tissue aspirate were excluded. No individual participants were excluded based on age, sex or prior VL history.
-
+Relapse is recorded and modelled as a binary outcome variable (occurred vs. not occurred, or 1/0). Unfortunately, modelling relapse as a time--to--event variable is not feasible, since \textit{timing} information is (i) inconsistently presented across the contributed IPD, and (ii) where presented, is often limited to fixed, predetermined study visits (e.g. 3 months, 6 months).
 
 % Study-specific definitions of initial cure and relapse are presented in \hyperref[sec:add-files]{Additional file 1}.
 \section{Model development}
 
-\subsection{Sample size}
+Having created an analysis--ready dataset, model development can now commence. Important steps here include:
 
-We used the methodology developed by Riley et al. to calculate the sample size required for multivariable prediction models with binary outcomes\cite{riley2019}, and implemented in the R package \texttt{pmsampsize}\cite{ensor2023}. We determined the maximum number of predictor parameters permitted according to three criteria designed to limit model overfitting and ensure accurate outcome estimation. Given the lack of previously published relapse prediction models, we assumed a Nagelkerke R$^2$ of 0.15\cite{riley2019}. With a total of 228 relapses in 4,599 participants (5.0\% event rate), the maximum number of supported predictor parameters was calculated at 25, corresponding to 8.8 events per predictor parameter (EPP).
+\begin{description}[noitemsep]
+    \item[Sample size calculations] Section \ref{sec:meth-samp}. To prevent model overfitting, the maximum number of candidate predictors (degrees of freedom) can be calculated.
+    \item[Candidate predictors] Section \ref{sec:meth-candidate-pred}. After establishing the degrees of freedom supported by the models, selection and specification of the candidate predictors can be carried out.
+    \item[Descriptive analysis] Section \ref{sec:meth-desc}. Description of how the analysis--dataset is presented, informing model specification.
+    \item[Missing data] Section \ref{sec:meth-missing}.
+    \item[Model specification] Section \ref{sec:meth-spec}.
+    \item[Variable selection] Section \ref{sec:meth-vs}.
+    \item[Evaluation of model performance] Section \ref{sec:meth-perf}.
+\end{description}
 
-\subsection{Candidate predictors}
+\subsection{\label{sec:meth-samp}Sample size}
+
+Sample size methodology developed by Riley et al\cite{riley2019A}, and implemented in the R package \texttt{pmsampsize}\cite{ensor2023}, is used to estimate the maximum number of predictors parameters (degrees of freedom) permitted to prevent overfitting, given the number of IPD and relapse events. To achieve this, Riley et al. propose three criteria: (i) small optimism in predictor effect estimates, defined by a global shrinkage factor of $geq$0.9, (ii) small absolute difference of $\leq$0.05 in the model's apparent and adjusted Nagelkerke's R\textsuperscript{2}, and (iii) precise estimation of the overall risk in the population.
+
+Given the lack of previously published relapse prediction models, we assumed a Nagelkerke R$^2$ of 0.15\cite{riley2019A}.
+
+\subsubsection{ISC model}
+
+With a total of 228 relapses identified among 4,599 participants (5.0\% event rate), the maximum number of predictor parameters satisfying Riley et al.'s three criteria was 25, corresponding to 8.86 events per predictor parameter (EPP). Relaxing the permitted overall shrinkage from 0.90 to 0.85 (modifying criteria (i)) allows for 40 predictor parameters, corresponding to 5.57 EPP.
+
+\subsubsection{East Africa model}
+
+With a total of 99 relapses identified among 2,051 participants (4.8\% event rate), the maximum number of predictor parameters satisfying Riley et al.'s three criteria was 11, corresponding to 8.81 EPP. Relaxing the permitted overall shrinkage from 0.90 to 0.85 (modifying criteria (i)) allows for 18 predictor parameters, corresponding to 5.54 EPP.
+
+\subsection{\label{sec:meth-candidate-pred}Candidate predictors}
 
 Candidate predictors available at the time of starting treatment were selected based on (i) existing evidence and expert opinion regarding their association with relapse\cite{hirve2016, goyal2020, burza2014}, (ii) availability across the contributed datasets; and (iii) feasibility for routine use outside research settings.
 
@@ -158,10 +194,9 @@ Baseline parasite grade, when available, was assessed from splenic or bone marro
 
 Continuous predictors - including fever duration, spleen length, and all blood tests except haemoglobin - were log-transformed to reduce skewness and better approximate normality. For spleen size, a value of 1 was added prior to transformation to accommodate zero values and avoid undefined logarithmic results. For parasite count, a value of 1 was subtracted to better approximate a Poisson distribution in the imputation model.
 
-\subsection{Descriptive analysis}
+\subsection{\label{sec:meth-desc}Descriptive analysis}
 
-
-\subsection{Missing data}
+\subsection{\label{sec:meth-missing}}
 
 Missing data were common and resulted from (i) planned non-capture at the study-level (ii) unplanned incomplete capture of the predictor at the study-level, or (iii) incomplete IPD in the contributed dataset. Outcome data were complete.
 
@@ -171,7 +206,8 @@ For each model development, 20 imputations were performed with 20 iterations per
 
 The same imputation model was used for the development of both Model~1 and Model~2. The MAR assumption and convergence of the imputation model were assessed visually with diagnostic plots. These included trace plots and plots comparing the original and imputed data (including density plots and scatter plots for age, height, and weight). Full specification of the imputation model methods, predictor matrix, passive imputation specifications, and post imputation calculations are provided in ...
 
-\subsection{Model specification and variable selection}
+\subsection{\label{sec:meth-spec}Model specification}
+\subsection{\label{sec:meth-vs}Variable selection}
 
 Six-month relapse was modelled as a binary outcome in a multivariable generalised linear mixed-effects model (GLMM) with a logit link function. Predictors were transformed as previously described. Anticipated between-study heterogeneity was accounted for by including study as a random intercept term\cite{bouwmeester2013A}. Whilst introducing methodological complexity, there are a number of benefits gained by accounting for between-study heterogeneity\cite{debray2023}:
 
@@ -185,7 +221,7 @@ Model parameters were estimated using the \texttt{glmer} function from the \text
 
 The final predictor set was determined using backwards variable selection with cutoff p $<$0.10. Rubin's rules were used to combine predictor estimates and test predictor significance at each selection stage across the 20 imputed datasets\cite{austin2019,rubin1987}. For categorical predictors with over two groups (malnutrition, treatment), predictor significance was assessed with the D1 multivariate Wald test as implemented in the \texttt{mice} R package\cite{van-buuren2011,li1991}. For age, lower-order polynomial terms were retained in the model whilst higher-order terms remained.
 
-\subsection{Model performance}
+\subsection{\label{sec:meth-perf}Model performance}
 
 Model discrimination was assessed using the c-statistic, and calibration using calibration slope, and calibration intercept and calibration plots. Within-study (conditional) performance measures are presented, reflecting model performance when evaluated at the study level\cite{wynants2018,van-klaveren2014}.
 

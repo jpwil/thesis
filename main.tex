@@ -41,17 +41,19 @@
 % If you're already a LaTeX pro and are used to natbib or something, modify as necessary.
 % Either way, you'll have to choose and configure an appropriate bibliography format...
 
-%% boxes %%
+%% Boxes %%
 \usepackage[most]{tcolorbox}
 
 % Define a new tcolorbox environment with an automatic counter
 \newtcolorbox[auto counter, number within=chapter]{mybox}[2][]{%
+  float,
+  floatplacement=tbph, #1,
+  segmentation style={draw=blue,solid},
   colback=blue!2!white,
   colframe=blue!60!white,
   fonttitle=\bfseries,
   fontupper=\small,
-  title=Box~\thetcbcounter: #2, % automatic numbering
-  #1
+  title=Box~\thetcbcounter: #2 % automatic numbering
 }
 
 \usepackage{geometry} % already loaded by ociamthesis, here just in case
