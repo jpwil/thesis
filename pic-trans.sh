@@ -25,8 +25,28 @@ cp /Users/jameswilson/proj/vl_model_isc/figures/treatment/treat_dist1a.pdf figur
 
 # missing data summary
 cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch5/isc_missing_summary.pdf
+ 
+# model presentation: forest plot of coefficients
+cp /Users/jameswilson/proj/vl_model_isc/results/var_forest_combined.pdf figures/ch5/var_forest_combined.pdf
+
+# model presentation: adjusted associations
+cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM2.pdf figures/ch5/isc_multiassoc_without_pg.pdf
+cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM1.pdf figures/ch5/isc_multiassoc_with_pg.pdf
+
+# model presentation: calibration plots
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlot.pdf figures/ch5/isc_calPlot.pdf
+
+# WITH PG - calibration plots
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf
+
+# WITHOUT PG - calibration plots
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotPD.pdf figures/ch5/isc_calPlotPD.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf figures/ch5/isc_calPlotFD1.pdf
 
 # APPENDIX - CHAPTER 5
+
+# logodds associations betweeen transformed continuous predictors and relapse
+cp /Users/jameswilson/proj/vl_model_isc/figures/dist/isc_logodds.pdf figures/ch5/isc_logodds.pdf
 
 # continuous study-specific distributions (including age-dependent malnutrition markers)
 cp /Users/jameswilson/proj/vl_model_isc/figures/dist/age_comb.pdf figures/ch5/isc_age_comb.pdf
@@ -51,6 +71,28 @@ cp /Users/jameswilson/proj/vl_model_isc/figures/dist/ass/cont_cont.pdf figures/c
 
 # associations - cont-cat
 cp /Users/jameswilson/proj/vl_model_isc/figures/dist/ass/cont_cat.pdf figures/ch5/isc_cont_cat.pdf
+
+# Calibration - with PG
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotPD.pdf figures/ch5/isc_calPlotPD.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf figures/ch5/isc_calPlotFD1.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotA1.pdf figures/ch5/isc_calPlotA1.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotAnaemia1.pdf figures/ch5/isc_calPlotAnaemia1.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotRx1.pdf figures/ch5/isc_calPlotRx1.pdf
+
+# Calibration - without PG
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD2.pdf figures/ch5/isc_calPlotFD2.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotA2.pdf figures/ch5/isc_calPlotA2.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotAnaemia2.pdf figures/ch5/isc_calPlotAnaemia2.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotRx2.pdf figures/ch5/isc_calPlotRx2.pdf
+
+# forest plots - with PG
+cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM1.pdf figures/ch5/forestCIM1.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM1.pdf figures/ch5/forestCalM1.pdf
+
+# forest plots - without PG
+cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM2.pdf figures/ch5/forestCIM2.pdf
+cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM2.pdf figures/ch5/forestCalM2.pdf
+
 
 # CHAPTER 6 FIGURES
 
@@ -80,8 +122,10 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/treatment/treat_dist1a.pdf figure
 # missing data summary
 cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/ea_missing_summary.pdf
 
-
 # APPENDIX - CHAPTER 6
+
+# logodds associations betweeen transformed continuous predictors and relapse
+cp /Users/jameswilson/proj/vl_model_ea/figures/dist/ea_logodds.pdf figures/ch6/ea_logodds.pdf
 
 # continuous study-specific distributions (including age-dependent malnutrition markers)
 cp /Users/jameswilson/proj/vl_model_ea/figures/dist/age_comb.pdf figures/ch6/ea_age_comb.pdf

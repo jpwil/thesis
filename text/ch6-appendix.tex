@@ -1,32 +1,13 @@
 \chapter{\label{app:ea-results}Appendix \textemdash\ East Africa model results}
 
-\minitoc
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/isc_logodds.pdf figures/ch5/isc_logodds.pdf
 
-\section{\label{app:ea-results-cp-dist-cont}Continuous predictor distributions by study}
-
-The following figures show the distributions of continuous candidate predictors by East Africa study. For each predictor, two plots are provided: (i) [left plot] histograms normalised within each study (each study's bars sum to the same area), and (ii) [right plot] histograms normalised across all studies to reflect their relative sample sizes. The y-axis labels also indicate the amount of missing data. Height, weight, and haemoglobin are included because they are used to derive the categorical predictors for malnutrition and anaemia, even though they are not predictors themselves.
-
-Fever duration and the laboratory tests are log-transformed given their marked right-skewed distributions.
-
-\begin{tabular}{ll}
-  \toprule
-  \textbf{Variable}                & \textbf{Figure reference} \\
-  \midrule
-  Age                              & \ref{fig:ea_age_comb}     \\
-  Height                           & \ref{fig:ea_height_comb}  \\
-  Weight                           & \ref{fig:ea_weight_comb}  \\
-  BMI                              & \ref{fig:ea_height_comb}  \\
-  BMI-for-age z-score              & \ref{fig:ea_bmiz_comb}    \\
-  Weight-for-height z-score        & \ref{fig:ea_wfh_comb}     \\
-  Spleen size                      & \ref{fig:ea_ss_comb}      \\
-  Fever duration (log scale)       & \ref{fig:ea_fd_log_comb}  \\
-  White blood cell (log scale)     & \ref{fig:ea_wbc_log_comb} \\
-  Platelets (log scale)            & \ref{fig:ea_plt_log_comb} \\
-  Haemoglobin (log scale)          & \ref{fig:ea_hb_log_comb}  \\
-  Alanine transaminase (log scale) & \ref{fig:ea_alt_log_comb} \\
-  Creatinine (log scale)           & \ref{fig:ea_cr_log_comb}  \\
-  \bottomrule
-\end{tabular}
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/ch6/ea_logodds.pdf}
+  \caption{Associations between transformed continuous predictors and log(odds) of relapse. For each predictor (excluding parasite grade), a univariable generalised additive model spline fit is shown, with 95\% confidence intervals. For parasite grade, 95\% confidence intervals are calculated for each grade using the Wilson method.}
+  \label{fig:ea_logodds}
+\end{figure}
 
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 
@@ -191,8 +172,6 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 
 \restoregeometry
 
-\section{\label{app:ea-results-cp-dist-cat}Categorical predictor distributions by study}
-
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/comb_discrete.pdf figures/ch6/ea_comb_discrete.pdf
@@ -206,8 +185,6 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 \end{landscape}
 
 \restoregeometry
-
-\section{\label{app:results-cp-ass-cont-cont}Pooled continuous-continuous predictor associations}
 
 % continuous-continuous associations
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
@@ -223,8 +200,6 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 \end{landscape}
 
 \restoregeometry
-
-\section{\label{app:results-cp-ass-cont-cat}Pooled continuous-categorical predictor associations}
 
 % continuous-categorical associations
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}

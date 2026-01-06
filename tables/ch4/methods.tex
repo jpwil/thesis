@@ -1,0 +1,18 @@
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\begin{table}[tb]
+    \centering
+    \caption{Multiple imputation with chained equations (MICE) methods used for univariable imputation of variables with missing data. ALT: alanine aminotransferase; BMI: body mass index; Crt: creatinine; Hb: haemoglobin; ISC: Indian subcontinent; n/a: not applicable; Plt: platelets; WBC: white blood cell count; WFH: weight-for-height.}
+    \label{tab:meth-missing}
+    \begin{tabular}{P{2.1cm}P{4.1cm}P{3.55cm}P{2.7cm}}
+        \toprule
+        \textbf{Method}     & \textbf{Variables}                                                                    & \textbf{Description}                                              & \textbf{R package}                                                    \\ \midrule
+        \texttt{2l.lmer}    & age, weight, height, fever duration, all bloods (Hb, ALT, WBC, Plt, Crt), spleen size & Two--level normal model using \texttt{lme4::lme4()}               & \texttt{mice}\cite{van-buuren2011} \texttt{micemd}\cite{audigier2018} \\ \midrule
+        \texttt{2l.zip}     & parasite grade (East Africa only)                                                     & Two--level zero--inflated Poisson model using Bayesian estimation & \texttt{countimp}\cite{kleinke2024}                                   \\ \midrule
+        \texttt{2l.poisson} & parasite grade (ISC only)                                                             & Two--level Poisson model using Bayesian estimation                & \texttt{countimp}\cite{kleinke2024}                                   \\ \midrule
+        Passive imputation  & BMI, BMI--for--age z--score, WFH z-score, age$^2$, age$^3$                            & Calculated during imputation from age, weight and height.         & \texttt{mice}\cite{van-buuren2011}                                    \\ \midrule
+        n/a                 & outcome, treatment (ISC only), sex, study (random intercept term)                     & No imputation performed (no missing data)                         & n/a                                                                   \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+

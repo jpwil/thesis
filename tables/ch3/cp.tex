@@ -1,0 +1,40 @@
+\definecolor{darkgreen}{RGB}{0,90,0}
+\newcommand{\yes}{\textcolor{green!66!black}{\ding{51}}}
+\newcommand{\no}{\textcolor{red}{\ding{55}}}
+\newcommand{\gap}{1.1cm}
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \begin{threeparttable}
+        \begin{tabular}{@{} l l l l >{\centering\arraybackslash}p{\gap} >{\centering\arraybackslash}p{\gap} >{\centering\arraybackslash}p{\gap} >{\centering\arraybackslash}p{\gap} @{}}
+            \toprule
+            Variable                & Specification       & dof & log & \multicolumn{2}{c}{ISC} & \multicolumn{2}{c}{EA}                                              \\
+            \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+                                    & (categories)        &     &     & $\mathrm{PG}$           & $\overline{\mathrm{PG}}$ & $\mathrm{PG}$ & $\overline{\mathrm{PG}}$ \\ \midrule
+            Relapse (outcome)       & Categorical (2)     & -   & -   & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Study                   & Random intercept    & 1   & -   & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Treatment               & Categorical (3)     & 2   & -   & \yes                    & \yes                     & \no           & \no                      \\ \midrule
+            Sex                     & Categorical (2)     & 1   & -   & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Malnutrition            & Categorical (3)     & 2   & -   & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Anaemia severity        & Categorical (2)     & 1   & -   & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Age                     & Continuous\tnote{1} & 3   & No  & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Fever duration          & Continuous          & 1   & Yes & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            WBCs                    & Continuous          & 1   & Yes & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Spleen size             & Continuous\tnote{2} & 1   & No  & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Platelets               & Continuous          & 1   & Yes & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            ALT                     & Continuous          & 1   & Yes & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Creatinine              & Continuous          & 1   & Yes & \yes                    & \yes                     & \yes          & \yes                     \\ \midrule
+            Parasite grade\tnote{3} & Continuous          & 1   & No  & \yes                    & \no                      & \yes          & \no                      \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \footnotesize
+            \item[1] Age is modelled as a cubic polynomial.
+            \item[2] A small additive constant (+1) is added to spleen size to allow inclusion of patients with non-palpable spleens.
+            \item[3] Parasite grade is recorded on a semi-quantitative logarithmic scale, ranging from 1+ to 6+.
+        \end{tablenotes}
+    \end{threeparttable}
+    \caption{Variables used in the development of the Indian subcontinent (ISC) and East Africa (EA) models. Models are fitted either with parasite grade ($\mathrm{PG}$) or without parasite grade ($\overline{\mathrm{PG}}$). -: not applicable, \yes:~included in model, \no:~not included in model, dof: degrees of freedom, log: whether modelled on a natural logarithmic scale, ALT: alanine aminotransferase, WBC: white blood cell.}
+    \label{tab:meth-cp}
+\end{table}

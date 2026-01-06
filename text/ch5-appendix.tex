@@ -1,32 +1,13 @@
 \chapter{\label{app:isc-results}Appendix \textemdash\ Indian subcontinent model results}
 
-\minitoc
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/isc_logodds.pdf figures/ch5/isc_logodds.pdf
 
-\section{\label{app:isc-results-cp-dist-cont}Continuous predictor distributions by study}
-
-The following figures show the distributions of continuous candidate predictors by ISC study. For each predictor, two plots are provided: (i) [left plot] histograms normalised within each study (each study's bars sum to the same area), and (ii) [right plot] histograms normalised across all studies to reflect their relative sample sizes. The y-axis labels also indicate the amount of missing data. Height, weight, and haemoglobin are included because they are used to derive the categorical predictors for malnutrition and anaemia, even though they are not predictors themselves.
-
-Fever duration and the laboratory tests are log-transformed given their marked right-skewed distributions.
-
-\begin{tabular}{ll}
-  \toprule
-  \textbf{Variable}                & \textbf{Figure reference}  \\
-  \midrule
-  Age                              & \ref{fig:isc_age_comb}     \\
-  Height                           & \ref{fig:isc_height_comb}  \\
-  Weight                           & \ref{fig:isc_weight_comb}  \\
-  BMI                              & \ref{fig:isc_height_comb}  \\
-  BMI-for-age z-score              & \ref{fig:isc_bmiz_comb}    \\
-  Weight-for-height z-score        & \ref{fig:isc_wfh_comb}     \\
-  Spleen size                      & \ref{fig:isc_ss_comb}      \\
-  Fever duration (log scale)       & \ref{fig:isc_fd_log_comb}  \\
-  White blood cell (log scale)     & \ref{fig:isc_wbc_log_comb} \\
-  Platelets (log scale)            & \ref{fig:isc_plt_log_comb} \\
-  Haemoglobin (log scale)          & \ref{fig:isc_hb_log_comb}  \\
-  Alanine transaminase (log scale) & \ref{fig:isc_alt_log_comb} \\
-  Creatinine (log scale)           & \ref{fig:isc_cr_log_comb}  \\
-  \bottomrule
-\end{tabular}
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/ch5/isc_logodds.pdf}
+  \caption{Associations between transformed continuous predictors and log(odds) of relapse. For each predictor (excluding parasite grade), a univariable generalised additive model spline fit is shown, with 95\% confidence intervals. For parasite grade, 95\% confidence intervals are calculated for each grade using the Wilson method.}
+  \label{fig:isc_logodds}
+\end{figure}
 
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 
@@ -191,8 +172,6 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 
 \restoregeometry
 
-\section{\label{app:results-cp-dist-cat}Categorical predictor distributions by study}
-
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/comb_discrete.pdf figures/ch5/isc_comb_discrete.pdf
@@ -206,8 +185,6 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 \end{landscape}
 
 \restoregeometry
-
-\section{\label{app:isc-results-cp-ass-cont-cont}Pooled continuous-continuous predictor associations}
 
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 %cp /Users/jameswilson/proj/vl_model_isc/figures/dist/ass/cont_cont.pdf figures/ch5/isc_cont_cont.pdf
@@ -223,8 +200,6 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 
 \restoregeometry
 
-\section{\label{app:isc-results-cp-ass-cont-cat}Pooled continuous-categorical predictor associations}
-
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 %cp /Users/jameswilson/proj/vl_model_isc/figures/dist/ass/cont_cat.pdf figures/ch5/isc_cont_cat.pdf
 
@@ -238,3 +213,100 @@ Fever duration and the laboratory tests are log-transformed given their marked r
 \end{landscape}
 
 \restoregeometry
+
+% calibration pots
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotPD.pdf figures/ch5/isc_calPlotPD.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf figures/ch5/isc_calPlotFD1.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotA1.pdf figures/ch5/isc_calPlotA1.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotAnaemia1.pdf figures/ch5/isc_calPlotAnaemia1.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotRx1.pdf figures/ch5/isc_calPlotRx1.pdf
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotPD.pdf}
+  \caption{Calibration plots for parasite grades \textemdash\ model including parasite grade.}
+  \label{fig:isc_calPlotPD_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotFD1.pdf}
+  \caption{Calibration plots for fever duration \textemdash\ model including parasite grade.}
+  \label{fig:isc_calPlotFD1_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotA1.pdf}
+  \caption{Calibration plots for age \textemdash\ model including parasite grade.}
+  \label{fig:isc_calPlotA1_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotAnaemia1.pdf}
+  \caption{Calibration plots for anaemia severity \textemdash\ model including parasite grade.}
+  \label{fig:isc_calPlotAnaemia1_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotRx1.pdf}
+  \caption{Calibration plots for treatment \textemdash\ model including parasite grade.}
+  \label{fig:isc_calPlotRx1_ap}
+\end{figure}
+
+
+% model without parasite grade
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotFD2.pdf}
+  \caption{Calibration plots for fever duration \textemdash\ model \textbf{not} including parasite grade.}
+  \label{fig:isc_calPlotFD2_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotA2.pdf}
+  \caption{Calibration plots for age \textemdash\ model \textbf{not} including parasite grade.}
+  \label{fig:isc_calPlotA2_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotAnaemia2.pdf}
+  \caption{Calibration plots for anaemia severity \textemdash\ model \textbf{not} including parasite grade.}
+  \label{fig:isc_calPlotAnaemia2_ap}
+\end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotRx2.pdf}
+  \caption{Calibration plots for treatment \textemdash\ model \textbf{not} including parasite grade.}
+  \label{fig:isc_calPlotRx2_ap}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM2.pdf figures/ch5/forestCIM2.pdf
+% forest plots for C-statistic - WITHOUT PARASITE GRADE
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=0.9\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM2.pdf}
+    \put(0,5.5){\scriptsize $\tau^2$: 0.62; $I^2$: 82.8\%}
+    \put(0,2.3){\scriptsize Q(df = 17): 134.88; p < .0001}
+  \end{overpic}
+  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{excluding} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Pooled random--effects c--statistics and variances are estimated using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Blue diamonds: pooled summary estimates with 95\% confidence intervals. Red line: 95\% prediction interval. Study ordered by c--statistic. For Chakraborty 2008, no relapse events occurred and c--statistic is therefore undefined. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}).}
+  \label{fig:isc_forestCIM2}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM2.pdf figures/ch5/forestCalM2.pdf
+% forest plots for calibration
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=0.9\textwidth, trim={3.4cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM2.pdf}
+    \put(27,13){\fcolorbox{black}{white}{\tiny $\tau^2$: 0.14; $I^2$: 55.8\%; Q(17): 39.5; p = .0015}}
+    \put(68,13){\fcolorbox{black}{white}{\tiny $\tau^2$: 0.006; $I^2$: 1.32\%; Q(16): 14.7; p = .62}}
+  \end{overpic}
+  \caption{Forest plots showing individual and pooled study calibration measures, for the model \textbf{excluding} parasite grade. Left: calibration intercept (calibration--in--the--large); Right: calibration slope. Pooled summary estimates and variances are estimated from random--effects meta-analysis models using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Blue diamonds: summary estimates with 95\% confidence intervals. Red lines: 95\% prediction interval. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
+  \label{fig:isc_forestCalM2}
+\end{figure}

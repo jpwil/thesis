@@ -22,14 +22,14 @@ This chapter's structure closely mirrors the methodological workflow as outlined
 All analyses were performed using R version 4.4.1\cite{r2025}, with R packages cited in the relevant sections below. R scripts used for model development and evaluation are provided in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
 
 \begin{mybox}[label=box:picots]{Definition of the research question: a PICOTS approach}
-    \begin{description}[nosep]
-        \item[Population] HIV-negative patients that are prospectively recruited into a clinical trial with a diagnosis of visceral leishmaniasis, confirmed either serologically or parasitologically. No restrictions are placed on age, sex or treatment regimen.
-        \item[Index models] For each setting, two prognostic models are developed; one including baseline parasite grade from a tissue aspirate, and one without. The models predict the \textit{future} occurrence of relapse, using patient information collected at treatment baseline. The intended time of model use is following a successful assessment of treatment response.
-        \item[Comparator model] As established in Chapter \ref{ch:3-sys-review}, no published relapse models are available for comparison or updating.
-        \item[Outcome] Relapse is defined as the recurrence of signs and symptoms of VL requiring rescue treatment, and following demonstration of an initial treatment response.
-        \item[Timing] Relapse occurring within 6--months of test--of--cure (typically occurring at the time of treatment completion, or within 30 days of starting treatment).
-        \item[Setting] Participants from either the Indian subcontinent or East Africa.
-    \end{description}
+  \begin{description}[nosep]
+    \item[Population] HIV-negative patients that are prospectively recruited into a clinical trial with a diagnosis of visceral leishmaniasis, confirmed either serologically or parasitologically. No restrictions are placed on age, sex or treatment regimen.
+    \item[Index models] For each setting, two prognostic models are developed; one including baseline parasite grade from a tissue aspirate, and one without. The models predict the \textit{future} occurrence of relapse, using patient information collected at treatment baseline. The intended time of model use is following a successful assessment of treatment response.
+    \item[Comparator model] As established in Chapter \ref{ch:3-sys-review}, no published relapse models are available for comparison or updating.
+    \item[Outcome] Relapse is defined as the recurrence of signs and symptoms of VL requiring rescue treatment, and following demonstration of an initial treatment response.
+    \item[Timing] Relapse occurring within 6--months of test--of--cure (typically occurring at the time of treatment completion, or within 30 days of starting treatment).
+    \item[Setting] Participants from either the Indian subcontinent or East Africa.
+  \end{description}
 \end{mybox}
 
 \section{Data harmonisation}
@@ -52,12 +52,12 @@ To facilitate reusability and interoperability, contributed datasets were standa
 
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
-    \begin{figure}[tb]
-        \centering
-        \includegraphics[width=1.2\textwidth, trim={1.6cm 1cm 1.6cm 1.3cm}, clip]{figures/ch4/workflow.pdf}
-        \caption{Schema of methodological workflow. \ding{192} Data harmonisation is performed for each contributed dataset including: initial curation (by the IDDO data engineering team) to the CDISC SDTM format, application of inclusion and exclusion criteria, and removal of outliers. Curated and cleaned datasets are converted into an analysis (wide) format and merged prior to \ding{193} model development. Multiple imputation is used to create (m = 30) imputed (complete) datasets. Variable selection, model fitting, and apparent performance evaluation is performed on all imputed datasets. Estimates are pooled using Rubin's rules. Bootstrapping is used to perform \ding{194} internal validation, allowing (i) review of model stability and (ii) optimism adjustment of performance measures and original model coefficients. All model development steps, including multiple imputation, are repeated for each of the (b = 500) bootstrap datasets. The resulting bootstrap models (b = 500) are evaluated both in the corresponding bootstrap (imputed) datasets and the original (imputed) datasets, and pooled using Rubin's rules. The mean of the differences of the pooled performance measures (in bootstrap vs. original dataset) are used to shrink the original model coefficients and apparent performance measures, resulting in the final optimism-adjusted model. AP: apparent performance; b: number of bootstraps; BP: bootstrap model performance; CDISC: Clinical Data Interchange Standards Consortium; IDDO: infectious diseases data observatory; m: number of imputations; n: number of contributed studies. SDTM: Study Data Tabulation Model.}
-        \label{fig:workflow}
-    \end{figure}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.2\textwidth, trim={1.6cm 1cm 1.6cm 1.3cm}, clip]{figures/ch4/workflow.pdf}
+    \caption{Schema of methodological workflow. \ding{192} Data harmonisation is performed for each contributed dataset including: initial curation (by the IDDO data engineering team) to the CDISC SDTM format, application of inclusion and exclusion criteria, and removal of outliers. Curated and cleaned datasets are converted into an analysis (wide) format and merged prior to \ding{193} model development. Multiple imputation is used to create (m = 30) imputed (complete) datasets. Variable selection, model fitting, and apparent performance evaluation is performed on all imputed datasets. Estimates are pooled using Rubin's Rules. Bootstrapping is used to perform \ding{194} internal validation, allowing (i) review of model stability and (ii) optimism adjustment of performance measures and original model coefficients. All model development steps, including multiple imputation, are repeated for each of the (b = 500) bootstrap datasets. The resulting bootstrap models (b = 500) are evaluated both in the corresponding bootstrap (imputed) datasets and the original (imputed) datasets, and pooled using Rubin's Rules. The mean of the differences of the pooled performance measures (in bootstrap vs. original dataset) are used to shrink the original model coefficients and apparent performance measures, resulting in the final optimism-adjusted model. AP: apparent performance; b: number of bootstraps; BP: bootstrap model performance; CDISC: Clinical Data Interchange Standards Consortium; IDDO: infectious diseases data observatory; m: number of imputations; n: number of contributed studies. SDTM: Study Data Tabulation Model.}
+    \label{fig:workflow}
+  \end{figure}
 \end{landscape}
 \restoregeometry
 
@@ -66,11 +66,11 @@ To facilitate reusability and interoperability, contributed datasets were standa
 Subsequently, SDTM format datasets were converted to a single analysis--ready dataset, primed for model development. This stage consisted of multiple steps, refined iteratively over several months and in close consultation with the IDDO data engineering team:
 
 \begin{itemize}[noitemsep]
-    \item Identification and removal of spurious data points (e.g. outliers, discussed below)
-    \item Application of study and participant eligibility criteria (Section \ref{sec:eligibility})
-    \item Creation of a standardised outcome variable according to a pre-defined definition (Section \ref{sec:methods-outcome})
-    \item Conversion of the datasets from a long to wide format, consisting of one row per participant
-    \item Merging of all datasets into a single analysis dataset
+  \item Identification and removal of spurious data points (e.g. outliers, discussed below)
+  \item Application of study and participant eligibility criteria (Section \ref{sec:eligibility})
+  \item Creation of a standardised outcome variable according to a pre-defined definition (Section \ref{sec:methods-outcome})
+  \item Conversion of the datasets from a long to wide format, consisting of one row per participant
+  \item Merging of all datasets into a single analysis dataset
 \end{itemize}
 
 Data wrangling during the second curation stage was performed with the \texttt{tidyverse} suite of R packages\cite{wickham2019}. Identification and removal of spurious data points was performed through subgroup tabulations and visual inspection of histograms and scatter plots. Where two incongruous data points were identified, for example, incompatible height and weight values, a third variable, such as BMI or age, would be used to identify the spurious value. Data points considered to be outliers were converted to missing values. A complete record of all data cleaning steps, including outlier identification and removal, was maintained and documented in commented R scripts.
@@ -79,38 +79,38 @@ In Section \ref{sec:relapse} of Chapter \ref{ch:2-background}, relapse was defin
 
 \subsection{\label{sec:eligibility}Population at risk}
 
-Clear specification of the population at risk is fundamental to understanding the model's real-world applicability\cite{riley2021_book_ch17, collins2024A}. Particular attention is given to the definition of initial cure, since (i) relapse can only occur following an initial treatment response, and (ii) heterogeneity in study-level cure definitions can be partially addressed through IPD--based standardisation.
+Clear specification of the population at risk is fundamental to understanding the model's real-world applicability\cite{riley2021_book_ch17, collins2024A}. Particular attention is given to the definition of initial cure, since (i) relapse can only occur following an initial treatment response, and (ii) heterogeneity in study-level cure definitions can be partly addressed through IPD--based standardisation.
 
 Inclusion and exclusion criteria were applied at the study and participant levels and are presented in Box \ref{box:eligibility}. Criteria are chosen according to (i) the eligibility criteria applied in the original systematic review from which identified study authors were invited to contribute their IPD\cite{bush2017}, (ii) the range of studies available in the IDDO VL data platform, and (iii) the resulting impact and applicability of models developed.
 
 \begin{mybox}[floatplacement=tb, label=box:eligibility]{Eligibility criteria}
-    \begin{itemize}[nosep]
-        \item \textbf{Study--level \underline{inclusion} criteria}
-              \begin{itemize}
-                  \item Studies conducted in either the ISC (India, Nepal, Bangladesh) or East Africa (Ethiopia, Sudan, South Sudan, Kenya, Uganda)
-                  \item Prospective design, defined as participants having provided informed consent
-                  \item Participants recruited with a diagnosis of VL as defined by a combination of clinical symptoms and either parasitological or serological confirmation
-                  \item Studies that report, as a minimum, the treatment regimen including at least the drug name(s), dose and duration
-                  \item Recruited a minimum of 6 patients
-                  \item Included a minimum of 6 months of prospective follow-up from treatment initiation
-                  \item Reported VL relapse events during the 6-month follow-up period
-              \end{itemize}
-        \item \textbf{Participant--level \underline{exclusion} criteria}
-              \begin{itemize}
-                  \item Participants with HIV co-infection or from a setting with high HIV co-infection prevalence and without a negative HIV test
-                  \item Participants who were confirmed pregnant at the time of treatment initiation
-                  \item Participants with symptomatic treatment failure requiring rescue treatment, identified either before or at initial cure assessment
-              \end{itemize}
-    \end{itemize}
+  \begin{itemize}[nosep]
+    \item \textbf{Study--level \underline{inclusion} criteria}
+          \begin{itemize}
+            \item Studies conducted in either the ISC (India, Nepal, Bangladesh) or East Africa (Ethiopia, Sudan, South Sudan, Kenya, Uganda)
+            \item Prospective design, defined as participants having provided informed consent
+            \item Participants recruited with a diagnosis of VL as defined by a combination of clinical symptoms and either parasitological or serological confirmation
+            \item Studies that report, as a minimum, the treatment regimen including at least the drug name(s), dose and duration
+            \item Recruited a minimum of 6 patients
+            \item Included a minimum of 6 months of prospective follow-up from treatment initiation
+            \item Reported VL relapse events during the 6-month follow-up period
+          \end{itemize}
+    \item \textbf{Participant--level \underline{exclusion} criteria}
+          \begin{itemize}
+            \item Participants with HIV co-infection or from a setting with high HIV co-infection prevalence and without a negative HIV test
+            \item Participants who were confirmed pregnant at the time of treatment initiation
+            \item Participants with symptomatic treatment failure requiring rescue treatment, identified either before or at initial cure assessment
+          \end{itemize}
+  \end{itemize}
 \end{mybox}
 
 \subsubsection{Study--level criteria}
 
-Study-level inclusion criteria were applied to ensure that contributing datasets were sufficiently comparable in terms of epidemiological context, study design, and outcome ascertainment to permit meaningful harmonisation and pooled analysis.
+Study-level inclusion criteria were applied to ensure that contributed studies were sufficiently comparable in terms of epidemiological context, study design, and outcome ascertainment to permit meaningful harmonisation and pooled analysis.
 
-Studies were limited to those conducted in East Africa and the ISC, reflecting both the public health relevance of relapse prediction in regions with ongoing VL elimination programmes, and the availability of IPD within the IDDO VL data platform. On review of the IDDO inventory \cite{iddo2025vlinventory}, only two studies were conducted outside these regions \textemdash\ one in Greece conducted in the 1990s \cite{syriopoulou2003}, and one in Brazil in the 2010s \cite{romero2017}. These were excluded to preserve geographical and epidemiological coherence.
+Studies were limited to those conducted in East Africa and the ISC, reflecting both the public health relevance of relapse prediction in regions with ongoing VL elimination programmes, and the availability of IPD the IDDO VL data platform. On review of the IDDO inventory\cite{iddo2025vlinventory}, only two studies were conducted outside these regions \textemdash\ one in Greece conducted in the 1990s \cite{syriopoulou2003}, and one in Brazil in the 2010s \cite{romero2017}. These were excluded to preserve geographical and epidemiological coherence.
 
-Only prospectively conducted studies were included. Prospective designs allow for systematic and active follow-up, predefined outcome definitions, and contemporaneous outcome recording, all of which are important for the reliable identification of initial cure and subsequent relapse. However, reliance on IPD derived from clinical trials limits the direct applicability of the resulting model to real-world patients \textemdash\ those who are managed outside trial settings, and may not meet the often--stringent eligibility criteria. These limitations are discussed further in Chapter~\ref{ch:7-discussion}.
+Only prospectively conducted studies were included. Prospective designs allow for systematic and active follow-up, predefined outcome definitions, and contemporaneous outcome recording, all of which are important for the reliable identification of initial cure and subsequent relapse. However, reliance on IPD from clinical trial settings limits model applicability to real-world patients \textemdash\ those who are managed outside trial settings, and may not meet the often--stringent eligibility criteria. These limitations are discussed further in Chapter~\ref{ch:7-discussion}.
 
 A minimum study size was imposed to exclude very small cohorts with unstable relapse estimates. Finally, studies were required to report relapse events during follow-up, either explicitly or in a form that allowed relapse to be inferred from the available IPD.
 
@@ -126,50 +126,50 @@ Understanding study--specific definitions of initial cure is important, as all s
 
 Initial cure definitions based solely on clinical improvement, as is common in routine practice, are likely to classify some patients as cured despite persistently positive tissue aspirates, were these assessed. These patients form a subgroup at increased risk of relapse and would instead be classified as initial treatment failures under more stringent, parasitology-based test--of--cure criteria, thereby being excluded from subsequent follow-up. Consequently, all else being equal, studies applying stricter definitions of initial cure will observe a lower subsequent relapse risk.
 
-Recently, Dahal and colleagues performed a systematic review of the design, conduct, analysis, and reporting of VL therapeutic efficacy studies, published between 2000--2021. Of the 89 studies identified, 71 (79.8\%) included parasitological assessment, with or without demonstration of clinical improvement, as part of the test--of--cure, while 13 (14.6\%) required clinical improvement only. The remaining studies did not provide a definition. Timing also varied considerably, with the 68 (76.4\%) of studies performing the test--of--cure between 15--30 days following treatment completion\cite{dahal2024}. Similar patterns are observed in the contributed studies, as reported in the \href{https://github.com/jpwil/dphil}{Supplemental Material}, and discussed further in subsequent results chapters. Importantly, criteria for `clinical improvement' are often not specified. Further complicating interpretation, many studies describe a subgroup of `slow responders', who remain in the study despite a positive tissue aspirate in the test--of--cure. These patients may undergo repeat assessment at subsequent time points (e.g. 2--4 weeks later), with or without treatment extension, and may or may not ultimately be classified as having achieved initial cure.
+Recently, Dahal and colleagues performed a systematic review of the design, conduct, analysis, and reporting of VL therapeutic efficacy studies, published between 2000--2021. Of the 89 studies identified, 71 (79.8\%) included parasitological assessment, with or without demonstration of clinical improvement, as part of the test--of--cure, while 13 (14.6\%) required clinical improvement only. The remaining studies did not provide a definition. Timing also varied considerably, with the 68 (76.4\%) of studies performing the test--of--cure between 15--30 days following treatment completion\cite{dahal2024}. Similar patterns are observed in the contributed studies, as reported in the \href{https://github.com/jpwil/dphil}{Supplementary Material}, and discussed further in subsequent results chapters. Importantly, criteria for `clinical improvement' are often not specified. Further complicating interpretation, many studies describe a subgroup of `slow responders', who remain in the study despite a positive tissue aspirate in the test--of--cure. These patients may undergo repeat assessment at subsequent time points (e.g. 2--4 weeks later), with or without treatment extension, and may or may not ultimately be classified as having achieved initial cure.
 
 Such variation in the initial cure definition can challenge standardisation efforts, leading to differences in observed relapse rates  stemming from differences in the population at risk. These differences, however, can often be mitigated through interrogation of the IPD. Box \ref{box:ipd-events} provides a working definition for initial cure, which is applied during data harmonisation.
 
 \begin{mybox}[floatplacement=tb, label=box:ipd-events]{IPD--based working definitions}
-    \begin{description}[nosep]
-        \item[\textbf{Initial cure}] Where initial cure (or initial treatment failure) is \textit{not} directly recorded in the IPD as an efficacy outcome, or where it is recorded but the study definition considers `slow responders' as initial treatment failures, it can be inferred from (i) improvement of signs and symptoms between baseline and test--of--cure, and (ii) not requiring rescue treatment during initial treatment. Importantly, reflecting both routine clinical practice and a number of study definitions, detection of parasites at test--of--cure should not preclude the subsequent development of relapse, so long as points (i) and (ii) are met.
-    \end{description}
-    \tcbline
-    \begin{description}[nosep]
-        \item[\textbf{Relapse}] Where relapse is not directly recorded in the IPD as an efficacy outcome, the event can be inferred from two or more of: (i) the need for rescue treatment within 6 months of initial cure assessment (test--of--cure), (ii) the presence of a positive tissue aspirate, and (iii) in addition to a recurrence of compatible signs and symptoms.
-    \end{description}
+  \begin{description}[nosep]
+    \item[\textbf{Initial cure}] Where initial cure (or initial treatment failure) is \textit{not} directly recorded in the IPD as an efficacy outcome, or where it is recorded but the study definition considers `slow responders' as initial treatment failures, it can be inferred from (i) improvement of signs and symptoms between baseline and test--of--cure, and (ii) not requiring rescue treatment during initial treatment. Importantly, reflecting both routine clinical practice and a number of study definitions, detection of parasites at test--of--cure should not preclude the subsequent development of relapse, so long as points (i) and (ii) are met.
+  \end{description}
+  \tcbline
+  \begin{description}[nosep]
+    \item[\textbf{Relapse}] Where relapse is not directly recorded in the IPD as an efficacy outcome, the event can be inferred from two or more of: (i) the need for rescue treatment within 6 months of initial cure assessment (test--of--cure), (ii) the presence of a positive tissue aspirate, and (iii) in addition to a recurrence of compatible signs and symptoms.
+  \end{description}
 \end{mybox}
 
 \subsection{\label{sec:methods-outcome}Outcome}
 
-Relapse itself, where described at the study--level, is also subject to substantial variation with respect to its (i) definition \textemdash\ including the severity of symptoms required to trigger a repeat aspirate and the tissue type chosen for aspirate, and (ii) timing \textemdash\ including whether patients were actively screened at set time points with clinical examination $\pm$ routine aspirates, or whether dependent on patients attended voluntarily based on recurrent symptoms and discharge advice. In line with findings by Dahal et al, a significant proportion of contributing studies do not directly define relapse as a study outcome\cite{dahal2024}. Instead, for most studies, a relapse event can be inferred from patients achieving initial cure who subsequently do not meet the definition of `definite cure', which itself is typically defined as patients requiring rescue treatment.
+Relapse itself, where described at the study--level, is also subject to substantial variation with respect to its (i) definition \textemdash\ including the severity of symptoms required to trigger a repeat aspirate and the tissue type chosen for aspirate, and (ii) timing \textemdash\ including whether patients were actively screened at set time points with clinical examination $\pm$ routine aspirates, or whether dependent on patients attending voluntarily based on recurrent symptoms and discharge advice. In line with findings by Dahal et al, a significant proportion of contributing studies do not directly define relapse as a study outcome\cite{dahal2024}. Instead, for most studies, a relapse event can be inferred from patients achieving initial cure who subsequently do not meet the definition of `definite cure', which itself is typically defined as patients requiring rescue treatment.
 
 Similar to the approach described for identifying patients that achieve initial cure, access to IPD allows relapse events to be inferred from other variables, including: definite cure status, tissue aspirates, timing of rescue treatment initiation, and patient signs and symptoms. Box \ref{box:ipd-events} provides an IPD--based working definition of relapse.
 
-Relapse is recorded and modelled as a binary outcome variable (occurred vs. not occurred, or 1/0). Unfortunately, modelling relapse as a time--to--event variable is not feasible, since \textit{timing} information is (i) inconsistently presented across the contributed IPD, and (ii) where presented, is often limited to fixed, predetermined study visits (e.g. 3 months, 6 months).
+Relapse is recorded and modelled as a binary outcome variable (occurred vs. not occurred). Unfortunately, modelling relapse as a time--to--event variable is not feasible, since \textit{timing} information is (i) inconsistently presented across the contributed IPD, and (ii) where presented, is often limited to fixed, predetermined study visits (e.g. 3 months, 6 months).
 
 % Study-specific definitions of initial cure and relapse are presented in \hyperref[sec:add-files]{Additional file 1}.
 \section{Model development}
 
-Having created an analysis--ready dataset, model development can now commence. Important steps here include:
+% Having created an analysis--ready dataset, model development can now commence. Important steps here include:
 
-\begin{description}[noitemsep]
-    \item[Sample size calculations] Section \ref{sec:meth-samp}. To prevent model overfitting, the maximum number of candidate predictors (degrees of freedom) can be calculated.
-    \item[Candidate predictors] Section \ref{sec:meth-candidate-pred}. After establishing the degrees of freedom supported by the models, selection and specification of the candidate predictors can be carried out.
-    \item[Descriptive analysis] Section \ref{sec:meth-desc}. Description of how the analysis--dataset is presented, informing model specification.
-    \item[Missing data] Section \ref{sec:meth-missing}.
-    \item[Model specification] Section \ref{sec:meth-spec}.
-    \item[Variable selection] Section \ref{sec:meth-vs}.
-    \item[Evaluation of model performance] Section \ref{sec:meth-perf}.
-\end{description}
+% \begin{description}[noitemsep]
+%     \item[Sample size calculations] Section \ref{sec:meth-samp}. To prevent model overfitting, the maximum number of candidate predictors (degrees of freedom) can be calculated.
+%     \item[Candidate predictors] Section \ref{sec:meth-candidate-pred}. After establishing the degrees of freedom supported by the models, selection and specification of the candidate predictors can be carried out.
+%     \item[Descriptive analysis] Section \ref{sec:meth-desc}. Description of how the analysis--dataset is presented, informing model specification.
+%     \item[Missing data] Section \ref{sec:meth-missing}.
+%     \item[Model specification] Section \ref{sec:meth-spec}.
+%     \item[Variable selection] Section \ref{sec:meth-vs}.
+%     \item[Evaluation of model performance] Section \ref{sec:meth-perf}.
+% \end{description}
 
 \subsection{\label{sec:meth-samp}Sample size}
 
-An often cited `rule of thumb' is that at least 10--20 outcome events per predictor parameter (EPP) are required to prevent model overfitting\cite{peduzzi1996,harrell2015}. However, both the validity of this threshold and the broader premise that a single rule applies universally have been increasingly questioned in the prediction modelling literature\cite{courvoisier2011}.
+A common `rule of thumb' is that at least 10--20 outcome events per predictor parameter (EPP) are needed to prevent model overfitting\cite{peduzzi1996,harrell2015}. However, both the validity of this threshold, and the broader premise that a single rule applies universally, have been increasingly debated in the prediction modelling literature\cite{courvoisier2011}.
 
-In response to these concerns, Riley et al.\cite{riley2019A} proposed a new sample size methodology in 2018. For prediction models with binary or time--to--event outcomes, the approach defines a minimum sample size that satisfies three criteria: (i) minimal optimism in predictor effect estimates, quantified by a global shrinkage factor of $\geq$0.9; (ii) a small absolute difference ($\leq$0.05) between the model's apparent and adjusted Nagelkerke's R\textsuperscript{2}; and (iii) precise estimation of the overall population risk (i.e.\ the model intercept). When the number of participants and outcome events is fixed, as in the present study, the maximum allowable EPP can be derived from an estimate of the model's overall performance. In the absence of previously published prediction models for relapse, we followed the authors' recommendation and assumed a Nagelkerke R\textsuperscript{2} of 0.15\cite{riley2019A}.
+Responding to these concerns, in 2018 Riley et al.\cite{riley2019A} proposed a new sample size methodology. For prediction models with binary or time--to--event outcomes, the approach defines a minimum sample size that satisfies three criteria: (i) minimal optimism in predictor effect estimates, quantified by a global shrinkage factor of $\geq$0.9; (ii) a small absolute difference ($\leq$0.05) between the model's apparent and adjusted Nagelkerke's R\textsuperscript{2}; and (iii) precise estimation of the overall population risk (i.e.\ the model intercept). When the number of participants and outcome events is fixed, as in the present study, the maximum allowable EPP can be derived from an estimate of the model's overall performance. In the absence of previously published prediction models for relapse, we followed the authors' recommendation and assumed a Nagelkerke R\textsuperscript{2} of 0.15\cite{riley2019A}.
 
-This methodology has been implemented in the \texttt{pmsampsize} R package\cite{ensor2023}, which was used to perform the sample size calculations for this study.
+This methodology has been adopted in the model development presented in this thesis, as implemented in the \texttt{pmsampsize} R package\cite{ensor2023}.
 
 \subsubsection{ISC model}
 
@@ -181,61 +181,217 @@ With a total of 99 relapses identified in 2,051 participants (4.8\% event rate),
 
 \subsection{\label{sec:meth-candidate-pred}Candidate predictors}
 
-Candidate predictors available at the time of starting treatment were selected based on (i) existing evidence and expert opinion regarding their association with relapse\cite{hirve2016, goyal2020, burza2014}, as summarised in Chapter \ref{ch:2-background}, Section \ref{sec:relapse}, (ii) availability across the contributed datasets; and (iii) feasibility for routine use outside research settings.
+All model variables, including candidate predictors, are listed in Table \ref{tab:meth-cp}.
 
-For Model~1 (including parasite grade), 16 candidate predictor parameters were included, corresponding to a study-specific random intercept term and 12 participant-level candidate predictors (EPP~=~14.25, with some predictors linked to $>$1 parameter). Candidate predictors consisted of age, sex, treatment regimen, malnutrition, duration of fever before treatment, spleen size, parasite grade from tissue aspirate, severity of anaemia, and a range of laboratory values including white blood cell count (WBC), platelet count, alanine aminotransferase (ALT), and creatinine.
+For the ISC models, a total of 17 candidate predictor parameters are included (16 when excluding parasite grade), corresponding to a study--specific random intercept term and 12 (11) participant-level candidate predictors, EPP~=~13.41 (14.25).
 
-As a marker of malnutrition - and in keeping with previous literature on the association between VL and malnutrition - BMI and BMI-for-age z-scores were used in adults and children/adolescents ($<$18 years) respectively\cite{burza2014,dorlo2017,naylor-leyland2022}. This variable was grouped as three ordered categories: (i) severe malnutrition: BMI $<$16 kg/m$^2$ or BMI-for-age z-score $<$-3; (ii) moderate malnutrition: 16 kg/m$^{2}\leq$ BMI $<$18.5 kg/m$^2$ or -3$\leq$ BMI-for-age z-score $<$-2; and (iii) mild or no malnutrition: BMI $\geq$18.5 kg/m2 or BMI-for-age z-score $\geq$-2. Z-scores were calculated using World Health Organization (WHO) growth standards with R packages \texttt{anthro} and \texttt{anthroplus}\cite{schumacher2023,schumacher2021}.
+For the East Africa models, a total of 14 candidate predictor parameters are included (13 when excluding parasite grade), corresponding to the same variables included in the ISC models minus treatment group, due to convergence issues discussed below, EPP~=~7.07 (7.62). Full specification of all candidate predictors are presented in Table \ref{tab:meth-cp}.
 
-To account for an anticipated non-linear relationship between age and relapse, age was included as a third-degree polynomial term (linear, squared, and cubic components).
+\input{tables/ch3/cp.tex}
 
-Treatment was categorised into three groups, reflecting current and recent WHO VL treatment guidelines in the Indian subcontinent: (i) 10mg/kg single dose liposomal amphotericin B (SDA), (ii) 28 days of oral miltefosine (standard linear dosing), and (iii) any other medicines or regimens. Further subdivision of the `other' group was not feasible due to the marked heterogeneity of treatment regimens across the contributing studies.
-Anaemia was grouped into two categories: severe and non-severe, using haemoglobin cut-offs stratified by age and sex thresholds, as per 2024 WHO guidance\cite{who_haem2024}. Additional subdivision of the non-severe anaemia group was limited by the small number of participants in the mild and normal categories.
+The following points were considered when selecting candidate predictors:
 
-Baseline parasite grade, when available, was assessed from splenic or bone marrow aspirates (with Nepalese studies preferentially using the latter). When reported, the logarithmic counting method of Chulay and Bryceson (1983) was either described or directly cited {Additional file 1}\cite{chulay1983}.
+\begin{itemize}[noitemsep]
+  \item To avoid excessive missing data, predictors must be available for at least 50\% of participants.
+  \item Predictors should be routinely measured, or at least available for measurement, in the majority of treatment centres in endemic areas.
+  \item Since the model is applied at the time of initial cure, predictors should be available at or \textit{prior} to this time point (typically measured within a month of starting treatment).
+  \item Predictors should be \textit{preferentially} included if (i) they have previously been shown to predict relapse, or (ii) other compelling reasons exist to include \textemdash\ such as expert opinion and arguments supporting a causal association between the predictor and relapse. Discussions in Section \ref{sec:relapse} provide further insight.
+  \item Sample size considerations explored in Section \ref{sec:meth-samp} should guide the maximum number of predictor parameters to prevent model overspecification and overfitting.
+  \item To facilitate model convergence, excessive collinearity should be avoided.
+\end{itemize}
 
-Continuous predictors - including fever duration, spleen length, and all blood tests except haemoglobin - were log-transformed to reduce skewness and better approximate normality. For spleen size, a value of 1 was added prior to transformation to accommodate zero values and avoid undefined logarithmic results. For parasite count, a value of 1 was subtracted to better approximate a Poisson distribution in the imputation model.
+When considering the final point, it is worth highlighting that model convergence issues can occur due to collinearity not only between predictors, but also between predictors and random--effects (clustering) structures. Given the significant heterogeneity in study design and outcome definitions, and further reasons addressed further in Section \ref{sec:meth-spec}, each contributing study is modelled as a random--intercept term. Consequently, caution must be exercised with categorical predictors that are uniquely, or near--uniquely, identified at the study level.
+
+\subsubsection{Treatment}
+
+Treatment regimen \textemdash\ already established as an important predictor relapse \textemdash\ represents a categorical predictor affected by collinearity at the study level. For example, including a treatment category of \textit{14 days of paromomycin} in the ISC model would lead to convergence failure when included in a model with study as a random--intercept term. As can be appreciated from Figure \ref{fig:isc_treat}, only one contributing study (Sundar 2009) includes patients receiving this treatment regimen. Consequently, a model including both would not be able to distinguish between relapse risk related to the study or the treatment regimen.\footnote{Or more technically, this induces near--non--identifiability between the fixed treatment effect and the study--level random intercept, resulting in an ill--conditioned information matrix and failure of numerical optimization.}
+
+Considering the distribution of treatment regimens across studies within the ISC, treatment will be categorised into three categories that occur in at least three studies (see Table \ref{tab:isc_study} and Figure \ref{fig:isc_treat}):
+
+\begin{itemize}[noitemsep]
+  \item Single dose liposomal amphotericin B (10mg/kg)
+  \item 28 days miltefosine (standard dose)
+  \item Other
+\end{itemize}
+
+As a consequence of creating a `catch--all' treatment group: \emph{Other}, some of the relationship between treatment and relapse not already accounted for at the study level will be lost. This is an important limitation and addressed further in the discussion (Chapter \ref{ch:7-discussion}).
+
+Unfortunately, convergence issues preclude the inclusion of treatment as a categorical predictor in the East Africa models. This is not surprising, given fewer participants, fewer studies, and higher treatment--study collinearity when compared to the ISC models (see Figure \ref{fig:ea_treat}). Convergence issues persisted despite exploring different treatment groupings, including separate groups for SSG and SSG/PM combination therapy. Therefore, in the East Africa models, the impact of treatment on relapse risk is incorporated into the study level random intercept.
+
+\subsubsection{Malnutrition}
+
+Malnutrition is a well-established determinant of progression from asymptomatic infection to clinical VL and of adverse outcomes following initial treatment, including treatment failure and mortality\cite{pareyn2025,abongomera2020}. Evidence linking malnutrition to relapse, however, remains sparse. This may partly reflect the absence of a unified framework for defining malnutrition across age groups, leading to frequent omission or inconsistent classification in prognostic factor and prediction model studies. Anthropometric assessment of malnutrition is inherently age-specific, and no formal guidance exists on how to combine measures across the life course.
+
+\begin{table}[tb]
+  \centering
+  \caption{Malnutrition severity definitions by age group. BMI(--FA): body--mass--index(--for--age), WFH: weight--for--height, yrs: years, [,]: including range limit, (,): not including range limit}
+  \label{tab:malnutrition}
+  \begin{tabular}{llccc}
+    \toprule
+    \textbf{Age group} & \textbf{Metric} & \textbf{Severe} & \textbf{Moderate} & \textbf{Mild/normal} \\
+    \midrule
+    $[0,5)$ yrs        & WFH z-score     & $(-\infty, -3]$ & $(-3,-2]$         & $(-2, \infty)$       \\
+    $[5,19)$ yrs       & BMI-FA z-score  & $(-\infty, -3]$ & $(-3,-2]$         & $(-2, \infty)$       \\
+    $[19, \infty)$ yrs & BMI (kg/m$^2$)  & $(0, 16)$       & $[16.0, 17.0)$    & $[17, \infty)$       \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+We therefore adopt a pragmatic three-level severity scale using age-appropriate metrics (Table~\ref{tab:malnutrition}). In children under five years, malnutrition is classified using weight-for-height (WFH) z-scores, largely consistent with WHO guidelines on the definition of acute malnutrition\cite{WHO-nutrition-2023}. For individuals aged five to under nineteen years, body--mass--index--for--age (BMI-FA) z-scores are used with identical cut-points, supported by the WHO 2007 growth reference, which was explicitly constructed to ensure continuity with the under-five standards at age five\cite{deonis2007}. In adults aged 19 years and over, malnutrition severity is defined using established BMI thresholds. Cole et~al.\ showed that adult BMI cut-offs of 16 and 17 kg/m$^2$ at 18 years correspond approximately to BMI-for-age z-scores of $-3$ and $-2$ in children and adolescents, providing a statistical basis for approximate continuity of severity definitions across the adolescent--adult boundary\cite{cole2007}. While imperfect, this approach preserves broadly comparable degrees of nutritional deficit across age groups.
+
+For modelling purposes, individuals with mild (18.5 $\leq$ BMI < 25 kg/m$^2$) or obesity (BMI $\geq$ 25 kg/m$^2$), or equivalent z-scores (z > -1), were combined into a single \emph{mild/normal} category due to small numbers.
+
+The approach adopted here is consistent with methods used in previous studies of VL outcomes that also use age-specific anthropometric indicators to define pragmatic malnutrition severity groupings\cite{burza2014,dorlo2017,gorski2010,naylor-leyland2022}. Z-scores were calculated using the \texttt{anthro} and \texttt{anthroplus} R packages for children <5 years and $\geq$5 years, respectively\cite{schumacher2023,schumacher2021}.
+
+\subsubsection{Anaemia}
+
+Anaemia was grouped into two categories: \emph{severe} and \emph{non-severe}, using haemoglobin cut-offs stratified by age and sex thresholds as defined by 2024 WHO guidelines\cite{who_haem2024}. Additional subdivision of the non-severe anaemia group was limited by the small number of participants in the mild and normal categories.
+
+\subsubsection{Age}
+
+To account for an anticipated non-linear relationship between age and relapse, age was modelled as a third-degree polynomial term (including linear, squared, and cubic components).
+
+\subsubsection{Parasite grade}
+
+Baseline parasite grade, when available, was assessed from splenic, bone marrow, or lymph node aspirates. When reported, the logarithmic counting method of Chulay and Bryceson (1983) was either described or directly cited {Additional file 1}\cite{chulay1983}.
+
+\subsubsection{Logarithmic transformations}
+
+A number of continuous predictors \textemdash\ including fever duration, spleen length, and all blood tests \textemdash\ were log-transformed to reduce skewness and thus stabilise variance and better approximate normality. For spleen size, +1 was added prior to log--transformation to accommodate zero values and avoid undefined logarithmic results. While recognising that this transformation implicitly assumes that non--palpable spleens can be modelled on the same continuous scale with palpable spleens, the approach was considered a pragmatic solution to avoid model overspecification.
+
+All models assume that the adjusted log(odds) of relapse varies \textit{linearly} with each continuous predictor when transformed as per Table \ref{tab:meth-cp}. These assumptions are evaluated prior to model fitting though visual assessment of the univariable associations (as described below in Section \ref{sec:meth-desc}, and presented in Figure \ref{fig:isc_logodds} for the ISC and Figure \ref{fig:ea_logodds} for East Africa) and, following model fitting, through inspection of the calibration plots.
 
 \subsection{\label{sec:meth-desc}Descriptive analysis}
 
+All candidate predictors (pooled and study--specific) are summarised in both tabular and graphical forms.
+
+The correlation between continuous predictors is illustrated with facetted scatter plots using the \texttt{ggpairs()} function from the \texttt{GGally} R package\cite{GGally2025}. The correlation between continuous and categorical predictors is presented with facetted box--and--whisker plots.
+
+Unadjusted relationships between the pooled candidate predictors and the outcome (relapse) are presented in graphical form. Confidence intervals for the relationships are presented in preference to p--values\cite{altman1986}.
+
+For continuous predictors (excluding parasite grade), relapse is modelled using a generalized additive model (GAM) with a binomial error distribution and logit link, fitted using the \texttt{gam()} function in the R package \texttt{mgcv}\cite{wood2011}. The effect of the continuous predictor is represented by a smooth function estimated using penalised thin-plate regression splines. Model fitting is performed by penalised maximum likelihood, with the degree of smoothness selected automatically via restricted maximum likelihood (REML). Both relapse \% and log(odds) of relapse are presented, allowing for both direct inspection of the relapse risk and visual assessment of the linearity assumption between the log(odds) of relapse and transformed continuous predictors.
+
+For categorical predictors and parasite grade, relapse is presented using bar charts with 95\% confidence intervals calculated using the Wilson method\cite{wilson1927}.
+
 \subsection{\label{sec:meth-missing}Missing data}
 
-Missing data were common and resulted from (i) planned non-capture at the study-level (ii) unplanned incomplete capture of the predictor at the study-level, or (iii) incomplete IPD in the contributed dataset. Outcome data were complete.
+Data can be missing entirely from a study (systematic missingness), or affecting only certain patients within a study (sporadic missingness). Three principal sources of missing data were identified across both the ISC and East Africa harmonised datasets:
 
-We used multiple imputation with chained equations (MICE) to handle missing data and assumed missingness at random (MAR) \cite{white2011,van_buuren2021}. All ungrouped candidate predictors, as well as weight, height and the outcome (relapse) were included in the imputation model. Derived predictors, including BMI, BMI-for-age z-score, and higher order age polynomial terms, were passively imputed from age, weight and height. Grouping of haemoglobin, BMI and BMI-for-age z-score occurred after imputation. We used the R package \texttt{mice}, with addon packages \texttt{countimp} for non-hierarchical count data (modelling parasite grade) and \texttt{micemd} for two-level continuous data (modelling the remaining variables, accounting for study-level heterogeneity and systematically missing data)\cite{van-buuren2011,kleinke2024,audigier2023,audigier2018}.
-
-For each model development, 20 imputations were performed with 20 iterations per imputation. Convergence of the imputation models was inspected visually with trace plots and by comparing distributions of imputed data with the complete data.
-
-The same imputation model was used for the development of both Model~1 and Model~2. The MAR assumption and convergence of the imputation model were assessed visually with diagnostic plots. These included trace plots and plots comparing the original and imputed data (including density plots and scatter plots for age, height, and weight). Full specification of the imputation model methods, predictor matrix, passive imputation specifications, and post imputation calculations are provided in ...
-
-\subsection{\label{sec:meth-spec}Model specification}
-\subsection{\label{sec:meth-vs}Variable selection}
-
-Six-month relapse was modelled as a binary outcome in a multivariable generalised linear mixed-effects model (GLMM) with a logit link function. Predictors were transformed as previously described. Anticipated between-study heterogeneity was accounted for by including study as a random intercept term\cite{bouwmeester2013A}. Whilst introducing methodological complexity, there are a number of benefits gained by accounting for between-study heterogeneity\cite{debray2023}:
-
-\begin{itemize}
-    \item Ignoring clustering can result in relapse probability estimates that are biased towards the overall study population estimate\cite{wynants2018}.
-    \item Variation in model performance measures can be compared and contrasted across the included studies, allowing insights into sources of heterogeneity\cite{steyerberg2019}.
-    \item Allows for improved generalisability of the model to new settings and populations\cite{debray2023,steyerberg2019}.
+\begin{itemize}[noitemsep]
+  \item planned non-capture at the study or site level, often resulting in systematic missingness,
+  \item unplanned incomplete capture of predictors at the study level, resulting in sporadic missingness, and
+  \item incomplete data retrieval, likely resulting in both systematic and sporadic missingness.
 \end{itemize}
 
-Model parameters were estimated using the \texttt{glmer} function from the \texttt{lme4} package in R with the BOBYQA algorithm\cite{bates2015,powell2009}.
+Patterns and extent of missingness in candidate predictors were explored and summarised using both tabular and graphical approaches. Study--stratified density plots were used to visualise missingness patterns stratified by study and are presented in the results chapters (Figures \ref{fig:isc_missing_summary} and \ref{fig:ea_missing_summary} presented in the Results chapters).
 
-The final predictor set was determined using backwards variable selection with cutoff p $<$0.10. Rubin's rules were used to combine predictor estimates and test predictor significance at each selection stage across the 20 imputed datasets\cite{austin2019,rubin1987}. For categorical predictors with over two groups (malnutrition, treatment), predictor significance was assessed with the D1 multivariate Wald test as implemented in the \texttt{mice} R package\cite{van-buuren2011,li1991}. For age, lower-order polynomial terms were retained in the model whilst higher-order terms remained.
+Multiple imputation with chained equations (MICE)\footnote{also known as fully conditional specification} was used to generate multiple imputed datasets\cite{white2011,van_buuren2021}. MICE was chosen for its flexibility in accommodating different variable types (continuous, binary, categorical, and count), its suitability for complex data structures including multilevel data, and the availability of well-established software implementations in R, notably the \texttt{mice} package and its extensions\cite{van-buuren2011,audigier2023}.
+
+Imputation was performed under the missing at random (MAR) assumption, whereby the probability of missingness depends only on observed data\cite{rubin1987}. Congeniality between the imputation and analysis models was promoted by (1) including in the imputation model all candidate predictors, the outcome, and variables used to derive predictors (including haemoglobin, height, and weight), and (2) accounting for between-study heterogeneity using a multilevel imputation framework with study included as a random intercept\cite{white2011}. The imputation methods used are summarised in Table~\ref{tab:meth-missing}.
+
+\input{tables/ch4/methods.tex}
+
+The imputation predictor matrix was initially specified to be saturated and include all variables listed in Table~\ref{tab:meth-missing} as well as variables without missing data (outcome, treatment, and sex), and derived predictors (age polynomial terms, BMI, and anthropometric z-scores). Study was included as a random intercept. Derived predictors were passively imputed from age, weight, and height at the end of each iteration, and, to avoid circularity in the imputation model, were excluded as independent variables when imputing age, weight, and height.
+
+Specification of the imputation model was an iterative process. Candidate imputation models were evaluated with respect to (1) convergence of the chained equations and (2) the extent to which the distributions of imputed values aligned with the corresponding observed data distributions. Model specification and selection were informed by visual inspection of diagnostic plots, including trace plots of the mean and standard deviation of imputed values across iterations, density plots comparing observed and imputed distributions, and scatter plots comparing observed and imputed data for key anthropometric relationships (weight versus height, weight versus age, and height versus age). Diagnostic plots are included in the \href{https://github.com/jpwil/dphil/tree/main/ch3/missing_diagnostics/}{Supplementary Material}. On visual inspection of the trace plots, twenty iterations per imputation were considered more sufficient to reach stable convergence.
+
+Parasite grade was modelled as count data. One unit was subtracted from the original grading scale (1+ to 6+) to permit zero values. Model selection for parasite grade differed by geographical region. In the ISC dataset, a Poisson model provided the best fit to the observed data. In contrast, for the East Africa dataset, a zero-inflated Poisson model better captured the excess of 1+ grades.
+
+For each model development dataset, 30 imputations were generated with 20 iterations per imputation. This represented a balance between computational feasibility and the need to stabilise parameter estimates. As a general rule, it has been stated that the number of imputations should at least match the percentage of incomplete cases\cite{white2011}. For datasets with many variables, however, van Buuren suggests that this requirement can be relaxed such that the minimum number of imputations approximates the average missing data rate\cite{van-buuren2011}. The average missing data rates across candidate predictors were 14.3\% for the ISC dataset and 14.9\% for the East Africa dataset, whilst the proportion of cases with any missing data was over 80\%. Since 80 iterations was considered too computationally intensive, a compromise of 30 imputations was chosen.
+
+Unless specified otherwise, subsequent analyses were performed separately within each imputed dataset, with results pooled across imputations using Rubin's Rules\cite{rubin1987}.
+
+Grouping of anaemia severity and malnutrition status was performed after imputation, as described in Section \ref{sec:meth-candidate-pred}.
+
+\subsection{\label{sec:meth-ms}Model specification}
+
+Relapse was modelled using a multivariable generalised linear mixed-effects model (GLMM) with a logit link function. Predictors were transformed as previously described. Following the aforementioned transformations, continuous predictors were centred and scaled by their means and standard deviations, respectively, to improve model stability. Anticipated between-study heterogeneity was accounted for by including study as a random intercept term\cite{bouwmeester2013A}. While introducing significant methodological complexity, a number of benefits gained by accounting for between-study heterogeneity\cite{debray2023}:
+
+\begin{itemize}
+  \item Ignoring clustering can result in relapse probability estimates that are biased towards the pooled population estimate\cite{wynants2018}.
+  \item Variation in model performance measures can be compared and contrasted across the included studies, allowing insights into sources of heterogeneity\cite{steyerberg2019}.
+  \item Allows for improved generalisability of the model to new settings and populations\cite{debray2023,steyerberg2019}.
+\end{itemize}
+
+GLMMs were fitted using the \texttt{glmer()} function from the \texttt{lme4} R package\cite{bates2015}. This approach estimates fixed effects while accounting for random effects by maximizing the marginal likelihood, which integrates over the random-effects distribution. For GLMMs, this integration cannot be solved exactly and is approximated using the Laplace approximation for binomial outcomes. Model parameters were estimated using maximum likelihood. To enhance model stability and improve convergence, optimization was performed using the \texttt{nloptwrap} optimizer with an increased number of iterations and strict convergence criteria (maximum evaluations = 200,000; absolute tolerances for the objective function and parameters = $1\times10^{-8}$).
+
+The saturated ISC model (with parasite grade and treatment groups included) is presented in Box~\ref{box:mod-spec}. For the East Africa models, the treatment group predictors are omitted due to collinearity at the study level, as previously discussed. For both ISC and East Africa, models are also fitted without parasite grade, given its frequent absence from routine clinical practice.
+
+\begin{mybox}[floatplacement=tb, label=box:mod-spec]{Saturated model specification}
+  \begin{align*}
+    \log & \left(\frac{\Pr(Y_{ij} =1)}{\Pr(Y_{ij}=0)}\right) = \beta_0 +
+    \beta_{\text{sex}}\cdot\text{sex}_{ij} +
+    \beta_{\text{age}}\cdot\text{age}_{ij} +
+    \beta_{\text{age}^{2}}\cdot\text{age}_{ij}^2 +
+    \beta_{\text{age}^{3}}\cdot\text{age}_{ij}^3 +                       \\
+         & \beta_{\text{treat-sda}}\cdot\text{treat--sda}_{ij} +
+    \beta_{\text{treat-oth}}\cdot\text{treat--oth}_{ij} +
+    \beta_{\text{mal-mod}}\cdot\text{mal--mod}_{ij} +                    \\
+         & \beta_{\text{mal-sev}}\cdot\text{mal--sev}_{ij} +
+    \beta_{\text{anaemia-sev}}\cdot\text{anaemia--sev}_{ij} +
+    \beta_{\text{fever-dur}}\cdot\text{fever-dur}_{ij} +                 \\
+         & \beta_{\text{spleen-cm}}\cdot\text{spleen}_{ij} +
+    \beta_{\text{para}}\cdot\text{para}_{ij} +
+    \beta_{\text{wbc}}\cdot\text{wbc}_{ij} +
+    \beta_{\text{plat}}\cdot\text{plat}_{ij} +                           \\
+         & \beta_{\text{alt}}\cdot\text{alt}_{ij} +
+    \beta_{\text{creat}}\cdot\text{creat}_{ij} + \mu_j.
+  \end{align*}
+  \tcbline
+  Where: $i$ represents the $i$th participant in study $j$, $Y$ is the relapse outcome (1 = relapse, 0 = no relapse), and
+  \begin{align*}
+    Y_{ij} & \sim \text{Bernoulli}(E[Y_{ij}]) \\
+    \mu_j  & \sim \mathcal{N}(0, \tau^2).
+  \end{align*}
+  $\beta_0$ is the fixed model intercept, and $\beta_{k}$ are the fixed effect coefficients for each candidate predictor $k$, corresponding to sex (1 = male, 0 = female), age, treatment group (reference = standard dose miltefosine, \texttt{treat--sda}: 10mg/kg single dose liposomal amphotericin B, \texttt{treat--oth}: other), malnutrition severity (reference = mild/normal, \texttt{mal--mod}: moderate, \texttt{mal--sev}: severe), anaemia severity (1 = severe, 0 = non-severe), fever duration, spleen size, \texttt{para}: parasite grade, \texttt{wbc}: white blood cell count, \texttt{plat}: platelet count, \texttt{alt}: alanine transaminase, and \texttt{creat}: creatinine. The random intercept $\mu_j$ captures between-study heterogeneity, with variance $\tau^2$.
+  \vspace{0.3cm}
+
+  All continuous candidate predictors, except age, spleen size, and parasite grade, are log-transformed, centred by their mean, and scaled by their standard deviation. Age is centred and scaled, and modelled as a third-degree polynomial term. Spleen size is log-transformed after adding +1.
+\end{mybox}
+
+\subsection{\label{sec:meth-vs}Variable selection}
+
+The final predictor set was determined using backwards variable selection with cutoff p$<$0.10. Univariable selection was avoided to prevent exclusion of predictors that may demonstrate significance only in the presence of other predictors, and to reduce the risk of overfitting\cite{moons2019}.
+
+A variety of methods have been explored for performing variable selection with multiple imputed datasets\cite{austin2019,wood2008}. In accordance with recommendations by Austin et al. and Wood et al., Rubin's Rules were used to combine p-values for predictor significance at each selection stage across the imputed datasets. At each stage, the full model is fitted in each of the 30 imputed datasets and the estimated regression coefficients and their standard errors are pooled using Rubin's Rules. The candidate predictor with the highest pooled p-value above the 0.10 threshold was removed, and the process repeated until all remaining predictors had pooled p-values below 0.10\cite{austin2019,wood2008,rubin1987}. For categorical predictors with over two groups (malnutrition, treatment), predictor significance was assessed with the D1 multivariate Wald test as implemented in the \texttt{mice} R package\cite{van-buuren2011,li1991}. For age, lower-order polynomial terms were retained in the model whilst higher-order terms remained.
+
+Variable selection was performed in a bespoke R script, available in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
 
 \subsection{\label{sec:meth-perf}Model performance}
 
-Model discrimination was assessed using the c-statistic, and calibration using calibration slope, and calibration intercept and calibration plots. Within-study (conditional) performance measures are presented, reflecting model performance when evaluated at the study level\cite{wynants2018,van-klaveren2014}.
+In accordance with the TRIPOD--Cluster reporting guidelines, measures of calibration and discrimination are presented for the prediction models overall and for each study (cluster) separately\cite{debray2023}. Within-study (conditional) performance measures are presented,\footnote{Also described as `conditional' performance measures; see Wynants et al. for a summary of how to present performance measures for prediction models developed with clustered data\cite{wynants2018}.} reflecting model performance when evaluated at the study level\cite{wynants2018,van-klaveren2014}. Assessment of model performance heterogeneity across studies is presented with forest plots using two--stage random effects meta-analysis\cite{debray2017,van-klaveren2014}.
 
-C-statistics with 95\% confidence intervals were calculated with bootstrapping (n~=~500). Bootstrap samples were then pooled across multiple imputations using the `MI Boot (PS)' method described by Schomaker et al\cite{schomaker2018}. Calibration slope and intercept were pooled across imputed datasets using Rubin's rules.
+\subsubsection{\label{meth:discrimination}Discrimination}
 
-For constructing calibration plots, the mean predicted and observed relapse probabilities were calculated across selected subgroups in the combined imputed datasets. Predicted probabilities were calibrated at the study level with logistic recalibration. Study-specific calibrated probabilities were estimated with best linear unbiased predictors. Binomial confidence intervals for the mean observed probabilities were estimated using Wilson's method. To account for multiple imputation, the number of relapses and corresponding denominators were averaged across imputations (i.e. divided by 20) prior to interval calculation. The continuous relationship between observed relapse probability and predicted probabilities was modelled using a generalised additive model with standard errors inflated by $\sqrt{20}$ to adjust for the inflated sample size from multiple imputations.
+Model discrimination was assessed using the c (concordance)--statistic. For models with binary outcomes, the c--statistic is equivalent to the AUC, and is the probability that a randomly selected case (patient who experiences relapse) will have a higher predicted probability of relapse than a randomly selected non-case (patient who does not experience relapse).
 
-Performance heterogeneity across the contributing studies was assessed with aggregate random-effects meta-analyses using the R package \texttt{metafor}\cite{viechtbauer2010}. Between-study variance was estimated with restricted maximum likelihood and 95\% confidence and prediction intervals were estimated with the Hartung-Knapp-Sidik-Jonkman method. C-statistics were pooled on the logit scale, and calibration slope and interval were pooled on their original scale\cite{snell2018}.
+In accordance with recommendations by van Klaveren et al.\cite{van-klaveren2014} and Debray et al.\cite{debray2017}, for each model, the within--study (conditional) c--statistic was calculated using a two--stage random effects meta-analysis approach. Here, study--specific estimates are assumed to vary not only because of sampling variability but also due to true heterogeneity between studies\cite{van-klaveren2014}. Study--specific c--statistics were initially estimated for each imputed dataset using the \texttt{roc()} function from R package: \texttt{pROC} \cite{proc2011}. Standard errors and 95\% confidence intervals were calculated using the DeLong method\cite{delong1988}. As suggested by Burgess et al., study--specific c--statistics were then pooled across imputed datasets using Rubin's Rules prior to meta--analysis\cite{burgess2013}. In the second stage, between--study variance ($\tau^2$) was estimated using restricted maximum likelihood (REML), and variance of the pooled c--statistics was estimated using the Hartung-Knapp-Sidik-Jonkman method\cite{knapp2003}. Meta-analysis was performed on the logit (c--statistic) scale using the R package: \texttt{metafor}\cite{metafor}. As the c--statistic is undefined when no events occur, studies without relapse events were excluded from the meta-analysis.
+
+\subsubsection{Calibration}
+
+Model calibration assesses agreement between predicted and observed relapse probability, and was evaluated with calibration plots, calibration slope, and calibration-in-the-large (CITL).
+
+Wynants et al. present a comprehensive framework for assessing prediction model performance in clustered datasets\cite{wynants2018}. Following their recommendations, calibration slope and CITL are estimated conditional on the study, and represent within--study performance measures.
+
+CITL, also known as the calibration intercept, refers to whether a model's average predicted risk is equal to the overall observed event rate. A positive CITL indicates that the model systematically underestimates relapse risk, whilst a negative CITL indicates systematic overestimation. Briefly, CITL is estimated by fitting a logistic GLMM with relapse as the outcome, study as a random intercept, and the linear predictor from the original model as an offset term. The estimated fixed intercept then corresponds to the within--study CITL, with an expected value of zero when assessed in the development dataset (apparent performance).
+
+Calibration slope assesses whether a model's predicted risks are systematically too extreme or too conservative by quantifying the agreement between differences in predicted and observed outcomes. A calibration slope of 1 indicates perfect calibration and is the expected value when evaluating apparent performance in the development dataset. Values less than 1 indicate overfitting (overly extreme predictions), whereas values greater than 1 indicate underfitting (overly moderate predictions). It was estimated by fitting an additional logistic GLMM with relapse as the outcome, study as a random intercept, and the linear predictor from the original model included as both a fixed and random effect (i.e. a random slope term). In this formulation, the fixed effect of the linear predictor represents the within-study calibration slope. To mitigate potential convergence issues arising from the inclusion of studies with small sample sizes, we adopted a Bayesian approach when estimating performing the random-intercept and random-slope mixed-effects model. Parameters were estimated using the Hamiltonian Monte Carlo algorithm as implemented in Stan, accessed via the R package \texttt{brms}\cite{burkner2017, stan_manual}. Posterior sampling was conducted using four chains with 2,500 iterations per chain (including warm--up), and the target acceptance rate was increased (\texttt{adapt\_delta = 0.95}) to reduce divergent transitions. Default weak priors were used.
+
+Within--study calibration slope and CITL were estimated separately within each imputed dataset and pooled across imputations using Rubin's Rules\cite{rubin1987}.
+
+Heterogeneity in calibration slope and CITL across studies is summarised using a similar approach to that described for the c--statistic \textemdash\ using a two--stage random effects meta--analysis. Study--specific estimates were initially calculated within each imputed dataset using the standard methodology for non--clustered data\cite{wynants2018}, and subsequently pooled across imputations using Rubin's Rules. The second stage of the meta--analysis was then performed as previously described for the c--statistic.
+
+Calibration plots allow direct visual assessment of the relationship between observed ($y$--axis) and predicted ($x$--axis) relapse probabilities. Firstly, all imputed datasets were stacked into a single dataset. Predicted relapse probabilities were then calibrated to each study using logistic recalibration of the intercept and divided into deciles. Observed probabilities were calculated for each decile and 95\% confidence intervals estimated using Wilson's method\cite{wilson1927}. The smoothed relationship between observed and predicted relapse probabilities was estimated using a generalised additive model, as previously described. To account for the stacking of 30 imputed datasets, all standard errors were inflated by $\sqrt{30}$.
+
+Following the same methodology for standard calibration plots, calibration was also illustrated for selected predictor subgroups by plotting both observed and predicted probabilities on the $y$--axis against predictor subgroups on the $x$--axis.
 
 \section{Internal validation}
 
-Internal validation was performed using bootstrapping at the participant level to (i) adjust performance measures and parameter estimates for model overfitting (optimism and uniform shrinkage), and (ii) evaluate model stability by reviewing the variation in model selection across different bootstrap samples\cite{collins2024B, bouwmeester2013B}. For each of the 500 bootstrap samples of the original dataset, full model development was performed including multiple imputation. Performance measures were evaluated for each bootstrap model in (i) the imputed bootstrap datasets used to derive the bootstrap model and (ii) the imputed original datasets used to derive the original model. The performance (optimism) difference between (i) and (ii) was calculated. The average (mean) optimism across the 500 bootstrap models was then subtracted from the original model apparent performance measures to obtain the optimism adjusted performance measures. Uniform shrinkage of the parameter estimates was performed. The University of Oxford Biomedical Research Computing cluster was used due to the high computational demand of performing bootstrapping with both multiple imputation with GLMM fitting.
+Internal validation is performed using bootstrap resampling with 500 bootstrap samples. Bootstrapping evaluates all aspects of the model building process to quantify and adjust for overfitting and optimism in model performance\cite{collins2024B}.
 
+Need to discuss level of bootstrapping\cite{bouwmeester2013B}
 
-\section{Conclusion}
+For each of the 500 bootstrap samples of the original dataset, all aforementioned model development steps, including multiple imputation and variable selection, were performed (see Figure \ref{fig:workflow}). For each of the resulting 500 bootstrap models, pooled performance measures were evaluated across (i) the imputed bootstrap datasets used to derive the bootstrap model and (ii) the imputed original datasets used to derive the original model. The mean pooled performance differences between (i) and (ii) were then subtracted from the original model apparent performance measures to obtain the optimism--adjusted performance measures. Uniform shrinkage of the parameter estimates was performed by multiplying the fitted regression coefficients by the optimism--adjusted calibration slope.
+
+\section{Model presentation}
+

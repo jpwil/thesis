@@ -16,6 +16,7 @@
   \label{fig:isc_flow_diagram}
 \end{figure}
 
+\subsection{Study and patient characteristics}
 % studies tables
 \input{tables/ch5/isc_study.tex}
 
@@ -24,6 +25,33 @@
 
 % continuous variables table
 \input{tables/ch5/isc_continuous.tex}
+
+
+
+
+% these are the study specific distributions of outcome, sex and age
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
+\newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
+\begin{landscape}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch5/isc_main_dist.pdf}
+    \caption{Graphical summary of the Indian subcontinent study-specific sample sizes and distributions of relapse status, sex, and age.}
+    \label{fig:isc_main_dist}
+  \end{figure}
+
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch5/treat.pdf}
+    \caption{Bar chart showing the distribution of treatment regimens across contributing studies from the Indian subcontinent. Drugs are colour-coded (see legend). Important distinguishing dosing information provided in the overlaying labels, as space allows. Full treatment details presented in Table \ref{tab:isc_study}. 6 patients are included from Chakraborty 2008: 5 receiving alternate day amphotericin B deoxycholate and 1 receiving human placenta extract. ABD: amphotericin B deoxycholate; ALT: alternate days; CONS: consecutive days; D: days; HPE: human placenta extract; MF: miltefosine; PENT: pentamidine; mg: miligrams/kilogram; SSG: sodium stibogluconate.}
+    \label{fig:isc_treat}
+  \end{figure}
+
+\end{landscape}
+\restoregeometry
+
+\subsection{Pooled univariable distributions}
+
 
 % pooled distributions of categorical variables
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/catOut/comb_cat.pdf figures/ch5/isc_cat_comb.pdf
@@ -37,6 +65,7 @@
   \end{figure}
 \end{landscape}
 \restoregeometry
+
 
 % these are the pooled continuous distributions and relationships with relapse - PART 1
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/age_comb.pdf figures/ch5/isc_pool_age_comb.pdf
@@ -79,7 +108,7 @@
     \end{overpic}
   \end{subfigure}
   \caption{Distributions and predictor--outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
-  \label{fig:isc_pooled_dist_cont1}
+  \label{fig:isc_pooled_dist_cont_lab}
 \end{figure}
 
 % these are the pooled continuous distributions and relationships with relapse - PART 2
@@ -121,32 +150,10 @@
     \end{overpic}
   \end{subfigure}
   \caption{Pooled distributions and predictor--outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
-  \label{fig:isc_pooled_dist_cont1}
+  \label{fig:isc_pooled_dist_cont_nolab}
 \end{figure}
 
-Distributions of continuous and categorical candidate predictors, stratified by study, are included in Appendix \ref{app:results}, Sections \ref{app:results-cp-dist-cont} and \ref{app:results-cp-dist-cat}, respectively.
-
-% these are the study specific distributions of outcome, sex and age
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
-\newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
-\begin{landscape}
-  \begin{figure}[tb]
-    \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch5/isc_main_dist.pdf}
-    \caption{Graphical summary of the Indian subcontinent study-specific sample sizes and distributions of relapse status, sex, and age.}
-    \label{fig:isc_main_dist}
-  \end{figure}
-
-  \begin{figure}[tb]
-    \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch5/treat.pdf}
-    \caption{Bar chart showing the distribution of treatment regimens across contributing studies from the Indian subcontinent. Drugs are colour-coded (see legend). Important distinguishing dosing information provided in the overlaying labels, as space allows. Full treatment details presented in Table \ref{tab:isc_study}. 6 patients are included from Chakraborty 2008: 5 receiving alternate day amphotericin B deoxycholate and 1 receiving human placenta extract. ABD: amphotericin B deoxycholate; ALT: alternate days; CONS: consecutive days; D: days; HPE: human placenta extract; MF: miltefosine; PENT: pentamidine; mg: miligrams/kilogram; SSG: sodium stibogluconate.}
-    \label{fig:isc_treat}
-  \end{figure}
-
-\end{landscape}
-\restoregeometry
-
+\subsection{Missing data patterns}
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch5/isc_missing_summary.pdf
 \begin{figure}[tb]
@@ -156,5 +163,84 @@ Distributions of continuous and categorical candidate predictors, stratified by 
   \label{fig:isc_missing_summary}
 \end{figure}
 
+\section{Model results}
 
+% cp /Users/jameswilson/proj/vl_model_isc/results/var_forest_combined.pdf figures/ch5/var_forest_combined.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/ch5/var_forest_combined.pdf}
+  \caption{Forest plot of adjusted odds ratios with 95\% confidence intervals for final model predictors. Odds ratios are displayed on a logarithmic scale. For age, the odds ratio represents a combination of linear and quadratic effects for standardised age (centred by the mean and scaled by the standard deviation). Please refer to Figure \ref{fig:isc_adjusted_assoc} for a visualisation of the adjusted relapse probabilities after recalibration of the model intercepts to the observed relapse rate observed in Sundar 2019\cite{sundar2019}.}
+  \label{fig:isc_var_forest_combined}
+\end{figure}
 
+% cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM1.pdf figures/ch5/isc_multiassoc_with_pg.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM2.pdf figures/ch5/isc_multiassoc_without_pg.pdf
+\newgeometry{left=2.5cm, bottom=2.5cm, right=2cm, top=3cm}
+\begin{landscape}
+  \begin{figure}[tb]
+    \centering
+    \begin{subfigure}{1.4\textwidth}
+      \centering
+      \begin{overpic}[width=\textwidth]{figures/ch5/isc_multiassoc_without_pg.pdf}
+        \put(2,31){\small ISC model: without parasite grade}
+      \end{overpic}
+    \end{subfigure}
+    \begin{subfigure}{1.4\textwidth}
+      \centering
+      \begin{overpic}[width=\textwidth]{figures/ch5/isc_multiassoc_with_pg.pdf}
+        \put(2,26){\small ISC model: with parasite grade}
+      \end{overpic}
+    \end{subfigure}
+    \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final ISC prognostic models. Probabilities were calculated from optimism-adjusted models and following logistic recalibration (intercept--term only) to data contributed from Sundar 2019\cite{sundar2019}. Where not varying in the plot, predictions are standardised to a representative reference participant: median age (18 years), median fever duration (30 days), treated with single-dose liposomal amphotericin B (10 mg/kg), with severe anaemia, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2+.}
+    \label{fig:isc_adjusted_assoc}
+  \end{figure}
+\end{landscape}
+\restoregeometry
+
+% calibration plots (overall)
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlot.pdf figures/ch5/isc_calPlot.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/ch5/isc_calPlot.pdf}
+  \caption{Calibration plots showing observed versus predicted probabilities for deciles of predicted probability. Red dashed line represents perfect calibration.  Observed probabilities are presented with 95\% confidence intervals (black error bars). A generalised additive model is fitted to show the smoothed mean observed probability (blue dotted line) with 95\% confidence intervals (blue ribbon). Histograms, normalised by outcome, are overlaid to illustrate the distribution of relapses and cures across the expected probabilities.}
+  \label{fig:isc_calPlot}
+\end{figure}
+
+% calibration plots (parasite grade and fever duration)
+% \begin{figure}[tb]
+%   \centering
+%   \includegraphics[width=\textwidth]{figures/ch5/isc_calPlotPD.pdf}
+%   \caption{Calibration plots for different parasite grades (model including parasite grade). Left: Observed vs. predicted probabilities, grouped by parasite grade. Right: Observed and predicted probabilities on the $y$--axis against parasite grade on the $x$--axis.}
+%   \label{fig:isc_calPlotPD}
+% \end{figure}
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/ch5/isc_calPlotFD1.pdf}
+  \caption{Calibration plots for different fever durations (model including parasite grade). Left: Observed vs. predicted probabilities, grouped by fever duration group. Right: Observed and predicted probabilities on the $y$--axis against fever duration group on the $x$--axis.}
+  \label{fig:isc_calPlotFD1}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM1.pdf figures/ch5/forestCIM1.pdf
+% forest plots for C-statistic
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=0.9\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM1.pdf}
+    \put(0,5.5){\scriptsize $\tau^2$: 0.43; $I^2$: 77.4\%}
+    \put(0,2.3){\scriptsize Q(df = 17): 122.48; p < .0001}
+  \end{overpic}
+  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{including} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Pooled random--effects c--statistics and variances are estimated using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Blue diamonds: pooled summary estimates with 95\% confidence intervals. Red line: 95\% prediction interval. Study ordered by c--statistic. For Chakraborty 2008, no relapse events occurred and c--statistic is therefore undefined. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}).}
+  \label{fig:isc_forestCIM1}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM1.pdf figures/ch5/forestCalM1.pdf
+% forest plots for calibration
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=0.9\textwidth, trim={3.4cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM1.pdf}
+    \put(27,13){\fcolorbox{black}{white}{\tiny $\tau^2$: 0.094; $I^2$: 46.1\%; Q(17): 33.6; p = .01}}
+    \put(67,13){\fcolorbox{black}{white}{\tiny $\tau^2$: 0; $I^2$: 0\%; Q(16): 12.9; p = .74}}
+  \end{overpic}
+  \caption{Forest plots showing individual and pooled study calibration measures, for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large); Right: calibration slope. Pooled summary estimates and variances are estimated from random--effects meta-analysis models using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Blue diamonds: summary estimates with 95\% confidence intervals. Red lines: 95\% prediction interval. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
+  \label{fig:isc_forestCalM1}
+\end{figure}
