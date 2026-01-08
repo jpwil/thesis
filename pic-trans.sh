@@ -122,6 +122,15 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/treatment/treat_dist1a.pdf figure
 # missing data summary
 cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/ea_missing_summary.pdf
 
+# model presentation
+cp /Users/jameswilson/proj/vl_model_ea/results/var_forest_combined.pdf figures/ch6/var_forest_combined.pdf
+
+# CI forest plots
+cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM1.pdf figures/ch6/forestCIM1.pdf
+
+# Cal forest plots
+cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCalM1.pdf figures/ch6/forestCalM1.pdf
+
 # APPENDIX - CHAPTER 6
 
 # logodds associations betweeen transformed continuous predictors and relapse
@@ -150,3 +159,7 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/dist/ass/cont_cont.pdf figures/ch
 
 # # associations - cont-cat
 cp /Users/jameswilson/proj/vl_model_ea/figures/dist/ass/cont_cat.pdf figures/ch6/ea_cont_cat.pdf
+
+# forest plots
+cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM2.pdf figures/ch6/forestCIM2.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCalM2.pdf figures/ch6/forestCalM2.pdf

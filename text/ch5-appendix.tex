@@ -291,10 +291,10 @@
 % forest plots for C-statistic - WITHOUT PARASITE GRADE
 \begin{figure}[tb]
   \centering
-  \begin{overpic}[width=0.9\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM2.pdf}
-    \put(0,5.5){\tiny \fcolorbox{black}{white}{$\tau^2$ = 0.62; $I^2$ = 82.8\%; p < .0001}}
+  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM2.pdf}
+    \put(0,5.5){\scriptsize \fcolorbox{black}{white}{$\tau^2$ = 0.0011; $I^2$ = 19.6\%; p = 0.37}}
   \end{overpic}
-  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{excluding} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Pooled random--effects c--statistics and variances are estimated using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Blue diamonds: pooled summary estimates with 95\% confidence intervals. Red line: 95\% prediction interval. Study ordered by c--statistic. For Chakraborty 2008, no relapse events occurred and c--statistic is therefore undefined. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}).}
+  \caption{Forest plot showing individual and pooled study c--statistics for the model \textbf{excluding} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Chakraborty 2008, no relapse events occurred and the c--statistic is therefore undefined. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}).}
   \label{fig:isc_forestCIM2}
 \end{figure}
 
@@ -302,10 +302,10 @@
 % forest plots for calibration
 \begin{figure}[tb]
   \centering
-  \begin{overpic}[width=0.9\textwidth, trim={3.4cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM2.pdf}
-    \put(27,13){\fcolorbox{black}{white}{\tiny $\tau^2$ = 0.14; $I^2$ = 55.8\%; p = .0015}}
-    \put(68,13){\fcolorbox{black}{white}{\tiny $\tau^2$ = 0.006; $I^2$ = 1.32\%; p = .62}}
+  \begin{overpic}[width=\textwidth, trim={3.3cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM2.pdf}
+    \put(0,13){\fcolorbox{black}{white}{\scriptsize CITL: $\tau^2$ = 0.14; $I^2$ = 55.8\%; p = .0015}}
+    \put(0,9.52){\fcolorbox{black}{white}{\scriptsize CS: $\tau^2$ = 0.006; $I^2$ = 1.32\%; p = .62}}
   \end{overpic}
-  \caption{Forest plots showing individual and pooled study calibration measures, for the model \textbf{excluding} parasite grade. Left: calibration intercept (calibration--in--the--large); Right: calibration slope. Pooled summary estimates and variances are estimated from random--effects meta-analysis models using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Blue diamonds: summary estimates with 95\% confidence intervals. Red lines: 95\% prediction interval. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
+  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
   \label{fig:isc_forestCalM2}
 \end{figure}

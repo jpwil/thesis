@@ -171,8 +171,8 @@
 \makeatletter
 \let\origrestoregeometry\restoregeometry
 \renewcommand{\restoregeometry}{%
-  \origrestoregeometry
-  \baselineskip=\textbaselineskip\relax
+    \origrestoregeometry
+    \baselineskip=\textbaselineskip\relax
 }
 \makeatletter
 
@@ -199,52 +199,52 @@
 % JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
 % keeping with most typesetting conventions.
 \begin{romanpages}
-  % Title page is created here
-  \maketitle
+    % Title page is created here
+    \maketitle
 
-  %%%%% DEDICATION -- If you'd like one, un-comment the following.
-  %\begin{dedication}
-  %This thesis is dedicated to\\
-  %someone\\
-  %for some special reason\\
-  %\end{dedication}
+    %%%%% DEDICATION -- If you'd like one, un-comment the following.
+    %\begin{dedication}
+    %This thesis is dedicated to\\
+    %someone\\
+    %for some special reason\\
+    %\end{dedication}
 
-  %%%%% ACKNOWLEDGEMENTS -- Nothing to do here except comment out if you don't want it.
-  \begin{acknowledgements}
-    \input{text/acknowledgements}
-  \end{acknowledgements}
+    %%%%% ACKNOWLEDGEMENTS -- Nothing to do here except comment out if you don't want it.
+    \begin{acknowledgements}
+        \input{text/acknowledgements}
+    \end{acknowledgements}
 
-  %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
-  \begin{abstract}
-    \input{text/abstract}
-  \end{abstract}
+    %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
+    \begin{abstract}
+        \input{text/abstract}
+    \end{abstract}
 
-  %%%%% MINI TABLES
-  \dominitoc % include a mini table of contents
-  \adjustmtc[-1] % fix minitoc numbering, it works. How it works will forever remain a mystery.  
-  % \dominilof  % include a mini list of figures
-  %\dominilot  % include a mini list of tables
+    %%%%% MINI TABLES
+    \dominitoc % include a mini table of contents
+    \adjustmtc[-1] % fix minitoc numbering, it works. How it works will forever remain a mystery.  
+    % \dominilof  % include a mini list of figures
+    %\dominilot  % include a mini list of tables
 
-  % This aligns the bottom of the text of each page.  It generally makes things look better.
-  \flushbottom
+    % This aligns the bottom of the text of each page.  It generally makes things look better.
+    \flushbottom
 
-  % This is where the whole-document ToC appears:
-  \tableofcontents
-  % \listoffigures
-  \mtcaddchapter
-  % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
+    % This is where the whole-document ToC appears:
+    \tableofcontents
+    % \listoffigures
+    \mtcaddchapter
+    % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
 
-  % Uncomment to generate a list of tables:
-  %\listoftables
-  %	\mtcaddchapter
+    % Uncomment to generate a list of tables:
+    %\listoftables
+    %	\mtcaddchapter
 
-  %%%%% LIST OF ABBREVIATIONS
-  % This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
-  % formatted.  The template can handle any kind of list though, so this might be a good place for a
-  % glossary, etc.
-  \include{text/abbreviations}
+    %%%%% LIST OF ABBREVIATIONS
+    % This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
+    % formatted.  The template can handle any kind of list though, so this might be a good place for a
+    % glossary, etc.
+    \include{text/abbreviations}
 
-  % The Roman pages, like the Roman Empire, must come to its inevitable close.
+    % The Roman pages, like the Roman Empire, must come to its inevitable close.
 \end{romanpages}
 
 %%%%% CHAPTERS

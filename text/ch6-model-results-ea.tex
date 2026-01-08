@@ -157,3 +157,39 @@
   \caption{Density plot illustrating the amount of missing data overall and across contributing studies from East Africa. Study ordered by lead author and publication year. Variable ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}
   \label{fig:ea_missing_summary}
 \end{figure}
+
+\section{Model results}
+
+% cp /Users/jameswilson/proj/vl_model_ea/results/var_forest_combined.pdf figures/ch6/var_forest_combined.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=\textwidth]{figures/ch6/var_forest_combined.pdf}
+  \caption{Forest plot of adjusted odds ratios with 95\% confidence intervals for final model predictors. Odds ratios are displayed on a logarithmic scale.}
+  \label{fig:ea_var_forest_combined}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM1.pdf figures/ch6/forestCIM1.pdf
+% forest plots for C-statistic
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch6/forestCIM1.pdf}
+    \put(0,5.5){\fcolorbox{black}{white}{\scriptsize $\tau^2$ = 0.0040; $I^2$ = 46.6\%; p = 0.11}}
+  \end{overpic}
+  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{including} parasite grade. For the model excluding parasite grade refer to Appendix \ref{fig:ea_forestCIM2}. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models, after excluding studies with $\leq$5 relapse events. Study--specific confidence intervals with few events should be interpreted with caution (as discussed in the Methodology \ref{meth:discrimination}). Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Mbui 2019, all bootstrapped c--statistic estimates were 1 exactly and therefore no variance is presented.}
+  \label{fig:ea_forestCIM1}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM1.pdf figures/ch5/forestCalM1.pdf
+% forest plots for calibration
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCalM1.pdf figures/ch6/forestCalM1.pdf
+% forest plots for calibration
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={2.4cm 0cm 0.3cm 0.3cm}, clip]{figures/ch6/forestCalM1.pdf}
+    \put(0,12){\fcolorbox{black}{white}{\tiny CITL: $\tau^2$ = 0.960; $I^2$ = 89.0\%; p < .0001}}
+    \put(0,8.85){\fcolorbox{black}{white}{\tiny CS: $\tau^2$ = 0; $I^2$ = 0\%; p = 0.90}}
+  \end{overpic}
+  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration slope for Mbui 2019 not shown due to small sample size causing failure of model convergence.}
+  \label{fig:ea_forestCalM1}
+\end{figure}

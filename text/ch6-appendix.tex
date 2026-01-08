@@ -215,3 +215,27 @@
 \end{landscape}
 
 \restoregeometry
+
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM2.pdf figures/ch6/forestCIM2.pdf
+% forest plots for C-statistic - WITHOUT PARASITE GRADE
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch6/forestCIM2.pdf}
+    \put(0,5.5){\scriptsize \fcolorbox{black}{white}{$\tau^2$ = 0.0056; $I^2$ = 53.1\%; p = .056}}
+  \end{overpic}
+  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{excluding} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Pooled random--effects c--statistics and variances are estimated using restricted maximum likelihood (REML) and the Hartung--Knapp--Sidik--Jonkman method. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}). Blue diamonds: pooled summary estimates with 95\% confidence intervals. Red line: 95\% prediction interval. Study ordered by c--statistic.}
+  \label{fig:ea_forestCIM2}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCalM2.pdf figures/ch6/forestCalM2.pdf
+% forest plots for calibration
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={2.35cm 0cm 0.3cm 0.3cm}, clip]{figures/ch6/forestCalM2.pdf}
+    \put(0,12){\fcolorbox{black}{white}{\tiny CITL: $\tau^2$ = 1.08; $I^2$ = 90.7\%; p < .0001}}
+    \put(0,8.85){\fcolorbox{black}{white}{\tiny CS: $\tau^2$ = 0.258; $I^2$ = 31.6\%; p = 0.30}}
+  \end{overpic}
+  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{excluding} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals.}
+  \label{fig:ea_forestCalM2}
+\end{figure}
