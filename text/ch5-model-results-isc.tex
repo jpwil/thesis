@@ -3,31 +3,56 @@
   \qauthor{--- James Wilson}
 \end{savequote}
 
-\chapter{\label{ch:5-isc-model-results}Indian subcontinent model results}
+\chapter{\label{ch:5-isc-model-results}Results: Indian Subcontinent Models}
 \minitoc
 
-\section{Descriptive analysis}
+\section{Descriptive Analysis}
 
 % flow diagram
 \begin{figure}[tb]
   \centering
-  \includegraphics[width = 0.8\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch5/isc_flow_chart.pdf}
-  \caption[Indian subcontinent model: flow diagram]{Flow diagram showing the studies and participants excluded from Indian subcontinent model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; ISC: Indian subcontinent; PKDL: post kala-azar dermal leishmaniasis; VL: visceral leishmaniasis.}
+  \includegraphics[width = 0.9\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch5/isc_flow_chart.pdf}
+  \caption[Indian subcontinent model: flow diagram]{Flow diagram showing the studies and patients excluded from Indian subcontinent model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; ISC: Indian subcontinent; PKDL: post kala--azar dermal leishmaniasis; VL: visceral leishmaniasis.}
   \label{fig:isc_flow_diagram}
 \end{figure}
 
-\subsection{Study and patient characteristics}
+On application of the eligibility criteria to the contributed studies in the IDDO VL data platform, a total of 19 studies and 4,599 patients were selected for inclusion. Full details are presented in the flow diagram (Figure \ref{fig:isc_flow_diagram}).
+
+\subsection{Study Characteristics}
+
+Key characteristics of the 19 included studies are presented in Table \ref{tab:isc_study}. Further study--level information, including full eligibility criteria, HIV testing, and definitions of initial cure and relapse, are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
+
+A median of 144 patients were recruited in each study, although this ranged considerably from 6 patients\cite{chakraborty2008} to 928 patients\cite{sundar2019} with an interquartile range (IQR) of 86.5--329.5 patients. Patients were recruited between 2000 and 2017 from sites in either India (15 studies, 4,171 (90.7\%) patients)\cite{bhattacharya2007,chakraborty2008, das2009,pandey2016,pandey2017,sundar2007a,sundar2008,sundar2008B,sundar2009,sundar2010,sundar2011,sundar2012,sundar2014,sundar2015,sundar2019} or Nepal (4 studies, 428 (9.3\%) patients)\cite{rijal2003, rijal2010a, rijal2010b}. All Nepalese studies were led by investigators based at the B.P. Koirala Institute of Health Sciences, a health sciences university in the city of Dharan, Koshi Province, eastern Nepal. All Indian studies recruited patients from the state of Bihar in northeastern India, with the majority of studies led by investigators from either a government referral hospital in Patna (Rajendra Memorial Research Institute of Medical Sciences: RMRIMS) (4 studies, 1,125 (24.5\%) patients)\cite{bhattacharya2007, das2009,pandey2016,pandey2017}, or a private research facility in Muzaffarpur (Kala--azar Medical Research Centre: KAMRC) (9 studies, 2,652 (57.7\%) patients)\cite{chakraborty2008,sundar2008,sundar2008B,sundar2009,sundar2010,sundar2011,sundar2012,sundar2015,sundar2019}.
+
 % studies tables
 \input{tables/ch5/isc_study.tex}
+
+All studies recruited both male and female patients, and all but three studies reported age inclusion criteria. Of note, four studies only recruited patients aged $\geq$12 years (314 (6.8\%) patients)\cite{sundar2015,sundar2008B,sundar2008,rijal2010a}. Where specified, the lower age limit was otherwise between 2 and 6 years. One study (100 (2.2\%) patients) recruited children (<15 years) only. Otherwise, where specified, the upper age limit ranged from 60 to 70 years.
+
+Twelve studies (2,021 (43.9\%) patients) explicitly reported performing HIV testing on all recruited patients\cite{bhattacharya2007,chakraborty2008,rijal2013,rijal2010a,sundar2007a,sundar2008,sundar2008B,sundar2009,sundar2010,sundar2014,sundar2015}, and patients with confirmed VL/HIV co-infection were excluded from all but two studies (280 (6.1\%) patients)\cite{rijal2003,rijal2010b}. Patients with HIV/VL co-infection from these two studies were excluded at the individual participant level, where reported.
+
+In the 16 studies that reported a lower haemoglobin threshold for patient inclusion, the median threshold was 50g/dL (range 35 to 60g/dL)\footnote{with one study reporting boosting haemoglobin with blood transfusions prior to recruitment\cite{das2009}.}. Almost all studies reported excluding patients with serious illness, or the presence of significant co-existing diseases. Specific wording of the exclusion criteria, and additional limits for platelets, white blood cells, clotting, renal, and liver function, are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
+
+% study designs
+% treatment arms
+
+% definitions of initial cure
+% definition of relapse
+
+% relapse proportions
+
+
+Relapse was identified in 228 (5.0\%) of all patients within 6--months of initial cure assessment.
+
+
+\subsection{Individual Patient Characteristics}
+
 
 % categorical variables table
 \input{tables/ch5/isc_categorical.tex}
 
 % continuous variables table
 \input{tables/ch5/isc_continuous.tex}
-
-
-
 
 % these are the study specific distributions of outcome, sex and age
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
@@ -50,7 +75,7 @@
 \end{landscape}
 \restoregeometry
 
-\subsection{Pooled univariable distributions}
+\subsection{Pooled Univariable Distributions}
 
 
 % pooled distributions of categorical variables
@@ -153,17 +178,17 @@
   \label{fig:isc_pooled_dist_cont_nolab}
 \end{figure}
 
-\subsection{Missing data patterns}
+\subsection{Missing Data Patterns}
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch5/isc_missing_summary.pdf
 \begin{figure}[tb]
   \centering
   \includegraphics[scale = 0.8]{figures/ch5/isc_missing_summary.pdf}
-  \caption{Density plot illustrating the amount of missing data overall and across contributing studies from the Indian subcontinent. Study ordered by lead author and year of publication (or protocol). Variable ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}
+  \caption{Density plot illustrating the amount of missing data overall and across contributing studies from the Indian subcontinent. Study ordered by lead author and year of publication (or protocol). Variables ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}
   \label{fig:isc_missing_summary}
 \end{figure}
 
-\section{Model results}
+\section{Model Results}
 
 % cp /Users/jameswilson/proj/vl_model_isc/results/var_forest_combined.pdf figures/ch5/var_forest_combined.pdf
 \begin{figure}[tb]
@@ -201,25 +226,39 @@
 % cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlot.pdf figures/ch5/isc_calPlot.pdf
 \begin{figure}[tb]
   \centering
-  \includegraphics[width=\textwidth]{figures/ch5/isc_calPlot.pdf}
+  \begin{overpic}[width=\textwidth]{figures/ch5/isc_calPlot.pdf}
+    \put(2,52){\small ISC model: with parasite grade}
+    \put(50,52){\small ISC model: without parasite grade}
+  \end{overpic}
   \caption{Calibration plots showing observed versus predicted probabilities for deciles of predicted probability. Red dashed line represents perfect calibration.  Observed probabilities are presented with 95\% confidence intervals (black error bars). A generalised additive model is fitted to show the smoothed mean observed probability (blue dotted line) with 95\% confidence intervals (blue ribbon). Histograms, normalised by outcome, are overlaid to illustrate the distribution of relapses and cures across the expected probabilities.}
   \label{fig:isc_calPlot}
 \end{figure}
 
 % calibration plots (parasite grade and fever duration)
-% \begin{figure}[tb]
-%   \centering
-%   \includegraphics[width=\textwidth]{figures/ch5/isc_calPlotPD.pdf}
-%   \caption{Calibration plots for different parasite grades (model including parasite grade). Left: Observed vs. predicted probabilities, grouped by parasite grade. Right: Observed and predicted probabilities on the $y$--axis against parasite grade on the $x$--axis.}
-%   \label{fig:isc_calPlotPD}
-% \end{figure}
-
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf figures/ch5/isc_calPlotFD1.pdf
 \begin{figure}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/ch5/isc_calPlotFD1.pdf}
-  \caption{Calibration plots for different fever durations (model including parasite grade). Left: Observed vs. predicted probabilities, grouped by fever duration group. Right: Observed and predicted probabilities on the $y$--axis against fever duration group on the $x$--axis.}
+  \caption{Calibration plots for different fever durations (model including parasite grade).}
   \label{fig:isc_calPlotFD1}
 \end{figure}
+
+\begin{table}[htbp]
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+                                   & Estimate (95\% CI) & Average  & Optimism--adjusted \\
+                                   &                    & optimism & performance        \\
+    \midrule
+    \textbf{Model: with PG}        &                    &          &                    \\
+    \hspace{1em} C-statistic       & 0.70 (0.66--0.74)  & 0.014    & 0.68               \\
+    \hspace{1em} Calibration slope & 1.01 (0.69--1.32)  & 0.093    & 0.91               \\        \midrule
+    \textbf{Model: without PG}     &                    &          &                    \\
+    \hspace{1em} C-statistic       & 0.69 (0.64--0.74)  & 0.016    & 0.67               \\
+    \hspace{1em} Calibration slope & 1.02 (0.68--1.35)  & 0.098    & 0.92               \\        \bottomrule
+  \end{tabular}
+  \caption{Apparent and optimism--adjusted performance measures. Abbreviations: CI: confidence interval; PG: parasite grade}
+  \label{tab:isc-performance}
+\end{table}
 
 % cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM1.pdf figures/ch5/forestCIM1.pdf
 % forest plots for C-statistic

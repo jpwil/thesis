@@ -1,0 +1,34 @@
+\begin{table}[ht]
+    \centering
+    \begin{threeparttable}
+        \begin{tabular}{lrr}
+            \toprule
+            Predictors     & Model with PG         & Model without PG      \\
+            \midrule
+            Fever duration & \textbf{500}\tnote{1} & \textbf{500}\tnote{1} \\
+            Parasite grade & \textbf{472}\tnote{1} & n/a                   \\
+            Age (linear)   & \textbf{418}\tnote{1} & \textbf{415}\tnote{1} \\
+            Age (squared)  & \textbf{355}\tnote{1} & \textbf{392}\tnote{1} \\
+            Treatment      & \textbf{333}\tnote{1} & \textbf{337}\tnote{1} \\
+            Anaemia        & \textbf{314}\tnote{1} & \textbf{263}\tnote{1} \\
+            Spleen size    & 244                   & 120                   \\
+            Sex            & 209                   & 217                   \\
+            Age (cubic)    & 114                   & 150                   \\
+            ALT            & 86                    & 184                   \\
+            Platelets      & 78                    & 78                    \\
+            WBC            & 51                    & 55                    \\
+            Malnutrition   & 33                    & 26                    \\
+            Creatinine     & 30                    & 30                    \\
+            \bottomrule
+        \end{tabular}
+        \begin{tablenotes}
+            \footnotesize
+            \item[1] Selected in final model.
+        \end{tablenotes}
+    \end{threeparttable}
+    \caption{Frequency of predictor selection during 500 bootstrap model developments. Predictors sorted by selection frequency in the model with parasite grade. ALT: alanine aminotransferase; n/a: not applicable; PG: parasite grade; WBC: white blood cell count}
+    \label{tab:isc_model_stability}
+\end{table}
+
+
+

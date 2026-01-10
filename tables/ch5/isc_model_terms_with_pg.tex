@@ -1,0 +1,38 @@
+\begin{table}[tb]
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{lrrrrr}
+      \toprule
+      term                      & estimate\tnote{1} & std.error & t statistic & df (effective) & p value  \\
+      \midrule
+      Fixed intercept           & -2.9166           & 0.2592    & -11.25      & 1123.60        & 6.54E-28 \\
+      Parasite grade\tnote{2}   & 0.2669            & 0.0781    & 3.42        & 174.73         & 7.88E-04 \\
+      Age (linear)\tnote{3}     & -0.2352           & 0.0975    & -2.41       & 3222.98        & 1.59E-02 \\
+      Age (squared)\tnote{3}    & 0.1352            & 0.0658    & 2.05        & 4178.35        & 4.00E-02 \\
+      Anaemia: Severe\tnote{4}  & -0.3860           & 0.1597    & -2.42       & 875.81         & 1.59E-02 \\
+      Fever duration\tnote{5}   & -0.5594           & 0.1175    & -4.76       & 77.95          & 8.68E-06 \\
+      Treatment: SDA\tnote{6}   & -0.8349           & 0.3483    & -2.40       & 3059.66        & 1.66E-02 \\
+      Treatment: Other\tnote{6} & -0.7159           & 0.2880    & -2.49       & 2905.85        & 1.30E-02 \\
+      \midrule
+      \multicolumn{6}{l}{Unadjusted intercept (Sundar 2019): -2.9888}                                     \\
+      \midrule
+      \multicolumn{6}{l}{Uniform shrinkage factor: 0.9132}                                                \\
+      \midrule
+      \multicolumn{6}{l}{Adjusted intercepts after shrinkage: Average: -3.1608; Sundar 2019: -3.2514}     \\
+      \midrule
+      \multicolumn{6}{l}{Pooled $\tau^2$: 0.1209. Pooled ICC: 0.0354}                                     \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \footnotesize
+      \item[1] Logit scale before uniform shrinkage.
+      \item[2] Continuous variable, from 1+ to 6+ as described by Chulay and Bryceson\cite{chulay1983}. Transformed $x \mapsto x - 1$.
+      \item[3] Units: years. Standardised by mean (22.301633) and standard deviation (15.4159649).
+      \item[4] Reference group: non--severe anaemia.
+      \item[5] Units: days. Converted to natural log scale and then standardised by mean (3.550509) and standard deviation (0.8693318).
+      \item[6] Reference group: standard dose miltefosine.
+    \end{tablenotes}
+  \end{threeparttable}
+  \caption{Model coefficients pooled across 30 imputed datasets using Rubin's Rules. Model \textbf{including} parasite grade. df: degrees of freedom; SDA: single dose liposomal amphotericin B; std.error: standard error}
+  \label{tab:isc_model_coeff_with_pg}
+\end{table}

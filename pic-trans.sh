@@ -125,6 +125,10 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/e
 # model presentation
 cp /Users/jameswilson/proj/vl_model_ea/results/var_forest_combined.pdf figures/ch6/var_forest_combined.pdf
 
+# Calibration plots
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlot.pdf figures/ch6/ea_calPlot.pdf
+
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotMal1.pdf figures/ch6/ea_calPlotMal1.pdf
 # CI forest plots
 cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM1.pdf figures/ch6/forestCIM1.pdf
 
@@ -159,6 +163,26 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/dist/ass/cont_cont.pdf figures/ch
 
 # # associations - cont-cat
 cp /Users/jameswilson/proj/vl_model_ea/figures/dist/ass/cont_cat.pdf figures/ch6/ea_cont_cat.pdf
+
+# adjusted associations
+cp /Users/jameswilson/proj/vl_model_ea/figures/multiAssocM1.pdf figures/ch6/isc_multiassoc_with_pg.pdf
+cp /Users/jameswilson/proj/vl_model_ea/figures/multiAssocM2.pdf figures/ch6/isc_multiassoc_without_pg.pdf
+
+
+# more calibration plots
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotPD.pdf figures/ch6/ea_calPlotPD.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotFD1.pdf figures/ch6/ea_calPlotFD1.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotAnaemia1.pdf figures/ch6/ea_calPlotAnaemia1.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotMal1.pdf figures/ch6/ea_calPlotMal1.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotWBC1.pdf figures/ch6/ea_calPlotWBC1.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotSS1.pdf figures/ch6/ea_calPlotSS1.pdf
+
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotAnaemia2.pdf figures/ch6/ea_calPlotAnaemia2.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotMal2.pdf figures/ch6/ea_calPlotMal2.pdf
+cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotWBC2.pdf figures/ch6/ea_calPlotWBC2.pdf
+
+
+
 
 # forest plots
 cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM2.pdf figures/ch6/forestCIM2.pdf

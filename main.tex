@@ -80,14 +80,6 @@
 \usepackage[percent]{overpic} % overlay with percentage coordinates
 \usepackage{float}
 
-% Define convenient column types:
-% L{<len>} = ragged-right paragraph column of width <len>
-% C{<len>} = centered paragraph column of width <len>
-% R{<len>} = ragged-left (right-aligned) paragraph column of width <len>
-\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}
-
 % stop lists becoming too spread out with the line spacing
 \usepackage{enumitem}
 
@@ -124,7 +116,9 @@
 
 %%%%% THESIS / TITLE PAGE INFORMATION
 % Everybody needs to complete the following:
-\title{Harnessing individual participant data from clinical trials to predict relapse in visceral leishmaniasis}
+\title{
+  Harnessing Individual Participant Data from Clinical Trials to Predict Relapse in Visceral Leishmaniasis
+}
 \author{James Patrick Wilson}
 \college{Green Templeton College}
 
@@ -216,7 +210,7 @@
 
     %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
     \begin{abstract}
-        \input{text/abstract}
+        \input{text/abstract.tex}
     \end{abstract}
 
     %%%%% MINI TABLES

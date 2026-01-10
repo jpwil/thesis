@@ -1,0 +1,33 @@
+\begin{table}[ht]
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{lrrrrr}
+      \toprule
+      term                            & estimate\tnote{1} & std.error & t statistic & df (effective) & p value  \\
+      \midrule
+      Fixed intercept                 & -3.7674           & 0.4381    & -8.60       & 2028.60        & 1.57E-17 \\
+      Anaemia: Severe\tnote{2}        & 0.5553            & 0.2365    & 2.35        & 1981.61        & 1.89E-02 \\
+      WBC count\tnote{3}              & 0.2254            & 0.1167    & 1.93        & 715.01         & 5.39E-02 \\
+      Malnutrition: Moderate\tnote{4} & 0.5486            & 0.2625    & 2.09        & 2002.50        & 3.67E-02 \\
+      Malnutrition: Severe\tnote{4}   & 0.9282            & 0.2794    & 3.32        & 2017.72        & 9.08E-04 \\
+      \midrule
+      \multicolumn{6}{l}{Unadjusted intercept (Musa 2012): -3.9073}                                             \\
+      \midrule
+      \multicolumn{6}{l}{Uniform shrinkage factor: 0.7493}                                                      \\
+      \midrule
+      \multicolumn{6}{l}{Adjusted intercepts after shrinkage: Average: -4.4889; Musa 2012: -4.6065}             \\
+      \midrule
+      \multicolumn{6}{l}{Pooled $\tau^2$: 1.040. Pooled ICC: 0.2401}                                            \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \footnotesize
+      \item[1] Logit scale before uniform shrinkage.
+      \item[2] Reference group: non--severe anaemia.
+      \item[3] Units: $\times10^9$ cells per litre. Converted to natural log scale and then standardised by mean (0.926133) and standard deviation (0.4911651).
+      \item[4] Reference group: Mild/normal malnutrition.
+    \end{tablenotes}
+  \end{threeparttable}
+  \caption{Model coefficients pooled across 30 imputed datasets using Rubin's Rules. Model \textbf{excluding} parasite grade. df: degrees of freedom; std.error: standard error; WBC: white blood cell count}
+  \label{tab:ea_model_coeff_without_pg}
+\end{table}

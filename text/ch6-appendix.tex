@@ -216,6 +216,94 @@
 
 \restoregeometry
 
+% model specification
+\input{tables/ch6/ea_model_terms_with_pg.tex}
+
+% model specification
+\input{tables/ch6/ea_model_terms_without_pg.tex}
+
+% model stability
+\input{tables/ch6/ea_model_stability.tex}
+
+% calibration pots
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotPD.pdf figures/ch6/ea_calPlotPD.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotPD.pdf}
+  \caption{Calibration plots for parasite grades \textemdash\ model \textbf{including} parasite grade.}
+  \label{fig:ea_calPlotPD_ap}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotFD1.pdf figures/ch6/ea_calPlotFD1.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotFD1.pdf}
+  \caption{Calibration plots for fever duration \textemdash\ model \textbf{including} parasite grade.}
+  \label{fig:ea_calPlotFD1_ap}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotAnaemia1.pdf figures/ch6/ea_calPlotAnaemia1.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotAnaemia1.pdf}
+  \caption{Calibration plots for anaemia \textemdash\ model \textbf{including} parasite grade.}
+  \label{fig:ea_calPlotAnaemia1}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotMal1.pdf figures/ch6/ea_calPlotMal1.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotMal1.pdf}
+  \caption{Calibration plots for malnutrition \textemdash\ model \textbf{including} parasite grade.}
+  \label{fig:ea_calPlotMal1_app}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotWBC1.pdf figures/ch6/ea_calPlotWBC1.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotWBC1.pdf}
+  \caption{Calibration plots for white blood cell count \textemdash\ model \textbf{including} parasite grade.}
+  \label{fig:ea_calPlotWBC1}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotSS1.pdf figures/ch6/ea_calPlotSS1.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotSS1.pdf}
+  \caption{Calibration plots for spleen size \textemdash\ model \textbf{including} parasite grade.}
+  \label{fig:ea_calPlotSS1}
+\end{figure}
+
+
+
+% model without parasite grade
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotAnaemia2.pdf figures/ch6/ea_calPlotAnaemia2.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotAnaemia2.pdf}
+  \caption{Calibration plots for anaemia \textemdash\ model \textbf{excluding} parasite grade.}
+  \label{fig:ea_calPlotAnaemia2}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotMal2.pdf figures/ch6/ea_calPlotMal2.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotMal2.pdf}
+  \caption{Calibration plots for malnutrition \textemdash\ model \textbf{excluding} parasite grade.}
+  \label{fig:ea_calPlotMal2}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlotWBC2.pdf figures/ch6/ea_calPlotWBC2.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/ch6/ea_calPlotWBC2.pdf}
+  \caption{Calibration plots for white blood cell count \textemdash\ model \textbf{excluding} parasite grade.}
+  \label{fig:ea_calPlotWBC2}
+\end{figure}
+
+% forest plots
 
 % cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM2.pdf figures/ch6/forestCIM2.pdf
 % forest plots for C-statistic - WITHOUT PARASITE GRADE

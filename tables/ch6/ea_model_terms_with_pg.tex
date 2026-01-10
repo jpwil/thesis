@@ -1,0 +1,39 @@
+\begin{table}[ht]
+  \centering
+  \begin{threeparttable}
+    \begin{tabular}{lrrrrr}
+      \toprule
+      term                            & estimate\tnote{1} & std.error & t statistic & df (effective) & p value  \\
+      \midrule
+      Fixed intercept                 & -3.7874           & 0.5369    & -7.05       & 1885.50        & 2.43E-12 \\
+      Parasite grade\tnote{2}         & 0.3593            & 0.0763    & 4.71        & 1044.63        & 2.83E-06 \\
+      Spleen size\tnote{3}            & -0.3335           & 0.1741    & -1.92       & 1813.86        & 5.56E-02 \\
+      Anaemia: Severe\tnote{4}        & 0.5450            & 0.2448    & 2.23        & 1973.14        & 2.61E-02 \\
+      Fever duration\tnote{5}         & -0.3302           & 0.1349    & -2.45       & 476.32         & 1.47E-02 \\
+      WBC count\tnote{6}              & 0.2368            & 0.1315    & 1.80        & 419.77         & 7.23E-02 \\
+      Malnutrition: Moderate\tnote{7} & 0.5769            & 0.2677    & 2.16        & 2004.45        & 3.13E-02 \\
+      Malnutrition: Severe\tnote{7}   & 0.9780            & 0.2860    & 3.42        & 2025.03        & 6.39E-04 \\
+      \midrule
+      \multicolumn{6}{l}{Unadjusted intercept (Musa 2012): -3.9411}                                             \\
+      \midrule
+      \multicolumn{6}{l}{Uniform shrinkage factor: 0.8079}                                                      \\
+      \midrule
+      \multicolumn{6}{l}{Adjusted intercepts after shrinkage: Average: -4.3182; Musa 2012: -4.4524}             \\
+      \midrule
+      \multicolumn{6}{l}{Pooled $\tau^2$: 0.9122. Pooled ICC: 0.2169}                                           \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}
+      \footnotesize
+      \item[1] Logit scale before uniform shrinkage.
+      \item[2] Continuous variable, from 1+ to 6+ as described by Chulay and Bryceson\cite{chulay1983}. Transformed $x \mapsto x - 1$.
+      \item[3] Units: centimetres. Converted to natural log scale $x \mapsto \log(x + 1)$.
+      \item[4] Reference group: non--severe anaemia.
+      \item[5] Units: days. Converted to natural log scale and then standardised by mean (3.550509) and standard deviation (0.8693318).
+      \item[6] Units: $\times10^9$ cells per litre. Converted to natural log scale and then standardised by mean (0.926133) and standard deviation (0.4911651).
+      \item[7] Reference group: Mild/normal malnutrition.
+    \end{tablenotes}
+  \end{threeparttable}
+  \caption{Model coefficients pooled across 30 imputed datasets using Rubin's Rules. Model \textbf{including} parasite grade. df: degrees of freedom; std.error: standard error; WBC: white blood cell count}
+  \label{tab:ea_model_coeff_with_pg}
+\end{table}
