@@ -1,6 +1,6 @@
 # DPhil Thesis
 
-This repository contains the LaTeX files for compiling my DPhil thesis. LaTeX package used: 
+This repository contains the LaTeX files for compiling my DPhil thesis. 
 
 ## MSD Canvas Course
 
