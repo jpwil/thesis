@@ -1,13 +1,17 @@
 \chapter{\label{app:isc-results}Appendix \textemdash\ Results: Indian Subcontinent Model}
 
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/isc_logodds.pdf figures/ch5/isc_logodds.pdf
+\newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 
-\begin{figure}[tb]
-  \centering
-  \includegraphics[width=1\textwidth]{figures/ch5/isc_logodds.pdf}
-  \caption{Associations between transformed continuous predictors and log(odds) of relapse. For each predictor (excluding parasite grade), a univariable generalised additive model spline fit is shown, with 95\% confidence intervals. For parasite grade, 95\% confidence intervals are calculated for each grade using the Wilson method.}
-  \label{fig:isc_logodds}
-\end{figure}
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/comb_discrete.pdf figures/ch5/isc_comb_discrete.pdf
+\begin{landscape}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch5/isc_comb_discrete.pdf}
+    \caption{Distribution of categorical predictors by study. Missing data excluded from stacked bar charts for malnutrition, parasite grade. Where aspirates were performed, the source was never missing. NA: unable to show distribution as all study-specific data are missing. MF: miltefosine; SDA: single-dose liposomal amphotericin B}
+    \label{fig:isc_comb_dist_cat}
+  \end{figure}
+\end{landscape}
+\restoregeometry
 
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 
@@ -172,20 +176,7 @@
 
 \restoregeometry
 
-\newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
-
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/comb_discrete.pdf figures/ch5/isc_comb_discrete.pdf
-\begin{landscape}
-  \begin{figure}[tb]
-    \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch5/isc_comb_discrete.pdf}
-    \caption{Distribution of categorical predictors by study. Missing data excluded from stacked bar charts for malnutrition, parasite grade. Where aspirates were performed, the source was never missing. NA: unable to show distribution as all study-specific data are missing. MF: miltefosine; SDA: single-dose liposomal amphotericin B}
-    \label{fig:isc_comb_dist_cat}
-  \end{figure}
-\end{landscape}
-
-\restoregeometry
-
+% CORRELATION - CONTINUOUS/CONTINUOUS
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 %cp /Users/jameswilson/proj/vl_model_isc/figures/dist/ass/cont_cont.pdf figures/ch5/isc_cont_cont.pdf
 
@@ -200,6 +191,7 @@
 
 \restoregeometry
 
+% CORRELATION - CONTINUOUS/CATEGORICAL
 \newgeometry{left=1cm, bottom=2.5cm, right=1.5cm, top=3cm}
 %cp /Users/jameswilson/proj/vl_model_isc/figures/dist/ass/cont_cat.pdf figures/ch5/isc_cont_cat.pdf
 
@@ -207,12 +199,18 @@
   \begin{figure}[tb]
     \centering
     \includegraphics[width=1.34\textwidth]{figures/ch5/isc_cont_cat.pdf}
-    \caption{Correlation between continuous and categorical variables. FevDur and laboratory tests axes transformed to log10 scale. Age: years; Height: cm; Weight: kg; FevDur: duration of fever, days; SpnSize: spleen size, cm; Hb: haemoglobin, g/L; Plt: platelets, $\times10^9/L$; WBC: white blood cells $\times10^9/L$; ALT: alanine aminotransferase, U/L; Cr: creatinine $\mu$mol/L.}
-    \label{fig:isc_cont_cat}
+    \caption{Correlation between continuous and categorical variables. FevDur and laboratory tests axes transformed to log10 scale. Age: years; Height: cm; Weight: kg; FevDur: duration of fever, days; SpnSize: spleen size, cm; Hb: haemoglobin, g/L; Plt: platelets, $\times10^9/L$; WBC: white blood cells $\times10^9/L$; ALT: alanine aminotransferase, U/L; Cr: creatinine $\mu$mol/L.}\label{fig:isc_cont_cat}
   \end{figure}
 \end{landscape}
-
 \restoregeometry
+
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/isc_logodds.pdf figures/ch5/isc_logodds.pdf
+\begin{figure}[tb]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/ch5/isc_logodds.pdf}
+  \caption{Associations between transformed continuous predictors and log(odds) of relapse. For each predictor (excluding parasite grade), a univariable generalised additive model spline fit is shown, with 95\% confidence intervals. For parasite grade, 95\% confidence intervals are calculated for each grade using the Wilson method.}
+  \label{fig:isc_logodds}
+\end{figure}
 
 % model specification
 \input{tables/ch5/isc_model_terms_with_pg.tex}
@@ -220,9 +218,29 @@
 % model specification
 \input{tables/ch5/isc_model_terms_without_pg.tex}
 
-% model stability
-\input{tables/ch5/isc_model_stability.tex}
 
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM2.pdf figures/ch5/forestCIM2.pdf
+% forest plots for C-statistic - WITHOUT PARASITE GRADE
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM2.pdf}
+    \put(0,5.5){\scriptsize \fcolorbox{black}{white}{$\tau^2$ = 0.0011; $I^2$ = 19.6\%; p = 0.37}}
+  \end{overpic}
+  \caption{Forest plot showing individual and pooled study c--statistics for the model \textbf{excluding} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Chakraborty 2008, no relapse events occurred and the c--statistic is therefore undefined. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}).}
+  \label{fig:isc_forestCIM2}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM2.pdf figures/ch5/forestCalM2.pdf
+% forest plots for calibration
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={3.3cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM2.pdf}
+    \put(0,13){\fcolorbox{black}{white}{\scriptsize CITL: $\tau^2$ = 0.14; $I^2$ = 55.8\%; p = .0015}}
+    \put(0,9.52){\fcolorbox{black}{white}{\scriptsize CS: $\tau^2$ = 0.006; $I^2$ = 1.32\%; p = .62}}
+  \end{overpic}
+  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
+  \label{fig:isc_forestCalM2}
+\end{figure}
 
 % calibration pots
 % cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotPD.pdf figures/ch5/isc_calPlotPD.pdf
@@ -279,15 +297,13 @@
 \begin{figure}[tb]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotA2.pdf}
-  \caption{Calibration plots for age \textemdash\ model \textbf{excluding} parasite grade.}
-  \label{fig:isc_calPlotA2_ap}
+  \caption{Calibration plots for age \textemdash\ model \textbf{excluding} parasite grade.}\label{fig:isc_calPlotA2_ap}
 \end{figure}
 
 \begin{figure}[tb]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/ch5/isc_calPlotAnaemia2.pdf}
-  \caption{Calibration plots for anaemia severity \textemdash\ model \textbf{excluding} parasite grade.}
-  \label{fig:isc_calPlotAnaemia2_ap}
+  \caption{Calibration plots for anaemia severity \textemdash\ model \textbf{excluding} parasite grade.}\label{fig:isc_calPlotAnaemia2_ap}
 \end{figure}
 
 \begin{figure}[tb]
@@ -297,25 +313,5 @@
   \label{fig:isc_calPlotRx2_ap}
 \end{figure}
 
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM2.pdf figures/ch5/forestCIM2.pdf
-% forest plots for C-statistic - WITHOUT PARASITE GRADE
-\begin{figure}[tb]
-  \centering
-  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM2.pdf}
-    \put(0,5.5){\scriptsize \fcolorbox{black}{white}{$\tau^2$ = 0.0011; $I^2$ = 19.6\%; p = 0.37}}
-  \end{overpic}
-  \caption{Forest plot showing individual and pooled study c--statistics for the model \textbf{excluding} parasite grade. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models. Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Chakraborty 2008, no relapse events occurred and the c--statistic is therefore undefined. Study--specific confidence intervals should be interpreted with caution due to small sample sizes and relapse events in some studies (see Methodology Section \ref{meth:discrimination}).}
-  \label{fig:isc_forestCIM2}
-\end{figure}
-
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM2.pdf figures/ch5/forestCalM2.pdf
-% forest plots for calibration
-\begin{figure}[tb]
-  \centering
-  \begin{overpic}[width=\textwidth, trim={3.3cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM2.pdf}
-    \put(0,13){\fcolorbox{black}{white}{\scriptsize CITL: $\tau^2$ = 0.14; $I^2$ = 55.8\%; p = .0015}}
-    \put(0,9.52){\fcolorbox{black}{white}{\scriptsize CS: $\tau^2$ = 0.006; $I^2$ = 1.32\%; p = .62}}
-  \end{overpic}
-  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
-  \label{fig:isc_forestCalM2}
-\end{figure}
+% model stability
+\input{tables/ch5/isc_model_stability.tex}

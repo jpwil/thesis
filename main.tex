@@ -44,6 +44,12 @@
 %% Boxes %%
 \usepackage[most]{tcolorbox}
 
+% texcount options
+%TC:envir mybox 0 0
+%TC:envir threeparttable 0 0
+%TC:envir mclistof 0 0
+%TC:envir ThreePartTable 0 0 
+
 % Define a new tcolorbox environment with an automatic counter
 \newtcolorbox[auto counter, number within=chapter]{mybox}[2][]{%
   float,
@@ -63,6 +69,10 @@
 \usepackage{booktabs}
 \usepackage{threeparttable}
 \usepackage{threeparttablex}
+
+% for creating space after threeparttable superscripts
+\newcommand{\mtnote}[1]{\textsuperscript{\TPTtagStyle{#1}}} 
+
 \usepackage{pdflscape}
 
 
@@ -133,8 +143,7 @@
 % Your full degree name.  (But remember that DPhils aren't "in" anything.  They're just DPhils.)
 \degree{Doctor of Philosophy in Clinical Medicine}
 % Term and year of submission, or date if your board requires (eg most masters)
-\degreedate{Michaelmas 2025}
-
+\degreedate{Hilary 2026}
 
 %%%%% YOUR OWN PERSONAL MACROS
 % This is a good place to dump your own LaTeX macros as they come up.
@@ -165,8 +174,8 @@
 \makeatletter
 \let\origrestoregeometry\restoregeometry
 \renewcommand{\restoregeometry}{%
-    \origrestoregeometry
-    \baselineskip=\textbaselineskip\relax
+  \origrestoregeometry
+  \baselineskip=\textbaselineskip\relax
 }
 \makeatletter
 
@@ -193,52 +202,54 @@
 % JEM: Pages are roman numbered from here, though page numbers are invisible until ToC.  This is in
 % keeping with most typesetting conventions.
 \begin{romanpages}
-    % Title page is created here
-    \maketitle
+  % Title page is created here
+  \maketitle
 
-    %%%%% DEDICATION -- If you'd like one, un-comment the following.
-    %\begin{dedication}
-    %This thesis is dedicated to\\
-    %someone\\
-    %for some special reason\\
-    %\end{dedication}
+  %%%%% DEDICATION -- If you'd like one, un-comment the following.
+  %\begin{dedication}
+  %This thesis is dedicated to\\
+  %someone\\
+  %for some special reason\\
+  %\end{dedication}
 
-    %%%%% ACKNOWLEDGEMENTS -- Nothing to do here except comment out if you don't want it.
-    \begin{acknowledgements}
-        \input{text/acknowledgements}
-    \end{acknowledgements}
+  %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
+  \begin{abstract}
+    \input{text/abstract.tex}
+  \end{abstract}
 
-    %%%%% ABSTRACT -- Nothing to do here except comment out if you don't want it.
-    \begin{abstract}
-        \input{text/abstract.tex}
-    \end{abstract}
+  %%%%% ACKNOWLEDGEMENTS -- Nothing to do here except comment out if you don't want it.
+  \begin{acknowledgements}
+    \input{text/acknowledgements}
+  \end{acknowledgements}
 
-    %%%%% MINI TABLES
-    \dominitoc % include a mini table of contents
-    \adjustmtc[-1] % fix minitoc numbering, it works. How it works will forever remain a mystery.  
-    % \dominilof  % include a mini list of figures
-    %\dominilot  % include a mini list of tables
 
-    % This aligns the bottom of the text of each page.  It generally makes things look better.
-    \flushbottom
+  %%%%% MINI TABLES
+  \dominitoc % include a mini table of contents
+  \adjustmtc[-1] % fix minitoc numbering, it works. How it works will forever remain a mystery.  
+  % \dominilof  % include a mini list of figures
+  %\dominilot  % include a mini list of tables
 
-    % This is where the whole-document ToC appears:
-    \tableofcontents
-    % \listoffigures
-    \mtcaddchapter
-    % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
+  % This aligns the bottom of the text of each page.  It generally makes things look better.
+  \flushbottom
 
-    % Uncomment to generate a list of tables:
-    %\listoftables
-    %	\mtcaddchapter
+  % This is where the whole-document ToC appears:
+  \tableofcontents
+  % \listoffigures
+  \mtcaddchapter
+  % \mtcaddchapter is needed when adding a non-chapter (but chapter-like) entity to avoid confusing minitoc
 
-    %%%%% LIST OF ABBREVIATIONS
-    % This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
-    % formatted.  The template can handle any kind of list though, so this might be a good place for a
-    % glossary, etc.
-    \include{text/abbreviations}
+  % Uncomment to generate a list of tables:
+  %\listoftables
+  %	\mtcaddchapter
 
-    % The Roman pages, like the Roman Empire, must come to its inevitable close.
+  %%%%% LIST OF ABBREVIATIONS
+  % This example includes a list of abbreviations.  Look at text/abbreviations.tex to see how that file is
+  % formatted.  The template can handle any kind of list though, so this might be a good place for a
+  % glossary, etc.
+  \include{text/abbreviations}
+
+  % The Roman pages, like the Roman Empire, must come to its inevitable close.
+
 \end{romanpages}
 
 %%%%% CHAPTERS

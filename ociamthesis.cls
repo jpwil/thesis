@@ -219,7 +219,10 @@
             \end{center}
         \else
             \begin{center}
-                { \LARGE {\bfseries {\@title}} \par}
+                {\LARGE\bfseries
+                    \setlength{\baselineskip}{1.2\baselineskip}%
+                    \@title\par
+                }
                 {\large \vspace*{30mm} {\crest \par} \vspace*{25mm}}
                 {{\Large \@author} \par}
                 {\large \vspace*{1ex}
