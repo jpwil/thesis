@@ -65,10 +65,17 @@
 \usepackage{geometry} % already loaded by ociamthesis, here just in case
 
 %% tables %%
+\usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{threeparttable}
 \usepackage{threeparttablex}
+
+\newcommand{\greythinrule}{%
+  % \arrayrulecolor{gray}%
+  \specialrule{0.3pt}{0pt}{0pt}%
+  % \arrayrulecolor{black}%
+}
 
 % for creating space after threeparttable superscripts
 \newcommand{\mtnote}[1]{\textsuperscript{\TPTtagStyle{#1}}} 
@@ -95,9 +102,15 @@
 
 \usepackage{pifont} % circled text
 
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\definecolor{rowyellow}{RGB}{255,249,220}
+\definecolor{rowgrey}{RGB}{245,245,245}
+\definecolor{rowwhite}{RGB}{255,255,255}
+
+
 % The science-type option: numerical in-text citation with references in order of appearance.
 % \usepackage[latin, english]{babel}
+
 
 \usepackage[
   backend=biber,            % use biber

@@ -1,0 +1,28 @@
+\begin{table}[ht]
+    \centering
+    \caption{Glossary of key terms.}
+    \label{tab:sr-prediction-terms}
+    \begin{tabularx}{\linewidth}{@{}L{3cm}X@{}}
+        \toprule
+        \textbf{Term}                 & \textbf{Description}                                                                                                                                                                                                                                                                                                                                                                                           \\
+        \midrule
+        \textbf{Prediction model}     & An equation or set of rules for estimating an individual's probability of an outcome based on two or more predictors. Traditionally developed using multivariable regression, although machine learning methods are increasingly used.                                                                                                                                                                         \\
+        \midrule
+        \textbf{Outcome}              & The event being predicted. Also termed the response or dependent variable. Models are described as \emph{prognostic} when outcomes occur after the time of model use, and \emph{diagnostic} when outcomes are present at the time of model use.                                                                                                                                                                \\
+        \midrule
+        \textbf{Predictors}           & Patient or group characteristics used to estimate an outcome, also termed covariates, inputs, determinants, or independent variables. Predictors may be \emph{candidate predictors} (considered for inclusion during model development) or \emph{final predictors} (retained in the final model).                                                                                                              \\
+        \midrule
+        \textbf{Overall performance}  & An overall summary measure of how well a model fits the data. Commonly presented measures include explained variation (R\textsuperscript{2}) and the Brier score.                                                                                                                                                                                                                                              \\
+        \midrule
+        \textbf{Discrimination}       & The ability of a model to distinguish between individuals with and without the outcome. For binary outcomes this is often quantified using the concordance (c-)statistic, also termed the AUC, defined as the probability that the model assigns a higher predicted risk to an individual with the outcome than to one without. Values range from 0.5 (no better than chance) to 1.0 (perfect discrimination). \\
+        \midrule
+        \textbf{Calibration}          & The agreement between predicted risks and observed outcomes. For binary outcomes, calibration is best assessed using a calibration plot comparing predicted risks with observed outcome frequencies across the range of predictions.                                                                                                                                                                           \\
+        \midrule
+        \textbf{Apparent performance} & Model performance evaluated using the same dataset in which the model was developed. Performance can be optimistically biased due to overfitting, particularly in small samples or when data-driven predictor selection is used.                                                                                                                                                                               \\
+        \midrule
+        \textbf{Internal validation}  & Model performance evaluated in the population represented by the development dataset, ideally using resampling techniques (e.g. cross-validation or bootstrapping) to account for overfitting. Split-sample approaches are generally considered inefficient.                                                                                                                                                   \\
+        \midrule
+        \textbf{External validation}  & Model performance evaluated in new data that were not used for model development and providing an assessment of model generalisability to new populations or settings.                                                                                                                                                                                                                                         \\
+        \bottomrule
+    \end{tabularx}
+\end{table}

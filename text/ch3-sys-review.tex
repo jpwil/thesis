@@ -4,3 +4,260 @@
 % \end{savequote}
 
 \chapter[Systematic Review of Prognostic Models]{\label{ch:3-sys-review}Prognostic Models Predicting Clinical Outcomes in Patients Diagnosed with Visceral Leishmaniasis: A Systematic Review}
+
+\subsubsection{Context}
+
+This systematic review was initially submitted for publication to \textit{BMJ Public Health} in early 2023. Following editorial and peer review feedback received in December 2025, the literature search was updated and substantial revisions were made. The version presented in this chapter is adapted from the updated manuscript.
+
+A protocol for this systematic review has been published\cite{wilsonPrognosticPredictionModels2023} and prospectively registered (PROSPERO registration number: CRD42023417226). Preliminary findings were disseminated through oral presentations at MSF Scientific Day (London, 2024) and the ASTMH 2024 Annual Meeting.
+
+\subsubsection{Authorship and Acknowledgements}
+
+While the manuscript was prepared by myself, the following co-authors contributed to this work (listed in publication order):
+
+Forhad Chowdhury;\footnote{Infectious Diseases Data Observatory, Nuffield Department of Medicine, University of Oxford; University of Oxford Centre for Tropical Medicine and Global Health, Nuffield Department of Medicine, University of Oxford.\label{fn:IDDO}} Shermarke Hassan;\textsuperscript{\ref{fn:IDDO}} Elinor Harriss;\footnote{University of Oxford, Bodleian Health Care Libraries} Fabiana Alves;\footnote{Drugs for Neglected Diseases Initiative} Ahmed Musa;\footnote{Institute of Endemic Diseases, University of Khartoum} Prabin Dahal;\textsuperscript{\ref{fn:IDDO}} Kasia Stepniewska;\textsuperscript{\ref{fn:IDDO}} Philippe Guérin.\textsuperscript{\ref{fn:IDDO}}
+
+PG, JW, KS, and PD conceptualised the study. The final manuscript was written by JW, with review and input from all co-authors. Disease-specific expertise was provided by FA, AM, and PG. The search strategy was developed and executed by EH, with the literature search conducted by JW and FH. The data collection tool was designed by JW, and data extraction was performed by JW and SH.
+
+In contrast to other chapters in this thesis, and to reflect co-author contributions, the plural first-person pronoun ``we'' is used throughout this chapter.
+
+\section{Introduction}
+
+In endemic settings, accurately identifying patients at high risk of adverse outcomes is paramount when prioritising limited resources, including admission, treatment selection, and follow-up intensity. Prognostic models \textemdash\ most commonly developed using multivariable regression techniques \textemdash\ estimate an individual patient's probability of experiencing a future clinical event\cite{moons2009}. Often presented as simplified risk scores, such models abound in the medical literature and inform clinical decision-making and guideline development\cite{moons2015}. In infectious diseases alone, systematic reviews have identified over 600 prognostic models for COVID-19\cite{wynants2020}, 37 models for tuberculosis\cite{peetluk2021}, and 27 models for malaria\cite{njim2019}. However, concerns have been raised on the methodological quality and reporting of prediction models. Biased models may overestimate performance, generate misleading predictions, and ultimately contribute to suboptimal or inequitable clinical decisions\cite{moons2015, steyerberg2013}.
+
+Several prognostic models have been developed and implemented for patients with VL\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016}. In Brazil, national guidelines introduced in 2011 recommended the use of four related risk scores, based on combinations of clinical and/or laboratory factors, to guide hospital admission and the use of liposomal amphotericin B\cite{costaPredictingDeathKalaazar2016,costadFatoresPrognosticoNa2009,ministryofhealthbrazilVisceralLeishmaniasisClinical2011}. Similarly, since 2003, Médecins Sans Frontières (MSF) Holland has used simple VL risk scores in South Sudan to support clinical decision-making regarding liposomal amphotericin B therapy, broad-spectrum antibiotics, blood transfusions, and nutritional support\cite{abongomeraDevelopmentExternalValidation2017,gorski2010,collin2004}. Additional models exist\cite{coura-vitalPrognosticFactorsScoring2014,werneckPrognosticFactorsDeath2003}, although the full range of models, including their characteristics, comparative performance, and inherent biases, have yet to be systematically described.
+
+We therefore conducted a systematic review to identify, summarise, and critically appraise prognostic models predicting future clinical outcomes in patients with VL. This review aims to support policymakers in evaluating the incorporation of prognostic models into treatment guidelines, and to help clinicians assess the applicability of existing models to their own patient populations. In addition, researchers may use this review to identify evidence gaps and to determine whether available data are better suited to the development of new models, or to the external validation (evaluation) and/or updating of existing models\cite{collinsExternalValidationMultivariable2014}.
+
+A glossary of key terms relating to model development and evaluation is presented in Table~\ref{tab:sr-prediction-terms}.
+
+\input{tables/ch3/glossary_table.tex}
+
+\begin{mybox}[label=box:bmj_sys_rev]{Key Messages of the Systematic Review}
+    {
+        \textbf{What is already known on this topic}
+        \begin{itemize}[noitemsep]
+            \item Visceral leishmaniasis (VL) is a neglected tropical disease associated with high mortality, predominantly affecting populations in resource-constrained settings.
+            \item Identification of patients at high risk of adverse outcomes is critical for prioritising limited healthcare resources, including hospital admission, treatment selection, and follow-up care.
+            \item Risk stratification of patients can be performed using prognostic models, however, the range of available models and their key methodological characteristics have not been systematically evaluated.
+        \end{itemize}
+        \textbf{What this study adds}
+        \begin{itemize}[noitemsep]
+            \item Using existing reporting guidelines for systematic reviews of prediction model studies, this review provides the first comprehensive synthesis of prognostic models predicting future clinical outcomes in patients with VL.
+            \item We identified 12 prognostic models, all of which predict mortality and were developed in Brazil or East Africa.
+            \item All identified models and model evaluations were judged to be at high risk of bias; therefore model predictions and performance measures should be interpreted with caution.
+        \end{itemize}
+        \textbf{How this study might affect research, practice or policy}
+        \begin{itemize}[noitemsep]
+            \item This review highlights key evidence gaps in the VL prediction model landscape and supports researchers in identifying candidate models for external validation or updating using local patient data.
+            \item By summarising and appraising available models, this review enables clinicians and policymakers to assess the applicability of existing models to their own patient populations.
+            \item By identifying common methodological limitations, this review encourages researchers to review contemporary guidance on the reporting of prediction model development and evaluation.
+        \end{itemize}
+    }
+\end{mybox}
+
+\section{Methodology}
+
+We adhered to Transparent Reporting of Multivariable Prediction Models for Individual Prognosis or Diagnosis: Checklist for Systematic Reviews and Meta-Analyses (TRIPOD-SRMA) when reporting this systematic review\cite{snellTransparentReportingMultivariable2023}. Data extraction was guided by the Checklist for Critical Appraisal and Data Extraction for Systematic Reviews of Prediction Modelling Studies (CHARMS)\cite{moonsCriticalAppraisalData2014} and the Prediction Model Risk of Bias Assessment Tool (PROBAST)\cite{wolffPROBASTToolAssess2019,moons2019}. Risk of bias assessment is performed with PROBAST\cite{wolffPROBASTToolAssess2019}.
+
+\subsubsection{Eligibility Criteria}
+
+We followed a Population, Index model, Comparator model, Outcomes, Timing, Setting (PICOTS) approach to frame our review question and define our eligibility criteria\cite{moonsCriticalAppraisalData2014,debray2017}.
+
+The population consisted of all human patients with a confirmed or suspected diagnosis of VL, as defined by the study authors. Index models included all prognostic models developed in patients with VL, including model development studies, external validation studies and/or model updating studies. No individual comparator model was defined, given the aim of the review was to summarise and critically appraise all identified model developments and evaluations. All clinical outcomes were considered that occur following the intended time of model use, with no upper limit on the prediction horizon. Timing of model use was either at the time of or following diagnosis. We imposed no restriction on the setting of model development or evaluation.
+
+In accordance with best practice in prediction modelling research\cite{steyerbergPrognosisResearchStrategy2013,wolffPROBASTToolAssess2019,collins2015}, we defined a prognostic model as a multivariable model (including two or more predictors) developed with the intention of predicting future outcomes at the individual patient level. Prediction model studies were distinguished from predictor finding or prognostic factor studies, where the aim is to investigate the effect of a single or group of factors on an outcome of interest\cite{rileyGuideSystematicReview2019}. We excluded unpublished studies (including conference abstracts, educational theses), studies that only report diagnostic prediction models, and animal studies.
+
+\subsubsection{Information Sources and Search Strategy}
+
+An information specialist (EH) created the search strategy to retrieve relevant records from the following databases: Ovid Embase; Ovid MEDLINE; the Web of Science Core Collection, SciELO and LILACS. No language restrictions were imposed. The databases were initially searched from database inception to 1 March 2023. Using the same strategy, the search was updated to include additional records from 1 March 2023 to 18 December 2025. The search strategy used text words and relevant indexing terms to retrieve studies describing eligible prognostic models. The Ingui search filter was augmented with an additional search string as described by Geersing et al\cite{inguiSearchingClinicalPrediction2001,geersingSearchFiltersFinding2012}, and combined with VL-specific keywords. Google Scholar was used to identify any complementary grey literature (full search strategy presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}).
+
+\subsubsection{Study Selection}
+
+Deduplication and screening of references were performed in Covidence\cite{covidence}. Screening was performed independently by two reviewers (JW, FC); initially at title and abstract level, and subsequently at full-text level. Where discordance existed, a third expert reviewer (PD) was consulted to make the final judgement. Subsequent forward and backward citation searching were performed to identify records missed by the initial search.
+
+\subsubsection{Data Collection}
+
+Study information was captured using a REDCap server hosted at the University of Oxford\cite{harrisREDCapConsortiumBuilding2019}. A data extraction form was created and piloted as per the CHARMS checklist and PROBAST (\href{https://github.com/jpwil/dphil}{Supplementary Material})\cite{moons2019,moonsCriticalAppraisalData2014,wolffPROBASTToolAssess2019}. Two reviewers (JW, SH) independently extracted the study information. Where discordance remained after discussion, a final decision was made by a third expert reviewer (PD). Study authors were not contacted in the event of unclear or missing information.
+
+\subsubsection{Risk of Bias Assessment}
+
+Risk of bias was assessed using PROBAST\cite{wolffPROBASTToolAssess2019,moons2019}. Two reviewers (JW, SH) independently assessed each model development (including updating) and external validation, by answering 20 signalling questions across four domains (participants, predictors, outcome, and analysis). Responses were used to judge the overall risk of bias as either `low', `high' or `unclear'. Any discordance was resolved through discussion.
+
+As part of the bias assessment, we established whether the model predictors and their corresponding risk scores were consistent with the reported multivariable regression coefficients (PROBAST signalling question 4.9). Consistency was assessed by referring to the study's reported methodology, and expert guidance on the presentation of clinical risk scores\cite{bonnettGuidePresentingClinical2019}.
+
+\subsubsection{Applicability}
+
+Applicability was not formally assessed given the broad remit of the research question. Instead, we summarise a broad range of information to facilitate comparison of each model's predictors, participants, and outcomes, with those of the intended target setting\cite{moons2019}.
+
+\subsubsection{Synthesis of Results}
+
+Key characteristics of the identified models and their evaluations are summarised at the aggregate study and model levels, with complementary information presented in accompanying tables and \href{https://github.com/jpwil/dphil}{Supplementary Material}. As all identified models predict mortality, a figure is included to facilitate comparison of candidate and final predictors across models.
+
+A complementary narrative summary is also provided in the \href{https://github.com/jpwil/dphil}{Supplementary Material}, where each study is described individually to provide additional contextual detail.
+
+All identified models reported discrimination using the c-statistic. Accordingly, median and range values are presented for models evaluated in the development dataset (apparent performance) and in new patient data (external validation). Where c-statistics or other measures were not explicitly reported, no attempt was made to derive them from other performance measures. Owing to sparse and heterogeneous reporting across studies, other reported performance measures were not suitable for quantitative synthesis and are instead reported separately for individual models where available.
+
+Meta-analysis was not performed due to substantial heterogeneity across models, including differences in predictors, populations, and outcome definitions, precluding meaningful pooling of c-statistics.
+
+\subsubsection{Patient and Public Involvement}
+
+No patients or members of the public were involved in this systematic review.
+
+\section{Results}
+
+\subsubsection{Study and Model Selection}
+
+After deduplication, 3,313 records were identified from the combined original and updated literature searches (Figure~\ref{fig:sr-flow}). Title and abstract screening yielded 71 records for full-text review, of which eight prognostic model studies were identified\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016,coura-vitalPrognosticFactorsScoring2014,werneckPrognosticFactorsDeath2003,dearaujoEarlyClinicalManifestations2012,sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}. In total, 12 prognostic models were described, of which 10 underwent one or more evaluations in patient data from either different settings and/or time periods (19 external validations presented in four studies)\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}.
+
+\begin{figure}[tb]
+    \centering
+    \includegraphics[
+        trim = 6.5cm 11.8cm 6.5cm 11.5cm,
+        clip,
+        width = 0.9\textwidth
+    ]{figures/ch3/sys-review-flow.pdf}
+    \caption{PRISMA-like flow diagram depicting the record screening process, performed initially on 1 March 2023 with subsequent updating on 18 December 2025.}
+    \label{fig:sr-flow}
+\end{figure}
+
+\subsubsection{Model Developments}
+
+Key characteristics of the identified models are summarised in Table~\ref{tab:sr-key-characteristics} (with further predictor, participant, and outcome information presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}). All models use multivariable logistic regression and predict mortality as a binary outcome, reported either as in-hospital mortality (10 models)\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016,werneckPrognosticFactorsDeath2003,sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}, or registry-reported mortality (two models)\cite{dearaujoEarlyClinicalManifestations2012,coura-vitalPrognosticFactorsScoring2014}.
+
+\input{tables/ch3/key-characteristics.tex}
+
+Two studies (three models) were developed in East African MSF treatment centres (one model from Ethiopia that included patients with HIV/VL co-infection[12], and two models from South Sudan, for patients $\geq$19 and < 19 years, and excluding HIV/VL co-infection\cite{kaminkClinicalSeverityScoring2017}). The remaining six studies (nine models) were performed in Brazil. Two Brazilian studies (two models) were developed using registry data; either at a national level\cite{coura-vitalPrognosticFactorsScoring2014} or for residents of Belo Horizonte, state of Minas Gerais\cite{dearaujoEarlyClinicalManifestations2012}. The remaining Brazilian studies were developed in hospital settings, including two studies (five models) developed from patients admitted to a hospital in Teresina\cite{werneckPrognosticFactorsDeath2003, costaPredictingDeathKalaazar2016}, and two studies (two models) that were developed for children < 15 years and admitted to a hospital in Recife, state of Pernambuco\cite{sampaioRiskFactorsDeath2010,foinquinosTemporalValidationPredictive2021}. No models were developed in South Asia or the Mediterranean region.
+
+Most studies employed a retrospective cohort design, using hospital records (four studies, five models)\cite{sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021,abongomeraDevelopmentExternalValidation2017} or registry data (two studies, two models)\cite{coura-vitalPrognosticFactorsScoring2014,dearaujoEarlyClinicalManifestations2012}. One study used a prospective cohort design (four models)\cite{costaPredictingDeathKalaazar2016} and one study (one model) used a case-control design\cite{werneckPrognosticFactorsDeath2003}. The median number of patients used for model development was 542 (range 90--12,333).
+
+Participant age formed the inclusion criteria of eight models\cite{costaPredictingDeathKalaazar2016,sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}, with five models limiting inclusion to adolescents and younger\cite{costaPredictingDeathKalaazar2016,sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}. Where reported, the median proportion of male participants was 56.2\% (range 48.7--95.9\%, seven models).  No model excluded participants based on sex. Of the models developed in adults ($\geq$ 15 years), patients living with HIV were either excluded (two models)\cite{kaminkClinicalSeverityScoring2017}, not reported (two models)\cite{dearaujoEarlyClinicalManifestations2012,werneckPrognosticFactorsDeath2003}, and where reported, ranged from 7.0--19.3\% of the model development datasets (four models)\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016,coura-vitalPrognosticFactorsScoring2014}.
+
+\subsubsection{External Validations}
+
+Both East African studies performed external validations of their model developments (two studies, three models)\cite{abongomeraDevelopmentExternalValidation2017,kaminkClinicalSeverityScoring2017}. The model developed in Ethiopia (Abdurafi health centre, Abdurafi, Amhara region) was validated using data from a nearby treatment centre (Leishmaniasis Research and Treatment Centre, Gondar, Gondar, Amhara region)\cite{abongomeraDevelopmentExternalValidation2017}, and the two models developed in South Sudan were validated using retrospectively collected data from the same treatment centre (Lankien hospital, Jonglei state) and a treatment centre from a neighbouring state in South Sudan (Malakal hospital, Upper Nile state) (three external validations per model)\cite{kaminkClinicalSeverityScoring2017}.
+
+Two Brazilian studies reported the external validations of eight models\cite{foinquinosTemporalValidationPredictive2021,costaPredictingDeathKalaazar2016}. One study, conducted in a prospective hospital cohort (Teresina, state of Piauí), both developed and evaluated four models. All four models were evaluated in patients attending the same hospital over the following five years\cite{costaPredictingDeathKalaazar2016}. The same study used their prospective cohort to evaluate three further models: one developed from historical cohort from the same hospital\cite{werneckPrognosticFactorsDeath2003}, one developed from a retrospective hospital cohort (Recife, state of Pernambuco)\cite{sampaioRiskFactorsDeath2010}, and one using national registry data\cite{coura-vitalPrognosticFactorsScoring2014}. The second Brazilian study\cite{foinquinosTemporalValidationPredictive2021} used a retrospective hospital cohort (Recife, state of Pernambuco) to both evaluate and update a model previously developed in the same hospital\cite{sampaioRiskFactorsDeath2010}.
+
+Further details on validation datasets are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
+
+\subsubsection{Model Performance}
+
+Model discrimination measures were reported as c-statistics for all risk scores, and presented in Table~\ref{tab:sr-model-performance}. Further performance measures, where reported, are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. For external validations, the median c-statistic was 0.78 (range 0.62--0.92, 10 models, 19 external validations). When evaluated in the same patients used for model development (apparent performance), the median c-statistic was 0.86 (range 0.56--0.93, 12 models). No studies presented overall measures of performance or calibration plots. One model's calibration plot could be reproduced from an internal (split-sample) validation of the risk score\cite{coura-vitalPrognosticFactorsScoring2014}.
+
+\input{tables/ch3/model-performance.tex}
+
+\subsubsection{Predictors}
+
+A visual comparison of the candidate and final predictors is presented in Figure~\ref{fig:sr-predictors}. Where authors provide further predictors definitions, these are reported in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. The four most common candidate predictors were jaundice (12 models), age (11 models), sex (10 models) and bleeding (10 models). Initial VL treatment was included as a candidate predictor in two models, although not retained in the final models [12,35]. Predictors most frequently retained in the models were jaundice (11 models), bleeding (eight models), and age (seven models). No models included sex as a final predictor. One model did not include HIV status as a candidate predictor, despite being conducted in adults and not pre-specifying the exclusion of patients with HIV [20]. Apart from HIV testing, four models did not consider laboratory tests as a predictor\cite{costaPredictingDeathKalaazar2016,coura-vitalPrognosticFactorsScoring2014,dearaujoEarlyClinicalManifestations2012}. The remaining eight models included laboratory tests both as candidate and final predictors\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016,werneckPrognosticFactorsDeath2003,sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}.
+
+\newgeometry{left=1.5cm, right=1.5cm, top=2cm, bottom=2cm}
+\begin{landscape}
+    \begin{figure}[tb]
+        \centering
+        \includegraphics[
+            trim = 6.3cm 12.72cm 6.1cm 12.5cm,
+            clip,
+            width = 0.87\linewidth
+        ]{figures/ch3/predictors.pdf}
+        \caption{Candidate (considered) and final (retained) predictors included in prognostic models of mortality in visceral leishmaniasis. Bars indicate the number of models incorporating each predictor. Models are labelled by first author, publication year, and model name (in brackets where multiple models were reported). Conceptually similar predictors were grouped and renamed; definitions and groupings as reported by the study authors are provided in Supplemental Table 4. For models by de Araújo et al. and Coura-Vital et al., cough and/or diarrhoea were treated as a single predictor in accordance with national registry reporting. For models by Kämink et al., oedema and ascites were combined as a single predictor, whereas Abongomera et al. treated these as separate variables. Predictors shown for the updated model correspond to the predetermined final predictors of the model being updated (Sampaio et al.). Abbreviations: ALT, alanine transaminase; AST, aspartate transaminase; clin, clinical; HIV, human immunodeficiency virus; lab, laboratory; TB, tuberculosis. `...' predictors assessed in $\leq$ 2 models and not included in the final model: [Werneck 2003]: `abdominal distension', episodes of blood transfusion; [de Araújo 2012]: fever, hepatomegaly, “other clinical manifestations”, initial VL regimen, VL drugs following initial regimen, antimony treatment duration; [Coura-Vital 2014]: fever, hepatomegaly, `other clinical manifestations', race, education; [Abongomera 2017]: initial VL regimen; [Kämink 2017, both models]: lymphadenopathy.}
+        \label{fig:sr-predictors}
+    \end{figure}
+\end{landscape}
+\restoregeometry
+
+\subsubsection{Model Presentation}
+
+All 12 models were presented as simplified risk scores. Score ranges, suggested risk groupings, and the authors' opinions on how different risk groups should inform clinical decision-making are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. Outcome (mortality) probabilities corresponding to the risk scores were presented either in tabular format (four models)\cite{abongomeraDevelopmentExternalValidation2017,coura-vitalPrognosticFactorsScoring2014,kaminkClinicalSeverityScoring2017}, graphically and through a web application (four models)\cite{costaPredictingDeathKalaazar2016}, or not presented (four models)\cite{werneckPrognosticFactorsDeath2003,dearaujoEarlyClinicalManifestations2012,sampaioRiskFactorsDeath2010,foinquinosTemporalValidationPredictive2021}. The full model equation, including model intercept, was reproducible for three models in total \textemdash\ presented either in the original study describing the model development (one model)\cite{coura-vitalPrognosticFactorsScoring2014}, or in the updating study (two models, corresponding to the original model and updated model)\cite{foinquinosTemporalValidationPredictive2021}.
+
+\subsubsection{Risk of Bias Assessment}
+
+Risk of bias assessments for all model developments and external validations are presented in Table~\ref{tab:sr-model-performance}, alongside measures of discrimination and details of model presentation and reproducibility. Further details on variable selection and handling of missing data are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. Responses to the risk of bias signalling questions are also provided in the \href{https://github.com/jpwil/dphil}{Supplementary Material}.
+
+All 12 model developments were judged at an overall high risk of bias.
+
+The analysis domain was assessed at high risk of bias across all model developments. One model obtained a sufficient sample size (event to predictor parameter ratio > 10), and adequately reported model performance, including calibration\cite{coura-vitalPrognosticFactorsScoring2014}. All models (excluding model updating) were developed using a univariable selection stage and did not adjust model predictions to account for optimism due to overfitting. In four model developments, the presented risk scores were not reproducible from the regression model coefficients(full calculations are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material})\cite{costaPredictingDeathKalaazar2016}.
+
+Five models (two studies) were assessed as having a low risk of bias in the predictors domain\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016}. Both studies provided evidence that the model predictors were defined consistently for all patients and were assessed without knowledge of outcome data. The remaining seven models (six studies) were considered at high risk of bias, with one model including predictors that were likely measured after the time of intended model implementation\cite{dearaujoEarlyClinicalManifestations2012}.
+
+The outcome domain was assessed at low risk of bias for all model developments, except for two models where bias risk was unclear\cite{coura-vitalPrognosticFactorsScoring2014,dearaujoEarlyClinicalManifestations2012}.
+
+The participants domain was assessed at low risk of bias for four models (one study)\cite{costaPredictingDeathKalaazar2016}, with the remaining models considered high risk due to using retrospectively collected data.
+
+All 19 external validations were also judged at high risk of bias, although assessment across the domains was limited by a lack of reporting. Briefly, sources of bias were similar to those identified for model developments, including small sample sizes, the use of retrospectively collected data, and the absence of calibration measure reporting. Please refer to the \href{https://github.com/jpwil/dphil}{Supplementary Material} for further details.
+
+\section{Discussion}
+
+Across a range of diseases, the number of prediction model studies has surged over the last two decades, driven by an increasing focus on personalised medicine, the need to provide evidence for guideline development, and a growing number of tools available for model development\cite{peetluk2021,collins2024A,wesslerClinicalPredictionModels2015}. VL is no exception, with a total of 12 prognostic models identified, of which nine were published since 2013. All models were developed in Brazil or East Africa and predict either in-hospital or registry-reported mortality.
+
+When using a prognostic model to predict mortality, for example, in a hospital ward or outpatient clinic, the clinician should be confident that after inputting model predictors (for example, age, haemoglobin, clinical signs and symptoms), they receive a trusted estimate of the probability (risk) of the outcome occurring. Empowered with this information, the patient can then be counselled, and important treatment decisions agreed on. Having confidence in the model output is fundamental, since inaccurate risk predictions can lead to suboptimal decision-making, inequitable care, and at times, patient harm.
+
+\subsection{Prognostic Model Assessment}
+
+Three important considerations should be taken into account when assessing whether a prognostic model's estimated risks are reliable for a target patient. These include (1) applicability: whether the model has been developed or evaluated in a setting and population similar to that of the target patient; (2) performance, including both discrimination and calibration, in the populations and settings chosen for evaluation; and (3) risk of bias: whether the studies performing model development or evaluation are subject to systematic errors that may distort risk estimates and performance measures.
+
+\subsubsection{Applicability}
+
+First, we consider model applicability. Has the model been developed, and/or evaluated in patients similar to the patient I'm interested in? Here, the onus is on the model user to compare their target patient and setting to those in which the model was developed and/or evaluated (Table~\ref{tab:sr-key-characteristics}, \href{https://github.com/jpwil/dphil}{Supplementary Material}). In VL, important mismatches can result from differences in (i) HIV status, (ii) patient age, (iii) geographical setting (both locally within a country, and between endemic regions), (iv) treatments used (where reported), (v) temporal differences, and (vi) treatment setting (e.g. inpatient vs outpatient). For example, estimating the mortality risk of a patient with HIV co-infection using a model developed from HIV-negative patients is likely to underestimate the true risk. Similarly, using a model developed in Brazil to estimate mortality risk in patients from India, may well overestimate the true risk, given the overall lower mortality rate in South Asia\cite{burza2018}. One may also question the contemporary risk estimates of models developed using data from 10-20 years ago. For example, is it fair to assume that models developed using hospital or registry data in Brazil in the 2000s and early 2010s are still accurate, given significant changes in treatment, and an evolving disease epidemiology\cite{lima2018}? Questions regarding model applicability, such as these, often have no clear consensus answer, although are important to consider.
+
+\subsubsection{Performance}
+
+Second, even if a model were applicable to my patient population, how can I be sure it performs well? As we summarise here (Table~\ref{tab:sr-model-performance} and \href{https://github.com/jpwil/dphil}{Supplementary Material}), model discrimination, presented as the c-statistic, is universally reported across all identified models, both when evaluated in the same patients used for model development (apparent performance) and when evaluated in new patients (external validation). Furthermore, given the reported c-statistics are frequently over 70--80\%, even when evaluated in new data, we are reassured that in the appropriate population, most models do a fairly good job at assigning higher risk to those who progress to death compared to those who do not. Crucially, while a highly discriminative model can reliably rank patients by risk, discrimination alone provides no information on the accuracy of the predicted probabilities. A model that estimates a mortality risk of 20\%, where the true risk is 2\%, may still have 100\% discriminative performance, despite dramatically overestimating the true risk.
+
+Instead, we should be reviewing a model's calibration, ideally presented as a plot of observed vs. estimated risks, to assess this fundamental, yet frequently overlooked aspect of model performance\cite{vancalster2019}. However, with estimated and observed risks only reproducible for one model risk score\cite{coura-vitalPrognosticFactorsScoring2014}, we find that the VL prognostic model landscape bucks the broader trend: calibration is neglected\cite{wynants2020,collinsExternalValidationMultivariable2014,bouwmeesterReportingMethodsClinical2012}. In contrast, measures of discrimination and classification (sensitivity, specificity), are preferentially reported, despite their limited clinical utility\cite{moons2019}.
+
+\subsubsection{Risk of Bias Assessment}
+
+Finally, we consider risk of bias, alongside the closely related issue of model reporting, both of which directly influence the interpretability, reproducibility, and clinical use of prognostic models.
+
+All model development and external validation studies were judged to be at high risk of bias according to PROBAST. Importantly, this classification does not imply that the identified models are inherently flawed or clinically uninformative. Rather, PROBAST highlights aspects of study design, analysis, or reporting that can challenge interpretation of estimated risks and performance measures\cite{moons2019}. Below, we briefly describe several recurrent issues and direct readers to accessible guidance on best practice in prognostic modelling.
+
+A frequent concern was model overfitting, which occurs when models capture random variation specific to the development dataset rather than true underlying risk patterns. This is more likely when many predictors are considered relative to the number of outcome events, and can lead to exaggerated performance estimates and inflated risk predictions when models are applied to new patients\cite{dhimanSampleSizeRequirements2023,steyerberg2019book}. While rules of thumb often suggest a minimum of 10--20 events per predictor parameter, most identified models fell well below this threshold. Formal sample size calculations are now available for prediction model development, which can also be used to the assess the number of predictors that can be reliably supported for a given sample size[46].
+
+Internal validation provides a means of adjusting performance estimates and risk estimates for the effects of overfitting. However, only two models applied internal validation methods, either using cross-validation\cite{abongomeraDevelopmentExternalValidation2017} or a split-sample approach\cite{coura-vitalPrognosticFactorsScoring2014}. Although historically common, data splitting is increasingly discouraged, particularly in smaller datasets, as it reduces the effective sample size available for model development. Resampling methods, such as bootstrapping, allow full use of the available data while providing more reliable estimates of model performance\cite{moons2015}.
+
+Another recurring source of bias was predictor selection based on univariable analyses. This approach can result in unstable models and misleading predictor inclusion, as variables are selected based on isolated statistical associations rather than their joint contribution to risk prediction. Alternative strategies include pre-specifying predictors based on clinical relevance, or applying penalisation or dimension-reduction techniques to limit model complexity\cite{moons2019,efthimiou2024}.
+
+We also identified reporting-related concerns that directly affected reproducibility of derived risk scores, with one study (four models) presenting scores that did not correspond to reported regression coefficients. While these discrepancies may reflect reporting errors, they undermine confidence in score implementation and external use.
+
+Other concerns related to model reporting and reproducibility were commonplace, limiting both model appraisal and application to the individual patient. Notably, several studies did not report absolute risk estimates corresponding to the presented risk scores\cite{werneckPrognosticFactorsDeath2003,dearaujoEarlyClinicalManifestations2012,sampaioRiskFactorsDeath2010,foinquinosTemporalValidationPredictive2021}. When models are presented primarily as binary classifiers (e.g. high vs low risk), much of their potential clinical utility is lost, as clinicians are unable to interpret or communicate individualised risk estimates.
+
+Similarly, incomplete presentation of the full model equation—including the intercept term—restricted reproducibility and external evaluation. Without this information, users are limited to applying simplified risk scores, which may differ in performance from the underlying regression model\cite{moons2019}. As only two studies reported the full model equation\cite{coura-vitalPrognosticFactorsScoring2014,foinquinosTemporalValidationPredictive2021}, independent evaluation of the remaining models would require direct contact with the original authors.
+
+Additional sources of bias—such as categorisation of continuous predictors, uncertain or suboptimal handling of missing data, reliance on retrospective data sources, and model evaluation in datasets with few outcomes—were also common. Importantly, the issues identified in this review are not unique to VL, but mirror challenges repeatedly highlighted in systematic reviews of prognostic models across a wide range of disease areas\cite{moons2019,wynants2020,collins2024A, damen2016,bellou2019}. For readers interested in addressing these issues, we signpost accessible and authoritative guidance on best practices in model development\cite{efthimiou2024}, evaluation\cite{collins2024B,riley2024A}, sample size calculation\cite{rileyCalculatingSampleSize2020,riley2024B}, model reporting\cite{collins2024A}, model presentation, (including risk score derivation)\cite{bonnettGuidePresentingClinical2019}, and updated guidance on risk of bias assessment\cite{moons2025}.
+
+\subsection{Predictors of Mortality}
+
+Where outcome timing was reported, death frequently occurred within days of hospitalisation, indicating a short prediction horizon. Two of the included prediction model studies reported time to death: one-third of patients died within 48 hours of admission in South Sudan\cite{kaminkClinicalSeverityScoring2017}, and the average time to death was just over five days in a study reporting from Teresina (Piauí, Brazil). In this context, predictors retained across models predominantly reflect advanced disease and imminent physiological decompensation.
+
+Severe VL is increasingly understood as a progressive inflammatory syndrome—described as `leishmanial sepsis' and characterized by cytokine storm, disseminated intravascular coagulation, secondary bacterial sepsis, and evolving multiple organ dysfunction\cite{costa2023}. It is therefore unsurprising that frequently identified predictors of mortality—including jaundice, bleeding, dyspnoea, oedema, and bacterial co-infection (cf. Figure~\ref{fig:sr-predictors}) represent clinical markers of established organ failure and broadly align with factors identified in systematic reviews of prognostic factors for VL mortality in East Africa\cite{abongomera2020} and Brazil\cite{beloRiskFactorsAdverse2014}.
+
+Conversely, factors plausibly important earlier in the disease course, such as symptom duration, nutritional status, or relapse history, were infrequently selected. While these variables may influence susceptibility or delayed care-seeking, they appear to have limited discriminatory value once patients reach hospital with severe disease.
+
+The short prediction horizon also explains the relatively high discrimination reported across studies, with c-statistics frequently approaching or exceeding 0.85. Under these conditions, discrimination is driven by late-stage clinical features rather than early prognostic signals. As a result, existing models primarily identify patients at high risk of near-term mortality, rather than supporting earlier risk stratification or anticipation of clinical deterioration.
+
+\subsection{Implications for Future Research}
+
+Several important evidence gaps were identified in this review. Most notably, no prediction model studies were identified outside East Africa and Brazil. This is striking given that South Asia has, until recently, accounted for the lion's share of the global VL burden. Mortality rates in South Asia are, however, relatively low compared with Brazil and East Africa, meaning that relatively large sample sizes would be required to develop mortality models without substantial risk of overfitting. In this setting, routinely collected programme data and national surveillance systems may offer a pragmatic opportunity to support adequately powered model development, provided data quality and outcome ascertainment are sufficient.
+
+A further major evidence gap is the absence of models predicting relapse or post-kala-azar dermal leishmaniasis. These outcomes are of particular importance in elimination settings, since both represent persistent infection reservoirs that sustain transmission\cite{who_sea_elim, WHO_nairobi_declaration}. The lack of current prognostic tools in this area limits our ability to target follow-up, secondary prophylaxis, or intensified surveillance. Recently the WHO released a target product profile for a test of cure following treatment, such that patients at high risk of subsequent relapse can be identified early\cite{WHO2024_Leishmaniasis}. A prognostic model for relapse could serve as a surrogate for such an in vitro test. Leveraging IPD meta-analysis allows harmonisation of data across heterogeneous studies, increases statistical power, and maximises the value of existing datasets—particularly in disease areas where high-quality data are scarce.
+
+In Brazil, existing models \textemdash\ including those informing current national guidelines\cite{Brasil_2024_GuiaVigilanciaSaude} \textemdash\ are based on data collected 10--20 years ago. Since that time, the epidemiology of VL has evolved, and treatment practices have shifted substantially, for example, with higher rates of HIV/VL co-infection, an increasing age at diagnosis, and better access to liposomal amphotericin B\cite{lima2018}. These changes raise questions about the continued validity of older models and highlight the need for model evaluation with recent patient data and, where necessary, model updating. In addition, future studies should carefully consider whether it is appropriate to combine patients with and without HIV within a single model, given their distinct clinical trajectories, immunological profiles, and risk factors for adverse outcomes\cite{cota2011}.
+
+Finally, emerging applications of artificial intelligence and machine learning warrant cautious consideration in the VL prediction modelling landscape. Recent studies have demonstrated the feasibility of applying machine learning methods to VL datasets\cite{kumar2025,donizette2025}. However, as emphasised in PROBAST+AI and TRIPOD+AI guidance, such approaches are not immune to bias, overfitting, or poor transparency\cite{collins2024A,moons2025}. Without rigorous reporting, external validation, and explicit consideration of clinical use-cases, machine learning models risk offering limited real-world utility. Future research should therefore prioritise methodological robustness, interpretability, and clinical relevance over algorithmic complexity.
+
+\subsection{Limitations}
+
+The principal limitations of this review relate to its scope. We excluded unpublished manuscripts, including conference abstracts and educational theses, due to concerns about variable methodological quality and access; however, this may have led to the omission of emerging or ongoing work.
+
+In line with our prespecified inclusion criteria, we also excluded studies reporting diagnostic models\cite{camposPredictiveScoreInfectious1996, machadodeassisPredictiveModelsDiagnostic2012}, models that were not developed using a multivariable approach\cite{abdelmoulaVisceralLeishmaniasisChildren2003,verrest2021,takele2022}, prognostic factor studies\cite{collin2004,dasilvaPrognosticFactorsAssociated2020,oliveira-senaRiskFactorsInhospital2020,kajaia2011}, and registered but unpublished prognostic model studies\cite{NCT05602610}. While these exclusions were necessary to maintain a focussed research question, they limit our ability to provide a comprehensive overview of the full VL prediction research landscape.
+
+\subsection{Conclusion}
+
+We present the first systematic review that identifies, summarises, and critically appraises prognostic models for all VL clinical outcomes. Using established methodological guidance, we provide a comprehensive, objective, and transparent synthesis of model characteristics, performance, applicability, and risk of bias. Our findings highlight substantial gaps in the current evidence base.
+
+All identified models predict mortality, were developed exclusively in Brazil or East Africa, and are almost all based on data collected over a decade ago. No models were developed in South Asia or the Mediterranean region, nor addressed relapse or PKDL \textemdash\ outcomes that are central to elimination efforts. These represent important evidence gaps where future research efforts should be prioritised.
+
+Clinicians, researchers, and policymakers can refer to this review to assess the strengths and limitations of existing VL prognostic models in this highly neglected and often fatal disease.
+
+We direct interested readers to expert guidance to support transparent reporting and reduce common sources of bias in the development and evaluation of prediction models.

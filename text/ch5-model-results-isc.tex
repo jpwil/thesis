@@ -60,7 +60,7 @@ Figure~\ref{fig:isc_treat} presents the different treatment regimens across all 
 
 All studies recruited both male and female patients, and all but three studies restricted inclusion by age. Four studies only recruited patients aged 12 years and above (314 [6.8\%] patients)\cite{sundar2015,sundar2008B,sundar2008,rijal2010a}. Where specified, the \textit{lower} age limit was otherwise between 2 and 6 years. One study (100 [2.2\%] patients) recruited children only (<15 years)\cite{pandey2017}. Otherwise, the \textit{upper} age limit ranged between 60 and 70 years.
 
-In the 16 studies that included baseline haemoglobin level in their eligibility criteria, the median threshold was 50g/dL (range 35 to 60g/dL).\footnote{with one study reporting boosting haemoglobin with blood transfusions prior to recruitment\cite{das2009}.} Almost all studies excluded patients with serious illness or the presence of significant co-existing diseases. No study explicitly excluded patients based on malnutrition severity. 
+In the 16 studies that included baseline haemoglobin level in their eligibility criteria, the median threshold was 50g/dL (range 35 to 60g/dL).\footnote{with one study reporting boosting haemoglobin with blood transfusions prior to recruitment\cite{das2009}.} Almost all studies excluded patients with serious illness or the presence of significant co-existing diseases. No study explicitly excluded patients based on malnutrition severity.
 
 Twelve studies (2,021 [43.9\%] patients) explicitly reported performing HIV testing on all recruited patients\cite{koirala2003,bhattacharya2007,chakraborty2008,rijal2013,rijal2010a,sundar2007a,sundar2008,sundar2008B,sundar2009,sundar2010,sundar2014,sundar2015}, and patients with confirmed VL/HIV co-infection were excluded from all but two studies (280 [6.1\%] patients)\cite{rijal2003,rijal2010b}. Patients with HIV/VL co-infection from these two studies were excluded at the IPD level, where reported.
 
@@ -155,13 +155,13 @@ Unadjusted relationships between variables (including all candidate predictors, 
 
 Across continuous candidate predictors, GAM smooths suggested often non-linear relationships with relapse risk, with wider uncertainty at the extremes of the predictor distributions where data were sparse. Apparent trends were most evident for age, duration of fever and spleen size. Age showed a shallow U-shaped pattern, reaching a minimum relapse risk at approximately 20 years, while duration of fever showed a marked downward trend, with longer fever durations associated with lower relapse risk. With spleen size, a notable downward trend in risk was seen for spleen sizes over 2cm, perhaps better appreciated on the logit-log scale in Appendix Figure~\ref{fig:isc_logodds}. For the laboratory predictors, weak upward trending monotonic patterns were observed for white blood cells and platelets, with higher values associated with increased relapse risk.
 
-Trends in non-candidate predictors, including weight, height, and haemoglobin, were also apparent. A marked upward trend was seen with haemoglobin and relapse risk, which was also evidence in the categorical associations, with severe anaemia associated with a lower relapse risk compared to non-severe anaemia. 
+Trends in non-candidate predictors, including weight, height, and haemoglobin, were also apparent. A marked upward trend was seen with haemoglobin and relapse risk, which was also evidence in the categorical associations, with severe anaemia associated with a lower relapse risk compared to non-severe anaemia.
 
 Treatment with miltefosine was associated with a higher unadjusted relapse risk when compared with 10mg/kg single-dose liposomal amphotericin B or `Other' treatment.
 
 Patients with parasite grades of $3+$ and $4+$ were associated with higher relapse risk compared to patients with grades $1+$ and $2+$. Extrapolation of any trend to patients with $5+$ parasite grade was limited by small numbers.
 
-A correlation matrix showing associations between continuous variables is presented in Appendix Figure~\ref{fig:isc_cont_cont}, and between continuous and categorical variables in Appendix Figure~\ref{fig:isc_cont_cat}. Inter-predictor correlations are considered further in the Discussion section. 
+A correlation matrix showing associations between continuous variables is presented in Appendix Figure~\ref{fig:isc_cont_cont}, and between continuous and categorical variables in Appendix Figure~\ref{fig:isc_cont_cat}. Inter-predictor correlations are considered further in the Discussion section.
 
 % these are the pooled continuous distributions and relationships with relapse - PART 1
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/age_comb.pdf figures/ch5/isc_pool_age_comb.pdf
@@ -267,7 +267,7 @@ On review of the missing data diagnostic plots (as described in Section \ref{sec
 
 \section{Model Results}
 
-\subsubsection{Model Specification and Coefficient Estimates}
+\subsection{Model Specification and Coefficient Estimates}
 
 Forest plots of the final model predictors are presented in Figure~\ref{fig:isc_var_forest_combined}. Full specification of the final models, including intercept terms, p-values, and predictor transformations, are presented in Appendix Tables~\ref{tab:isc_model_coeff_with_pg} and~\ref{tab:isc_model_coeff_without_pg}.
 
@@ -308,7 +308,7 @@ Pooled estimates of intraclass correlation coefficients (ICC)\footnote{ICC quant
 \end{landscape}
 \restoregeometry
 
-\subsubsection{Model Performance and Internal Validation}
+\subsection{Model Performance and Internal Validation}
 
 Apparent and optimism-adjusted c-statistics and calibration slopes are presented in Table~\ref{tab:isc_performance}. When assessed in studies with $>$5 relapse events, model discrimination was estimated at 0.70 (95\% CI\@: 0.66--0.74) in the model including parasite grade, and 0.69 (95\% CI\@: 0.64--0.74) in the model excluding parasite grade. These estimates reduced to 0.68 and 0.67, respectively, after adjusting for optimism. No evidence of significant between-study heterogeneity was identified in either model, with forest plots presented in Figure~\ref{fig:isc_forestCIM1} (model including parasite grade) and Appendix Figure~\ref{fig:isc_forestCIM2} (excluding parasite grade).
 
@@ -316,14 +316,14 @@ Apparent and optimism-adjusted c-statistics and calibration slopes are presented
   \begin{tabular}{@{}llll@{}}
     \toprule
                                    & Estimate (95\% CI) & Average  & Optimism-adjusted \\
-                                   &                    & optimism & performance        \\
+                                   &                    & optimism & performance       \\
     \midrule
-    \textbf{Model: with PG}        &                    &          &                    \\
-    \hspace{1em} C-statistic       & 0.70 (0.66--0.74)  & 0.014    & 0.68               \\
-    \hspace{1em} Calibration slope & 1.01 (0.69--1.32)  & 0.093    & 0.91               \\        \midrule
-    \textbf{Model: without PG}     &                    &          &                    \\
-    \hspace{1em} C-statistic       & 0.69 (0.64--0.74)  & 0.016    & 0.67               \\
-    \hspace{1em} Calibration slope & 1.02 (0.68--1.35)  & 0.098    & 0.92               \\        \bottomrule
+    \textbf{Model: with PG}        &                    &          &                   \\
+    \hspace{1em} C-statistic       & 0.70 (0.66--0.74)  & 0.014    & 0.68              \\
+    \hspace{1em} Calibration slope & 1.01 (0.69--1.32)  & 0.093    & 0.91              \\        \midrule
+    \textbf{Model: without PG}     &                    &          &                   \\
+    \hspace{1em} C-statistic       & 0.69 (0.64--0.74)  & 0.016    & 0.67              \\
+    \hspace{1em} Calibration slope & 1.02 (0.68--1.35)  & 0.098    & 0.92              \\        \bottomrule
   \end{tabular}
   \caption{Apparent and optimism-adjusted performance measures. Abbreviations: CI: confidence interval; PG: parasite grade}
   \label{tab:isc_performance}
@@ -350,8 +350,7 @@ Optimism in calibration slopes were estimated at 0.093 and 0.098 in the models i
     \put(0,13){\fcolorbox{black}{white}{\scriptsize CITL: $\tau^2$ = 0.094; $I^2$ = 46.1\%; p = .01}}
     \put(0,9.52){\fcolorbox{black}{white}{\scriptsize CS: $\tau^2$ = 0; $I^2$ = 0\%; p = .74}}
   \end{overpic}
-  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration-in-the-large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}
-  \label{fig:isc_forestCalM1}
+  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration-in-the-large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}\label{fig:isc_forestCalM1}
 \end{figure}
 
 Visual inspection of the calibration plots comparing predicted and observed relapse probabilities showed minimal deviation from perfect calibration (Figure~\ref{fig:isc_calPlot}). Calibration plots showing predicted and observed relapse probabilities for fever duration (Figure~\ref{fig:isc_calPlotFD1} for model including parasite grade), and other predictors (Appendix Figures~\ref{fig:isc_calPlotPD_ap} to \ref{fig:isc_calPlotRx1_ap} for model including parasite grade and~\ref{fig:isc_calPlotFD2_ap} to~\ref{fig:isc_calPlotRx2_ap} excluding parasite grade) and also showed good overall agreement, with predicted relapse probabilities lying within the 95\% confidence intervals of the observed probabilities.
@@ -378,7 +377,7 @@ The distribution of the final predictors selected across the 2~$\times$~500 boot
   \centering
   \includegraphics[width=\textwidth]{figures/ch5/isc_calPlotFD1.pdf}
   \caption{Calibration plots for different fever durations (model including parasite grade).}
-\label{fig:isc_calPlotFD1}
+  \label{fig:isc_calPlotFD1}
 \end{figure}
 
 
