@@ -32,7 +32,7 @@
   \begin{figure}[tb]
     \centering
     \includegraphics[width=1.35\textwidth]{figures/ch6/ea_cat_comb.pdf}
-    \caption{Pooled distributions and predictor--outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. Note: for parasite grade relapse \%, $y$--axis is rescaled to accommodate increased risk in 6+ group. Norm: normal.}
+    \caption{Marginal distributions and predictor--outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. Note: for parasite grade relapse \%, $y$--axis is rescaled to accommodate increased risk in 6+ group. Norm: normal.}
     \label{fig:ea_cat_comb}
   \end{figure}
 \end{landscape}
@@ -78,7 +78,7 @@
       \put(2,19){\small SpnSize}
     \end{overpic}
   \end{subfigure}
-  \caption{Distributions and predictor--outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \caption{Distributions and predictor--outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
   \label{fig:ea_pooled_dist_cont1}
 \end{figure}
 
@@ -120,7 +120,7 @@
       \put(2,19){\small Crt}
     \end{overpic}
   \end{subfigure}
-  \caption{Pooled distributions and predictor--outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density pooled across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \caption{Marginal distributions and predictor--outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
   \label{fig:ea_pooled_dist_cont2}
 \end{figure}
 
@@ -177,13 +177,13 @@
     \begin{subfigure}{1.5\textwidth}
       \centering
       \begin{overpic}[width=\textwidth]{figures/ch6/isc_multiassoc_without_pg.pdf}
-        \put(2,25.5){\small East Africa model: without parasite grade}
+        \put(2,25.5){\small\textbf{East Africa model: without parasite grade}}
       \end{overpic}
     \end{subfigure}
     \begin{subfigure}{1.5\textwidth}
       \centering
       \begin{overpic}[width=\textwidth]{figures/ch6/isc_multiassoc_with_pg.pdf}
-        \put(2,22.4){\small East Africa model: with parasite grade}
+        \put(2,22.4){\small\textbf{East Africa model: with parasite grade}}
       \end{overpic}
     \end{subfigure}
     \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final East Africa prognostic models. Probabilities were calculated from optimism--adjusted models and following logistic recalibration (intercept--term only) to data contributed from Musa 2012\cite{musa2012}. Where not varying in the plot, predictions are standardised to a representative reference participant: median age (13 years), median fever duration (45 days), median white cell count (2.5 x10$^9$/L), with severe anaemia, moderate malnutrition, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2+.}
@@ -197,8 +197,8 @@
 \begin{figure}[tb]
   \centering
   \begin{overpic}[width=\textwidth, trim = 0 0 0 -25]{figures/ch6/ea_calPlot.pdf}
-    \put(2,52){\small East Africa model: with parasite grade}
-    \put(50,52){\small East Africa model: without parasite grade}
+    \put(2,52){\small\textbf{East Africa model: with parasite grade}}
+    \put(50,52){\small\textbf{East Africa model: without parasite grade}}
   \end{overpic}
   \caption{Calibration plots showing observed versus predicted probabilities for deciles of predicted probability. Red dashed line represents perfect calibration.  Observed probabilities are presented with 95\% confidence intervals (black error bars). A generalised additive model is fitted to show the smoothed mean observed probability (blue dotted line) with 95\% confidence intervals (blue ribbon). Histograms, normalised by outcome, are overlaid to illustrate the distribution of relapses and cures across the expected probabilities.}
   \label{fig:ea_calPlot}
@@ -236,7 +236,7 @@
   \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch6/forestCIM1.pdf}
     \put(0,5.5){\fcolorbox{black}{white}{\scriptsize $\tau^2$ = 0.0040; $I^2$ = 46.6\%; p = 0.11}}
   \end{overpic}
-  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{including} parasite grade. For the model excluding parasite grade refer to Appendix \ref{fig:ea_forestCIM2}. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models, after excluding studies with $\leq$5 relapse events. Study--specific confidence intervals with few events should be interpreted with caution (as discussed in the Methodology \ref{meth:discrimination}). Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Mbui 2019, all bootstrapped c--statistic estimates were 1 exactly and therefore no variance is presented.}
+  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{including} parasite grade. For the model excluding parasite grade refer to Appendix \ref{fig:ea_forestCIM2}. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models, after excluding studies with $\leq$ 5 relapse events. Study--specific confidence intervals with few events should be interpreted with caution (as discussed in the Methodology \ref{meth:discrimination}). Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Mbui 2019, all bootstrapped c--statistic estimates were 1 exactly and therefore no variance is presented.}
   \label{fig:ea_forestCIM1}
 \end{figure}
 
