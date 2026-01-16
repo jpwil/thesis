@@ -116,7 +116,7 @@ A minimum study size was imposed to exclude very small cohorts with unstable rel
 
 \subsubsection{Participant-Level Criteria}
 
-With respect to clinical presentation, treatment response, and outcomes, patients with VL/HIV co-infection constitute an important but distinct clinical population. Accordingly, patients with and without VL/HIV co-infection were \textit{not} combined within a single prediction model, given the substantial uncertainty in extrapolating relapse associations derived from HIV-negative patients to those with VL/HIV co-infection. Since the majority of contributing studies excluded patients with VL/HIV co-infection, insufficient IPD were available to develop a separate model for this group.
+With respect to clinical presentation, treatment response, and outcomes, patients with VL/HIV co-infection constitute an important but distinct clinical population. Accordingly, patients with and without VL/HIV co-infection were \textit{not} combined within a single prediction model, given the substantial uncertainty in extrapolating relapse associations derived from HIV-negative patients to those with VL/HIV co-infection. Since the majority of contributing studies excluded patients with VL/HIV co-infection, insufficient IPD were available to develop a separate model for this group. Patients without evidence of HIV testing were excluded if they were otherwise considered to be from a high risk area. For the East Africa models, patients without HIV testing were only included if they were recruited from Sudanese sites.
 
 As with VL/HIV co-infection, very few contributing studies included pregnant participants, reflecting their systematic exclusion from VL trials and precluding the development of a separate prediction model.
 
@@ -209,7 +209,7 @@ Treatment regimen \textemdash\ already established as an important predictor rel
 Considering the distribution of treatment regimens across studies within the ISC, treatment will be categorised into three categories that occur in at least three studies (see Table \ref{tab:isc_study} and Figure \ref{fig:isc_treat}):
 
 \begin{itemize}[noitemsep]
-  \item Single dose liposomal amphotericin B (10 mg/kg)
+  \item Single dose liposomal amphotericin B (10~mg/kg)
   \item 28 days miltefosine (standard dose)
   \item Other
 \end{itemize}
@@ -237,9 +237,9 @@ Malnutrition is a well-established determinant of progression from asymptomatic 
   \end{tabular}
 \end{table}
 
-We therefore adopt a pragmatic three-level severity scale using age-appropriate metrics (Table~\ref{tab:malnutrition}). In children under five years, malnutrition is classified using weight-for-height (WFH) z-scores, consistent with WHO guidelines on the definition of acute malnutrition\cite{WHO-nutrition-2023}. For individuals aged five to under nineteen years, BMI-for-age z-scores (BMI z-scores) are used with identical cut-points, supported by the WHO 2007 growth reference, which was explicitly constructed to ensure continuity with the under-five standards at age five\cite{deonis2007}. In adults aged 19 years and over, malnutrition severity is defined using established BMI thresholds. Cole et~al.\ showed that adult BMI cut-offs of 16 and 17 kg/m$^2$ at 18 years correspond approximately to BMI-for-age z-scores of $-3$ and $-2$ in children and adolescents, providing a statistical basis for approximate continuity of severity definitions across the adolescent-adult boundary\cite{cole2007}. While imperfect, this approach preserves broadly comparable degrees of nutritional deficit across age groups.
+We therefore adopt a pragmatic three-level severity scale using age-appropriate metrics (Table~\ref{tab:malnutrition}). In children under five years, malnutrition is classified using weight-for-height (WFH) z-scores, consistent with WHO guidelines on the definition of acute malnutrition\cite{WHO-nutrition-2023}. For individuals aged five to under nineteen years, BMI-for-age z-scores (BMI z-scores) are used with identical cut-points, supported by the WHO 2007 growth reference, which was explicitly constructed to ensure continuity with the under-five standards at age five\cite{deonis2007}. In adults aged 19 years and over, malnutrition severity is defined using established BMI thresholds. Cole et~al.\ showed that adult BMI cut-offs of 16 and 17~kg/m$^2$ at 18 years correspond approximately to BMI-for-age z-scores of $-3$ and $-2$ in children and adolescents, providing a statistical basis for approximate continuity of severity definitions across the adolescent-adult boundary\cite{cole2007}. While imperfect, this approach preserves broadly comparable degrees of nutritional deficit across age groups.
 
-For modelling purposes, individuals with mild (18.5 $\leq$ BMI < 25 kg/m$^2$) or obesity (BMI $\geq$ 25 kg/m$^2$), or equivalent z-scores (z > -1), were combined into a single \emph{mild/normal} category due to small numbers.
+For modelling purposes, individuals with mild (18.5 $\leq$ BMI < 25~kg/m$^2$) or obesity (BMI $\geq$ 25~kg/m$^2$), or equivalent z-scores (z > -1), were combined into a single \emph{mild/normal} category due to small numbers.
 
 The approach adopted here is consistent with methods used in previous studies of VL outcomes that also use age-specific anthropometric indicators to define pragmatic malnutrition severity groupings\cite{burza2014,dorlo2017,gorski2010,naylor-leyland2022}. z-scores were calculated using the \texttt{anthro} and \texttt{anthroplus} R packages for children < 5 years and $\geq$ 5 years, respectively\cite{schumacher2023,schumacher2021}.
 
@@ -343,7 +343,7 @@ The saturated ISC model (with parasite grade and treatment groups included) is p
     Y_{ij} & \sim \text{Bernoulli}(E[Y_{ij}]) \\
     \mu_j  & \sim \mathcal{N}(0, \tau^2).
   \end{align*}
-  $\beta_0$ is the fixed model intercept, and $\beta_{k}$ are the fixed effect coefficients for each candidate predictor $k$, corresponding to sex (1 = male, 0 = female), age, treatment group (reference = standard dose miltefosine, \texttt{treat-sda}: 10 mg/kg single dose liposomal amphotericin B, \texttt{treat-oth}: other), malnutrition severity (reference = mild/normal, \texttt{mal-mod}: moderate, \texttt{mal-sev}: severe), anaemia severity (1 = severe, 0 = non-severe), fever duration, spleen size, \texttt{para}: parasite grade, \texttt{wbc}: white blood cell count, \texttt{plat}: platelet count, \texttt{alt}: alanine transaminase, and \texttt{creat}: creatinine. The random intercept $\mu_j$ captures between-study heterogeneity, with variance $\tau^2$.
+  $\beta_0$ is the fixed model intercept, and $\beta_{k}$ are the fixed effect coefficients for each candidate predictor $k$, corresponding to sex (1 = male, 0 = female), age, treatment group (reference = standard dose miltefosine, \texttt{treat-sda}: 10~mg/kg single dose liposomal amphotericin B, \texttt{treat-oth}: other), malnutrition severity (reference = mild/normal, \texttt{mal-mod}: moderate, \texttt{mal-sev}: severe), anaemia severity (1 = severe, 0 = non-severe), fever duration, spleen size, \texttt{para}: parasite grade, \texttt{wbc}: white blood cell count, \texttt{plat}: platelet count, \texttt{alt}: alanine transaminase, and \texttt{creat}: creatinine. The random intercept $\mu_j$ captures between-study heterogeneity, with variance $\tau^2$.
   \vspace{0.3cm}
   All continuous candidate predictors, except age, spleen size, and parasite grade, are log-transformed, centred by their mean, and scaled by their standard deviation. Age is centred and scaled, and modelled as a third-degree polynomial term. Spleen size is log-transformed after adding +1.
 \end{mybox}

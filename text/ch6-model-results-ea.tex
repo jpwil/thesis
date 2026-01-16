@@ -8,19 +8,83 @@
 
 \section{Descriptive Analysis}
 
+A total of 2,095 patients from nine East African studies were identified after applying the eligibility criteria to the IDDO VL data platform\cite{hailu2010,khalil2014,mbui2019,musa2010,musa2012,ritmeijer2001,ritmeijer2006,veeken2000,wasunna2016}. At the participant selection stage, 370 participants (13.5\%, 370/2749) were excluded due to either having a positive HIV test, or lacking a HIV test and recruiting from a site outside of Sudan. 323 (11.7\%, 323/2749) participants were excluded due to not achieving initial cure. A flow-diagram is presented in Figure~\ref{fig:ea_flow_diagram}.
+
 % flow diagram
 \begin{figure}[tb]
   \centering
   \includegraphics[width = 0.8\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch6/ea_flow_chart.pdf}
-  \caption{Flow diagram showing the studies and participants excluded from East Africa model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; EA: East Africa; PKDL: post kala--azar dermal leishmaniasis; VL: visceral leishmaniasis.}
+  \caption{Flow diagram showing the studies and participants excluded from East Africa model development, following application of the eligibility criteria. HIV: human immunodeficiency virus; IDDO: Infectious Diseases Data Observatory; EA: East Africa; PKDL: post kala-azar dermal leishmaniasis; VL: visceral leishmaniasis.}
   \label{fig:ea_flow_diagram}
 \end{figure}
 
-% studies tables
-\input{tables/ch6/ea_study.tex}
+\subsection{Study Characteristics}
+
+Important study characteristics are presented in Table~\ref{tab:ea_study}.
+
+A median of 138 patients per contributed study were included in model development, ranging from 29 to 638 patients (IQR: 92 to 289 patients). Five studies recruited from sites across multiple countries (1,186 [57.8\%] patients)\cite{hailu2010,khalil2014,mbui2019,musa2012,wasunna2016}, and the remaining four studies recruited from site(s) in single countries, including Sudan (two studies, 505 [24.6\%] patients)\cite{musa2010,veeken2000} and Ethiopia (two studies 360 [17.6\%] patients)\cite{ritmeijer2006,ritmeijer2001}. A full breakdown of patients by country is included in Section~\ref{sec:pt-char} below.
+
+The majority of studies were sponsored by DND\textit{i} and conducted across the Leishmaniasis East Africa Platform (LEAP) (six studies, 1,226 [59.8\%] patients, conducted 2004 to 2016). These included LEAP~0104 \textemdash\ a large pivotal study comparing short course SSG \& paromomycin to SSG or paromomycin monotherapy (three contributed studies, 967 [47.1\%] patients)\cite{hailu2010,musa2010,musa2012}. LEAP~0106 was a smaller study with the aim of identifying the minimum safe and effective dose of liposomal amphotericin B (LAMB) (one study, 92 [4.5\%] patients)\cite{khalil2014}. LEAP~0208 compared miltefosine with two different combination therapies (LAMB + miltefosine, LAMB + SSG) (138 [6.7\%] patients)\cite{wasunna2016}, and LEAP~0714 was a smaller allometric dosing study of miltefosine in paediatric patients (29 [1.4\%] patients)\cite{mbui2019}.
+
+The remaining studies were led by MSF and conducted between 1998 and 2005, including two studies comparing generic and branded SSG (577 [28.1\%] patients)\cite{ritmeijer2001,veeken2000}, and a further study comparing SSG and miltefosine (248 [12.1\%] patients)\cite{ritmeijer2006}.
+
+{
+\newgeometry{left=1.5cm, right=1.5cm, top=2cm, bottom=1.8cm}
+
+\begin{landscape}
+  \pagestyle{empty}
+
+  \input{tables/ch6/ea_study.tex}
+
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch6/treat.pdf}
+    \caption{Bar chart showing the distribution of treatment regimens across contributing studies from East Africa. Drugs are colour-coded (see legend). Important distinguishing dosing information provided in the overlaying labels. Full treatment details presented in Table \ref{tab:ea_study}. D: days; LAMB: liposomal amphotericin B (Gilead); PM: paromomycin; MF: miltefosine; mg: milligrams/kilogram; SSG: sodium stibogluconate.}
+    \label{fig:ea_treat}
+  \end{figure}
+
+\end{landscape}
+}
+\pagestyle{fancy}
+\restoregeometry
+
+\subsubsection{Study Design and Treatment Arms}
+
+All studies bar one allocated patients to more than one treatment arm (eight studies, 2,022 [98.6\%] patients)\cite{hailu2010,musa2010,musa2012,khalil2014,ritmeijer2006,ritmeijer2001,veeken2000,wasunna2016}. Six studies randomly allocated patients to treatment arms (1,445 [70.5\%] patients)\cite{hailu2010,khalil2014,musa2010,musa2012,ritmeijer2006,wasunna2016} and two studies were pseudo-randomised\footnote{Based on whether the direct agglutination test batch number was odd or even.} (577 [28.1\%] patients)\cite{ritmeijer2001,veeken2000}. Three studies were described by the authors as Phase 2 trials (207 [10.1\%] patients)\cite{mbui2019,musa2010,wasunna2016}.
+
+Treatment arms are summarised in Figure~\ref{fig:ea_treat}. Treatment allocations at the patient level are described further in Section~\ref{sec:ea_cat_var}.
+
+\subsubsection{Study Eligibility Criteria}
+
+One study (248 [12.1\%] patients) limited inclusion to male patients owing to teratogenicity concerns with miltefosine\cite{ritmeijer2006}. All but two studies described age limits in their inclusion criteria\cite{hailu2010,khalil2014,mbui2019,musa2010,musa2012,ritmeijer2006,wasunna2016}. Two studies specified lower age limits only ($\geq$~15 years in one study; 248 [12.1\%] patients, and $\geq$~4 years in a further study; 92 [4.5\%] patients). Three studies limited inclusion to patients between 4 and 60 years (967 [47.1\%] patients)\cite{musa2010,musa2012,hailu2010}, and one study limited inclusion to patients between 7 and 60 years (138 [6.7\%] patients)\cite{wasunna2016}. One study recruited children between 4 and 12 years only (29 [1.4\%] patients)\cite{mbui2019}.
+
+All DND\textit{i} studies reported exclusion criteria based on platelet count ($\geq$~40~$\times$10$^9$/L) and haemoglobin ($\geq$~40~g/L in one study, 92 [4.4\%] patients\cite{khalil2014}, and $\geq$~50~g/L in five studies, 1,134 [55.2\%] patients\cite{hailu2010,mbui2019,musa2010,musa2012,wasunna2016}).
+
+
+\subsubsection{Diagnostic Criteria}
+\subsubsection{Relapse}
+\subsubsection{Initial Cure}
+\subsection{Patient Characteristics\label{sec:pt-char}}
+
+% these are the study specific distributions of outcome, sex and age
+% cp /Users/jameswilson/proj/vl_model_ea/figures/dist/main_dist.pdf figures/ch6/ea_main_dist.pdf
+\newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
+\begin{landscape}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=1.35\textwidth]{figures/ch6/ea_main_dist.pdf}
+    \caption{Graphical summary of East Africa study-specific sample sizes and distributions of relapse status, sex, and age.}
+    \label{fig:ea_main_dist}
+  \end{figure}
+\end{landscape}
+\restoregeometry
+
+\subsubsection{Categorical variables\label{sec:ea_cat_var}}
 
 % categorical variables table
 \input{tables/ch6/ea_categorical.tex}
+
+\subsubsection{Continuous variables}
 
 % continuous variables table
 \input{tables/ch6/ea_continuous.tex}
@@ -37,6 +101,8 @@
   \end{figure}
 \end{landscape}
 \restoregeometry
+
+\subsection{Univariable Associations}
 
 % these are the pooled continuous distributions and relationships with relapse - PART 1
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/contOut/age_comb.pdf figures/ch6/ea_pool_age_comb.pdf
@@ -124,30 +190,9 @@
   \label{fig:ea_pooled_dist_cont2}
 \end{figure}
 
-% these are the study specific distributions of outcome, sex and age
-% cp /Users/jameswilson/proj/vl_model_ea/figures/dist/main_dist.pdf figures/ch6/ea_main_dist.pdf
-\newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
-\begin{landscape}
-  \begin{figure}[tb]
-    \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch6/ea_main_dist.pdf}
-    \caption{Graphical summary of East Africa study-specific sample sizes and distributions of relapse status, sex, and age.}
-    \label{fig:ea_main_dist}
-  \end{figure}
+\subsection{\label{sec:isc_missing_data}Missing Data}
 
-  % study specific treatments
-  % cp /Users/jameswilson/proj/vl_model_ea/figures/treatment/treat_dist1a.pdf figures/ch6/treat.pdf
-
-  \begin{figure}[tb]
-    \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch6/treat.pdf}
-    \caption{Bar chart showing the distribution of treatment regimens across contributing studies from East Africa. Drugs are colour-coded (see legend). Important distinguishing dosing information provided in the overlaying labels. Full treatment details presented in Table \ref{tab:ea_study}. D: days; LAMB: liposomal amphotericin B (Gilead); PM: paromomycin; MF: miltefosine; mg: miligrams/kilogram; SSG: sodium stibogluconate.}
-    \label{fig:ea_treat}
-  \end{figure}
-
-\end{landscape}
-\restoregeometry
-
+\subsubsection{Multiple Imputation}
 
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/ea_missing_summary.pdf
@@ -160,6 +205,9 @@
 
 \section{Model Results}
 
+\subsection{Model Specification and Coefficient Estimates}
+
+
 % cp /Users/jameswilson/proj/vl_model_ea/results/var_forest_combined.pdf figures/ch6/var_forest_combined.pdf
 \begin{figure}[tb]
   \centering
@@ -167,6 +215,7 @@
   \caption{Forest plot of adjusted odds ratios with 95\% confidence intervals for final model predictors. Odds ratios are displayed on a logarithmic scale.}
   \label{fig:ea_var_forest_combined}
 \end{figure}
+
 
 % cp /Users/jameswilson/proj/vl_model_ea/figures/multiAssocM1.pdf figures/ch6/isc_multiassoc_with_pg.pdf
 % cp /Users/jameswilson/proj/vl_model_ea/figures/multiAssocM2.pdf figures/ch6/isc_multiassoc_without_pg.pdf
@@ -192,6 +241,49 @@
 \end{landscape}
 \restoregeometry
 
+\subsection{Model Performance and Internal Validation}
+
+
+\begin{table}[htbp]
+  \begin{tabular}{@{}llll@{}}
+    \toprule
+                                   & Performance        & Average  & Optimism--adjusted \\
+                                   & estimate (95\% CI) & optimism & performance        \\        \midrule
+    \textbf{Model: with PG}        &                    &          &                    \\
+    \hspace{1em} C-statistic       & 0.72 (0.63--0.82)  & 0.046    & 0.68               \\
+    \hspace{1em} Calibration slope & 1.03 (0.64--1.42)  & 0.224    & 0.81               \\        \midrule
+    \textbf{Model: without PG}     &                    &          &                    \\
+    \hspace{1em} C-statistic       & 0.66 (0.56--0.76)  & 0.050    & 0.61               \\
+    \hspace{1em} Calibration slope & 1.08 (0.47--1.68)  & 0.329    & 0.75               \\        \bottomrule
+  \end{tabular}
+  \caption{Apparent and optimism--adjusted performance measures. Abbreviations: CI: confidence interval; PG: parasite grade}
+  \label{tab:ea-performance}
+\end{table}
+
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM1.pdf figures/ch6/forestCIM1.pdf
+% forest plots for C-statistic
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch6/forestCIM1.pdf}
+    \put(0,5.5){\fcolorbox{black}{white}{\scriptsize $\tau^2$ = 0.0040; $I^2$ = 46.6\%; p = 0.11}}
+  \end{overpic}
+  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{including} parasite grade. For the model excluding parasite grade refer to Appendix \ref{fig:ea_forestCIM2}. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models, after excluding studies with $\leq$ 5 relapse events. Study--specific confidence intervals with few events should be interpreted with caution (as discussed in the Methodology \ref{meth:discrimination}). Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Mbui 2019, all bootstrapped c--statistic estimates were 1 exactly and therefore no variance is presented.}
+  \label{fig:ea_forestCIM1}
+\end{figure}
+
+% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCalM1.pdf figures/ch6/forestCalM1.pdf
+% forest plots for calibration
+\begin{figure}[tb]
+  \centering
+  \begin{overpic}[width=\textwidth, trim={2.4cm 0cm 0.3cm 0.3cm}, clip]{figures/ch6/forestCalM1.pdf}
+    \put(0,12){\fcolorbox{black}{white}{\tiny CITL: $\tau^2$ = 0.960; $I^2$ = 89.0\%; p < .0001}}
+    \put(0,8.85){\fcolorbox{black}{white}{\tiny CS: $\tau^2$ = 0; $I^2$ = 0\%; p = 0.90}}
+  \end{overpic}
+  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration slope for Mbui 2019 not shown due to small sample size causing failure of model convergence.}
+  \label{fig:ea_forestCalM1}
+\end{figure}
+
 % calibration plots (overall)
 % cp /Users/jameswilson/proj/vl_model_ea/graphs/calPlot.pdf figures/ch6/ea_calPlot.pdf
 \begin{figure}[tb]
@@ -213,44 +305,4 @@
   \label{fig:ea_calPlotMal1}
 \end{figure}
 
-\begin{table}[htbp]
-  \begin{tabular}{@{}llll@{}}
-    \toprule
-                                   & Performance        & Average  & Optimism--adjusted \\
-                                   & estimate (95\% CI) & optimism & performance        \\        \midrule
-    \textbf{Model: with PG}        &                    &          &                    \\
-    \hspace{1em} C-statistic       & 0.72 (0.63--0.82)  & 0.046    & 0.68               \\
-    \hspace{1em} Calibration slope & 1.03 (0.64--1.42)  & 0.224    & 0.81               \\        \midrule
-    \textbf{Model: without PG}     &                    &          &                    \\
-    \hspace{1em} C-statistic       & 0.66 (0.56--0.76)  & 0.050    & 0.61               \\
-    \hspace{1em} Calibration slope & 1.08 (0.47--1.68)  & 0.329    & 0.75               \\        \bottomrule
-  \end{tabular}
-  \caption{Apparent and optimism--adjusted performance measures. Abbreviations: CI: confidence interval; PG: parasite grade}
-  \label{tab:ea-performance}
-\end{table}
-
-% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCIM1.pdf figures/ch6/forestCIM1.pdf
-% forest plots for C-statistic
-\begin{figure}[tb]
-  \centering
-  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch6/forestCIM1.pdf}
-    \put(0,5.5){\fcolorbox{black}{white}{\scriptsize $\tau^2$ = 0.0040; $I^2$ = 46.6\%; p = 0.11}}
-  \end{overpic}
-  \caption{Forest plot showing individual and pooled study c--statistics, for the model \textbf{including} parasite grade. For the model excluding parasite grade refer to Appendix \ref{fig:ea_forestCIM2}. Pooled c--statistics are presented from both fixed--effects and random--effects meta-analysis models, after excluding studies with $\leq$ 5 relapse events. Study--specific confidence intervals with few events should be interpreted with caution (as discussed in the Methodology \ref{meth:discrimination}). Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Mbui 2019, all bootstrapped c--statistic estimates were 1 exactly and therefore no variance is presented.}
-  \label{fig:ea_forestCIM1}
-\end{figure}
-
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM1.pdf figures/ch5/forestCalM1.pdf
-% forest plots for calibration
-
-% cp /Users/jameswilson/proj/vl_model_ea/graphs/forestCalM1.pdf figures/ch6/forestCalM1.pdf
-% forest plots for calibration
-\begin{figure}[tb]
-  \centering
-  \begin{overpic}[width=\textwidth, trim={2.4cm 0cm 0.3cm 0.3cm}, clip]{figures/ch6/forestCalM1.pdf}
-    \put(0,12){\fcolorbox{black}{white}{\tiny CITL: $\tau^2$ = 0.960; $I^2$ = 89.0\%; p < .0001}}
-    \put(0,8.85){\fcolorbox{black}{white}{\tiny CS: $\tau^2$ = 0; $I^2$ = 0\%; p = 0.90}}
-  \end{overpic}
-  \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration--in--the--large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration slope for Mbui 2019 not shown due to small sample size causing failure of model convergence.}
-  \label{fig:ea_forestCalM1}
-\end{figure}
+\section{Summary}
