@@ -3,6 +3,7 @@
 # https://github.com/michaeltanner/oxford-thesis/blob/master/.gitignore
 ################################################################################
 
+reading-list.tex
 temp.tex
 ## Output PDF file for project
 main.pdf
