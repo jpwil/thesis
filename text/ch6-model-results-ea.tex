@@ -154,10 +154,15 @@ A correlation matrix showing associations between continuous variables is presen
 
 Unadjusted relationships between variables (including all candidate predictors, excluding missing data) and relapse risk are presented both in tabular form (Tables~\ref{tab:ea_categorical}, \ref{tab:ea_continuous}) and visually alongside their distributions (Figure~\ref{fig:ea_cat_comb} for categorical variables, and Figures~\ref{fig:ea_pooled_dist_cont1} and \ref{fig:ea_pooled_dist_cont2} for non-laboratory and laboratory variables, respectively). Predictor-outcome relationships are presented on the log-odds (logit) scale for continuous candidate predictors in Appendix Figure~\ref{fig:ea_logodds}.
 
+On review of the associations between the categorical predictors and relapse risk (upper facet row, Figure~\ref{fig:ea_cat_comb}), clear trends were seen for malnutrition, anaemia, and parasite grade. Increased relapse risk was seen with higher malnutrition severity, ranging from approximately 3.5\% for mild/normal to 6.5\% for severe categories. Perhaps more marked, with non-overlying confidence intervals, was the increased relapse risk seen in the severe anaemia group compared to the non-severe anaemia group, from approximately 3\% to 6.5\%. For relapse cases, 65/99 (65.7\%) had severe anaemia, compared to 476/1946 (24.5\%) of final cure cases (excluding missing data).
 
+With parasite grade, a substantial increase in relapse risk was seen for patients with a 6$+$ grade compared to <~6$+$ grades, increasing from approximately 5--7.5\% to over 20\%. Among relapse cases, 17/92 (18.5\%) of patients had a 6$+$ grade aspirate, compared to 60/1297 (4.6\%) of the final cure cases (after excluding missing data).
+
+Clear trends were observed between all non-laboratory continuous variables and relapse risk (Figure~\ref{fig:ea_pooled_dist_cont1}). For age, relapse risk followed a non-linear trend, peaking at approximately 10~years and decreasing to a nadir in the early 20s. Fluctuations in risk with height and weight were also noted, mirroring the relationship between age and relapse. Less marked downward trends between relapse risk and spleen size and fever duration were observed.
+
+Among the laboratory continuous variables (Figure~\ref{fig:ea_pooled_dist_cont2}), a pronounced inverse relationship between relapse risk and haemoglobin is seen, concordant with the aforementioned increased risk seen in patients with severe vs. non-severe anaemia. Appreciable upwards trends between relapse risk and both white blood cell count and platelets are also seen, although the overall significance is unclear.
 
 A correlation matrix showing associations between continuous variables is presented in Appendix Figure~\ref{fig:ea_cont_cont}, and between continuous and categorical variables in Appendix Figure~\ref{fig:ea_cont_cat}. These correlations are considered further in the Discussion section.
-
 
 % these are the pooled continuous distributions and relationships with relapse - PART 1
 % cp /Users/jameswilson/proj/vl_model_ea/figures/dist/contOut/age_comb.pdf figures/ch6/ea_pool_age_comb.pdf
@@ -247,7 +252,13 @@ A correlation matrix showing associations between continuous variables is presen
 
 \subsection{\label{sec:ea_missing_data}Missing Data}
 
+Missingness was common, and affecting one or more candidate predictors in 1,168 (56.9\%) patients. 215 (10.5\%) patients were missing 1 candidate predictor exactly. As appreciated from Figure~\ref{fig:ea_missing_summary}, the majority of missingness originated from the earlier MSF studies, where ALT, platelets, WBC, creatinine, and parasite grade were not routinely collected, resulting in almost a third of all patients (634 [30.9\%] patients) missing 5 candidate predictors.
+
+Across all studies, ALT, platelets, WBC, and creatinine were missing in between 40 and 45\% of all patients. Parasite grade was missing for approximately one third of the total cohort (662 [32.3\%] of patients).
+
 \subsubsection{Multiple Imputation}
+
+Diagnostic plots for the 30 imputed datasets are available in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. On review of the trace plots, there was good evidence for convergence of the imputation model. Density and scatter plots revealed overall good correlation between the imputed and original variables.
 
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch6/ea_missing_summary.pdf
@@ -260,7 +271,11 @@ A correlation matrix showing associations between continuous variables is presen
 
 \section{Model Results}
 
+East African IPD were used to develop two separate prediction models; one including parasite grade as a candidate predictor, and one exclude parasite grade.
+
 \subsection{Model Specification and Coefficient Estimates}
+
+Final (retained) predictors across both models are presented in Figure~\ref{fig:ea_var_forest_combined}. Full specification of the final models, including intercept terms, p-values, and predictor transformations, are presented in Appendix Tables~\ref{tab:ea_model_coeff_with_pg} and \ref{tab:ea_model_coeff_without_pg}.
 
 
 % cp /Users/jameswilson/proj/vl_model_ea/results/var_forest_combined.pdf figures/ch6/var_forest_combined.pdf
@@ -344,8 +359,8 @@ A correlation matrix showing associations between continuous variables is presen
 \begin{figure}[tb]
   \centering
   \begin{overpic}[width=\textwidth, trim = 0 0 0 -25]{figures/ch6/ea_calPlot.pdf}
-    \put(2,52){\small\textbf{East Africa model: with parasite grade}}
-    \put(50,52){\small\textbf{East Africa model: without parasite grade}}
+    \put(-2,52){\small\textbf{East Africa model: with parasite grade}}
+    \put(54,52){\small\textbf{East Africa model: without parasite grade}}
   \end{overpic}
   \caption{Calibration plots showing observed versus predicted probabilities for deciles of predicted probability. Red dashed line represents perfect calibration.  Observed probabilities are presented with 95\% confidence intervals (black error bars). A generalised additive model is fitted to show the smoothed mean observed probability (blue dotted line) with 95\% confidence intervals (blue ribbon). Histograms, normalised by outcome, are overlaid to illustrate the distribution of relapses and cures across the expected probabilities.}
   \label{fig:ea_calPlot}
