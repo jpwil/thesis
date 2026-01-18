@@ -1,0 +1,23 @@
+\begin{table}[tbhp]
+    \centering
+    \caption{Maximum number of predictor parameters supported by the available IPD in the ISC and East Africa datasets. Calculations performed for a range of minimum permitted shrinkage factors (criterion 1) as per Riley et al's methodology\cite{riley2019A}. The remaining two criteria were unchanged from Riley et al's recommendations (see text). For all calculations, the minimum permitted shrinkage factor was the criterion limiting the number supported predictor parameters. Fixed sample sizes \textemdash\ ISC: 4,599 patients, 228 relapses; East Africa: 2,051 patients, 99 relapses. Assuming Nagelkerke's R$^2$ = 0.15.}
+    \label{tab:max-EPP}
+    \begin{threeparttable}
+        \begin{tabularx}{0.8\linewidth}{@{}XC{4cm}C{4cm}@{}}
+            \toprule
+            Shrinkage factor & \multicolumn{2}{c}{Maximum supported predictor parameters}             \\
+            \cmidrule{2-3}
+                             & ISC models                                                 & EA models \\
+            \midrule
+            0.95             & 12                                                         & 5         \\
+            0.90\tnote{1}    & 25                                                         & 11        \\
+            0.85             & 40                                                         & 17        \\
+            0.80             & 58                                                         & 25        \\
+            \bottomrule
+        \end{tabularx}
+        \begin{tablenotes}
+            \footnotesize
+            \item[1] Recommended by Riley et al\cite{riley2019A}.
+        \end{tablenotes}
+    \end{threeparttable}
+\end{table}

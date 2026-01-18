@@ -1,3 +1,8 @@
+# CHAPTER 2 FIGURES
+
+cp /Users/jameswilson/proj/who_gho/results/gho_plot.pdf figures/ch2/gho_plot_top8.pdf
+cp /Users/jameswilson/proj/vl_visualisation/results/gho_map.pdf figures/ch2/gho_map.pdf
+
 # CHAPTER 5 FIGURES
 
 # combo pooled continuous distributions - non-lab
@@ -20,7 +25,7 @@ cp /Users/jameswilson/proj/vl_model_isc/figures/dist/catOut/comb_cat.pdf figures
 # selected study-specific distributions (study n / relapse / sex/ age)
 cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
 
-# study specific treatments
+# study-specific treatments
 cp /Users/jameswilson/proj/vl_model_isc/figures/treatment/treat_dist1a.pdf figures/ch5/treat.pdf
 
 # missing data summary
@@ -116,7 +121,7 @@ cp /Users/jameswilson/proj/vl_model_ea/figures/dist/catOut/comb_cat.pdf figures/
 # selected study-specific distributions (study n / relapse / sex/ age)
 cp /Users/jameswilson/proj/vl_model_ea/figures/dist/main_dist.pdf figures/ch6/ea_main_dist.pdf
 
-# study specific treatments
+# study-specific treatments
 cp /Users/jameswilson/proj/vl_model_ea/figures/treatment/treat_dist1a.pdf figures/ch6/treat.pdf
 
 # missing data summary

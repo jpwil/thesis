@@ -36,7 +36,7 @@ A median of 144 patients were recruited in each study, ranging from 6 to 928 pat
       \begin{figure}[tb]
         \centering
         \includegraphics[width=1.35\textwidth]{figures/ch5/treat.pdf}
-        \caption{Bar chart showing the distribution of treatment regimens across contributing studies from the Indian subcontinent. Important distinguishing dosing information are provided in the overlaying labels, as space allows. Full treatment details are presented in Table~\ref{tab:isc_study}. 6 patients are included from Chakraborty 2008: 5 receiving alternate day amphotericin B deoxycholate and 1 receiving human placenta extract. ABD: amphotericin B deoxycholate; ALT: alternate days; CONS: consecutive days; D: days; HPE: human placenta extract; MF: miltefosine; PENT: pentamidine;~mg: milligrams/kilogram; SSG: sodium stibogluconate.}\label{fig:isc_treat}
+        \caption{Bar chart showing the distribution of treatment regimens across contributing studies from the Indian subcontinent. Important distinguishing dosing information are provided in the overlaid labels, as space allows. Full treatment details are presented in Table~\ref{tab:isc_study}. 6 patients are included from Chakraborty 2008: 5 receiving alternate day amphotericin B deoxycholate and 1 receiving human placenta extract. ABD: amphotericin B deoxycholate; ALT: alternate days; CONS: consecutive days; D: days; HPE: human placenta extract; MF: miltefosine; PENT: pentamidine;~mg: milligrams/kilogram; SSG: sodium stibogluconate.}\label{fig:isc_treat}
       \end{figure}
 
     \end{landscape}
@@ -92,7 +92,7 @@ Overall (marginal) distributions of categorical and continuous variables are tab
 
 Patient numbers and proportions presented in this section exclude missing data. See Section \ref{sec:isc_missing_data} for further information on missing data.
 
-% these are the study specific distributions of outcome, sex and age
+% these are the study-specific distributions of outcome, sex and age
 % cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
@@ -126,7 +126,7 @@ The most common baseline parasite grade on tissue aspirate was $1+$ (1,201 [40.7
 
 The median age was 18 years, ranging from 1 to 80 years (IQR: 10 to 32 years). Overall the distribution was right-skewed, with study-specific distributions reflecting age-specific inclusion criteria. 138 (3.0\%) of patients were under 5 years, and 47 (1.0\%) were 65 years or over.
 
-In adults ($\geq$ 19 years) the median BMI was 18.2~kg/m$^2$ (IQR: 16.4 to 20.8~m/kg$^2$) (1,313 patients). In children ($\geq$~5 and $<$~19 years), the median BMI-for-age z-score was -1.68 (IQR: -2.67 to -0.72) (1,338 patients), and in younger children ($<$~5 years) the median weight-for-height z-score was -1.80 (IQR: -2.97 to -0.99) (27 patients).
+In adults ($\geq$ 19 years) the median BMI was 18.2~kg/m$^2$ (IQR: 16.4 to 20.8~kg/m$^2$) (1,313 patients). In children ($\geq$~5 and $<$~19 years), the median BMI-for-age z-score was -1.68 (IQR: -2.67 to -0.72) (1,338 patients), and in younger children ($<$~5 years) the median weight-for-height z-score was -1.80 (IQR: -2.97 to -0.99) (27 patients).
 
 The median spleen size was 4~cm (IQR: 2 to 7~cm), and ranged from 0 to 22~cm. Eight studies reported patients without splenomegaly at baseline\cite{sundar2019, sundar2012, sundar2010, sundar2009,sundar2008,sundar2007a, pandey2017,bhattacharya2007}, corresponding to 218 (3.7\%) patients with recorded spleen sizes.
 
@@ -314,7 +314,7 @@ Pooled estimates of intraclass correlation coefficients (ICC)\footnote{ICC quant
 
 \subsection{Model Performance and Internal Validation}
 
-Apparent and optimism-adjusted c-statistics and calibration slopes are presented in Table~\ref{tab:isc_performance}. When assessed in studies with $>$5 relapse events, model discrimination was estimated at 0.70 (95\% CI\@: 0.66--0.74) in the model including parasite grade, and 0.69 (95\% CI\@: 0.64--0.74) in the model excluding parasite grade. These estimates reduced to 0.68 and 0.67, respectively, after adjusting for optimism. No evidence of significant between-study heterogeneity was identified in either model, with forest plots presented in Figure~\ref{fig:isc_forestCIM1} (model including parasite grade) and Appendix Figure~\ref{fig:isc_forestCIM2} (excluding parasite grade).
+Apparent and optimism-adjusted c-statistics and calibration slopes are presented in Table~\ref{tab:isc_performance}. When assessed in studies with $>$5 relapse events, model discrimination was estimated at 0.70 (95\% CI\@: 0.66--0.74) in the model including parasite grade, and 0.69 (95\% CI\@: 0.64--0.74) in the model excluding parasite grade. These estimates reduced to 0.68 and 0.67, respectively, after adjusting for optimism. No evidence of significant between-study heterogeneity in discrimination was identified in either model, with forest plots presented in Figure~\ref{fig:isc_forestCIM1} (model including parasite grade) and Appendix Figure~\ref{fig:isc_forestCIM2} (excluding parasite grade).
 
 \begin{table}[htbp]
   \begin{tabular}{@{}llll@{}}
@@ -357,7 +357,6 @@ Optimism in calibration slopes were estimated at 0.093 and 0.098 in the models i
   \caption{Forest plots showing individual and pooled study calibration measures for the model \textbf{including} parasite grade. Left: calibration intercept (calibration-in-the-large, CITL); Right: calibration slope (CS). Blue diamonds: summary estimates with 95\% confidence intervals. Calibration measures not presented for Chakraborty 2008 due to no relapse events. Calibration slope not presented for Rijal 2010(A) due to only one relapse event and few total participants leading to failure of model convergence.}\label{fig:isc_forestCalM1}
 \end{figure}
 
-
 % calibration plots (overall)
 % cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlot.pdf figures/ch5/isc_calPlot.pdf
 \begin{figure}[tb]
@@ -379,11 +378,11 @@ Optimism in calibration slopes were estimated at 0.093 and 0.098 in the models i
   \label{fig:isc_calPlotFD1}
 \end{figure}
 
-Visual inspection of the calibration plots comparing predicted and observed relapse probabilities showed minimal deviation from perfect calibration (Figure~\ref{fig:isc_calPlot}). Calibration plots showing predicted and observed relapse probabilities for fever duration (Figure~\ref{fig:isc_calPlotFD1} for model including parasite grade), and other predictors (Appendix Figures~\ref{fig:isc_calPlotPD_ap} to \ref{fig:isc_calPlotRx1_ap} for model including parasite grade and~\ref{fig:isc_calPlotFD2_ap} to~\ref{fig:isc_calPlotRx2_ap} excluding parasite grade) and also showed good overall agreement, with predicted relapse probabilities lying within the 95\% confidence intervals of the observed probabilities.
-
 Calibration intercepts (calibration-in-the-large) were found to vary significantly between studies for both models, as can be appreciated from the forest plots in Figure~\ref{fig:isc_forestCalM1} for the model including parasite grade, and Appendix Figure~\ref{fig:isc_forestCalM2} for the model excluding parasite grade (test for heterogeneity; p = 0.01 and p = 0.002 for models including and excluding parasite grade).
 
-The distribution of the final predictors selected across the 2~$\times$~500 bootstrap models are presented in Appendix Table~\ref{tab:isc_model_stability}. Reassuringly, the most frequently selected predictors correspond to the final predictors selected in both final models. However, a degree of instability is apparent, with predictors such as spleen size, sex, alanine aminotransferase, and the cubic age term being selected in 100--250 bootstraps.
+Visual inspection of the calibration plots comparing predicted and observed relapse probabilities showed minimal deviation from perfect calibration (Figure~\ref{fig:isc_calPlot}). Calibration plots showing predicted and observed relapse probabilities for fever duration (Figure~\ref{fig:isc_calPlotFD1} for model including parasite grade), and other predictors (Appendix Figures~\ref{fig:isc_calPlotPD_ap} to \ref{fig:isc_calPlotRx1_ap} for model including parasite grade and~\ref{fig:isc_calPlotFD2_ap} to~\ref{fig:isc_calPlotRx2_ap} excluding parasite grade) and also showed good overall agreement, with predicted relapse probabilities lying within the 95\% confidence intervals of the observed probabilities.
+
+The distribution of the final predictors selected across the 2~$\times$~500 bootstrap models are presented in Appendix Table~\ref{tab:isc_model_stability}. Reassuringly, the most frequently selected predictors correspond to the final predictors selected in both final models. Of note, fever duration was selected across all bootstraps for both models. When considered as a candidate predictor, parasite grade was selected in 472 (94.4\%) of bootstrap models. A degree of instability was apparent, with predictors such as spleen size, sex, alanine aminotransferase, and the cubic age term being selected in 100--250 bootstraps.
 
 \section{Summary}
 
