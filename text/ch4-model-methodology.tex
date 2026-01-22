@@ -396,7 +396,7 @@ Internal validation is performed using bootstrap resampling with 500 bootstrap s
 
 For each of the 500 bootstrap samples of the original dataset, all aforementioned model development steps, including multiple imputation and variable selection, were undertaken (see Figure \ref{fig:workflow}). For each of the resulting 500 bootstrap models, pooled performance measures were evaluated across (i) the imputed bootstrap datasets used to derive the bootstrap model and (ii) the imputed original datasets used to derive the original model. The mean pooled performance differences between (i) and (ii) were then subtracted from the original model apparent performance measures to obtain the optimism-adjusted performance measures. Uniform shrinkage of the parameter estimates was performed by multiplying the fitted regression coefficients by the optimism-adjusted calibration slope and re-estimating the model intercept with logistic recalibration.
 
-Given the computational intensity of the model development process (~4 hours per model development), bootstrap validation was implemented using a high performance computing cluster based in the Nuffield Department of Medicine at the University of Oxford.\footnote{\url{https://www.medsci.ox.ac.uk/for-staff/resources/bmrc}}
+Given the computational intensity of the model development process (\textasciitilde 4 hours per model development), bootstrap validation was implemented using a high performance computing cluster based in the Nuffield Department of Medicine at the University of Oxford.\footnote{\url{https://www.medsci.ox.ac.uk/for-staff/resources/bmrc}}
 
 \section{Summary}
 
