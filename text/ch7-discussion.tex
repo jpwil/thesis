@@ -19,53 +19,142 @@ Finally, the thesis concludes with a high-level summary of how the models collec
 
 \section{Plausibility of Relapse Predictors}
 
-It deserves recognition that the relapse-predictor relationships identified in the relapse models, and illustrated in Figures~\ref{fig:isc_var_forest_combined} and \ref{fig:ea_var_forest_combined}, reflect statistical associations arising under the stated modelling assumptions alone. In the absence of additional context, these associations do not elucidate the biological mechanisms underlying relapse and should not be interpreted as causal. In this section, we explore ...
+It deserves recognition that the identified relapse-predictor relationships, as illustrated in Figures~\ref{fig:isc_var_forest_combined} and \ref{fig:ea_var_forest_combined}, simply reflect statistical associations arising under the stated modelling assumptions. Accurate prediction, in itself, does not require biological plausibility or a causal model of the underlying relationships. However, articulating a plausible biological or mechanistic framework can add substantial value. Specifically:
+
+\begin{description}
+  \item{\textbf{User confidence}}. Biological plausibility of relapse-associated factors improves the face validity of the models, increasing user trust in its predictions.
+  \item{\textbf{Model applicability}}. Developing a mechanistic understanding informs the transportability of the model across populations, settings, and time, by clarifying which associations are likely to remain stable.
+  \item{\textbf{Tool for discovery}}. Model findings, when interpreted through a causal or biological lens, can generate hypotheses and contribute to a broader understanding of the underlying disease process.
+\end{description}
+
+Given these benefits, this section aims to build on the disease pathophysiology set out in the background chapter, and provide additional context to the model findings.
+
+\subsection{Parasite Dynamics}
+
+Supporting a more mechanistic interpretation, Figure~\ref{fig:natural-history} schematically illustrates the temporal dynamics of parasite load before, during, and after treatment. The figure situates relapse within the broader natural history of infection and treatment response, contextualised as four interconnected periods: asymptomatic stage $\rightarrow$ symptomatic stage $\rightarrow$ treatment stage $\rightarrow$ post-treatment stage. Events that occur during the post-treatment stage are critical in determining if, and when, relapse occurs.
+
+\newgeometry{left=1.5cm, bottom=2.5cm, right=2cm, top=3cm}
+\begin{landscape}
+  \begin{figure}[tb]
+    \centering
+    \includegraphics[width=\linewidth, trim = {0.2cm 1.2cm 2cm 2.4cm}, clip]{figures/ch7/natural-history.pdf}
+    \caption{Dynamics of parasite load, treatment response, and relapse in visceral leishmaniasis.}
+    \label{fig:natural-history}
+  \end{figure}
+\end{landscape}
+\restoregeometry
+
+\subsubsection{From Asymptomatic Infection to Symptomatic Disease}
+
+In endemic areas, serological surveys demonstrate that approximately \textasciitilde 10--30\% of individuals harbor asymptomatic infection, far outnumbering clinically apparent cases\cite{mannan2021}. Only a small minority of these individuals progress to symptomatic disease, underscoring that clinical illness represents an exception rather than the norm in infected populations\cite{hasker2014}. Primary disease progression reflects a complex interplay of host genetic susceptibility, immune competence, and parasite-related factors, although these relationships remain poorly understood\cite{kaye2011}.
+
+Relapse shares a key conceptual feature with primary disease progression \textemdash\ namely, failure to control parasite expansion. Consequently, studies examining determinants of primary disease progression can also provide important insights into the mechanisms underlying relapse. High-quality prospective serosurveillance studies are particularly informative in this regard and provide essential context for the discussion below\cite{picado2010,hasker2014,bern2007}.
+
+\subsubsection{Progression of Symptomatic Disease}
+
+As symptoms evolve, immune control is progressively undermined by parasite immune evasion, facilitating intracellular persistence and dissemination within the mononuclear phagocyte system. Host immune responses become increasingly skewed toward an immunoregulatory profile associated with dysfunctional cell-mediated immunity. This shift drives a vicious cycle of immunosuppression, heightened susceptibility to co-infections, and progressive end-organ damage\cite{kaye2011,costa2023}.
+
+Historical descriptions from the pre-treatment era reveal marked variability in the natural history of disease. Nineteenth-century outbreaks in Assam and Bengal were characterized by devastating epidemic waves, with rapid disease progression and mortality exceeding 90--95\%\cite{sengupta1947,gibson1983}. In contrast, other accounts describe a more chronic, relapsing--remitting course that could persist for years\cite{sengupta1947}.
+
+In both ISC models, and the East Africa model including parasite grade, a marked inverse association with relapse is shown. Appreciating the factors associated with disease...
+
+The duration of the symptomatic stage is strongly associated with relapse risk, with a strong inverse association demonstrated across both regions. This stage is also important in understanding the models' findings, as it also captures the evolution of other established relapse predictors: spleen size, severity of anaemia, white cell count, and parasite grade. * correlations.
+
+\subsubsection{Treatment}
+
+
+
+
+% In a systematic review and meta-analysis conducted by Mannan and colleagues (2021), multiple studies were identified showing that male sex and certain genetic polymorphisms were more common in patients with symptomatic disease\cite{mannan2021}. In 2016, Hirve and colleagues systematically reviewed the risk factors for progression to symptomatic disease, and identified
+
+% KALANET community trial conducted by the KALANET consortium (2006-2009): Picado A, Singh SP, Rijal S, Sundar S, Ostyn B, ... Marleen Boelaert (2010) Longlasting insecticidal nets for prevention of Leishmania donovani infection in India and Nepal: paired cluster randomised trial. BMJ 341: c6760.
+
+% NIH/TMRC: 
+
+% discussion of systematic review - how patients with symptomatic disease compare to patients who relapse
+% reflection on prospective patient cohorts - TMRC, KALANET, Bern's CDC work in Bangladesh -> mathematical modelling studies
+
+
+The sections below examine potential mechanisms underlying these associations.
+
+post-treatment stage
+- critical for determining whether relapse occurs
+- treatment does *not* cause sterile cure \cite{gidwani2011} - persistence of serology following cure
+- Key factors during this period include treatment-related effects, host immunity, and parasite characteristics, including parasite burden and infectivity.
+
+\subsection{Symptom duration}
+
+% Pareyn: Visceral leishmaniasis is usually subacute or chronic but can occasionally be acute and more severe in very young, older or immunosuppressed patients (cites WHO Leishmaniasis 2023 - ie website).
+
+% Regardless of the treatment received, it is widely accepted that an effective host immunity is crucial to achieving lasting cure\cite{murray2005, khalil2005, franssen2021, alves2018}. In this context, the goal of treatment is not complete parasite eradication, but rather sufficient suppression of the parasite burden to facilitate reconstitution of the host's cell-mediated immune response and  subsequent parasite control.
+
+\cite{addisu2025}
+% (1) patient clinical and inflammatory profiles varied at admission and partially revert to healthy levels at EoT, with different levels of recovery across countries; (2) levels of inflammatory markers, including soluble TNF receptors and sCD40L, consistently changed between admission and EoT in all four countries; and
+
+\cite{pareyn2025}
+% Amastigotes divide by mitosis but may also become metabolically quiescent, facilitating immune evasion, persistence and drug resistance. Triggers for quiescence remain ill-defined97. Bone marrow resident haematopoietic stem cells provide a niche for quiescent amastigotes in visceral leishmaniasis, underpinning persistence and disease relapse after treatment
+
+quiescence: \cite{jara2022}
+bone marrow niche and relapse: \cite{dirkx2024}
+
+
+% reflect on: recent work in determining pathophysiology - where the quiescent parasites reside that escape treatment and cause relapse. Need to cite \cite{dirkx2024} - excellent paper looking at potential mechanisms, supported by murine model. Reference to other diseases with sanctuary sites. 
+
 
 \section{Model Implementation}
+
+Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
 
 \section{Limitations}
 
 \section{Future Research}
 
+% importance of early case detection highlighted in mathematical modelling: \cite{chapman2020}
+% Identify predictive biomarkers for treatment cure or failure and relapse \cite{pareyn2025} -  research priorities for VL elimination and control
+
+% need to *link* relapse episodes with primary cases, in order to understand what drives relapse. Can be included as part of a national database - however linking of cases can often be challenging. Monitoring for relapse can also serve as pharmacovigilance and resistance monitoring surveillance for leishmaniasis treatments, as performed for other diseases and proposed by experts in the field.\cite{vangriensven2024,pareyn2025}
+
+% point-of-care molecular diagnostics - as a test of cure
+
 \section{Conclusion}
 
 \begin{itemize}
-    \item High level summary of prediction models
-          \begin{itemize}
-              \item Impactful statement - emphasising large datasets, novelty, and rigorous statistical approach
-              \item Review of model predictors and performance
-              \item Link to structure of discussion
-          \end{itemize}
-    \item Causal plausibility of identified relationships
-          \begin{itemize}
-              \item What is relapse?
-              \item Is relapse different to treatment failure?
-              \item East Africa models
-          \end{itemize}
-    \item Implementation considerations
-          \begin{itemize}
-              \item Model form (considering clinical prediction rule, vs.\ application)
-              \item Choice of intercept
-              \item Patient counselling
-              \item Policy implementation
-              \item Stakeholder engagement
-          \end{itemize}
-    \item Strengths
-          \begin{itemize}
-              \item Novelty
-              \item Comprehensive statistical approach
-          \end{itemize}
-    \item Limitations
-          \begin{itemize}
-              \item Underlying data: Applicability of prediction models to non-trial patients: need for external validation. Need to be cautious when using models to risk stratify patients with severe disease, immunocompromised.
-              \item Underlying data: 'Noisy' data. For example, affected by patient recall.
-              \item Modelling assumptions: Treatment
-              \item Modelling assumptions: Age
-              \item Modelling assumptions: East Africa
-          \end{itemize}
-    \item Directions for future research
-    \item
-    \item Conclusion
+  \item High level summary of prediction models
+        \begin{itemize}
+          \item Impactful statement - emphasising large datasets, novelty, and rigorous statistical approach
+          \item Review of model predictors and performance
+          \item Link to structure of discussion
+        \end{itemize}
+  \item Causal plausibility of identified relationships
+        \begin{itemize}
+          \item What is relapse?
+          \item Is relapse different to treatment failure?
+          \item East Africa models
+        \end{itemize}
+  \item Implementation considerations
+        \begin{itemize}
+          \item Model form (considering clinical prediction rule, vs.\ application)
+          \item Choice of intercept
+          \item Patient counselling
+          \item Policy implementation
+          \item Stakeholder engagement
+        \end{itemize}
+  \item Strengths
+        \begin{itemize}
+          \item Novelty
+          \item Comprehensive statistical approach
+        \end{itemize}
+  \item Limitations
+        \begin{itemize}
+          \item Underlying data: Applicability of prediction models to non-trial patients: need for external validation. Need to be cautious when using models to risk stratify patients with severe disease, immunocompromised.
+          \item Underlying data: 'Noisy' data. For example, affected by patient recall.
+          \item Modelling assumptions: Treatment
+          \item Modelling assumptions: Age
+          \item Modelling assumptions: East Africa
+        \end{itemize}
+  \item Directions for future research
+  \item
+  \item Conclusion
 \end{itemize}
 
 •	Biological and clinical plausibility:
