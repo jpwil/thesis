@@ -1,0 +1,145 @@
+
+\documentclass[11pt,a4paper]{article} % or letterpaper, 10pt, 12pt, etc.
+
+% -------------------------
+% Packages
+% -------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}         % or omit for modern engines (XeLaTeX/Luatex)
+\usepackage{lmodern}                % scalable fonts
+\usepackage{microtype}              % better typography
+\usepackage{graphicx}               % include graphics
+\usepackage{amsmath,amssymb}        % math
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref}% \usepackage{csquotes}               % quotations
+\usepackage{pdflscape}
+\usepackage{overpic}
+\usepackage{subcaption}
+% \usepackage{enumitem}               % control lists
+% \usepackage{titlesec}               % control section spacing
+% \usepackage{fancyhdr}               % headers/footers
+
+\usepackage[
+  a4paper,
+  left=25mm,
+  right=25mm,
+  top=20mm,
+  bottom=20mm,
+]{geometry}
+
+\title{Predicting Visceral Leishmaniasis Relapse in the Indian Subcontinent}
+\author{James Wilson}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+This \textit{draft} article outlines the structure of a paper that introduces a VL relapse clinical prediction model for the Indian subcontinent (ISC).
+
+\section*{Relapse is Important}
+
+\begin{itemize}
+    \item Brief introduction of VL, including epidemiology, in the context of ISC elimination programme. Comment on particularly poor outcomes in patients with VL/HIV co-infection.
+    \item Persistence of human reservoir, through active infection and PKDL, are barriers to successful elimination. Emphasising importance of early detection.
+    \item We argue that relapse represents an \textbf{`important, yet understated'} form of persistent infection, with consequences not only at the individual patient level, but also threatening elimination success. Why?
+          \begin{enumerate}
+              \item \textbf{For the patient:} relapse is associated with heightened morbidity and mortality. Exposure to prolonged and often toxic treatments. High financial cost to patient and state.
+              \item \textbf{For elimination}: \underline{relapse cases are different from primary cases}
+                    \begin{enumerate}
+                        \item Parasite strains isolated from relapse cases are more likely to harbour drug resistance,\footnote{\url{https://doi.org/10.1046/j.1365-3156.2001.00778.x}. \url{https://doi.org/10.1017/S0031182016002031}}
+                        \item There is growing evidence that relapse strains have greater fitness.\footnote{SSG: \url{https://doi.org/10.1371/journal.pone.0023120}; Miltefosine: \url{https://doi.org/10.1128/mbio.00611-13}}
+                        \item As the overall disease incidence decreases, the \textit{proportion} of cases attributable to relapse increases.\footnote{See Figure 4 of WHO Regional Strategic Framework for South-East Asia 2022--2026 \url{https://www.who.int/publications/i/item/9789290209812}} As we approach the consolidation phase of elimination, relapse becomes more relevant.
+                    \end{enumerate}
+              \item \textbf{Why understated}: relapse rates obtained from prospective clinical trials (e.g.\ \textasciitilde5\%) \textit{underestimate} the disease burden. Why? For a number of reasons\dots
+                    \begin{enumerate}
+                        \item Trial follow-up is typically 6 months, and there is growing evidence that relapse frequently occurs \textit{beyond} 6 months.\footnote{\url{https://doi.org/10.1016/j.lansea.2023.100317}}
+                        \item Trial populations are different to real patients: they are overall less unwell with less comorbidities, and are treated under ideal and well-supervised conditions
+                        \item Unlike in routine practice, in trial settings a repeat tissue aspirate following treatment is usually performed. Patients with clinical improvement yet with persistent tissue parasites would often be considered initial treatment failures, and rescue treatment initiated.\footnote{Either immediately, or in some trial settings, if the initial aspirate were 1$+$, then treatment would be started only if a repeat tissue aspirate were positive.} In routine clinical practice, these high risk patients with persistent tissue parasites would be discharged from care and any subsequent relapses would be counted.
+                    \end{enumerate}
+          \end{enumerate}
+    \item Improvement of clinical symptoms alone, following VL treatment, is \textbf{not sufficient} for predicting which patients progress to relapse. Consequently, recognising the important of relapse, there has been \textbf{significant interest} in better understanding the \underline{mechanisms} and \underline{predictors} of relapse.
+          \begin{enumerate}
+              \item In the `WHO Regional Strategic Framework for accelerating and sustaining elimination of kala-azar in the South-East Asia Region 2022--2026', priority areas for operation research are identified,\footnote{See Box 4, \url{https://www.who.int/publications/i/item/9789290209812}} including\dots
+                    \begin{enumerate}
+                        \item `Mechanisms or determinants of progression to PKDL or relapse'
+                        \item `Less invasive test of cure for kala-azar, PKDL, HIV co-infection and relapse'
+                    \end{enumerate}
+              \item In 2024 the WHO Diagnostic Technical Advisory Group for Neglected Tropical Diseases (DTAG-NTD) published a `Target Product Profile'\footnote{\url{https://www.who.int/publications/i/item/9789240091818}} for an \textit{in vitro} biomarker predicting treatment success. This document recognises the importance of confirming treatment response, and identifying patients at higher risk of subsequent relapse. Further references to the importance of relapse can be found in the
+              \item Promising candidate biomarkers for test-of-cure have been explored. For example kDNA detection with qPCR.\footnote{\url{https://doi.org/10.1371/journal.pntd.0012078}, \url{https://doi.org/10.1371/journal.pone.0185606}} However, PCR-based approaches are limited by the need for expertise and high costs, and often lower sensitivity in immunocompetent patients.
+          \end{enumerate}
+    \item An alternate approach for predicting relapse, and obviating the need for a novel biomarker, is to use routinely collected information to risk stratify a patient's risk of relapse in the form of a \textbf{clinical prediction model}.
+          \begin{itemize}
+              \item Such prediction models, using risk scores, have been developed and successfully implemented for identification of VL patients at high risk of mortality.\footnote{Brazilian guidelines, MSF}
+              \item However, no clinical prediction models predicting relapse exist.\footnote{\url{https://doi.org/10.1101/2024.03.20.24304622}}
+              \item By identifying high-risk patients, high impact interventions can be made, either preventing relapse occurring through treatment modification, or by promoting the early identification and diagnosis of relapse cases.
+          \end{itemize}
+\end{itemize}
+
+\section*{Clinical Prediction Models}
+
+\begin{itemize}
+    \item Motivated by (i) the importance of relapse both at the individual patient and public health levels, (ii) recognised need to predict which patients are successfully treated, and (iii) absence of current prediction model, investigators in the ISC have collaborated with colleagues at IDDO to develop a novel prediction model for predicting VL relapse.
+    \item Citations for model protocol, model publication.
+    \item Overview of methodology
+          \begin{enumerate}
+              \item Development of a shared repository of VL clinical trial data, adhering to best practice in data governance, and part of an international data sharing collaborative.\footnote{Reference IDDO, living systematic review}
+              \item Engagement of disease experts (IDDO SAC),\footnote{\url{https://www.iddo.org/vl/governance/scientific-advisory-committee}} recognising the importance of VL relapse, and the current lack of prediction models. Link to the collaborative development of a study group.\footnote{\url{https://www.iddo.org/development-and-validation-prognostic-model-visceral-leishmaniasis-relapse}}
+              \item Use of \textbf{robust and transparent statistical approach}, in concordance with reporting guidelines for prediction models (TRIPOD+AI, TRIPOD Cluster). Development of a hierarchical logistic regression model predicting 6-month relapse, accounting for (i) missing data using multiple imputation, and (ii) clustering of data across contributing studies.
+          \end{enumerate}
+    \item Overview of results
+          \begin{enumerate}
+              \item Over 4,500 patient records and 228 relapse events from 19 prospective trials conducted in India and Nepal.
+              \item Candidate predictors measured at time of treatment initiation: sex, age, laboratory tests (ALT, creatinine, WBC, platelets), anaemia, malnutrition, fever duration, spleen size, treatment regimen. Two models fitted, one including tissue aspirate parasite grade, one excluding parasite grade.
+              \item Final predictors: see Figure ~\ref{fig:isc_var_forest_combined} (forest plot of odds ratios) and Figure~\ref{fig:isc_adjusted_assoc} (adjusted associations between relapse probability and final predictors, calibrated to a large phase 4 trial of single-dose liposomal amphotericin B 10 mg/kg, Sundar et al, 2019).\footnote{Sundar S et al. Effectiveness of Single-Dose Liposomal Amphotericin B in Visceral Leishmaniasis in Bihar. Am J Trop Med Hyg. 2019 Oct;101(4):795-798. doi: 10.4269/ajtmh.19-0179}.
+          \end{enumerate}
+    \item Deployment of model
+          \begin{itemize}
+              \item Highlight need for further stakeholder engagement, prior to deployment as a web application or as a simplified clinical risk score.
+              \item Consider how such a model can optimise clinical decision making at both individual patient and policy levels. For example, (i) triggering a one-month tissue aspirate, (ii) extending treatment for high-risk patients (iii) counselling high-risk patients to recognise their increased risk (iv) intensified follow-up (e.g. return for clinical review in 3, 6, 12 months).
+          \end{itemize}
+    \item{Interpretation of selected predictors}
+          \begin{itemize}
+              \item Reflection on inverse relationship between fever duration and relapse risk, considering the role of host immunity. Shorter symptom duration may reflect accelerated disease progression due to lack of pre-existing immunity, or relative immune compromise. Can cite similar findings.\footnote{\url{https://doi.org/10.1371/journal.pntd.0002536}, \url{https://doi.org/10.1371/journal.pntd.0007726}}
+              \item Reflection on inverse relationship between anaemia and relapse risk, perhaps also related to anaemia being more common in patients with more prolonged illness.
+              \item Similar brief reflections on age, treatment, and parasite grade.
+          \end{itemize}
+\end{itemize}
+
+\section*{Conclusion}
+\begin{itemize}
+    \item Summary 1-2 paragraphs to communicate key messages:
+          \begin{enumerate}
+              \item Relapse is important.
+              \item We have development the first models identifying patients at high risk of relapse.
+              \item Models allows to better understand the \underline{mechanisms and predictors} of relapse.\footnote{And can provide further clues supporting relapse treatment decisions.}
+              \item Next steps: stakeholder engagement, model implementation via policy integration.
+          \end{enumerate}
+\end{itemize}
+
+\newgeometry{left=2.5cm, bottom=2.5cm, right=2cm, top=3cm}
+\begin{landscape}
+    \begin{figure}[p]
+        \centering
+        \includegraphics[width=\linewidth]{var_forest_combined.pdf}
+        \caption{Forest plots of adjusted odds ratios with 95\% confidence intervals for final model predictors. SDA: single dose liposomal amphotericin B 10~mg/kg.}
+        \label{fig:isc_var_forest_combined}
+    \end{figure}
+    \begin{figure}[p]
+        \centering
+        \begin{subfigure}{\linewidth}
+            \centering
+            \begin{overpic}[width=\textwidth]{isc_multiassoc_without_pg.pdf}
+                \put(2,31){\small\textbf{model without parasite grade}}
+            \end{overpic}
+        \end{subfigure}
+        \begin{subfigure}{\linewidth}
+            \centering
+            \begin{overpic}[width=\textwidth]{isc_multiassoc_with_pg.pdf}
+                \put(2,26){\small\textbf{model with parasite grade}}
+            \end{overpic}
+        \end{subfigure}
+        \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final ISC prognostic models. Probabilities were calculated from optimism-adjusted models and following logistic recalibration (intercept-term only) to data contributed from Sundar et al (2019). Where not varying in the plot, predictions are standardised to a representative reference participant: median age (18 years), median fever duration (30 days), treated with 10~mg/kg single dose liposomal amphotericin B, with severe anaemia, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2$+$.}\label{fig:isc_adjusted_assoc}
+    \end{figure}
+\end{landscape}
+\restoregeometry
+
+\end{document}
