@@ -3,11 +3,21 @@
 
 \section{Overview}
 
-This thesis demonstrates both the feasibility and the challenges of predicting VL relapse using routinely collected clinical data. In response to a clear public health need and the lack of existing prognostic tools, the prognostic models presented here represent the first systematic attempt to predict relapse risk across the ISC and East Africa.
+So far, this thesis has:
 
-Despite substantial heterogeneity between contributing studies, several important relapse-predictor relationships were identified. Fever duration and baseline parasite grade showed effects shared across regions, supporting their role as core prognostic features. In contrast, other predictors demonstrated region-specific effects: the association between anaemia and relapse differed in direction between regions, while WBC count and malnutrition were predictive only in East Africa, and age only in the ISC. Models incorporating parasite grade achieved superior discrimination where available. Excluding parasite grade, however, still allowed for meaningful discriminatory performance.
+\begin{itemize}
+  \item established relapse as clinically significant VL outcome, both for individual patients and regional elimination efforts (Chapter \ref{ch:2-background}),
+  \item demonstrated that, despite its importance, no models predicting relapse exist, identifying a clear and important gap in the literature (Chapter \ref{ch:3-sys-review}), and
+  \item developed and internally validated four relapse prediction models for patients in the ISC and East Africa (Chapters \ref{ch:4-isc-model-methodology}--\ref{ch:6-ea-model-results}).
+\end{itemize}
 
-This final chapter provides a structured reflection on the models presented in the Results chapters. Insights from the Background and Systematic Review chapters are drawn upon to interpret, contextualise, and assess the implications of these findings.
+Drawing on individual patient data from 6,650 participants across 19 prospective studies, the models presented in this thesis constitute the first attempt to predict visceral leishmaniasis relapse risk at the individual patient level.
+
+Despite considerable heterogeneity across the contributed studies and substantial missing data \textemdash\ necessitating the use of advanced and often only recently developed statistical approaches \textemdash\ several important predictors of relapse were identified. Fever duration and baseline parasite grade showed effects shared across both regions, supporting their role as core prognostic factors. In contrast, other predictors demonstrated region-specific effects: the association between anaemia and relapse differed in direction between regions, WBC count and malnutrition were predictive only in East Africa, and age only in the ISC. Models incorporating parasite grade achieved superior discrimination where available, although excluding parasite grade still allowed for meaningful discriminatory performance.
+
+\subsubsection{Chapter Structure}
+
+This final chapter provides a structured reflection on the presented models. Insights from the preceding chapters are drawn upon to interpret, contextualise, and assess the implications of these findings.
 
 First, the models are explored and critically appraised from two complementary angles; considering \textbf{(i)} the mechanistic plausibility of the identified predictor-relapse relationships, \textemdash\ `\textit{what do the models teach us about the nature of VL relapse?}', and \textbf{(ii)} the clinical implications, impact, challenges, and practicalities related to model deployment in routine settings \textemdash\ `\textit{how can the models be applied to improve outcomes at the patient and policy levels?}'.
 
@@ -19,7 +29,7 @@ Finally, the thesis concludes with a high-level summary of how the models collec
 
 \section{Plausibility of Relapse Predictors}
 
-It deserves recognition that the identified relapse-predictor relationships, as illustrated in Figures~\ref{fig:isc_var_forest_combined} and \ref{fig:ea_var_forest_combined}, simply reflect statistical associations arising under the stated modelling assumptions. Accurate prediction, in itself, does not require biological plausibility or a causal model of the underlying relationships. However, articulating a plausible biological or mechanistic framework can add substantial value. Specifically:
+It deserves recognition that the identified relapse-predictor relationships, as illustrated in Figures~\ref{fig:isc_var_forest_combined} and \ref{fig:ea_var_forest_combined}, simply reflect statistical associations arising under the stated modelling assumptions. Accurate prediction does not require biological plausibility. However, articulating a likely mechanistic framework can add substantial value. Specifically:
 
 \begin{description}
   \item{\textbf{User confidence}}. Biological plausibility of relapse-associated factors improves the face validity of the models, increasing user trust in its predictions.
@@ -38,7 +48,7 @@ Supporting a more mechanistic interpretation, Figure~\ref{fig:natural-history} s
   \begin{figure}[tb]
     \centering
     \includegraphics[width=\linewidth, trim = {0.2cm 1.2cm 2cm 2.4cm}, clip]{figures/ch7/natural-history.pdf}
-    \caption{Dynamics of parasite load, treatment response, and relapse in visceral leishmaniasis.}
+    \caption{Dynamics of parasite load, treatment response, and relapse in visceral leishmaniasis. Rx: treatment, PKDL: post-kala-azar dermal leishmaniasis.}
     \label{fig:natural-history}
   \end{figure}
 \end{landscape}
@@ -48,7 +58,7 @@ Supporting a more mechanistic interpretation, Figure~\ref{fig:natural-history} s
 
 In endemic areas, serological surveys demonstrate that approximately \textasciitilde 10--30\% of individuals harbor asymptomatic infection, far outnumbering clinically apparent cases\cite{mannan2021}. However, only a small minority of these individuals progress to symptomatic disease, underscoring that clinical illness represents an exception rather than the norm in infected populations\cite{hasker2014}. Primary disease progression reflects a complex interplay of host genetic susceptibility, immune competence, and parasite-related factors, although these relationships remain poorly understood\cite{kaye2011}.
 
-Relapse shares a key conceptual feature with primary disease progression \textemdash\ namely, failure to control parasite expansion. Consequently, studies examining determinants of primary disease progression can also provide important insights into the mechanisms underlying relapse. High-quality prospective incidence studies are particularly informative in this regard, and provide insightful context for the discussion below\cite{picado2010,hasker2014,bern2007}.
+Relapse shares a key conceptual feature with primary disease progression \textemdash\ namely, a failure to control parasite expansion and the transition from an asymptomatic to symptomatic state. Consequently, studies examining determinants of primary disease progression can also provide important insights into the mechanisms underlying relapse. High-quality prospective incidence studies are particularly informative in this regard, and provide important context for upcoming discussion\cite{picado2010,hasker2014,bern2007}.
 
 \subsubsection{Progression of Symptomatic Disease}
 
@@ -56,15 +66,11 @@ As symptoms evolve, immune control is progressively undermined by parasite immun
 
 Historical descriptions from the pre-treatment era reveal marked variability in the natural history of disease. Nineteenth-century outbreaks in Assam and Bengal were characterized by devastating epidemic cycles, with rapid disease progression and mortality exceeding 90--95\%\cite{sengupta1947,gibson1983}. In contrast, other accounts describe a more chronic, relapsing--remitting course that could persist for years\cite{sengupta1947}.
 
-Understanding how clinical and laboratory factors evolve during symptomatic disease can help explain a number of relapse predictors, including fever duration, splenomegaly, anaemia, white blood cell count, and parasite grade. Drawing on literature that describes the natural progression and inter-relatedness of these factors can offer a framework for interpreting their mechanistic links to relapse.
+Understanding how clinical and laboratory factors evolve during symptomatic disease can help explain a number of relapse predictors, including fever duration, splenomegaly, anaemia, WBC count, and parasite grade. Drawing on literature that describes the natural progression and inter-relatedness of these factors can offer a framework for interpreting their mechanistic links to relapse.
 
 \subsubsection{Treatment Stage}
 
-There is no question that treatment decisions \textemdash\ including the choice of drug, dose, and duration \textemdash\ are critical in determining whether, and to what extent, a patient improves clinically and biochemically. As discussed in the Background Chapter, molecular markers of parasite load have been shown to decrease from the order of \textasciitilde 10$^3$--10$^4$ parasites/ml (blood) at treatment initiation to \textasciitilde 10$^1$ parasites/ml at day 28, although with significant variation observed across treatment groups and between individuals. Perhaps unsurprisingly, symptomatic improvement and subsequent relapse are significantly correlated with end of treatment parasitaemia\cite{sudarshan2011,verrest2021,verrest2024}.
-
-In studies reporting patient outcomes at 6 month or more following treatment, the term `treatment failure' usually describes a composite outcome that includes both initial non-response to treatment (\textit{initial} treatment failure, synonymous with a lack of initial cure), and, where measured, subsequent relapse\cite{pontesucre2017}. In prospective trials, the pre-specified outcome or `estimand' of initial treatment failure is typically assessed within 15--30 days of treatment completion, with clinical and parasitological evaluation. However, as outlined in sections~\ref{sec:isc_initial_cure} and \ref{sec:ea_initial_cure}, with further elaboration in the \href{https://github.com/jpwil/dphil}{Supplementary Material}, definitions were often not clearly presented and varied widely across the contributed studies. Rarely were criteria for clinical improvement presented in a reproducible manner, assessment timing varied considerably, and events triggering treatment failure prior to the test-of-cure assessment were infrequently described (e.g.\ number of missed doses permitted due to adverse events, the degree of clinical deterioration prompting rescue treatment). In some studies, patients experiencing adverse events or mortality during treatment were classified as initial treatment failures, while in others they were excluded from the analysis.
-
-In clinical trials, deaths are a rare event - systematic review \cite{singhphulgenda2021}, meta-analysis, incidence rate of death: IRD estimated at 0.068 95\% confidence interval (CI): 0.041--0.114. 285/428 deaths (66.6\%) occurred within first 30 days.
+There is no question that treatment decisions \textemdash\ including the choice of drug, dose, and duration \textemdash\ are critical in determining whether, and to what extent, a patient improves clinically and biochemically. As discussed in the Chapter \ref{ch:2-background}, molecular markers of parasite load have been shown to decrease from the order of \textasciitilde 10$^3$--10$^4$ parasites/ml (blood) at treatment initiation to \textasciitilde 10$^1$ parasites/ml at day 28, although with significant variation observed across treatment groups and between individuals. Perhaps unsurprisingly, symptomatic improvement and subsequent relapse are significantly correlated with end of treatment parasitaemia\cite{sudarshan2011,verrest2021,verrest2024}.
 
 One important point:
 
@@ -74,9 +80,6 @@ One important point:
 \subsubsection{Post-treatment Stage}
 
 - sterile cure is not achieved. As evidenced by - aforementioned studies on parasite dynamics, but also, observation that serology persists \cite{gidwani2011}, frequently detectable parasites demonstrated at test-of-cure, despite no subsequent relapse, and case reports of disease reactivation many years after initial exposure\cite{eichenberger2017, postorino2011}
-
-
-
 
 % In a systematic review and meta-analysis conducted by Mannan and colleagues (2021), multiple studies were identified showing that male sex and certain genetic polymorphisms were more common in patients with symptomatic disease\cite{mannan2021}. In 2016, Hirve and colleagues systematically reviewed the risk factors for progression to symptomatic disease, and identified
 
@@ -119,6 +122,12 @@ bone marrow niche and relapse: \cite{dirkx2024}
 Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
 
 \section{Limitations}
+
+% re: definition of treatment failure / relapse - these are 'artificial constructs' 
+In studies reporting patient outcomes at 6 month or more following treatment, the term `treatment failure' usually describes a composite outcome that includes both initial non-response to treatment (\textit{initial} treatment failure, synonymous with a lack of initial cure), and, where measured, subsequent relapse\cite{pontesucre2017}. In prospective trials, the pre-specified outcome or `estimand' of initial treatment failure is typically assessed within 15--30 days of treatment completion, with clinical and parasitological evaluation. However, as outlined in sections~\ref{sec:isc_initial_cure} and \ref{sec:ea_initial_cure}, with further elaboration in the \href{https://github.com/jpwil/dphil}{Supplementary Material}, definitions were often not clearly presented and varied widely across the contributed studies. Rarely were criteria for clinical improvement presented in a reproducible manner, assessment timing varied considerably, and events triggering treatment failure prior to the test-of-cure assessment were infrequently described (e.g.\ number of missed doses permitted due to adverse events, the degree of clinical deterioration prompting rescue treatment). In some studies, patients experiencing adverse events or mortality during treatment were classified as initial treatment failures, while in others they were excluded from the analysis.
+
+% death was not included
+In clinical trials, deaths are a rare event - systematic review \cite{singhphulgenda2021}, meta-analysis, incidence rate of death: IRD estimated at 0.068 95\% confidence interval (CI): 0.041--0.114. 285/428 deaths (66.6\%) occurred within first 30 days.
 
 \section{Future Research}
 
