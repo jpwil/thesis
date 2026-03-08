@@ -92,7 +92,11 @@ Expert consensus holds that VL treatment rarely results in sterile cure, as evid
 
 Verrest et al.\ (2024)\cite{verrest2024} hypothesised that post-treatment parasite dynamics are influenced by four key factors: (i) the pre-treatment parasite burden, (ii) the degree of parasite depletion by the treatment, (iii) the intrinsic parasite virulence, and, crucially, (iv) the host's immune system. It can be further hypothesised that, during the post-treatment stage, for each individual there must exist a `critical parasite load' (Figure~\ref{fig:natural-history}). The threshold itself would be expected to vary between individuals, reflecting both differences in host immunity and in parasite virulence. For parasite loads below this threshold, the host immune system controls parasite replication resulting in lasting cure. For parasite loads above this threshold, parasite replication outpaces immune control, leading to relapse (Figure~\ref{fig:natural-history}).
 
-With this framework in mind, the mechanistic link between the identified predictors and relapse can be explained in terms of their association, whether causal or not, with (i) the post-treatment parasite load (itself determined largely by the pre-treatment parasite load and treatment regimen), (ii) host immunity, and (iii) parasite virulence.
+\subsubsection{Development of a Causal Model for Relapse}
+
+Building on Verrest et al.'s hypothesis, a causative (mechanistic) model can be assembled. In this putative model, three key drivers of relapse, all shaped by events prior to and during treatment, determine whether relapse occurs: (i) post-treatment parasite grade, (ii) host immunity, and (iii) parasite fitness. Post-treatment parasite grade itself can be considered a direct consequence of both pre-treatment parasite grade and the treatment regimen. If presented as a directed acyclic graph (DAG), these drivers represent the final common pathway (mediators) of relapse. As shown in Figure~\ref{fig:dag}, text boxes (`nodes') represent relapse determinants, and lines (`vertices') indicate the direction of causation between nodes. For example, pre-treatment host immunity directly affects the initial rate of symptom progression.
+
+Caution is, however, warranted when interpreting such a model. As with DAGs in any disease process, it represents a broad approximation of true biological events and fails to capture the dynamic interactions between the identified determinants as the disease develops. Rarely do disease experts agree on the `correct' DAG\cite{daveysmith2016}. Limitations aside, the proposed DAG at least provides an explicit conceptual framework that contextualizes the predictors identified in this thesis, and clarifies how they may relate mechanistically to relapse.
 
 \definecolor{green_dag}{RGB}{217,242,208}
 \definecolor{pink_dag}{RGB}{242,207,238}
@@ -102,7 +106,7 @@ With this framework in mind, the mechanistic link between the identified predict
 \begin{figure}[tb]
   \centering
   \includegraphics[width=\linewidth, trim = {5cm 5cm 7.5cm 1.1cm}, clip]{figures/ch7/dag.pdf}
-  \caption{Directed acyclic graph (DAG) describing putative effectors of visceral leishmaniasis relapse. Factors are colour coded:\\ \colorbox{green_dag}{Factors measurable at the time of treatment initiation} \\ \colorbox{pink_dag}{Factors measurable at time of disease onset, or shortly thereafter} \\ \colorbox{blue_dag}{\textcolor{white}{Factors on the final common pathway to relapse}} \\ \colorbox{orange_dag}{Relapse}.}
+  \caption{Directed acyclic graph (DAG) describing putative effectors of visceral leishmaniasis relapse. Factors are colour coded:\\ \colorbox{green_dag}{Factors measurable at the time of treatment initiation} \\ \colorbox{pink_dag}{Factors measurable at time of disease onset, or shortly thereafter} \\ \colorbox{blue_dag}{\textcolor{white}{Factors on the final common pathway to relapse}} \\ \colorbox{orange_dag}{Relapse}}
   \label{fig:dag}
 \end{figure}
 
