@@ -64,7 +64,7 @@ Relapse shares a key conceptual feature with primary disease progression \textem
 
 \subsubsection{Progression of Symptomatic Disease}
 
-As symptoms evolve, immune control is progressively undermined by parasite immune evasion, facilitating intracellular persistence and dissemination within the mononuclear phagocyte system. Host immune responses become increasingly skewed toward an immunoregulatory profile associated with dysfunctional cell-mediated immunity. This shift drives a vicious cycle of immunosuppression, heightened susceptibility to co-infections, and progressive end-organ damage\cite{kaye2011,costa2023}.
+As symptoms evolve, immune control is progressively undermined by parasite immune evasion, facilitating intracellular persistence and dissemination within the mononuclear phagocytic system. Host immune responses become increasingly skewed toward an immunoregulatory profile associated with dysfunctional cell-mediated immunity. This shift drives a vicious cycle of immunosuppression, heightened susceptibility to co-infections, and progressive end-organ damage\cite{kaye2011,costa2023}.
 
 Historical descriptions from the pre-treatment era reveal marked variability in the natural history of disease. Nineteenth-century outbreaks in Assam and Bengal were characterized by devastating epidemic cycles, with rapid disease progression and mortality exceeding 90--95\%\cite{sengupta1947,gibson1983}. In contrast, in settings with endemic disease, a more chronic, relapsing--remitting course is described that could persist for years\cite{sengupta1947}.
 
@@ -126,7 +126,7 @@ Mechanistically, pre-treatment parasite grade can be associated with relapse thr
 
 Taken together, the consistent regional effects observed in this thesis, the supporting evidence from prior studies, and a strong biological rationale, all reinforce pre-treatment parasite grade as a core prognostic determinant of VL relapse.
 
-\subsection{Fever Duration}
+\subsection{Fever Duration\label{sec:fever_duration}}
 
 Duration of fever, a close surrogate for the duration of symptomatic disease, was also identified as significant relapse predictor in both regions. In the ISC, in both models, a doubling in fever duration was associated with an approximate one third decrease in relapse odds (Figure~\ref{fig:isc_var_forest_combined}). A less marked association between fever duration and relapse risk was identified in the East Africa model with parasite grade, where a doubling in fever duration was associated with a more modest 20\% decrease in relapse odds, although with an upper 95\% confidence interval bordering the null effect (Figure~\ref{fig:ea_var_forest_combined}).
 
@@ -154,16 +154,47 @@ The finding that miltefosine is associated with higher relapses rates compared t
 
 Interpretation of the decreased relapse rate in the miltefosine versus `Other' treatment category is challenging because the `Other' group comprises heterogeneous treatment regimens (presented in Figure~\ref{fig:isc_treat}). This represents an important limitation in the prediction model development, discussed further in Section~\ref{sec:limitations}.
 
-\subsection{Anaemia}
+\subsection{Anaemia Severity}
 
+The presence of severe anaemia is found to be a significant predictor of relapse in both the ISC and East Africa, although curiously, with opposing directions of association. In the ISC, the presence of severe anaemia is predictive of an approximate 30\% \textit{reduction} in the relapse odds, contrasting with an approximate 70\% \textit{increase} in relapse odds in East Africa. Effects are similar across models with and without parasite grade, and while remaining statistically significant at the 5\% level, both confidence intervals skirt the null effect. Similar associations are seen in the unadjusted associations, demonstrated graphically in Figures~\ref{fig:isc_pooled_dist_cont_lab} (ISC) and \ref{fig:ea_pooled_dist_cont2} (East Africa).
 
+Severe anaemia is highly prevalent in patients with VL, and most often found to be normocytic and normochromic\cite{varma2010, goto2017}. Even in the relatively well patients used in model development, almost 50\% were found to be severely anaemic according to the age- and sex-adjusted 2024 WHO definition\cite{who_haem2024} (Tables~\ref{tab:isc_categorical} and \ref{tab:ea_categorical}).
+
+Ferrokinetic studies performed in the 1970s and 80s show that erythrocytes in VL-infected patients have reduced survival times due to increased splenic haemolysis, with relatively preserved bone marrow haematopoiesis\cite{woodruff1972, volti1980}. The finding of increased intracellular iron stores and reduced circulating iron suggests that an anaemia of chronic disease also contributes to the overall picture\cite{pippard1986}. These findings support observations that spleen size and duration of illness correlate with the anaemia severity, demonstrated both in this thesis (Appendix Figures~\ref{fig:isc_cont_cont}, \ref{fig:isc_cont_cat} [ISC] and \ref{fig:ea_cont_cont}, \ref{fig:ea_cont_cat} [East Africa]) and elsewhere\cite{varma2010, marwaha1991,goto2017}.
+
+In the literature review of relapse determinants presented in Chapter~\ref{ch:2-background}, one study from the ISC\cite{lucero2015}, and one from East Africa\cite{kennedy2024} demonstrated positive unadjusted associations between anaemia severity and increased relapse risk, although interpretation is challenged by small sample sizes and possible confounding by age and spleen size. In the proposed DAG (Figure~\ref{fig:dag}), anaemia affects relapse through its association with symptom severity (including spleen size, resulting in splenic sequestration), symptom duration (linked to anaemia of chronic disease), rate of symptom progression, and malnutrition (linked to iron deficiency anaemia).
+
+In the ISC, it is plausible anaemia severity is primarily a surrogate of symptom duration (i.e.\ reflecting an anaemia of chronic disease); with longer symptom durations representing milder, more indolent disease caused by improved host immunity (as described in Section~\ref{sec:fever_duration}), and therefore associated with a lower relapse risk.
+
+Conversely, it may be argued that in East Africa, where patients are more malnourished (24.9\% with severe malnutrition vs.\ 18.9\% in the ISC, excluding missing data, cf.\ Tables~\ref{tab:isc_categorical}, \ref{tab:ea_categorical}), anaemia severity is driven by pre-existing anaemia due to malnutrition, or perhaps better correlated with disease severity at presentation due to the aforementioned increased barriers to care. In either case, both associations would align the severity of anaemia with a less competent host immunity and/or a higher pre-treatment (and hence higher post-treatment) parasite burden.
+
+Overall, these contrasting findings suggest that severe anaemia is unlikely to act as a direct biological determinant of relapse, but rather functions as a context-dependent surrogate marker for underlying disease severity and host immunity. The direction of association observed in each region likely reflects differences in the causal pathways underlying anaemia rather than a fundamentally different biological effect of anaemia itself.
 
 \subsection{Spleen Size}
+
+Despite spleen size being significantly correlated with both parasite grade and illness duration, it was only identified as a significant predictor of relapse in the East Africa model that included parasite grade. With borderline significance (p = 0.056), the odds of relapse were found to \textit{decrease} by approximately 40\% for each doubling of the spleen size. Interestingly, the direction of this relationship is reproduced in the unadjusted analyses in both regions (Figures~\ref{fig:ea_pooled_dist_cont1} and \ref{fig:isc_pooled_dist_cont_nolab}).
+
+As presented in Section~\ref{sec:relapse_det}, spleen size was the second most frequently identified relapse predictor in the literature review. However, interpretation, and comparison with this thesis' model findings, is complicated by differences in reported measures and differences in the covariates adjusted for in the multivariable models. In the ISC, for example, significant adjusted associations were identified between relapse and (i) smaller changes of spleen size during treatment\cite{burza2014}, (ii) larger spleen sizes at discharge\cite{lucero2015}, and (iii) larger spleen sizes at admission\cite{sundar2019}. In East Africa, Gorski et al.\ (2010) showed that in a multivariable model containing treatment, admission, and discharge spleen sizes, the odds of relapse were higher in patients with larger admission and discharge spleens.
+
+The apparent discordance between earlier reports and the findings presented here likely reflects differences in study populations, clinical settings, model construction, and the covariates adjusted for. Drawing on a similar inference used to explain the relationship between anaemia severity and relapse, and given the strong correlation between symptom duration and splenic enlargement, it can be hypothesised that patients with smaller spleens present after a shorter, more rapidly progressive disease course. In this context, a smaller spleen at admission may indicate weaker host immunity and, consequently, a greater risk of subsequent relapse. Although the East African dataset includes fewer patients, the median spleen size at admission is twice that observed in the ISC cohort (8 cm vs.\ 4 cm). This striking contrast parallels the higher parasite grades and longer symptom duration also seen in the East Africa dataset. The broader distribution of spleen sizes in East Africa likely contributes to its ability to discriminate which patients progress to relapse, and therefore its inclusion in the final model.
+
+\subsection{Age}
+
+Age, including both linear and squared terms, was retained as a significant predictor in both ISC models. Plotting predicted relapse probability (y-axis) against age (x-axis) resulted in a `U'-shaped association (Figure~\ref{fig:isc_adjusted_assoc}), with a similar appearance seen in the unadjusted association (Figure~\ref{fig:isc_pooled_dist_cont_nolab}). Conversely, no age terms were retained in the final models developed from the East Africa dataset.
+
+In the literature review of relapse determinants in immunocompetent patients, of the seven identified studies from the ISC, all but one demonstrated a significant relationship between relapse risk and age, with younger age always associated with increased risk\cite{burza2014,goyal2019,goyal2020,lucero2015,rijal2013,sundar2019}. Of these studies, two grouped age into more than two strata: using routinely collected data from MSF treatment clinics, Burza et al.\ (2014, India)\cite{burza2014} and Lucero et al.\ (2015, Bangladesh)\cite{lucero2015} demonstrated that patients under 5 years and over 40--45 years were at increased risk of 12-month relapse. Authors have attributed the higher risk in younger patients to a less mature host immunity\cite{burza2014,goyal2020,rijal2013}, and less effective treatment efficacy due to altered pharmacokinetic and pharmacodynamics\cite{rijal2013,goyal2020}.
+
+Increased relapse risk in older patients is also likely related to host immunity, given a higher prevalence of comorbidities and age-related immunosenescence\cite{liu2023}. The conjecture that the age-relapse relationship is driven by differences in host immunity is supported indirectly by drawing on observations on the speed of clinical deterioration. Similar to patients with VL/HIV co-infection, patients at the extremes of age are considered more likely to present with an acute disease\cite{pareyn2025,farrar2023manson}.
+
+The absence of age as a relapse predictor in the East Africa models is also consistent with a large observational study of patients attending MSF clinics in South Sudan. Gorski et al.\ (2010) compared the ages of 166 patients with confirmed relapse with almost 8,000 patients without a record of relapse, and found no significant difference\cite{gorski2010}. One possible explanation is that patients in this region often present with more advanced disease, such that severity-related factors \textemdash\ including malnutrition, anaemia, and parasite burden \textemdash\ dominate relapse risk, thereby attenuating more subtle host determinants such as age. Differences in treatment regimens may also contribute to this effect.
+
 \subsection{White Blood Cell Count}
 
+In both East Africa models, a doubling of the pre-treatment WBC count is predictive, with borderline significance, of an approximate 40\% increase in relapse odds (Figure~\ref{fig:ea_var_forest_combined}). The direction of association is maintained in the unadjusted analysis (Figure~\ref{fig:ea_pooled_dist_cont2}).
+
+This appears to be the first time such an association between WBC count and relapse has been described, although this likely reflecting a lack of previous investigation, with only one of the 11 identified studies in the literature review considering WBC as a candidate predictor\cite{kajaia2011}. Similar to the finding of increased relapse risk with non-severe anaemia in the ISC, and with smaller spleen sizes in East Africa, this finding may at first seem counterintuitive, given that more severe disease is generally associated with lower white cell counts.
+
 \subsection{Malnutrition}
-
-
 
 % In a systematic review and meta-analysis conducted by Mannan and colleagues (2021), multiple studies were identified showing that male sex and certain genetic polymorphisms were more common in patients with symptomatic disease\cite{mannan2021}. In 2016, Hirve and colleagues systematically reviewed the risk factors for progression to symptomatic disease, and identified
 
@@ -174,15 +205,8 @@ Interpretation of the decreased relapse rate in the miltefosine versus `Other' t
 % discussion of systematic review - how patients with symptomatic disease compare to patients who relapse
 % reflection on prospective patient cohorts - TMRC, KALANET, Bern's CDC work in Bangladesh -> mathematical modelling studies
 
-% Regardless of the treatment received, it is widely accepted that an effective host immunity is crucial to achieving lasting cure\cite{murray2005, khalil2005, franssen2021, alves2018}. In this context, the goal of treatment is not complete parasite eradication, but rather sufficient suppression of the parasite burden to facilitate reconstitution of the host's cell-mediated immune response and  subsequent parasite control.
-
 % \cite{addisu2025}
 % (1) patient clinical and inflammatory profiles varied at admission and partially revert to healthy levels at EoT, with different levels of recovery across countries; (2) levels of inflammatory markers, including soluble TNF receptors and sCD40L, consistently changed between admission and EoT in all four countries; and
-
-% quiescence: \cite{jara2022}
-% bone marrow niche and relapse: \cite{dirkx2024}
-
-% reflect on: recent work in determining pathophysiology - where the quiescent parasites reside that escape treatment and cause relapse. Need to cite \cite{dirkx2024} - excellent paper looking at potential mechanisms, supported by murine model. Reference to other diseases with sanctuary sites. 
 
 \section{Model Implementation}
 
