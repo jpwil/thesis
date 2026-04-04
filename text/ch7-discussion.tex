@@ -17,13 +17,13 @@ Despite considerable heterogeneity across the contributed studies and substantia
 
 \subsubsection{Chapter Structure}
 
-This final chapter provides a structured reflection on the presented models. Insights from preceding chapters are drawn upon to interpret, contextualise, and assess the implications of these findings.
+This final chapter provides a structured reflection on the presented models. Insights from preceding chapters are drawn upon to contextualise and assess the implications of the presented prediction models.
 
-First, the models are explored and critically appraised from two complementary angles; considering \textbf{(i)} the mechanistic plausibility of the identified predictor-relapse relationships, \textemdash\ `\textit{what do the models teach us about the nature of VL relapse?}', and \textbf{(ii)} the clinical implications, impact, challenges, and practicalities related to model deployment in routine settings \textemdash\ `\textit{how can the models be applied to improve outcomes at the patient and policy levels?}'.
+First, the mechanistic plausibility of the identified predictor-relapse relationships is explored \textemdash\ `\textit{what do the models teach us about the nature of VL relapse?}'. Specifically, a causal framework is developed that links the model predictors with VL relapse. This approach improves user confidence in the models, and provides a tool for discovery \textemdash\ generating new hypotheses and insights into the underlying disease process.
 
-Second, key strengths and limitations are explored relating to the underlying data, study design, and assumptions made during the modelling process. The potential impact of limitations on model performance, interpretability, and generalisability are discussed, alongside consideration of how they may influence the translation of findings into routine clinical practice.
+Second, key strengths and limitations are explored relating to the underlying data, study design, and assumptions made during the modelling process. Issues related to model performance, interpretability, and generalisability are discussed. The potential impact of the developed models on clinical practice is considered.
 
-Third, directions for future research are considered. These consider how data-driven approaches can be leveraged to shine new light onto both the nature and determinants of VL outcomes, and how such efforts can be translated into policy that benefits patients.
+Third, directions for future research are explored. These include how data-driven approaches can be leveraged to shine new light onto both the nature and determinants of VL outcomes, and how such efforts can be translated into meaningful policy.
 
 Finally, the thesis concludes with a high-level summary of how the models collectively advance understanding of VL relapse risk, highlighting their key strengths, novel insights, and potential contribution to both clinical decision-making and public health policy.
 
@@ -210,12 +210,42 @@ A possible explanation for why malnutrition is significantly associated with rel
 
 \section{Strengths and Limitations}
 
+The models developed in this thesis result from a decade-long collaborative effort to collate and harmonise datasets from multiple clinical trials. Predictors of relapse have been identified using robust statistical methods, accounting for both substantial missing data and heterogeneity across the contributed datasets. The resulting models are the first of their kind in the field of neglected tropical diseases, and represent a significant advance in our understanding of relapse determinants in patients treated for VL. However, the model findings must be interpreted in light of several limitations, including the representativeness of the development datasets to the target population, the assumptions made during model development, and the need for external validation with independent datasets.
+
+\subsection{Sample Size and Internal Validity}
+
+Like many neglected tropical diseases, VL studies are few in number and often small in sample size; a consequence of a disproportionate lack of research funding relative to the disease burden. This is particularly true for studies of VL relapse, which require both follow-up for at least 6 months after treatment completion and large patient numbers to capture sufficient relapse events. Such studies are logistically challenging and expensive to conduct, especially in resource-limited settings\cite{alves2018}. As identified in prediction models for VL mortality\cite{wilson2026}, and in models across other diseases\cite{moons2015,wynants2020,peetluk2021,njim2019}, the majority are underpowered to support the number of candidate predictors. This leads to overfitting, where the model captures random noise rather than true relationships, resulting in poor performance when evaluated in new patient populations\cite{moons2015}. By combining studies using IPD meta-analysis, the effective sample size, and therefore statistical power, can be increased\cite{debray2023}.
+
+Indeed, one of the principal strengths of this thesis was the use of IPD meta-analysis to develop relapse prediction models using data from a total of 4,599 patients in the ISC (including 228 relapses) and 2,095 patients in East Africa (including 99 relapses). These represent the largest datasets used to investigate relapse predictors in VL.
+
+Using recently developed sample size calculation methods for prediction model development\cite{riley2019B}, it was estimated that the ISC dataset would support the development of a model with up to 25 predictors whilst maintaining a recommended uniform shrinkage of $\geq$ 0.9 (Table~\ref{tab:max-EPP}). With the actual number of predictor parameters chosen at 17 (16) for the ISC model with (without) parasite grade (Table~\ref{tab:meth-cp}), it was reassuring to find that after performing internal validation, the calculated uniform shrinkage was 0.91 (0.92) (Table~\ref{tab:isc_performance}). Since both uniform shrinkage factors were above the 0.9 threshold, this suggests that overfitting is unlikely to be a major concern in the ISC models.
+
+When applying similar calculations to the East Africa dataset, it was estimated that the effective sample size would support a model with up to 11 predictor parameters to maintain a uniform shrinkage factor of $\geq$ 0.9, or up to 17 parameters when relaxing the uniform shrinkage factor to $\geq$ 0.85 (Table~\ref{tab:max-EPP}). With the actual number of predictor parameters chosen at 15 (14) for the East Africa model with (without) parasite grade (Table~\ref{tab:meth-cp}), the calculated uniform shrinkage factors were 0.81 (0.75) (Table~\ref{tab:ea-performance}). These shrinkage estimates were lower than expected, and suggest that overfitting is a larger concern in the East Africa models, particularly for the model without parasite grade. Reasons for the discrepancy between the expected and measured uniform shrinkage factors likely reflect increased model instability introduced by combining multiple imputation with a hierarchical model structure \textemdash\ a combination that is not necessarily supported by the sample size methodology\cite{riley2019B}. The robust methodology used for internal validation, which involved bootstrapping the entire model development process, including imputation and model selection, also likely contributed to the lower shrinkage factors observed in the East Africa models, as it more accurately captures the true model optimism\cite{moons2015}.
+
+Model overfitting was mitigated through internal validation, allowing for calculation of optimism-adjustment coefficients and performance measures. On balance, the benefits of including a comparable set of predictors across both ISC and East Africa models were considered to outweigh the risks of overfitting, particularly given the exploratory nature of this thesis and the interest in comparing the predictor-relapse across regions. This being said, the potential for overfitting in the East Africa models highlights the importance of external validation with independent datasets.
+
+\subsection{Heterogeneity and Predictor Selection}
+
+
+
+\subsection{Model Applicability}
+
+
+% treatments
+% clinical signs and symptoms
+
+\subsection{Predictor Validity}
+
+\subsection{Model Impact}
+
+% Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
+
 % Potential applications of risk-stratification tool for relapse
 % - need to have access to all the predictor information
 % - only applicable to patients who show a clinical response to treatment (not always measured)
 % -
 
-% Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
+
 
 % \section{Limitations\label{sec:limitations}}
 
