@@ -188,7 +188,7 @@ Increased relapse risk in older patients is also likely related to host immunity
 
 The absence of age as a relapse predictor in the East Africa models is also consistent with a large observational study of patients attending MSF clinics in South Sudan. Gorski et al.\ (2010) compared the ages of 166 patients with confirmed relapse with almost 8,000 patients without a record of relapse, and found no significant difference\cite{gorski2010}. One possible explanation is that patients in this region often present with more advanced disease, such that severity-related factors \textemdash\ including malnutrition, anaemia, and parasite burden \textemdash\ dominate relapse risk, thereby attenuating more subtle host determinants such as age. Differences in treatment regimens may also contribute to this effect.
 
-\subsection{WBC Count}
+\subsection{White Blood Cell Count}
 
 In both East African models, doubling the pre-treatment WBC count was associated with an approximately 40\% increase in relapse odds, with borderline significance (Figure~\ref{fig:ea_var_forest_combined}). This direction of effect was consistent in the unadjusted analysis (Figure~\ref{fig:ea_pooled_dist_cont2}).
 
@@ -224,19 +224,85 @@ When applying similar calculations to the East Africa dataset, it was estimated 
 
 Model overfitting was mitigated through internal validation, allowing for calculation of optimism-adjustment coefficients and performance measures. On balance, the benefits of including a comparable set of predictors across both ISC and East Africa models were considered to outweigh the risks of overfitting, particularly given the exploratory nature of this thesis and the interest in comparing the predictor-relapse across regions. This being said, the potential for overfitting in the East Africa models highlights the importance of external validation with independent datasets.
 
-\subsection{Heterogeneity and Predictor Selection}
+\subsection{Predictor Selection}
+
+\subsubsection{Treatment}
+
+An important limitation to recognise is that treatment was only partially accounted for in the ISC models, and not included at all in the East Africa models. This is despite treatment being a well-established determinant of relapse risk, as described in the Chapter~\ref{ch:2-background} (Section~\ref{sec:relapse_det}).
+
+As briefly discussed in Chapter~\ref{ch:4-isc-model-methodology} (Section~\ref{sec:meth-candidate-pred}), and illustrated in Figures~\ref{fig:isc_treat} and \ref{fig:ea_treat} for the ISC and East Africa studies respectively, treatments were highly heterogeneous. Many regimens \textemdash\ when considering (i) choice of agent(s), (ii) dosing, and (iii) duration \textemdash\ were only represented by a single study. Consequently, if a model were to include both treatment as a grouped covariate \textit{and} study as a random intercept term, model convergence would be challenged by the high multicollinearity between treatment and study.\footnote{Alternatively described as an approximately non-identifiable model. As an example, consider the extreme case, where a model includes two studies, with each study using a different treatment. Including both study and treatment as predictors would lead to a failure of model convergence, given that the effects of study and treatment cannot be uniquely identified, or `teased apart'.} As an imperfect compromise, for the ISC models, the treatments of single-dose liposomal amphotericin B (10 mg/kg) and miltefosine (standard dose) were retained as separate categories, given that they were shared across sufficient studies to permit identifiability of both study and treatment. The remaining `\textit{Other}' category included a heterogeneous mix of different regimens, resulting in a coefficient that is difficult to interpret. Unfortunately, despite attempts, this compromise was not possible in the East Africa models, given the even greater heterogeneity in treatment regimens and the smaller number of studies.
+
+Alternative modelling approaches were considered to permit inclusion of a broader range of treatment regimens. First, a non-hierarchical model was considered, where study was not included as a random intercept term. This approach would remove the collinearity between treatment and study, but would also fail to account for the between-study clustering of the predictor-relapse relationships, which can occur due to differences in study design, setting, and patient populations. The consequences of not using a hierarchical model are consider further below, in Section\~ref{sec:modelling-heterogeneity}.
+
+Second, treatment groups could be defined purely based on the pharmacological agents used, without considering dosing or duration. This approach would allow for the inclusion of more treatment groups, but would also falsely assume that all regimens containing a particular agent have the same effect on relapse risk, which is, of course, incorrect.
+
+\subsubsection{Clinical Signs and Symptoms}
+
+Among the clinical variables included as candidate predictors, only spleen size and fever duration were considered in the model building process. Other signs and symptoms were explored, but not considered as candidate predictors despite their potential utility in predicting relapse. These included the magnitude of fever and the presence of weight loss, cough, dyspnoea, bleeding, ascites, and oedema.
+
+Their exclusion was, in part, due to the lack of consistent measurement and reporting across the contributed datasets. For example, `presence of cough' was frequently present in the harmonised datasets, but it would often be unclear how the variable was defined (for example, whether the cough was observed by a clinician vs. reported by the patient voluntarily vs. reported by the patient on direct questioning), when the variable was measured (for example, at admission vs. during treatment), the time period or time point the cough occurred (for example, prior to recruitment, or at the time of initial patient assessment), and whether missing values reflected a true absence of the symptom, or simply a lack of measurement. Access to the original study case report forms would have allowed for a more detailed exploration of these variables, and perhaps their inclusion as candidate predictors.
+
+A further reason for the exclusion of many clinical variables was their lack of discriminatory power in predicting relapse. The majority of contributed studies excluded patients with severe illness (with full eligibility criteria presented in the Supplementary Material). As a result, only a small proportion of patients in a minority of the contributed datasets had any markers of severe infection, such as jaundice, co-infection, bleeding, ascites, or oedema. The relatively stringent eligibility criteria raises broader questions about the applicability of the developed models, addressed further in Section~\ref{sec:applicability}.
+
+\subsubsection{Variables Measured at Initial Cure Assessment}
+
+Many of the contributed datasets provided patient information measured at the time(s) of initial cure assessment, including repeat blood tests, and patient signs and symptoms such as spleen size. In an ideal world, these variables would have been considered in a model predicting relapse, since (i) the model is intended for use at time of initial cure assessment (once initial treatment failure has been ruled out), and (ii) more generally, using patient information measured closer to the timing of the outcome event often results in superior model performance (as seen with models predicting VL mortality in Chapter~\ref{ch:3-sys-review}).
+
+When considering the inclusion of these variables, however, a number of challenges were identified.
+
+First, the timing of the initial cure assessment varied significantly across studies, ranging from 18 to 31 days following treatment initiation in East Africa, and from 16 to 30 days in the ISC. Furthermore, in the majority of studies, in the event of a failed initial test of cure (e.g.\ a positive aspirate), a repeat test of cure would be performed at subsequent time points, perhaps accompanied by an extended treatment course. This variability in timing would have introduced significant heterogeneity in the model building process and challenged the interpretation of the resulting model coefficients. A possible `work-around' would have been to instead model the \textit{rate of change} in these variables from treatment initiation to initial cure assessment; for example, change in spleen size per day, or change in haemoglobin per day. However, these calculated `rate' variables would likely be highly correlated with the initial value at admission (for example, a patient with a larger spleen at admission would be expected to have a faster rate of spleen reduction during treatment). Also, the assumption of a constant change over time \textemdash\ allowing comparisons regardless of the timing of the initial cure assessment \textemdash\ would likely be violated, since the rate of change in these variables is likely to be greater during the early stages of treatment, and then slow down as patients approach initial cure assessment.
+
+Second, during the exploratory stage of data harmonisation, a much higher proportion of missing data was observed for variables measured at the time of initial cure assessment. Accounting for this missing data using multiple imputation techniques would have introduced additional complexity, and perhaps instability, to the model building process.
+
+Last, but certainly not least, including variables measured at approximately one month after treatment initiation would directly impact a model's real world utility. This is especially true in the ISC, where patients are treated with single-dose liposomal amphotericin B and discharged from care shortly after. Despite recommendations that patients return for assessment at 1 and 6 months, in routine practice, this often does not reflect real-world practice\cite{pareyn2025, chatterjee2025}. In East Africa, in contrast, since current first-line treatment mandates 17 days of injections, an end-of-treatment assessment could further inform a relapse prediction model. However, whether information provided at 17 days would align with information provided at 30 days, as is more often reported by the contributing studies, is uncertain.
+
+\subsection{Modelling Between-Study Heterogeneity\label{sec:modelling-heterogeneity}}
+
+Substantial between-study heterogeneity in relapse risk was anticipated in the final models, given differences in eligibility criteria, treatment regimens, definitions of relapse and initial cure, patient populations, settings, and other study design factors. Further details on these differences are presented in the Supplementary Material and described in the study characteristics sections of the results chapters (Sections~\ref{sec:isc_study_characteristics} [ISC] and \ref{sec:ea_study_characteristics} [East Africa]).
+
+To account for this heterogeneity, study was modelled as a random intercept term. As described in Chapter~\ref{ch:4-isc-model-methodology} (Section~\ref{sec:meth-ms}), the principal benefits of adopting a hierarchical model include (i) improved generalisability of the model to new settings and populations, and (ii) avoidance of probability estimates that would otherwise be biased towards the marginal population estimate\cite{debray2023,wynants2020,steyerberg2019}.
+
+Despite the added statistical complexities introduced by modelling study as a random intercept, their use is validated when assessing the variation in calibration intercept (calibration-in-the-large) between studies using a two-stage random-effects meta-analysis. In the ISC model including parasite grade, approximately half of the variation in calibration intercepts is explained by between-study heterogeneity ($I^2$ = 46.1\%, p = 0.01, Figure~\ref{fig:ea_forestCalM1}). In the East Africa model including parasite grade, even more between-study heterogeneity is demonstrated, with almost 90\% of the variation in calibration intercepts explained by between-study heterogeneity ($I^2$ = 89.0\%, p < 0.0001, Figure~\ref{fig:ea_forestCalM1}). Similar findings were observed in the models without parasite grade (Figures~\ref{fig:isc_forestCalM2} and \ref{fig:ea_forestCalM2}).
+
+\subsection{Model Assumptions}
+
+\begin{quote}
+  ``Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad.'' \textemdash\ George Box (1976)\cite{box1976}
+\end{quote}
+
+According to the well-known aphorism coined by George Box, all models are wrong.\footnote{\url{https://en.wikipedia.org/wiki/All_models_are_wrong}} Models presented in this thesis are, of course, no exception. Model assumptions are implicit in the presented model equations and represent a necessary simplification of a complex, and often unknown interplay of factors that determine relapse risk. Here, key assumptions made during model development are revisited, and their validity considered. Hopefully, the reader will conclude that while many mice are unavoidably present, the existence of tigers lurking in the shadows is unlikely.
 
 
 
-\subsection{Model Applicability}
+- all models are wrong
+- strength: avoided grouping continuous variables (as per expert guidance)
+- assumption of linearity for continuous predictors
+- check assumptions by (i) looking at univariable associations and (ii) looking at calibration plots (comparing predicted vs./ observed relapse probability) both overall and across different groups
+- assumption that the modelled relationships are the same across all studies and subgroups (i.e. interaction terms were not considered). Mitigated somewhat by looking at model calibration separately in different treatment and age subgroups.
 
+\subsection{Model Applicability\label{sec:applicability}}
 
-% treatments
-% clinical signs and symptoms
+- Most important limitation: models were developed in patients recruited into clinical trials, which are not always representative of the target population.
+- HIV - no
+- Severe disease, treat with caution
+- Patients in ISC with severe disease would often be treated with extended doses of LAMB.. simply a lack of data
+- Another limitation -> possibility of changing treatment regimens in East Africa. Paromomycin and miltefosine. Would need to recalibrate the model intercept to account for this.
 
-\subsection{Predictor Validity}
+\subsection{Model Implementation and Impact}
 
-\subsection{Model Impact}
+- Strength: models can be using routine clinical information available at the time of initial cure assessment
+- Two models: one with, and one without parasite grade
+- Need haemoglobin (not always available)
+- ISC: what if patient not assessed at 1 month after initial treatment?
+- East Africa - approximate assessment at end of 21 days of therapy
+
+- Method of implementation: clinical score/prediction rule? vs. mobile phone application / web calculator?
+
+- Potential applications
+
+- Further engagement required to understand how the models can best be implemented. Based on clinical need and resource availability.
+
+\section{Future Research}
 
 % Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
 
