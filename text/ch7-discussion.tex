@@ -284,17 +284,17 @@ An implicit assumption in the final models is that the predictor-relapse relatio
 
 \subsection{Model Applicability}
 
-If a model is shown to perform well and constructed with reasonable assumptions, any resulting prediction should be valid for the patient population(s) and setting(s) used for model development and evaluation\cite{moons2025}. A natural question then follows: ``How similar are the patients used in model development to the intended target population?''.
+If a model demonstrates good performance and is constructed using reasonable assumptions, its predictions should be applicable to the patient populations and settings used for model development and/or updating\cite{moons2025}. This raises an important question: ``How similar are the patients used in model development to the intended target population?''
 
-In patients with VL/HIV co-infection, or other similar degree of immunosuppression, treatment failure or relapse is often considered the norm rather than the exception\cite{abongomera2017a}. Since all models were developed in HIV-negative patients and without significant comorbidities, any extrapolation of model predictions to immunosuppressed patients would underestimate the true risk and certainly result in a poor overall calibration. The developed models should therefore \textit{not} be used to predict relapse risk in patients with VL/HIV co-infection or other immunosuppressive comorbidities.
+In patients with VL/HIV co-infection, or other forms of severe immunosuppression, treatment failure or relapse is considered the norm rather than the exception\cite{abongomera2017a}. As all models presented here were developed in immunocompetent patients, extrapolation to immunosuppressed populations would likely underestimate true relapse risk and result in poor calibration. These models should therefore \textit{not} be used in this high-risk group.
 
-Since those with severe disease are largely excluded from the contributed clinical trials, it is uncertain how well the models perform in this important patient subgroup. On the one hand, patients presenting with severe disease may be at higher risk of relapse, despite an initial treatment response. Those with severe disease are more likely to be immunosuppressed from the disease itself and may well have a higher baseline level of immunosuppression as a risk factor for developing severe disease \textemdash\ perhaps related to underlying malnutrition or immune-naivety. Those with severe disease may also be infected with a more virulent parasite strain, leading to higher relapse risk\cite{rai2013}. On the other hand, severe disease may, contrary to intuition, result in a lower relapse risk compared to those with non-severe disease. For example, in many settings, those with severe disease will be more intensively managed, including the use of extended treatment regimens and often favouring liposomal amphotericin B. Also, patients with severe disease may be offered tissue aspirates after treatment completion to confirm initial cure.
+Patients with severe disease were largely excluded from the contributing clinical trials. Model performance in this subgroup is therefore uncertain. On the one hand, severe disease may be associated with a higher risk of relapse. These patients are likely to be more immunosuppressed as a consequence of disease severity, and therefore more likely to relapse. Furthermore, severe disease itself occur as a casual consequence of shared risk factors for relapse, including immunosuppression (malnutrition, immune-naivety), or infection with more virulent parasite strains\cite{rai2013}. On the other hand, severe disease may also be associated with a lower relapse risk. In many settings, patients with severe disease are managed more intensively, including extended treatment regimens and the preferential use of liposomal amphotericin B. They may also undergo post-treatment tissue aspiration to confirm cure. Given these competing considerations, the use of the presented models in patients with severe disease should be avoided.
 
-A further important limitation to reflect on is how initial cure is defined in the development dataset, how this contrasts with real-world assessment of initial cure, and ultimately how this can result in a systematic underestimation of true 6-month relapse risk. As discussed in the Methodology (Section~\ref{sec:meth_initial_cure}), in the contributing studies, a range of methods are used to assess initial cure, typically requiring a repeat clinical and biochemical assessment with tissue aspirate performed approximately 1 month after treatment initiation (full descriptions in the Supplementary Material). In the trial setting, patients failing this assessment would either have an extended treatment course with a follow-up aspirate, or would simply be classified as an `initial treatment failure' and excluded from subsequent trial outcomes. In routine practice, however, the definition of `initial cure' is poorly defined, resulting in a systematically higher relapse risk from the inclusion of patients who would otherwise fail a formal initial cure assessment. For example, in the ISC, where most patients are treated with single-dose liposomal amphotericin B and discharged the same day, in the absence of routine active follow-up, initial cure assessment within 1 month only occurs in patients who return due to persistent or recurrent symptoms. In East Africa, in contrast, current first-line treatment mandates 17 days of injections. This allows for a clinical assessment at the end of treatment, but without the routine tissue aspirate that would normally occur in the trial setting. The extent to which the differences in initial cure assessments between the development datasets and real-world practice affects model applicability is uncertain, and likely varies considerably across settings.
+A further important limitation that merits reflection relates to the definitions of initial cure across development dataset. Specifically, how these definitions contrast with real-world initial cure assessments and can lead in the systematic underestimation of true 6-month relapse risk. As discussed in the Methodology (Section~\ref{sec:meth_initial_cure}), a range of methods were used to assess initial cure in the contributing studies, often requiring a repeat clinical and biochemical assessment with tissue aspirate performed approximately 1 month after treatment initiation (full descriptions in the Supplementary Material). In the trial setting, patients failing this assessment would either have an extended treatment course with a follow-up aspirate, or would simply be classified as `initial treatment failure' and excluded from subsequent trial outcomes. In routine practice, however, the definition of `initial cure' is poorly defined, resulting in a systematically higher relapse risk due to the inclusion of patients who would have failed a formal initial cure assessment under trial conditions. For example, in the ISC, where most patients are treated with single-dose liposomal amphotericin B and discharged the same day, in the absence of routine active follow-up, initial cure assessment within 1 month only occurs in patients who return due to persistent or recurrent symptoms. In East Africa, in contrast, current first-line treatment mandates 17 days of injections. This allows for a clinical assessment at the end of treatment, but without the routine tissue aspirate that would normally occur in the trial setting. The extent to which the differences in initial cure assessments between the development datasets and real-world practice affects model applicability is uncertain, and likely varies considerably across settings.
 
-Additional applicability concerns relate to patient populations using non-standard, or a range of treatment regimens not otherwise adjusted for in the models. In East Africa, there is an anticipated change in the recommended treatment regimens in the near future, with the introduction of paromomycin and miltefosine\cite{musa2023}. The applicability of the models to patients on non-standard and/or novel regimens remains unknown. Given the importance of treatment in determining relapse risk, recalibration of the model intercept may be required using routinely collected data.
+Additional concerns arise when patients are treated with novel or non-standard regimens not represented in the development data. For example, updated WHO guidelines are expected to introduce paromomycin and miltefosine as treatment options in East Africa\cite{musa2023}.
 
-In summary, the developed models are likely to be most applicable to patients with non-severe disease, without significant immunosuppressive comorbidities, and treated with regimens similar to those included in the development datasets (i.e. first-line treatments). External validation with independent datasets, ideally using real-world data with prospective follow-up, is required to further explore model applicability and performance.
+In summary, the models are most applicable to patients with non-severe disease, without significant immunosuppression, and treated with regimens similar to those used in model development. External validation using independent datasets, ideally with prospective real-world follow-up, is required to further assess model applicability and performance.
 
 \subsection{Model Implementation and Impact}
 
@@ -319,149 +319,5 @@ In summary, the developed models are likely to be most applicable to patients wi
 % - only applicable to patients who show a clinical response to treatment (not always measured)
 % -
 
-
-
-% \section{Limitations\label{sec:limitations}}
-
-% - unable to use post-treatment parasite load as predictor
-
-% % death was not included
-% In clinical trials, deaths are a rare event - systematic review \cite{singhphulgenda2021}, meta-analysis, incidence rate of death: IRD estimated at 0.068 95\% confidence interval (CI): 0.041--0.114. 285/428 deaths (66.6\%) occurred within first 30 days.
-
-% \section{Future Research}
-
-% % importance of early case detection highlighted in mathematical modelling: \cite{chapman2020}
-% % Identify predictive biomarkers for treatment cure or failure and relapse \cite{pareyn2025} -  research priorities for VL elimination and control
-
-% % need to *link* relapse episodes with primary cases, in order to understand what drives relapse. Can be included as part of a national database - however linking of cases can often be challenging. Monitoring for relapse can also serve as pharmacovigilance and resistance monitoring surveillance for leishmaniasis treatments, as performed for other diseases and proposed by experts in the field.\cite{vangriensven2024,pareyn2025}
-
-% % point-of-care molecular diagnostics - as a test of cure
-
-% \section{Conclusion}
-
-% \begin{itemize}
-%   \item High level summary of prediction models
-%         \begin{itemize}
-%           \item Impactful statement - emphasising large datasets, novelty, and rigorous statistical approach
-%           \item Review of model predictors and performance
-%           \item Link to structure of discussion
-%         \end{itemize}
-%   \item Causal plausibility of identified relationships
-%         \begin{itemize}
-%           \item What is relapse?
-%           \item Is relapse different to treatment failure?
-%           \item East Africa models
-%         \end{itemize}
-%   \item Implementation considerations
-%         \begin{itemize}
-%           \item Model form (considering clinical prediction rule, vs.\ application)
-%           \item Choice of intercept
-%           \item Patient counselling
-%           \item Policy implementation
-%           \item Stakeholder engagement
-%         \end{itemize}
-%   \item Strengths
-%         \begin{itemize}
-%           \item Novelty
-%           \item Comprehensive statistical approach
-%         \end{itemize}
-%   \item Limitations
-%         \begin{itemize}
-%           \item Underlying data: Applicability of prediction models to non-trial patients: need for external validation. Need to be cautious when using models to risk stratify patients with severe disease, immunocompromised.
-%           \item Underlying data: 'Noisy' data. For example, affected by patient recall.
-%           \item Modelling assumptions: Treatment
-%           \item Modelling assumptions: Age
-%           \item Modelling assumptions: East Africa
-%         \end{itemize}
-%   \item Directions for future research
-%   \item
-%   \item Conclusion
-% \end{itemize}
-
-% •	Biological and clinical plausibility:
-% •	Host factors
-% •	Treatment-related factors
-% •	Immunological hypotheses
-% •	Discussion of whether predictors are:
-% •	Causal
-% •	Proxies
-% •	Markers of unmeasured processes
-
-% \section{Implementation Considerations}
-
-% \subsection{Indian subcontinent}
-% •	Model performance and strengths
-% •	Key predictors and their regional relevance
-% •	Implications for:
-% •	Follow-up strategies
-% •	Targeted surveillance
-% •	Resource allocation
-
-% \subsection{East Africa}
-% •	Differences in predictors and performance
-% •	Role of:
-% •	Comorbidities
-% •	Treatment heterogeneity
-% •	Programmatic constraints
-% •	Implications for clinical and public health practice
-
-% 5. Clinical and programmatic implementation considerations
-
-% (Strongly recommend keeping this separate)
-% •	Who would use these models?
-% •	At what point in the care pathway?
-% •	Data availability in routine care
-% •	Risks of misclassification
-% •	Ethical considerations:
-% •	Risk stratification
-% •	Stigma or differential care
-% •	Alignment with VL elimination goals
-
-% This section is especially valuable for examiners and policy-minded readers.
-
-% \section{Strengths}
-% \section{Limitations}
-
-% Your list is good; consider adding framing:
-% •	Data limitations
-% •	Trial populations
-% •	Missingness and measurement error
-% •	Methodological limitations
-% •	Overfitting
-% •	Outcome definition
-% •	Lack of time-to-event modelling
-% •	Conceptual limitations
-% •	Prediction vs causation
-% •	Immune mechanisms inferred but not measured
-
-% Explicitly note which limitations are unlikely vs likely to materially affect conclusions.
-
-% \section{Future Research}
-
-% Strong already. You could sharpen by grouping:
-% •	Methodological
-% •	Dynamic prediction models
-% •	Time-to-relapse modelling
-% •	Incorporation of biomarkers
-% •	Biological
-% •	Immune correlates of relapse
-% •	Implementation
-% •	Prospective validation
-% •	Impact studies
-% •	Stakeholder-driven refinement
-
-% \section{Conclusion}
-
-% •	One-two paragraph synthesis of:
-% •	What is now known that wasn't before
-% •	Why this matters for VL control
-% •	Explicit statement of contribution:
-% •	    Scientific
-% •	    Clinical
-% •	    Methodological
-
-% % summarise main story
-
-% % importance of relapse -> widespread recognition of urgent need to determine cure and monitor treatment response -> 
-% % prediction model for relapse -> currently no prediction models for relapse -> development of new relapse models!
+\section{Conclusion}
 
