@@ -258,13 +258,11 @@ Second, during the exploratory stage of data harmonisation, a much higher propor
 
 Last, but certainly not least, including variables measured at approximately one month after treatment initiation would directly impact a model's real world utility. This is especially true in the ISC, where patients are treated with single-dose liposomal amphotericin B and discharged from care shortly after. Despite recommendations that patients return for assessment at 1 and 6 months, in routine practice, this often does not reflect real-world practice\cite{pareyn2025, chatterjee2025}. In East Africa, in contrast, since current first-line treatment mandates 17 days of injections, an end-of-treatment assessment could further inform a relapse prediction model. However, whether information provided at 17 days would align with information provided at 30 days, as is more often reported by the contributing studies, is uncertain.
 
-\subsection{Modelling Between-Study Heterogeneity\label{sec:modelling-heterogeneity}}
+\subsection{Performance Considerations}
 
-Substantial between-study heterogeneity in relapse risk was anticipated in the final models, given differences in eligibility criteria, treatment regimens, definitions of relapse and initial cure, patient populations, settings, and other study design factors. Further details on these differences are presented in the Supplementary Material and described in the study characteristics sections of the results chapters (Sections~\ref{sec:isc_study_characteristics} [ISC] and \ref{sec:ea_study_characteristics} [East Africa]).
+After optimism adjustment, both ISC relapse models provide moderate-good discrimination (c-statistics of 0.68 for the model with parasite grade, 0.67 for the model without parasite grade), and are well-calibrated on internal validation. Consequently, for patients with non-severe disease and without significant immunosuppression, clinicians and policy-makers should be reassured that the presented models provide an effective tool for risk-stratification and clinical decision-making.
 
-To account for this heterogeneity, study was modelled as a random intercept term. As described in Chapter~\ref{ch:4-isc-model-methodology} (Section~\ref{sec:meth-ms}), the principal benefits of adopting a hierarchical model include (i) improved generalisability of the model to new settings and populations, and (ii) avoidance of probability estimates that would otherwise be biased towards the marginal population estimate\cite{debray2023,wynants2020,steyerberg2019}.
-
-Despite the added statistical complexities introduced by modelling study as a random intercept, their use is validated when assessing the variation in calibration intercept (calibration-in-the-large) between studies using a two-stage random-effects meta-analysis. In the ISC model including parasite grade, approximately half of the variation in calibration intercepts is explained by between-study heterogeneity ($I^2$ = 46.1\%, p = 0.01, Figure~\ref{fig:ea_forestCalM1}). In the East Africa model including parasite grade, even more between-study heterogeneity is demonstrated, with almost 90\% of the variation in calibration intercepts explained by between-study heterogeneity ($I^2$ = 89.0\%, p < 0.0001, Figure~\ref{fig:ea_forestCalM1}). Similar findings were observed in the models without parasite grade (Figures~\ref{fig:isc_forestCalM2} and \ref{fig:ea_forestCalM2}).
+In contrast, in East Africa, despite both models being well-calibrated, only the model \textit{with} parasite grade can reasonably discriminate between those who develop relapse vs.\ those who do not (c-statistic 0.68). In settings where parasite grade is \textit{not} routinely available (i.e.\ where diagnosis is made with the rK39 rapid test and/or the direct agglutination test), the model \textit{without} parasite grade would need to be used, with an optimism-adjusted c-statistic of 0.61. While still meaningful in certain settings, most experts would consider a c-statistic of <~0.65 to reflect poor discrimination\cite{steyerberg2010}. Compared to the ISC, the added benefit in model discrimination from including parasite grade in the East Africa models likely reflects the broader range of parasite grades in the East Africa datasets (c.f.\ Figures~\ref{fig:isc_cat_comb} and \ref{fig:ea_cat_comb}). Increased variation in parasite grade may reflect both higher rates of immunosuppression (e.g.\ malnutrition is overall more severe in the East Africa datasets), and increased delays in diagnosis (symptom duration is overall high in the East Africa datasets).
 
 \subsection{Model Assumptions}
 
@@ -296,21 +294,35 @@ Additional concerns arise when patients are treated with novel or non-standard r
 
 In summary, the models are most applicable to patients with non-severe disease, without significant immunosuppression, and treated with regimens similar to those used in model development. External validation using independent datasets, ideally with prospective real-world follow-up, is required to further assess model applicability and performance.
 
-\subsection{Model Implementation and Impact}
+\subsection{Modelling Between-Study Heterogeneity\label{sec:modelling-heterogeneity}}
 
-- Strength: models can be using routine clinical information available at the time of initial cure assessment
-- Two models: one with, and one without parasite grade
-- Need haemoglobin (not always available)
-- ISC: what if patient not assessed at 1 month after initial treatment?
-- East Africa - approximate assessment at end of 21 days of therapy
+Substantial between-study heterogeneity in relapse risk was anticipated in the final models, given differences in eligibility criteria, treatment regimens, definitions of relapse and initial cure, patient populations, settings, and other study design factors. Further details on these differences are presented in the Supplementary Material and described in the study characteristics sections of the results chapters (Sections~\ref{sec:isc_study_characteristics} [ISC] and \ref{sec:ea_study_characteristics} [East Africa]).
 
-- Method of implementation: clinical score/prediction rule? vs. mobile phone application / web calculator?
+To account for this heterogeneity, study was modelled as a random intercept term. As described in Chapter~\ref{ch:4-isc-model-methodology} (Section~\ref{sec:meth-ms}), the principal benefits of adopting a hierarchical model include (i) improved generalisability of the model to new settings and populations, and (ii) avoidance of probability estimates that would otherwise be biased towards the marginal population estimate\cite{debray2023,wynants2020,steyerberg2019}.
 
-- Potential applications
+Despite the added statistical complexities introduced by modelling study as a random intercept, their use is validated when assessing the variation in calibration intercept (calibration-in-the-large) between studies using a two-stage random-effects meta-analysis. In the ISC model including parasite grade, approximately half of the variation in calibration intercepts is explained by between-study heterogeneity ($I^2$ = 46.1\%, p = 0.01, Figure~\ref{fig:ea_forestCalM1}). In the East Africa model including parasite grade, even more between-study heterogeneity is demonstrated, with almost 90\% of the variation in calibration intercepts explained by between-study heterogeneity ($I^2$ = 89.0\%, p < 0.0001, Figure~\ref{fig:ea_forestCalM1}). Similar findings were observed in the models without parasite grade (Figures~\ref{fig:isc_forestCalM2} and \ref{fig:ea_forestCalM2}).
+
+\section{Model Implementation}
+
+\subsection{Choice of Intercept}
+
+As a consequence of using a random-effects modelling approach to account for between-study heterogeneity in relapse risk, the user will need to choose a suitable intercept that best represents their target patient population. Overall model calibration (calibration-in-the-large) will be directly affected by the intercept choice. Suggested intercepts are provided in the full model specifications, including the average (marginal) intercepts across all contributed studies, and intercepts adjusted to the largest datasets corresponding to current first-line treatments, as provided by Sundar et al (2019) for the ISC, and Musa et al (2012) for East Africa\cite{sundar2019,musa2012}. Full model specifications are presented in the Appendices (Tables~\ref{tab:isc_model_coeff_with_pg} and \ref{tab:isc_model_coeff_without_pg} for the ISC models, and Tables~\ref{tab:ea_model_coeff_with_pg} and \ref{tab:ea_model_coeff_without_pg} for the East Africa models). As discussed in Section~\ref{sec:future-research}, the optimal intercept for a particular setting should be selected based on data describing local relapse rates.
+
+\subsection{Method of Implementation}
+
+Models presented in this thesis could be implemented either as risk scores or as electronic calculators accessed through a mobile phone application or web interface\cite{collins2024A, bonnettGuidePresentingClinical2019}. Risk scores integrate more naturally into routine bedside practice but require model simplification, with consequent loss of predictive accuracy. In contrast, electronic calculators preserve the full models and their predictive performance. A single platform (e.g.\ a web or mobile application) could host all four models. With smartphone use now near-ubiquitous and barriers to application development and deployment continuing to fall, integrating these models into a unified application is likely the most practical and accessible approach\cite{liu2022, watson2019}.
+
+\subsection{Potential Applications}
+
+The intended application of the models is risk stratification at the time of initial cure assessment, allowing patients at high risk of relapse to be prioritised for closer follow-up. However, in the absence of routine follow-up at 1 month \textemdash\ as is typically the case in the ISC \textemdash\ risk-stratification must instead be performed at the time of initial treatment, with the caveat that the predictions only become valid once the patient remains symptom-free one month later. In East Africa, risk-stratification can be performed after completion of the 17-day treatment course of PM/SSG.
+
+Further engagement is needed to determine how the models can best be implemented in practice. Statistical performance alone is not sufficient: routine use must also fit clinical need, workflow, and resource availability. Discussion with clinicians, programme staff, and policymakers will be important to understand what information is routinely available, what decisions the model would actually inform, and whether the predicted risk can be acted upon. Implementation should therefore be guided not only by model performance, but also by the realities of care delivery in the target setting.
+
+\section{Implications for Future Research}
+
 
 - Further engagement required to understand how the models can best be implemented. Based on clinical need and resource availability.
 
-\section{Future Research}
 
 % Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
 
@@ -318,6 +330,13 @@ In summary, the models are most applicable to patients with non-severe disease, 
 % - need to have access to all the predictor information
 % - only applicable to patients who show a clinical response to treatment (not always measured)
 % -
+\section{Future Research\label{sec:future-research}}
+
+- Importance of routine data collection (MSF as an example)
+- KAMIS (CARE India)
+- Brazil SINAN
+- Net benefit / Decision analysis
+-
 
 \section{Conclusion}
 
