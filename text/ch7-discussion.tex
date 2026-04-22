@@ -92,7 +92,7 @@ Expert consensus holds that VL treatment rarely results in sterile cure, as evid
 
 Verrest et al.\ (2024)\cite{verrest2024} hypothesise that post-treatment parasite dynamics are dependent on four key factors: (i) the pre-treatment parasite burden, (ii) the degree of parasite depletion by the treatment, (iii) the intrinsic parasite virulence, and, crucially, (iv) the host's immune system. It can be further hypothesised that, during the post-treatment stage, for each individual there must exist a `critical parasite load' (Figure~\ref{fig:natural-history}). The threshold itself would be expected to vary between individuals, reflecting both differences in host immunity and in parasite virulence. For parasite loads below this threshold, the host immune system controls parasite replication resulting in lasting cure. For parasite loads above this threshold, parasite replication outpaces immune control, leading to relapse (Figure~\ref{fig:natural-history}).
 
-\subsection{Causal Model for Relapse}
+\subsection{Causal Model for Relapse\label{sec:causal_model}}
 
 Building on Verrest et al.'s hypothesis, a causal (mechanistic) model can be assembled. In this putative model, three key drivers of relapse, all shaped by events prior to and during treatment, determine whether relapse occurs: (i) post-treatment parasite grade, (ii) host immunity, and (iii) parasite fitness. Post-treatment parasite grade itself can be considered a direct consequence of both pre-treatment parasite grade and the treatment regimen. If presented as a directed acyclic graph (DAG), these drivers represent the final common pathway (mediators) of relapse. As shown in Figure~\ref{fig:dag}, text boxes (`nodes') represent relapse determinants, and lines (`vertices') indicate the direction of causality between nodes. For example, pre-treatment host immunity directly affects the initial rate of symptom progression.
 
@@ -152,7 +152,7 @@ In both ISC models, treatment with miltefosine is associated with an approximate
 
 The finding that miltefosine is associated with higher relapses rates compared to single dose liposomal amphotericin B is consistent with observations made in the ISC during the late 2000s and early 2010s. In Bihar, India, Sundar et al.\ showed that 6-month relapse rates had approximately doubled, from 3.0\% observed in the pivotal RCT\cite{sundar2002} conducted between 1999 and 2000, to 6.8\% in a subsequent trial conducted between 2009 and 2010\cite{sundar2012}. High relapse rates were also demonstrated a subsequent pharmacovigilance study in India\cite{pandey2016}, in Bangladesh\cite{rahman2011} and Nepal\cite{rijal2013}. While increased relapse rates were largely blamed on the emergence of resistance during widespread use in the early elimination campaign, alongside poor stewardship practices\cite{sundarEfficacyMiltefosineTreatment2012}, work by the Kaladrug-R project suggested that the true explanation may be more nuanced. Compared to non-relapsing strains, relapsing strains were not shown to demonstrate increased resistance based on \textit{in vitro} promastigote cultures, but were instead found to be more infective\cite{rai2013}. Regardless of the underlying mechanism, concerns about increased relapse rates with miltefosine, together with strong emerging trial evidence demonstrating the superior efficacy of single-dose liposomal amphotericin B, ultimately led to its adoption in place of miltefosine in the elimination programme\cite{WHO_KalaAzarElimination_2015}.
 
-Interpretation of the decreased relapse rate in the miltefosine versus `Other' treatment category is challenging because the `Other' group comprises heterogeneous treatment regimens (presented in Figure~\ref{fig:isc_treat}). This represents an important limitation in the prediction model development, discussed further in Section~\ref{sec:limitations}.
+Interpretation of the decreased relapse rate in the miltefosine versus `Other' treatment category is challenging because the `Other' group comprises heterogeneous treatment regimens (presented in Figure~\ref{fig:isc_treat}). This represents an important limitation in the prediction model development, discussed further in Section~\ref{sec:treat_limitations}.
 
 \subsection{Anaemia Severity}
 
@@ -228,7 +228,7 @@ Model overfitting was mitigated through internal validation, allowing for calcul
 
 Across both the ISC and East Africa models, predictor selection was shaped not only by prior clinical knowledge of relapse risk, but also by substantial practical constraints arising from data structure, heterogeneity, and variable availability. While a broad range of potential predictors was initially considered, decisions regarding inclusion were ultimately guided by considerations of identifiability, consistency of measurement, and real-world applicability of the final models. The following sections outline key limitations and trade-offs encountered in selecting predictors, focusing in particular on treatment, clinical variables, and measurements obtained at initial cure assessment.
 
-\subsubsection{Treatment}
+\subsubsection{Treatment\label{sec:treat_limitations}}
 
 An important limitation to recognise is that treatment was only partially accounted for in the ISC models, and not included at all in the East Africa models. This is despite treatment being a well-established determinant of relapse risk, as described in the Chapter~\ref{ch:2-background} (Section~\ref{sec:relapse_det}).
 
@@ -280,7 +280,7 @@ Calibrations plots provide the strongest evidence supporting the overall choice 
 
 An implicit assumption in the final models is that the predictor-relapse relationships are the same across all predictor subgroups. In the interest of model parsimony and to avoid overfitting, interaction terms were not considered during predictor selection. This assumption is, to some extent, tested by (1) reviewing the heterogeneity in calibration slope in the models when evaluated across the individual contributing studies, and (2) assessing the calibration plots in two important age subgroups; (i) in patients 18 years and older, and (ii) under 18 years. Overall, the calibration slopes appear reasonably consistent across studies, with no evidence for significant heterogeneity ($I^2$ = 0 for all models across both regions, as displayed in Figures~\ref{fig:isc_forestCalM1} and \ref{fig:ea_forestCalM1}) for the models with parasite grade. Evaluation of the calibration plots in the two age subgroups is limited by the reduced number of relapse events, especially in the East Africa models. When considering the large confidence intervals in the probability estimates, the age-specific calibration plots do not show any obvious deviations from the line of perfect calibration (presented in the Supplementary Material).
 
-\subsection{Model Applicability}
+\subsection{Model Applicability\label{sec:applicability}}
 
 If a model demonstrates good performance and is constructed using reasonable assumptions, its predictions should be applicable to the patient populations and settings used for model development and/or updating\cite{moons2025}. This raises an important question: ``How similar are the patients used in model development to the intended target population?''
 
@@ -306,6 +306,8 @@ Despite the added statistical complexities introduced by modelling study as a ra
 
 It is well established that the majority of published prediction models are never used in routine clinical practice\cite{markowetz2024}. In part, this reflects a saturated market,\footnote{The number of new prediction models being published continues to double every 5 years\cite{arshi2025}.} but also stems from poor user confidence from a lack of external validation, the absence of transparent reporting, the use of variables that are not readily available in routine practice, and crucially, a lack of stakeholder engagement\cite{markowetz2024,moons2015}.
 
+% one in six prediction models are externally validated after publication, impact assessment is scarce
+
 The models presented in this thesis answer an important clinical question and are the only tools for VL relapse risk stratification. However, several barriers must be overcome before their adoption in routine clinical practice. Some of these barriers, including choice of intercept, method of implementation, and potential use-cases, are discussed here. Engagement of policymakers, external validation, and updating with new data are all vital if these models are to achieve meaningful clinical impact and be sustainably integrated into routine care pathways.
 
 \subsection{Choice of Intercept}
@@ -324,26 +326,25 @@ A major benefit of all clinical prediction models is that, where the variables r
 
 Further engagement with clinicians, programme staff, and policymakers is vital to determine how exactly the models can be best integrated with day-to-day practice. Statistical performance alone is not sufficient: routine use must also fit clinical need, workflow, and resource availability.
 
-\section{Implications for Future Research}
+\section{Implications for Future Research\label{sec:future-research}}
 
+It is hoped that the models presented here will provide a catalyst for further research into the determinants of VL relapse. Such research could focus on the external validation and/or updating of VL relapse prediction tools, or provide further novel insights into the mechanistic link between VL relapse and host, parasite, and treatment factors.
 
+\subsection{Prediction Modelling}
 
-- Further engagement required to understand how the models can best be implemented. Based on clinical need and resource availability.
+The reported model performance measures are only valid when applied to participants of the contributed studies: patients without severe disease, without HIV, and treated under trial conditions. To build user confidence in the models' real-world applicability, future research should focus on model evaluation (external validation) using data collected from routine practice, with updating where necessary\cite{riley2024A}.
 
+Routine programmatic data collection can make this possible. Electronic surveillance systems, such as the Kala-azar Management Information System (KAMIS) in India\cite{bindroo2021} and the Brazilian national notifiable diseases information system (Sistema de Informação de Agravos de Notificação \textemdash\ SINAN)\cite{assefa2026} offer important opportunities for external validation and updating. However, in order to evaluate the full models, sufficient predictor information must be captured at the time of treatment initiation and it must also be possible to confidently link relapse events with the index presentation. Whilst on paper this may appear straight-forward, in practice this is often not the case. Missing identifiers, patient movement, and fragmented records can preclude the linking of consecutive VL episodes. The experience of MSF in South Sudan demonstrates how challenging this can be outside of research settings\cite{naylor-leyland2022}.
 
-% Patients are usually discharged after the end of therapy, with follow-up visits at 1 month (to assess clinical cure) and 6 months (to monitor relapse). \cite{pareyn2025}
+Once a model is externally validated, with proven accuracy in the target setting, the next question is `does the model lead to better decisions and improved patient outcomes?' Model-based clinical decisions are typically based on an absolute risk threshold. For example, `all patients with an estimated relapse risk of over 10\% will be invited to a follow-up appointment at 3 months', or `all patients with a relapse risk over 20\% will be offered a tissue aspirate one month after treatment completion.' Selection of the optimal threshold should, ideally, be guided by an assessment of the direct risks and benefits to the patient, and costs. Analysis of `net benefit', and how this varies with the cutoff threshold, is advocated in the literature, but rarely performed\cite{vickers2016}.
 
-% Potential applications of risk-stratification tool for relapse
-% - need to have access to all the predictor information
-% - only applicable to patients who show a clinical response to treatment (not always measured)
-% -
-\section{Future Research\label{sec:future-research}}
+Any model deployment, for example, as a component of the ISC or East Africa elimination campaign, should be accompanied by research that evaluates both the model's predictive accuracy (external validation), and the model's impact on decision-making.
 
-- Importance of routine data collection (MSF as an example)
-- KAMIS (CARE India)
-- Brazil SINAN
-- Net benefit / Decision analysis
--
+\subsection{Mechanistic Understanding}
+
+As explored in Chapter~\ref{ch:2-background}, Section~\ref{sec:biomarkers}, a growing body of evidence supports the link between relapse and measures of host immunity and/or parasite burden. The importance of these biomarkers is strongly echoed in the model-supported framework presented in Section~\ref{sec:causal_model}. In the proposed causal model (Figure~\ref{fig:dag}), mechanistic links between the majority of the identified predictors and relapse can be plausibly traced back to markers of host immunity \textemdash\ a framework that challenges a more intuition-based approach, where markers of disease severity would be the strongest predictors of relapse. New evidence presented in this thesis is not only compatible with our current understanding of relapse determinants, but also offers fresh insight into how readily-available host factors (e.g. symptom duration, age, anaemia, malnutrition) can act as surrogates of host immunity, and therefore also relapse. This is especially important given the challenges faced in measuring novel markers of immunity (e.g. IgG subtitres, T-cell subsets, IFN$\gamma$ and PD1 levels), or parasite burden (e.g. molecular methods) outside of research or high-resource settings.
+
+Reflecting on the above, researchers should not be focussing the use of biomarkers in isolation when building models predicting VL outcomes, regardless of whether the models are intended as predictive or exploratory, or whether in immunocompetent or immunosuppressed patients. Future research should ideally incorporate clinical correlates of host immunity \textit{in addition} to novel biomarkers when optimising their statistical models. Routinely measured clinical correlates \textemdash\ including symptom duration, spleen size, severity of malnutrition and anaemia \textemdash\ can provide important extra information which strong prognostic potential.
 
 \section{Conclusion}
 
