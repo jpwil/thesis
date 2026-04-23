@@ -80,9 +80,9 @@
 
 \ifmc@nobind
     % \usepackage[includehead,hmargin={2cm, 2cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
-    \usepackage[includehead,hmargin={3.1cm, 3.1cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
+    \usepackage[includehead,hmargin={3.1cm, 3.1cm}, vmargin={2.4cm,2.6cm}, headsep=.8cm,footskip=1.2cm]{geometry}
 \else
-    \usepackage[includehead,hmargin={3.6cm, 2.6cm}, vmargin={2.5cm,2.7cm}, headsep=.8cm,footskip=1.2cm]{geometry}
+    \usepackage[includehead,hmargin={3.6cm, 2.6cm}, vmargin={2.4cm,2.6cm}, headsep=.8cm,footskip=1.2cm]{geometry}
 \fi
 
 \usepackage{xcolor}
@@ -440,11 +440,9 @@
 \sethlcolor{shadecolor}
 \newcommand{\mccorrect}[1]{\ifcorrections\hl{#1}\else#1\fi}
 
-
 % JEM: adjust start-of-chapter spacing
-\renewcommand{\chapterheadstartvskip}{\vspace*{40pt}}
-\renewcommand{\chapterheadendvskip}{\vspace{30pt}}
-
+\renewcommand{\chapterheadstartvskip}{\vspace*{28pt}}
+\renewcommand{\chapterheadendvskip}{\vspace{26pt}}
 
 % JEM: combine all of the commands you run before appendices start
 \newcommand{\startappendices}
