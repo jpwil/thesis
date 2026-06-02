@@ -17,7 +17,7 @@ TL;DR: [**download thesis**](https://raw.githubusercontent.com/jpwil/thesis/main
 | `figures/`              | Folder containing figures (by chapter)                                       |
 | `ociamthesis.cls`       | Modified [OxThesis](https://github.com/mcmanigle/OxThesis) LaTeX class file  |
 | `.gitignore`            | git file listing files and folders to ignore                                 |
-| `thesis.code-workspace` | VS Code Workspace Setup                                                      |
+| `thesis.code-workspace` | VS Code Workspace setup                                                      |
 | `wc.sh`                 | Perl script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/) |
 | `texcount.html`         | Output of `wc.sh`: summary word count at page end                            |
 | `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                    |

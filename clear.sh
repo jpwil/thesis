@@ -1,10 +1,10 @@
 #!/bin/bash
-# clear.sh - Delete LaTeX build helper files
+# clear.sh - Delete LaTeX build helper/auxiliary files
 
 # List of common LaTeX temporary extensions
 EXTS=(
   mtc* aux bbl bcf maf run.xml blg brf fdb_latexmk fls glo glg gls idx ilg ind
-  lof log lot nav out snm synctex.gz toc vrb xdy bbl-SAVE-ERROR
+  lof log lot nav out snm synctex.gz toc vrb xdy bbl-SAVE-ERROR bcf-SAVE-ERROR dvi
 )
 
 echo "Cleaning LaTeX helper files in $(pwd)..."
