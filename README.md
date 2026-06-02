@@ -2,13 +2,16 @@
 
 This repository contains the LaTeX files for compiling my DPhil thesis. 
 
-## MSD Canvas Course
+## Useful links
 
-Link to Canvas course 'writing a thesis' [here](https://canvas.ox.ac.uk/courses/54330). 
+* [University of Oxford 'Research examinations': summary of key regulations and guidance applicable to all research examinations](https://www.ox.ac.uk/students/academic/exams/research)
+* [Examples of previous DPhil submissions](https://ora.ox.ac.uk/)
+* [Medical Sciences Division (MSD) Canvas Course (requires Intranet access)](https://canvas.ox.ac.uk/courses/54330)
+
 
 ## Thesis Guidance
 
-University regulations are found [here](https://www.ox.ac.uk/students/academic/exams/research?wssl=1), with MSD specific guidance available as a [Canvas course](https://canvas.ox.ac.uk/courses/22105). Key points include
+Key points from University regulations:
 
 - Examiner appointment
     - General advice: "You should liaise with your supervisor regarding the selection of your proposed examiners. It is usual for supervisors to invite the proposed examiners informally, and confirm their willingness to act, before the submission of the Application for Appointment of Examiners (GSO.3) form."

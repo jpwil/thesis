@@ -277,7 +277,9 @@
 %i.e. tabbed in at both sides, and on its own page.
 
 \renewenvironment{abstract}%
-{   \begin{alwayssingle}\chapter*{Abstract}
+{   \begin{alwayssingle}
+        \chapter*{Abstract}
+        \addcontentsline{toc}{chapter}{Abstract}
         \thispagestyle{empty}
         \pagestyle{empty}
         \setlength{\baselineskip}{\frontmatterbaselineskip}}
@@ -313,6 +315,17 @@
         \setlength{\baselineskip}{\z@}}
         {\vfill\end{alwayssingle}\restoregeometry}
 
+%Reader's Guide
+% - same as abstract.
+
+\newenvironment{readers_guide}%
+{   \begin{alwayssingle}
+        \chapter*{Reader's Guide}
+        \addcontentsline{toc}{chapter}{Reader's Guide}
+        \thispagestyle{empty}
+        \pagestyle{empty}
+        \setlength{\baselineskip}{\frontmatterbaselineskip}}
+        {\end{alwayssingle}}
 
 %ROMANPAGES
 %
