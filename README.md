@@ -1,8 +1,8 @@
 # DPhil Thesis
 
-This repository contains the LaTeX project for compiling the final DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are welcome: [James Wilson](mailto:jpwilson123@outlook.com).
+This repository contains the LaTeX project for compiling the final DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are welcome: jpwilson123@outlook.com.
 
-TL;DR: [Download thesis here](https://github.com/jpwil/thesis/blob/main/main.pdf) (right click, download)
+TL;DR [Download thesis here](https://raw.githubusercontent.com/jpwil/thesis/main/main.pdf)
 
 ## Project Structure
 
@@ -21,7 +21,7 @@ TL;DR: [Download thesis here](https://github.com/jpwil/thesis/blob/main/main.pdf
 | `wc.sh`                 | Perl script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/) |
 | `texcount.html`         | Output of `wc.sh`: summary word count at page end                            |
 | `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                    |
-| `clear.sh`              | Script for removing auxiliary files created during project compilation       |
+| `clear.sh`              | Script for removing auxiliary files created during compilation               |
 
 ## Useful links
 
