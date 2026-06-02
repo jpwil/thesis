@@ -1,6 +1,6 @@
 # DPhil Thesis
 
-This repository contains the LaTeX project for compiling the final DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are welcome: jpwilson123@outlook.com.
+This repository contains the LaTeX project for compiling my DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are welcome: jpwilson123@outlook.com.
 
 TL;DR: [**download thesis**](https://raw.githubusercontent.com/jpwil/thesis/main/main.pdf)
 
@@ -19,12 +19,13 @@ TL;DR: [**download thesis**](https://raw.githubusercontent.com/jpwil/thesis/main
 | `.gitignore`            | git file listing files and folders to ignore                                 |
 | `thesis.code-workspace` | VS Code Workspace setup                                                      |
 | `wc.sh`                 | Perl script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/) |
-| `texcount.html`         | Output of `wc.sh`: summary word count at page end                            |
+| `texcount.html`         | Output of `wc.sh`: summary word count at end of page                         |
 | `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                    |
 | `clear.sh`              | Script for removing auxiliary files created during compilation               |
 
 ## Useful links
 
+* [Supplementary Material](https://github.com/jpwil/dphil)
 * [University of Oxford 'Research examinations': summary of key regulations and guidance applicable to all research examinations](https://www.ox.ac.uk/students/academic/exams/research)
 * [Examples of previous DPhil submissions](https://ora.ox.ac.uk/)
 * [Medical Sciences Division (MSD) Canvas Course (requires Intranet access)](https://canvas.ox.ac.uk/courses/54330)
