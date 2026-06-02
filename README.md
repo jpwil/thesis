@@ -1,6 +1,23 @@
 # DPhil Thesis
 
-This repository contains the LaTeX files for compiling my DPhil thesis. Compiled 
+This repository contains the LaTeX files for compiling my DPhil thesis. Comments, feedback are welcome: [James Wilson](mailto:jpwilson123@outlook.com).
+
+## Project Structure
+
+| Path        | Description                    |
+| ----------- | ------------------------------ |
+| `main.tex`  | Master LaTeX document          |
+| `main.pdf`  | Compiled (pdf) master document |
+|             |                                |
+|             |                                |
+|             |                                |
+|             |                                |
+|             |                                |
+|             |                                |
+| `data/`     | Input datasets                 |
+| `scripts/`  | Utility and analysis scripts   |
+| `README.md` | Project documentation          |
+
 
 ## Useful links
 

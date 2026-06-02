@@ -3,7 +3,7 @@
 %     \qauthor{--- James Wilson}
 % \end{savequote}
 
-\chapter[Systematic Review of Prognostic Models]{\label{ch:3-sys-review}Prognostic Models Predicting Clinical Outcomes in Patients with Visceral Leishmaniasis: A Systematic Review}
+\chapter[Systematic Review of Prognostic Models]{\label{ch:2-sys-review}Prognostic Models Predicting Clinical Outcomes in Patients with Visceral Leishmaniasis: A Systematic Review}
 \minitoc{}
 
 \subsubsection{Context}
@@ -32,7 +32,7 @@ We therefore conducted a systematic review to identify, summarise, and criticall
 
 A glossary of key terms relating to model development and evaluation is presented in Table~\ref{tab:sr-prediction-terms}.
 
-\input{tables/ch3/glossary_table.tex}
+\input{tables/ch2/glossary_table.tex}
 
 \begin{mybox}[label=box:bmj_sys_rev]{Key Messages of the Systematic Review}
   {
@@ -117,7 +117,7 @@ After deduplication, 3,313 records were identified from the combined original an
     trim = 6.5cm 11.8cm 6.5cm 11.5cm,
     clip,
     width = 0.9\textwidth
-  ]{figures/ch3/sys-review-flow.pdf}
+  ]{figures/ch2/sys-review-flow.pdf}
   \caption{PRISMA-like flow diagram depicting the record screening process, performed initially on 1 March 2023 with subsequent updating on 18 December 2025.}
   \label{fig:sr-flow}
 \end{figure}
@@ -126,7 +126,7 @@ After deduplication, 3,313 records were identified from the combined original an
 
 Key characteristics of the identified models are summarised in Table~\ref{tab:sr-key-characteristics} (with further predictor, participant, and outcome information presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}). All models use multivariable logistic regression and predict mortality as a binary outcome, reported either as in-hospital mortality (10 models)\cite{abongomeraDevelopmentExternalValidation2017,costaPredictingDeathKalaazar2016,werneckPrognosticFactorsDeath2003,sampaioRiskFactorsDeath2010,kaminkClinicalSeverityScoring2017,foinquinosTemporalValidationPredictive2021}, or registry-reported mortality (two models)\cite{dearaujoEarlyClinicalManifestations2012,coura-vitalPrognosticFactorsScoring2014}.
 
-\input{tables/ch3/key-characteristics.tex}
+\input{tables/ch2/key-characteristics.tex}
 
 Two studies (three models) were developed in East African MSF treatment centres (one model from Ethiopia that included patients with VL/HIV co-infection[12], and two models from South Sudan, for patients $\geq$ 19 and < 19 years, and excluding VL/HIV co-infection\cite{kaminkClinicalSeverityScoring2017}). The remaining six studies (nine models) were performed in Brazil. Two Brazilian studies (two models) were developed using registry data; either at a national level\cite{coura-vitalPrognosticFactorsScoring2014} or for residents of Belo Horizonte, state of Minas Gerais\cite{dearaujoEarlyClinicalManifestations2012}. The remaining Brazilian studies were developed in hospital settings, including two studies (five models) developed from patients admitted to a hospital in Teresina\cite{werneckPrognosticFactorsDeath2003, costaPredictingDeathKalaazar2016}, and two studies (two models) that were developed for children < 15 years and admitted to a hospital in Recife, state of Pernambuco\cite{sampaioRiskFactorsDeath2010,foinquinosTemporalValidationPredictive2021}. No models were developed in South Asia or the Mediterranean region.
 
@@ -146,7 +146,7 @@ Further details on validation datasets are presented in the \href{https://github
 
 Model discrimination measures were reported as c-statistics for all risk scores, and presented in Table~\ref{tab:sr-model-performance}. Further performance measures, where reported, are presented in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. For external validations, the median c-statistic was 0.78 (range 0.62--0.92, 10 models, 19 external validations). When evaluated in the same patients used for model development (apparent performance), the median c-statistic was 0.86 (range 0.56--0.93, 12 models). No studies presented overall measures of performance or calibration plots. One model's calibration plot could be reproduced from an internal (split-sample) validation of the risk score\cite{coura-vitalPrognosticFactorsScoring2014}.
 
-\input{tables/ch3/model-performance.tex}
+\input{tables/ch2/model-performance.tex}
 
 \subsection{Predictors}
 
@@ -160,7 +160,7 @@ A visual comparison of the candidate and final predictors is presented in Figure
       trim = 6.3cm 12.72cm 6.1cm 12.5cm,
       clip,
       width = 0.87\linewidth
-    ]{figures/ch3/predictors.pdf}
+    ]{figures/ch2/predictors.pdf}
     \caption{Candidate (considered) and final (retained) predictors included in prognostic models of mortality in visceral leishmaniasis. Bars indicate the number of models incorporating each predictor. Models are labelled by first author, publication year, and model name (in brackets where multiple models were reported). Conceptually similar predictors were grouped and renamed; definitions and groupings as reported by the study authors are provided in Supplemental Table 4. For models by de Araújo et al. and Coura-Vital et al., cough and/or diarrhoea were treated as a single predictor in accordance with national registry reporting. For models by Kämink et al., oedema and ascites were combined as a single predictor, whereas Abongomera et al. treated these as separate variables. Predictors shown for the updated model correspond to the predetermined final predictors of the model being updated (Sampaio et al.). Abbreviations: ALT, alanine transaminase; AST, aspartate transaminase; clin, clinical; HIV, human immunodeficiency virus; lab, laboratory; TB, tuberculosis. `...' predictors assessed in $\leq$ 2 models and not included in the final model: [Werneck 2003]: `abdominal distension', episodes of blood transfusion; [de Araújo 2012]: fever, hepatomegaly, “other clinical manifestations”, initial VL regimen, VL drugs following initial regimen, antimony treatment duration; [Coura-Vital 2014]: fever, hepatomegaly, `other clinical manifestations', race, education; [Abongomera 2017]: initial VL regimen; [Kämink 2017, both models]: lymphadenopathy.}
     \label{fig:sr-predictors}
   \end{figure}

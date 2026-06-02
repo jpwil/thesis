@@ -3,7 +3,7 @@
 %   \qauthor{--- James Wilson}
 % \end{savequote}
 
-\chapter{\label{ch:5-isc-model-results}Results: Indian Subcontinent Models}
+\chapter{\label{ch:4-isc-model-results}Results: Indian Subcontinent Models}
 \minitoc{}
 
 \section{Descriptive Analysis}
@@ -13,7 +13,7 @@ On application of the eligibility criteria to the IDDO VL data platform, a total
 % flow diagram
 \begin{figure}[tb]
   \centering
-  \includegraphics[width = 0.9\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch5/isc_flow_chart.pdf}
+  \includegraphics[width = 0.9\textwidth, trim={4cm 0cm 2cm 2cm}, clip]{figures/ch4/isc_flow_chart.pdf}
   \caption[Indian subcontinent model: flow diagram]{Flow diagram showing the studies and patients excluded from Indian subcontinent model development. HIV\@: human immunodeficiency virus; IDDO\@: Infectious Diseases Data Observatory; ISC\@: Indian subcontinent; PKDL\@: post kala-azar dermal leishmaniasis; VL\@: visceral leishmaniasis.}\label{fig:isc_flow_diagram}
 \end{figure}
 
@@ -31,11 +31,11 @@ A median of 144 patients were recruited in each study, ranging from 6 to 928 pat
     \begin{landscape}
       \pagestyle{empty}
 
-      \input{tables/ch5/isc_study.tex}
+      \input{tables/ch4/isc_study.tex}
 
       \begin{figure}[tb]
         \centering
-        \includegraphics[width=1.35\textwidth]{figures/ch5/treat.pdf}
+        \includegraphics[width=1.35\textwidth]{figures/ch4/treat.pdf}
         \caption{Bar chart showing the distribution of treatment regimens across contributing studies from the Indian subcontinent. Important distinguishing dosing information are provided in the overlaid labels, as space allows. Full treatment details are presented in Table~\ref{tab:isc_study}. 6 patients are included from Chakraborty 2008: 5 receiving alternate day amphotericin B deoxycholate and 1 receiving human placenta extract. ABD: amphotericin B deoxycholate; ALT: alternate days; CONS: consecutive days; D: days; HPE: human placenta extract; MF: miltefosine; PENT: pentamidine;~mg: milligrams/kilogram; SSG: sodium stibogluconate.}\label{fig:isc_treat}
       \end{figure}
 
@@ -93,12 +93,12 @@ Overall (marginal) distributions of categorical and continuous variables are tab
 Patient numbers and proportions presented in this section exclude missing data. See Section \ref{sec:isc_missing_data} for further information on missing data.
 
 % these are the study-specific distributions of outcome, sex and age
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch5/isc_main_dist.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/main_dist.pdf figures/ch4/isc_main_dist.pdf
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
   \begin{figure}[tb]
     \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch5/isc_main_dist.pdf}
+    \includegraphics[width=1.35\textwidth]{figures/ch4/isc_main_dist.pdf}
     \caption{Graphical summary of the Indian subcontinent study-specific sample sizes and distributions of relapse status, sex, and age.}
     \label{fig:isc_main_dist}
   \end{figure}
@@ -120,7 +120,7 @@ At the patient level, the most common treatment regimen was 28 days of oral milt
 The most common baseline parasite grade on tissue aspirate was $1+$ (1,201 [40.7\%] patients), while the median grade was $2+$ (764 [25.9\%] patients at this grade; IQR: 1 to 3). The proportion of patients decreased with increasing parasite grade, with 54 (1.8\%) patients with a parasite grade of $5+$. Where reported, 92.0\% (2,717 patients) of tissue aspirates were obtained from the spleen. The remaining aspirates were from bone marrow and accounted for almost all aspirates performed in three studies from Nepal\cite{rijal2010a,rijal2003,koirala2003} (Appendix Figure~\ref{fig:isc_comb_dist_cat}).
 
 % categorical variables table
-\input{tables/ch5/isc_categorical.tex}
+\input{tables/ch4/isc_categorical.tex}
 
 \subsubsection{Continuous Variables}
 
@@ -135,15 +135,15 @@ The median duration of fever prior to patient recruitment was 30 days (IQR: 20 t
 For distributions of laboratory results (haemoglobin, white blood cells, platelets, creatinine, and alanine aminotransferase), please refer to Table~\ref{tab:isc_continuous} and Figure~\ref{fig:isc_pooled_dist_cont_lab}.
 
 % continuous variables table
-\input{tables/ch5/isc_continuous.tex}
+\input{tables/ch4/isc_continuous.tex}
 
 %  distributions of categorical variables
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/catOut/comb_cat.pdf figures/ch5/isc_cat_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/catOut/comb_cat.pdf figures/ch4/isc_cat_comb.pdf
 \newgeometry{left=1cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
   \begin{figure}[tb]
     \centering
-    \includegraphics[width=1.35\textwidth]{figures/ch5/isc_cat_comb.pdf}
+    \includegraphics[width=1.35\textwidth]{figures/ch4/isc_cat_comb.pdf}
     \caption{Marginal distributions and predictor-outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. MF: miltefosine; Norm: normal; SDA: single-dose liposomal amphotericin B.}\label{fig:isc_cat_comb}
   \end{figure}
 \end{landscape}
@@ -164,42 +164,42 @@ Patients with parasite grades of $3+$ and $4+$ were associated with higher relap
 A correlation matrix showing associations between continuous variables is presented in Appendix Figure~\ref{fig:isc_cont_cont}, and between continuous and categorical variables in Appendix Figure~\ref{fig:isc_cont_cat}. These correlations are considered further in the Discussion section.
 
 % these are the pooled continuous distributions and relationships with relapse - PART 1
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/age_comb.pdf figures/ch5/isc_pool_age_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/ss_comb.pdf figures/ch5/isc_pool_ss_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/fd_comb.pdf figures/ch5/isc_pool_fd_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/height_comb.pdf figures/ch5/isc_pool_height_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/weight_comb.pdf figures/ch5/isc_pool_weight_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/age_comb.pdf figures/ch4/isc_pool_age_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/ss_comb.pdf figures/ch4/isc_pool_ss_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/fd_comb.pdf figures/ch4/isc_pool_fd_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/height_comb.pdf figures/ch4/isc_pool_height_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/weight_comb.pdf figures/ch4/isc_pool_weight_comb.pdf
 
 \clearpage
 \begin{figure}[H]
   \centering
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_age_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_age_comb.pdf}
       \put(2,19){\small Age}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_weight_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_weight_comb.pdf}
       \put(2,19){\small Weight}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_height_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_height_comb.pdf}
       \put(2,19){\small Height}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_fd_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_fd_comb.pdf}
       \put(2,19){\small FevDur}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_ss_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_ss_comb.pdf}
       \put(2,19){\small SpnSize}
     \end{overpic}
   \end{subfigure}
@@ -208,40 +208,40 @@ A correlation matrix showing associations between continuous variables is presen
 \end{figure}
 
 % these are the pooled continuous distributions and relationships with relapse - PART 2
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/wbc_comb.pdf figures/ch5/isc_pool_wbc_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/plt_comb.pdf figures/ch5/isc_pool_plt_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/hb_comb.pdf figures/ch5/isc_pool_hb_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/alt_comb.pdf figures/ch5/isc_pool_alt_comb.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/cr_comb.pdf figures/ch5/isc_pool_cr_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/wbc_comb.pdf figures/ch4/isc_pool_wbc_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/plt_comb.pdf figures/ch4/isc_pool_plt_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/hb_comb.pdf figures/ch4/isc_pool_hb_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/alt_comb.pdf figures/ch4/isc_pool_alt_comb.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/dist/contOut/cr_comb.pdf figures/ch4/isc_pool_cr_comb.pdf
 \begin{figure}[H]
   \centering
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_hb_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_hb_comb.pdf}
       \put(2,19){\small Hb}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_plt_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_plt_comb.pdf}
       \put(2,19){\small Plt}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_wbc_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_wbc_comb.pdf}
       \put(2,19){\small WBC}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_alt_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_alt_comb.pdf}
       \put(2,19){\small ALT}
     \end{overpic}
   \end{subfigure}
   \begin{subfigure}{\textwidth}
     \centering
-    \begin{overpic}[width=\textwidth]{figures/ch5/isc_pool_cr_comb.pdf}
+    \begin{overpic}[width=\textwidth]{figures/ch4/isc_pool_cr_comb.pdf}
       \put(2,19){\small Crt}
     \end{overpic}
   \end{subfigure}
@@ -260,10 +260,10 @@ The candidate predictor with the most missingness was malnutrition, which affect
 On review of the multiple imputation diagnostic plots (as described in Section \ref{sec:meth-missing} and available for review in the \href{https://github.com/jpwil/dphil}{Supplementary Material}), no clear or consistent patterns indicating violations of the missing-at-random assumption were apparent. Convergence was obtained well before the 20 iterations for the majority of imputed predictors, and the distributional assumptions of the imputation model appeared robust on inspection of the diagnostic density and scatter plots.
 
 % missing data figure
-% cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch5/isc_missing_summary.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch4/isc_missing_summary.pdf
 \begin{figure}[tb]
   \centering
-  \includegraphics[scale = 0.8, trim = 0 25 0 0]{figures/ch5/isc_missing_summary.pdf}
+  \includegraphics[scale = 0.8, trim = 0 25 0 0]{figures/ch4/isc_missing_summary.pdf}
   \caption{Density plot illustrating the amount of missing data overall and across contributing studies from the Indian subcontinent. Study ordered by lead author and year of publication (or protocol). Variables ordered by amount of missingness. ALT: alanine aminotransferase; WBC: white blood cells.}\label{fig:isc_missing_summary}
 \end{figure}
 
@@ -281,29 +281,29 @@ In both models, U-shaped relationships between age and relapse risk were shown, 
 
 Pooled estimates of intraclass correlation coefficients (ICC)\footnote{ICC quantifies the proportion of total variance in the latent propensity for the outcome attributable to between-study differences.} were 3.5\% for the model including parasite grade, and 4.4\% for the model excluding parasite grade.
 
-% cp /Users/jameswilson/proj/vl_model_isc/results/var_forest_combined.pdf figures/ch5/var_forest_combined.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/results/var_forest_combined.pdf figures/ch4/var_forest_combined.pdf
 \begin{figure}[tb]
   \centering
-  \includegraphics[width=\textwidth]{figures/ch5/var_forest_combined.pdf}
+  \includegraphics[width=\textwidth]{figures/ch4/var_forest_combined.pdf}
   \caption{Forest plots of adjusted odds ratios with 95\% confidence intervals for final model predictors. For age, the odds ratio represents a combination of linear and squared effects, with age centred by the mean and scaled by the standard deviation. Please refer to Figure~\ref{fig:isc_adjusted_assoc} for the adjusted relapse probabilities after model intercept recalibration to the observed relapse rate in the Sundar 2019 dataset\cite{sundar2019}. SDA: single-dose liposomal amphotericin B 10~mg/kg.}
   \label{fig:isc_var_forest_combined}
 \end{figure}
 
-% cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM1.pdf figures/ch5/isc_multiassoc_with_pg.pdf
-% cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM2.pdf figures/ch5/isc_multiassoc_without_pg.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM1.pdf figures/ch4/isc_multiassoc_with_pg.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/figures/multiAssocM2.pdf figures/ch4/isc_multiassoc_without_pg.pdf
 \newgeometry{left=2.5cm, bottom=2.5cm, right=2cm, top=3cm}
 \begin{landscape}
   \begin{figure}[tb]
     \centering
     \begin{subfigure}{1.4\textwidth}
       \centering
-      \begin{overpic}[width=\textwidth]{figures/ch5/isc_multiassoc_without_pg.pdf}
+      \begin{overpic}[width=\textwidth]{figures/ch4/isc_multiassoc_without_pg.pdf}
         \put(2,31){\small\textbf{ISC model: without parasite grade}}
       \end{overpic}
     \end{subfigure}
     \begin{subfigure}{1.4\textwidth}
       \centering
-      \begin{overpic}[width=\textwidth]{figures/ch5/isc_multiassoc_with_pg.pdf}
+      \begin{overpic}[width=\textwidth]{figures/ch4/isc_multiassoc_with_pg.pdf}
         \put(2,26){\small\textbf{ISC model: with parasite grade}}
       \end{overpic}
     \end{subfigure}
@@ -333,11 +333,11 @@ Apparent and optimism-adjusted c-statistics and calibration slopes are presented
   \label{tab:isc_performance}
 \end{table}
 
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM1.pdf figures/ch5/forestCIM1.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCIM1.pdf figures/ch4/forestCIM1.pdf
 % forest plots for C-statistic
 \begin{figure}[tb]
   \centering
-  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch5/forestCIM1.pdf}
+  \begin{overpic}[width=\textwidth, trim={3.5cm 0cm 1cm 0.3cm}, clip]{figures/ch4/forestCIM1.pdf}
     \put(0,5.5){\fcolorbox{black}{white}{\scriptsize $\tau^2$ = 0; $I^2$ = 0\%; p = 0.73}}
   \end{overpic}
   \caption{Forest plot showing individual and pooled study c-statistics, for the model \textbf{including} parasite grade. For the model excluding parasite grade refer to Appendix \ref{fig:isc_forestCIM2}. Pooled c-statistics are presented from both fixed-effects and random-effects meta-analysis models, after excluding studies with $\leq$ 5 relapse events. Blue diamonds: pooled summary estimates with 95\% confidence intervals. For Chakraborty 2008, no relapse events occurred and c-statistic is therefore undefined.}
@@ -346,11 +346,11 @@ Apparent and optimism-adjusted c-statistics and calibration slopes are presented
 
 Optimism in calibration slopes were estimated at 0.093 and 0.098 in the models including and excluding parasite grade, respectively. Resulting uniform shrinkage factors were 0.91 and 0.92, respectively. Multiplying together these shrinkage factors with the estimated model coefficients will result in the optimism-adjusted coefficients (Appendix Tables \ref{tab:isc_model_coeff_with_pg} and \ref{tab:isc_model_coeff_without_pg}). No significant evidence of between-study heterogeneity in calibration slope was identified, with forest plots presented in Figure~\ref{fig:isc_forestCalM1} (model including parasite grade) and Appendix Figure~\ref{fig:isc_forestCalM2} (model excluding parasite grade).
 
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM1.pdf figures/ch5/forestCalM1.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/forestCalM1.pdf figures/ch4/forestCalM1.pdf
 % forest plots for calibration
 \begin{figure}[tb]
   \centering
-  \begin{overpic}[width=\textwidth, trim={3.3cm 0cm 0.3cm 0.3cm}, clip]{figures/ch5/forestCalM1.pdf}
+  \begin{overpic}[width=\textwidth, trim={3.3cm 0cm 0.3cm 0.3cm}, clip]{figures/ch4/forestCalM1.pdf}
     \put(0,13){\fcolorbox{black}{white}{\scriptsize CITL: $\tau^2$ = 0.094; $I^2$ = 46.1\%; p = .01}}
     \put(0,9.52){\fcolorbox{black}{white}{\scriptsize CS: $\tau^2$ = 0; $I^2$ = 0\%; p = .74}}
   \end{overpic}
@@ -358,10 +358,10 @@ Optimism in calibration slopes were estimated at 0.093 and 0.098 in the models i
 \end{figure}
 
 % calibration plots (overall)
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlot.pdf figures/ch5/isc_calPlot.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlot.pdf figures/ch4/isc_calPlot.pdf
 \begin{figure}[tb]
   \centering
-  \begin{overpic}[width=\textwidth, trim = 0 0 0 -25]{figures/ch5/isc_calPlot.pdf}
+  \begin{overpic}[width=\textwidth, trim = 0 0 0 -25]{figures/ch4/isc_calPlot.pdf}
     \put(2,52){\small \textbf{ISC model: with parasite grade}}
     \put(50,52){\small \textbf{ISC model: without parasite grade}}
   \end{overpic}
@@ -370,10 +370,10 @@ Optimism in calibration slopes were estimated at 0.093 and 0.098 in the models i
 \end{figure}
 
 % calibration plots (parasite grade and fever duration)
-% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf figures/ch5/isc_calPlotFD1.pdf
+% cp /Users/jameswilson/proj/vl_model_isc/graphs/calPlotFD1.pdf figures/ch4/isc_calPlotFD1.pdf
 \begin{figure}[tb]
   \centering
-  \includegraphics[width=\textwidth]{figures/ch5/isc_calPlotFD1.pdf}
+  \includegraphics[width=\textwidth]{figures/ch4/isc_calPlotFD1.pdf}
   \caption{Calibration plots for different fever durations (model including parasite grade).}
   \label{fig:isc_calPlotFD1}
 \end{figure}
