@@ -3,10 +3,13 @@
 # https://github.com/michaeltanner/oxford-thesis/blob/master/.gitignore
 ################################################################################
 
+sundar-doc/
+summary/
+
 reading-list.tex
 temp.tex
 ## Output PDF file for project
-main.pdf
+# main.pdf
 *.bbl-SAVE-ERROR
 *.bcf-SAVE-ERROR
 ~$*

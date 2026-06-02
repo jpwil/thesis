@@ -1,13 +1,12 @@
 # DPhil Thesis
 
-This repository contains the LaTeX files for compiling my DPhil thesis. 
+This repository contains the LaTeX files for compiling my DPhil thesis. Compiled 
 
 ## Useful links
 
 * [University of Oxford 'Research examinations': summary of key regulations and guidance applicable to all research examinations](https://www.ox.ac.uk/students/academic/exams/research)
 * [Examples of previous DPhil submissions](https://ora.ox.ac.uk/)
 * [Medical Sciences Division (MSD) Canvas Course (requires Intranet access)](https://canvas.ox.ac.uk/courses/54330)
-
 
 ## Thesis Guidance
 
