@@ -2,24 +2,26 @@
 
 This repository contains the LaTeX project for compiling the final DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are welcome: [James Wilson](mailto:jpwilson123@outlook.com).
 
+TL;DR: [Download thesis here](https://github.com/jpwil/thesis/blob/main/main.pdf) (right click, download)
+
 ## Project Structure
 
-| Path                    | Description                                                                                    |
-| ----------------------- | ---------------------------------------------------------------------------------------------- |
-| `README.md`             | Project documentation (this text)                                                              |
-| `main.tex`              | Master TeX document                                                                            |
-| `main.pdf`              | Compiled (pdf) master document                                                                 |
-| `references.bib`        | Bibliography (compiled with BibTex/Biber)                                                      |
-| `text/`                 | Folder containing text .tex files                                                              |
-| `tables/`               | Folder containing table .tex files (by chapter)                                                |
-| `figures/`              | Folder containing figures (by chapter)                                                         |
-| `ociamthesis.cls`       | Modified [OxThesis](https://github.com/mcmanigle/OxThesis) LaTeX class file                    |
-| `.gitignore`            | git file listing files and folders to ignore                                                   |
-| `thesis.code-workspace` | VS Code Workspace Setup                                                                        |
-| `wc.sh`                 | Script that calls Perl script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/) |
-| `texcount.html`         | Output of `wc.sh` script, with summary word count at the end of the page                       |
-| `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                                      |
-| `clear.sh`              | Script for removing auxiliary files created during project compilation                         |
+| Path                    | Description                                                                  |
+| ----------------------- | ---------------------------------------------------------------------------- |
+| `README.md`             | Project documentation (this text)                                            |
+| `main.tex`              | Master TeX document                                                          |
+| `main.pdf`              | Compiled (pdf) master document                                               |
+| `references.bib`        | Bibliography (compiled with BibTex/Biber)                                    |
+| `text/`                 | Folder containing text .tex files                                            |
+| `tables/`               | Folder containing table .tex files (by chapter)                              |
+| `figures/`              | Folder containing figures (by chapter)                                       |
+| `ociamthesis.cls`       | Modified [OxThesis](https://github.com/mcmanigle/OxThesis) LaTeX class file  |
+| `.gitignore`            | git file listing files and folders to ignore                                 |
+| `thesis.code-workspace` | VS Code Workspace Setup                                                      |
+| `wc.sh`                 | Perl script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/) |
+| `texcount.html`         | Output of `wc.sh`: summary word count at page end                            |
+| `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                    |
+| `clear.sh`              | Script for removing auxiliary files created during project compilation       |
 
 ## Useful links
 
