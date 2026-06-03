@@ -1,6 +1,6 @@
 # DPhil Thesis
 
-This repository contains the LaTeX project for compiling my DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are welcome: jpwilson123@outlook.com.
+This repository contains the LaTeX project for compiling my DPhil thesis. A modified version of the [OxThesis](https://github.com/mcmanigle/OxThesis) template is used for document formatting. Comments, feedback are always welcome: jpwilson123@outlook.com.
 
 TL;DR: [**download thesis**](https://raw.githubusercontent.com/jpwil/thesis/main/main.pdf)
 
