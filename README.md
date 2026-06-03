@@ -6,22 +6,22 @@ TL;DR: [**download thesis**](https://raw.githubusercontent.com/jpwil/thesis/main
 
 ## Project Structure
 
-| Path                    | Description                                                                  |
-| ----------------------- | ---------------------------------------------------------------------------- |
-| `README.md`             | Project documentation (this text)                                            |
-| `main.tex`              | Master TeX document                                                          |
-| `main.pdf`              | Compiled (pdf) master document                                               |
-| `references.bib`        | Bibliography (compiled with BibTex/Biber)                                    |
-| `text/`                 | Folder containing text .tex files                                            |
-| `tables/`               | Folder containing table .tex files (by chapter)                              |
-| `figures/`              | Folder containing figures (by chapter)                                       |
-| `ociamthesis.cls`       | Modified [OxThesis](https://github.com/mcmanigle/OxThesis) LaTeX class file  |
-| `.gitignore`            | Files and folders to ignore in local directory                               |
-| `thesis.code-workspace` | VS Code Workspace setup                                                      |
-| `wc.sh`                 | Perl script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/) |
-| `texcount.html`         | Output of `wc.sh`: summary word count at end of page                         |
-| `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                    |
-| `clear.sh`              | Script for removing auxiliary files created during compilation               |
+| Path                    | Description                                                                 |
+| ----------------------- | --------------------------------------------------------------------------- |
+| `README.md`             | Project documentation (this text)                                           |
+| `main.tex`              | Master TeX document                                                         |
+| `main.pdf`              | Compiled (pdf) master document                                              |
+| `references.bib`        | Bibliography (compiled with BibTex/Biber)                                   |
+| `text/`                 | Folder containing text .tex files                                           |
+| `tables/`               | Folder containing table .tex files (by chapter)                             |
+| `figures/`              | Folder containing figures (by chapter)                                      |
+| `ociamthesis.cls`       | Modified [OxThesis](https://github.com/mcmanigle/OxThesis) LaTeX class file |
+| `.gitignore`            | Files and folders to ignore in local directory                              |
+| `thesis.code-workspace` | VS Code Workspace setup                                                     |
+| `wc.sh`                 | Script for counting words: [TeXcount](https://app.uio.no/ifi/texcount/)     |
+| `texcount.html`         | Output of `wc.sh`: summary word count at end of page                        |
+| `pic-trans.sh`          | Script for copying figures from R output to LaTeX project                   |
+| `clear.sh`              | Script for removing auxiliary files created during compilation              |
 
 ## Useful links
 
