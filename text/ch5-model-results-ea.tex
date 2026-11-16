@@ -109,7 +109,7 @@ Relapse within 6 months was reported in 99 (4.8\%) patients overall, and varied 
 
 As defined in Section~\ref{sec:malnutrition}, almost a quarter of all patients were severely malnourished (509 [24.9\%] patients). Moderate malnutrition affected 800 (39.1\%) patients, and 735 (36.0\%) had mild/normal malnutrition. Higher rates of severe malnutrition were seen in the two early MSF studies conducted in the late 1990s (33.1\%)\cite{veeken2000,ritmeijer2001} (presented in Appendix~\ref{app:ea-results-figures}, Figure~\ref{fig:ea_comb_dist_cat}).
 
-Severe anaemia affected 999 (48.8\%) of patients overall.
+Severe anaemia affected 999 patients (48.8\%) overall.
 
 A variety of treatment regimens were investigated across the studies. At the patient level, the single most common drug used was SSG (either generic or branded) \textemdash\ used as monotherapy in 1,048 (51.1\%) patients, or as part of combination therapy with paromomycin or LAMB in 326 (15.9\%) and 47 (2.2\%) patients, respectively. The second most frequently used drug was paromomycin (received by 623 [30.3\%] of patients overall) followed by LAMB (185 [9.1\%] patients) and miltefosine (195 [9.5\%] patients). The full range of treatment regimens, including dosing, are presented in Figure~\ref{fig:ea_treat}.
 
@@ -144,7 +144,7 @@ A correlation matrix showing associations between continuous variables is presen
   \begin{figure}[tb]
     \centering
     \includegraphics[width=1.35\textwidth]{figures/ch5/ea_cat_comb.pdf}
-    \caption{Marginal distributions and predictor-outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. Note: for parasite grade relapse \%, $y$--axis is rescaled to accommodate increased risk in 6+ group. Norm: normal.}
+    \caption{Marginal distributions and predictor-outcomes relationships for categorical candidate predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. Note: for parasite grade relapse \%, $y$--axis is rescaled to accommodate increased risk in 6+ group. Norm: normal.}
     \label{fig:ea_cat_comb}
   \end{figure}
 \end{landscape}
@@ -204,7 +204,7 @@ A correlation matrix showing associations between continuous variables is presen
       \put(2,19){\small SpnSize}
     \end{overpic}
   \end{subfigure}
-  \caption{Marginal distributions and predictor-outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \caption{Marginal distributions and predictor-outcome relationships for continuous non-laboratory candidate predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
   \label{fig:ea_pooled_dist_cont1}
 \end{figure}
 
@@ -246,7 +246,7 @@ A correlation matrix showing associations between continuous variables is presen
       \put(2,19){\small Crt}
     \end{overpic}
   \end{subfigure}
-  \caption{Marginal distributions and predictor--outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet count; WBC:~white blood cell count; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \caption{Marginal distributions and predictor--outcome relationships for continuous laboratory candidate predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet count; WBC:~white blood cell count; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
   \label{fig:ea_pooled_dist_cont2}
 \end{figure}
 
@@ -258,7 +258,7 @@ Across all studies, ALT, platelet count, WBC count, and creatinine were missing 
 
 \subsubsection{Multiple Imputation}
 
-Diagnostic plots for the 30 imputed datasets are available in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. On review of the trace plots, there was good evidence for convergence of the imputation model. Density and scatter plots revealed overall good correlation between the imputed and original variables.
+Diagnostic plots for the 30 imputed datasets are available in the \href{https://github.com/jpwil/dphil}{Supplementary Material}. \mccorrect{Density and scatter plots did not reveal obvious distributional inconsistencies or implausible imputed values. However, these diagnostics assess the performance of the imputation procedure and cannot establish the validity of the missing-at-random (MAR) assumption.}
 
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_ea/figures/missing/summary.pdf figures/ch5/ea_missing_summary.pdf
@@ -289,7 +289,7 @@ As presented in Appendix~\ref{app:ea-results-tables}, Tables~\ref{tab:ea_model_c
 \begin{figure}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/ch5/var_forest_combined.pdf}
-  \caption{Forest plot of adjusted odds ratios with 95\% confidence intervals for final model predictors. Odds ratios are displayed on a logarithmic scale.}
+  \caption{Forest plot of adjusted odds ratios with 95\% confidence intervals for final model predictors. \mccorrect{All predictors were recorded at the time of treatment initiation.} Odds ratios are displayed on a logarithmic scale.}
   \label{fig:ea_var_forest_combined}
 \end{figure}
 
@@ -312,7 +312,7 @@ As presented in Appendix~\ref{app:ea-results-tables}, Tables~\ref{tab:ea_model_c
         \put(2,22.4){\small\textbf{East Africa model: with parasite grade}}
       \end{overpic}
     \end{subfigure}
-    \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final East Africa prognostic models. Probabilities were calculated from optimism--adjusted models and following logistic recalibration (intercept--term only) to data contributed from Musa 2012\cite{musa2012}. Where not varying in the plot, predictions are standardised to a representative reference participant: median age (13 years), median fever duration (45 days), median white blood cell count (2.5 x10$^9$/L), with severe anaemia, moderate malnutrition, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2+.}
+    \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final East Africa prognostic models. \mccorrect{All predictors were recorded at the time of treatment initiation.} Probabilities were calculated from optimism--adjusted models and following logistic recalibration (intercept--term only) to data contributed from Musa 2012\cite{musa2012}. Where not varying in the plot, predictions are standardised to a representative reference participant: median age (13 years), median fever duration (45 days), median white blood cell count (2.5 x10$^9$/L), with severe anaemia, moderate malnutrition, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2+.}
     \label{fig:ea_adjusted_assoc}
   \end{figure}
 \end{landscape}
@@ -390,7 +390,10 @@ Forest plots showing the heterogeneity of calibration performance measures acros
 
 Calibration plots demonstrated concordance between predicted and observed relapse risk across both models (see Figure~\ref{fig:ea_calPlot}). Concordance is also demonstrated when comparing predicted and observed probabilities for malnutrition severity (Figure~\ref{fig:ea_calPlotMal1} for the model including parasite grade and Appendix~\ref{app:ea-results-figures}, Figure~\ref{fig:ea_calPlotMal2} for the model excluding parasite grade). Calibration plots for all final predictors are presented in the Appendix~\ref{app:ea-results-figures}, Figures~\ref{fig:ea_calPlotPD_ap} to \ref{fig:ea_calPlotWBC2}.
 
-The distribution of final predictor selection across the 2~$\times$~500 bootstrap models are presented in Appendix~\ref{app:ea-results-tables}, Table~\ref{tab:ea_model_stability}. When included as a candidate predictor, parasite grade consistently selected for inclusion across almost all bootstrap models (499 [99.8\%] bootstrap models). In both models, the selection of malnutrition was also consistently seen (477 [95.4\%] and 461 [92.2\%] bootstrap models when including and excluding parasite grade, respectively). WBC count was the least stable predictor included in both models (254 [50.8\%] amd 188 [37.6\%] bootstrap models when including and excluding parasite grade, respectively).
+The distribution of final predictor selection across the 2~$\times$~500 bootstrap models are presented in Table~\ref{tab:ea_model_stability}. When included as a candidate predictor, parasite grade consistently selected for inclusion across almost all bootstrap models (499 [99.8\%] bootstrap models). In both models, the selection of malnutrition was also consistently seen (477 [95.4\%] and 461 [92.2\%] bootstrap models when including and excluding parasite grade, respectively). WBC count was the least stable predictor included in both models (254 [50.8\%] amd 188 [37.6\%] bootstrap models when including and excluding parasite grade, respectively).
+
+% model stability
+\input{tables/ch5/ea_model_stability.tex}
 
 \section{Summary}
 

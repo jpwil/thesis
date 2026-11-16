@@ -99,7 +99,7 @@ Patient numbers and proportions presented in this section exclude missing data. 
   \begin{figure}[tb]
     \centering
     \includegraphics[width=1.35\textwidth]{figures/ch4/isc_main_dist.pdf}
-    \caption{Graphical summary of the Indian subcontinent study-specific sample sizes and distributions of relapse status, sex, and age.}
+    \caption{Graphical summary of the Indian subcontinent study-specific sample sizes and distributions of relapse status, sex, and age \mccorrect{(recorded at the start of treatment)}.}
     \label{fig:isc_main_dist}
   \end{figure}
 \end{landscape}
@@ -144,7 +144,7 @@ For distributions of laboratory results (haemoglobin, white blood cells, platele
   \begin{figure}[tb]
     \centering
     \includegraphics[width=1.35\textwidth]{figures/ch4/isc_cat_comb.pdf}
-    \caption{Marginal distributions and predictor-outcomes relationships for categorical candidate predictors. Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. MF: miltefosine; Norm: normal; SDA: single-dose liposomal amphotericin B.}\label{fig:isc_cat_comb}
+    \caption{Marginal distributions and predictor-outcomes relationships for categorical candidate predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} Excluding missing data. 95\% binomial confidence intervals calculated using the Wilson method. MF: miltefosine; Norm: normal; SDA: single-dose liposomal amphotericin B.}\label{fig:isc_cat_comb}
   \end{figure}
 \end{landscape}
 \restoregeometry
@@ -203,7 +203,7 @@ A correlation matrix showing associations between continuous variables is presen
       \put(2,19){\small SpnSize}
     \end{overpic}
   \end{subfigure}
-  \caption{Marginal distributions and predictor-outcome relationships for continuous non-laboratory candidate predictors. FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \caption{Marginal distributions and predictor-outcome relationships for continuous non-laboratory candidate predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} FevDur:~duration of fever; SpnSize:~spleen size. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
   \label{fig:isc_pooled_dist_cont_nolab}
 \end{figure}
 
@@ -245,7 +245,7 @@ A correlation matrix showing associations between continuous variables is presen
       \put(2,19){\small Crt}
     \end{overpic}
   \end{subfigure}
-  \caption{Marginal distributions and predictor-outcome relationships for continuous laboratory candidate predictors. All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
+  \caption{Marginal distributions and predictor-outcome relationships for continuous laboratory candidate predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} All predictors presented on log scale. Hb:~haemoglobin; Plt:~platelet; WBC:~white blood cells; ALT:~alanine aminotransferase; Crt:~creatinine. For each candidate predictor, left upper panel shows the overall density across studies and the left lower panel shows overlapping densities normalised by relapse status. The right panel shows a univariable generalised additive model spline fit, with 95\% confidence interval, of relapse.}
   \label{fig:isc_pooled_dist_cont_lab}
 \end{figure}
 
@@ -257,7 +257,9 @@ The candidate predictor with the most missingness was malnutrition, which affect
 
 \subsubsection{Multiple Imputation}
 
-On review of the multiple imputation diagnostic plots (as described in Section \ref{sec:meth-missing} and available for review in the \href{https://github.com/jpwil/dphil}{Supplementary Material}), no clear or consistent patterns indicating violations of the missing-at-random assumption were apparent. Convergence was obtained well before the 20 iterations for the majority of imputed predictors, and the distributional assumptions of the imputation model appeared robust on inspection of the diagnostic density and scatter plots.
+\begin{mccorrection}
+  Inspection of the multiple imputation diagnostic plots (described in Section \ref{sec:meth-missing} and available for review in the \href{https://github.com/jpwil/dphil}{Supplementary Material}) suggested satisfactory convergence for all imputed predictors, generally well before 20 iterations. The density and scatter plots did not reveal obvious distributional inconsistencies or implausible imputed values. However, these diagnostics assess the performance of the imputation procedure and cannot establish the validity of the MAR assumption.
+\end{mccorrection}
 
 % missing data figure
 % cp /Users/jameswilson/proj/vl_model_isc/figures/missing/summary.pdf figures/ch4/isc_missing_summary.pdf
@@ -285,7 +287,7 @@ Pooled estimates of intraclass correlation coefficients (ICC)\footnote{ICC quant
 \begin{figure}[tb]
   \centering
   \includegraphics[width=\textwidth]{figures/ch4/var_forest_combined.pdf}
-  \caption{Forest plots of adjusted odds ratios with 95\% confidence intervals for final model predictors. For age, the odds ratio represents a combination of linear and squared effects, with age centred by the mean and scaled by the standard deviation. Please refer to Figure~\ref{fig:isc_adjusted_assoc} for the adjusted relapse probabilities after model intercept recalibration to the observed relapse rate in the Sundar 2019 dataset\cite{sundar2019}. SDA: single-dose liposomal amphotericin B 10~mg/kg.}
+  \caption{Forest plots of adjusted odds ratios with 95\% confidence intervals for final model predictors. \mccorrect{All candidate predictors were recorded at the time of treatment initiation.} For age, the odds ratio represents a combination of linear and squared effects, with age centred by the mean and scaled by the standard deviation. Please refer to Figure~\ref{fig:isc_adjusted_assoc} for the adjusted relapse probabilities after model intercept recalibration to the observed relapse rate in the Sundar 2019 dataset\cite{sundar2019}. SDA: single-dose liposomal amphotericin B 10~mg/kg.}
   \label{fig:isc_var_forest_combined}
 \end{figure}
 
@@ -307,7 +309,7 @@ Pooled estimates of intraclass correlation coefficients (ICC)\footnote{ICC quant
         \put(2,26){\small\textbf{ISC model: with parasite grade}}
       \end{overpic}
     \end{subfigure}
-    \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final ISC prognostic models. Probabilities were calculated from optimism-adjusted models and following logistic recalibration (intercept-term only) to data contributed from Sundar 2019\cite{sundar2019}. Where not varying in the plot, predictions are standardised to a representative reference participant: median age (18 years), median fever duration (30 days), treated with 10~mg/kg single-dose liposomal amphotericin B, with severe anaemia, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2+.}\label{fig:isc_adjusted_assoc}
+    \caption{Adjusted associations between final predictors and predicted relapse probability, as estimated from the final ISC prognostic models. \mccorrect{All predictors were recorded at the time of treatment initiation.} Probabilities were calculated from optimism-adjusted models and following logistic recalibration (intercept-term only) to data contributed from Sundar 2019\cite{sundar2019}. Where not varying in the plot, predictions are standardised to a representative reference participant: median age (18 years), median fever duration (30 days), treated with 10~mg/kg single-dose liposomal amphotericin B, with severe anaemia, and \textemdash\ for the model including parasite grade \textemdash\ a median parasite count of 2+.}\label{fig:isc_adjusted_assoc}
   \end{figure}
 \end{landscape}
 \restoregeometry
@@ -382,7 +384,10 @@ Calibration intercepts (calibration-in-the-large) were found to vary significant
 
 Visual inspection of the calibration plots comparing predicted and observed relapse probabilities showed minimal deviation from perfect calibration (Figure~\ref{fig:isc_calPlot}). Calibration plots showing predicted and observed relapse probabilities for fever duration (Figure~\ref{fig:isc_calPlotFD1} for model including parasite grade), and other predictors (Appendix~\ref{app:isc-results-figures}, Figures~\ref{fig:isc_calPlotPD_ap} to \ref{fig:isc_calPlotRx1_ap} for model including parasite grade and~\ref{fig:isc_calPlotFD2_ap} to~\ref{fig:isc_calPlotRx2_ap} excluding parasite grade) and also showed good overall agreement, with predicted relapse probabilities lying within the 95\% confidence intervals of the observed probabilities.
 
-The distribution of the final predictors selected across the 2~$\times$~500 bootstrap models are presented in Appendix~\ref{app:isc-results-tables}, Table~\ref{tab:isc_model_stability}. Reassuringly, the most frequently selected predictors correspond to the final predictors selected in both final models. Of note, fever duration was selected across all bootstraps for both models. When considered as a candidate predictor, parasite grade was selected in 472 (94.4\%) of bootstrap models. A degree of instability was apparent, with predictors such as spleen size, sex, alanine aminotransferase, and the cubic age term being selected in 100--250 bootstraps.
+The distribution of the final predictors selected across the 2~$\times$~500 bootstrap models are presented in Table~\ref{tab:isc_model_stability}. Reassuringly, the most frequently selected predictors correspond to the final predictors selected in both final models. Of note, fever duration was selected across all bootstraps for both models. When considered as a candidate predictor, parasite grade was selected in 472 (94.4\%) of bootstrap models. A degree of instability was apparent, with predictors such as spleen size, sex, alanine aminotransferase, and the cubic age term being selected in 100--250 bootstraps.
+
+% model stability
+\input{tables/ch4/isc_model_stability.tex}
 
 \section{Summary}
 
